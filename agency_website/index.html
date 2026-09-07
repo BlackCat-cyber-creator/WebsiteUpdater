@@ -336,12 +336,125 @@
     }
 
     /* =========================================================================
-       2. HERO SECTION
+       2. HERO SECTION (WebGPU & Parallax 3D Perspective)
        ========================================================================= */
     .hero-section {
-      padding: 72px 0 60px;
-      background: radial-gradient(100% 100% at 50% 0%, #ffffff 60%, #f8fafc 100%);
+      position: relative;
+      padding: 76px 0 70px;
+      background: radial-gradient(100% 100% at 50% 0%, #ffffff 50%, #f8fafc 100%);
       border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+      perspective: 1200px;
+    }
+
+    #hero-gpu-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    .hero-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Multi-Depth Parallax Scene */
+    .parallax-scene {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .parallax-layer {
+      transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform;
+    }
+
+    .layer-glow {
+      position: absolute;
+      inset: -30px;
+      background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.16) 0%, rgba(6, 182, 212, 0.08) 45%, transparent 70%);
+      filter: blur(40px);
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .layer-card {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Floating Metric Badges */
+    .floating-chip {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+      border-radius: var(--radius-full);
+      padding: 8px 18px;
+      text-align: left;
+      pointer-events: none;
+    }
+
+    .chip-left {
+      top: -20px;
+      left: -24px;
+    }
+
+    .chip-right {
+      bottom: -22px;
+      right: -24px;
+    }
+
+    .chip-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .chip-icon.emerald {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      color: var(--accent-emerald);
+    }
+
+    .chip-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .chip-sub {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .floating-chip { display: none; }
     }
 
     .hero-content {
@@ -1369,6 +1482,9 @@
          2. HIGH-AUTHORITY HERO SECTION
          ========================================================================= -->
     <section class="hero-section">
+      <!-- Lightweight WebGPU Background Shader (Inspired by vercel-labs/vgpu) -->
+      <canvas id="hero-gpu-canvas" aria-hidden="true"></canvas>
+
       <div class="container">
         <div class="hero-content">
           <!-- Category Pill Badge -->
@@ -1427,48 +1543,78 @@
           </div>
         </div>
 
-        <!-- Modern B2B Product / Performance Showcase Card -->
-        <div class="hero-preview-wrapper">
-          <div class="preview-header">
-            <div class="window-dots">
-              <span class="w-dot"></span>
-              <span class="w-dot"></span>
-              <span class="w-dot"></span>
+        <!-- Interactive Multi-Depth Parallax Showcase (Inspired by wagerfield/parallax) -->
+        <div class="parallax-scene" id="hero-parallax-scene">
+          <!-- Layer 1: Ambient Horizon Aura -->
+          <div class="parallax-layer layer-glow" data-depth="0.08" aria-hidden="true"></div>
+
+          <!-- Layer 2: Main Browser Showcase Window -->
+          <div class="parallax-layer layer-card" data-depth="0.18">
+            <div class="hero-preview-wrapper">
+              <div class="preview-header">
+                <div class="window-dots">
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                </div>
+                <div class="preview-title-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>https://bisnis-anda.vercel.app &middot; Production Build</span>
+                </div>
+                <div style="width: 48px;"></div>
+              </div>
+              <div class="preview-body">
+                <div class="stat-pill">
+                  <div class="stat-val emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>98 / 100</span>
+                  </div>
+                  <div class="stat-label">Google PageSpeed Score</div>
+                </div>
+                <div class="stat-pill">
+                  <div class="stat-val blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    <span>&lt; 0.7s</span>
+                  </div>
+                  <div class="stat-label">Largest Contentful Paint</div>
+                </div>
+                <div class="stat-pill">
+                  <div class="stat-val">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <span>100%</span>
+                  </div>
+                  <div class="stat-label">Mobile-First Viewport</div>
+                </div>
+                <div class="stat-pill">
+                  <div class="stat-val emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Valid</span>
+                  </div>
+                  <div class="stat-label">Schema.org LocalBusiness</div>
+                </div>
+              </div>
             </div>
-            <div class="preview-title-bar">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              <span>https://bisnis-anda.vercel.app &middot; Production Build</span>
-            </div>
-            <div style="width: 48px;"></div>
           </div>
-          <div class="preview-body">
-            <div class="stat-pill">
-              <div class="stat-val emerald">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>98 / 100</span>
+
+          <!-- Layer 3: Floating Speed Chip -->
+          <div class="parallax-layer" data-depth="0.36" aria-hidden="true">
+            <div class="floating-chip chip-left">
+              <div class="chip-icon">⚡</div>
+              <div>
+                <div class="chip-title">0.4s FCP</div>
+                <div class="chip-sub">Ultra Fast Delivery</div>
               </div>
-              <div class="stat-label">Google PageSpeed Score</div>
             </div>
-            <div class="stat-pill">
-              <div class="stat-val blue">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                <span>&lt; 0.7s</span>
+          </div>
+
+          <!-- Layer 4: Floating Verification Chip -->
+          <div class="parallax-layer" data-depth="0.46" aria-hidden="true">
+            <div class="floating-chip chip-right">
+              <div class="chip-icon emerald">✓</div>
+              <div>
+                <div class="chip-title">PageSpeed 99</div>
+                <div class="chip-sub">Turn-Key Turnaround</div>
               </div>
-              <div class="stat-label">Largest Contentful Paint</div>
-            </div>
-            <div class="stat-pill">
-              <div class="stat-val">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                <span>100%</span>
-              </div>
-              <div class="stat-label">Mobile-First Viewport</div>
-            </div>
-            <div class="stat-pill">
-              <div class="stat-val emerald">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                <span>Valid</span>
-              </div>
-              <div class="stat-label">Schema.org LocalBusiness</div>
             </div>
           </div>
         </div>
@@ -2157,17 +2303,270 @@
       }
     }
 
-    // Close on Escape key press
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const backdrop = document.getElementById('modal-backdrop');
-        if (backdrop && backdrop.classList.contains('active')) {
-          backdrop.classList.remove('active');
-          backdrop.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-        }
+    // =========================================================================
+    // 5. LIGHTWEIGHT WebGPU CYBER SHADER (Inspired by vercel-labs/vgpu)
+    // =========================================================================
+    (async function initWebGPUBackground() {
+      const canvas = document.getElementById('hero-gpu-canvas');
+      if (!canvas) return;
+
+      if (!navigator.gpu) {
+        initCanvas2DFallback(canvas);
+        return;
       }
-    });
+
+      try {
+        const adapter = await navigator.gpu.requestAdapter({ powerPreference: 'low-power' });
+        if (!adapter) {
+          initCanvas2DFallback(canvas);
+          return;
+        }
+
+        const device = await adapter.requestDevice();
+        const context = canvas.getContext('webgpu');
+        const format = navigator.gpu.getPreferredCanvasFormat();
+
+        context.configure({
+          device,
+          format,
+          alphaMode: 'premultiplied'
+        });
+
+        const uniformBuffer = device.createBuffer({
+          size: 16,
+          usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST
+        });
+
+        const shaderModule = device.createShaderModule({
+          code: `
+            struct Uniforms {
+              time: f32,
+              pointerX: f32,
+              pointerY: f32,
+              pad: f32,
+            };
+            @binding(0) @group(0) var<uniform> u: Uniforms;
+
+            struct VertexOutput {
+              @builtin(position) position: vec4f,
+              @location(0) uv: vec2f,
+            };
+
+            @vertex
+            fn vs_main(@builtin(vertex_index) idx: u32) -> VertexOutput {
+              var pos = array<vec2f, 6>(
+                vec2f(-1.0, -1.0), vec2f( 1.0, -1.0), vec2f(-1.0,  1.0),
+                vec2f(-1.0,  1.0), vec2f( 1.0, -1.0), vec2f( 1.0,  1.0)
+              );
+              var out: VertexOutput;
+              out.position = vec4f(pos[idx], 0.0, 1.0);
+              out.uv = (pos[idx] + 1.0) * 0.5;
+              return out;
+            }
+
+            @fragment
+            fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
+              let t = u.time * 0.35;
+              let p = (uv - 0.5) * 2.0;
+              let distToMouse = length(p - vec2f(u.pointerX, u.pointerY));
+              
+              let wave1 = sin(p.x * 3.5 + t + p.y * 2.0);
+              let wave2 = cos(p.y * 4.0 - t * 1.2 + p.x * 1.5);
+              let wave3 = sin(length(p) * 4.0 - t * 1.5) * 0.5;
+              let waves = (wave1 + wave2 + wave3) / 3.0;
+
+              let mouseInfluence = smoothstep(1.2, 0.0, distToMouse) * 0.3;
+              let intensity = clamp(waves * 0.5 + 0.5 + mouseInfluence, 0.0, 1.0);
+
+              let colAzure = vec3f(0.145, 0.388, 0.922);
+              let colCyan  = vec3f(0.024, 0.714, 0.831);
+              let colBase  = mix(colAzure, colCyan, uv.x + sin(t) * 0.2);
+
+              let edgeFade = (1.0 - pow(abs(p.y), 1.6)) * (1.0 - pow(abs(p.x), 1.8));
+              let alpha = clamp(intensity * 0.22 * edgeFade, 0.0, 0.35);
+
+              return vec4f(colBase * alpha, alpha);
+            }
+          `
+        });
+
+        const pipeline = device.createRenderPipeline({
+          layout: 'auto',
+          vertex: { module: shaderModule, entryPoint: 'vs_main' },
+          fragment: {
+            module: shaderModule,
+            entryPoint: 'fs_main',
+            targets: [{
+              format,
+              blend: {
+                color: { srcFactor: 'one', dstFactor: 'one-minus-src-alpha', operation: 'add' },
+                alpha: { srcFactor: 'one', dstFactor: 'one-minus-src-alpha', operation: 'add' }
+              }
+            }]
+          },
+          primitive: { topology: 'triangle-list' }
+        });
+
+        const bindGroup = device.createBindGroup({
+          layout: pipeline.getBindGroupLayout(0),
+          entries: [{ binding: 0, resource: { buffer: uniformBuffer } }]
+        });
+
+        let pointer = { x: 0, y: 0 };
+        window.addEventListener('mousemove', (e) => {
+          const rect = canvas.getBoundingClientRect();
+          if (rect.width && rect.height) {
+            pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            pointer.y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+          }
+        }, { passive: true });
+
+        function resize() {
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          const width = Math.floor(canvas.clientWidth * dpr);
+          const height = Math.floor(canvas.clientHeight * dpr);
+          if (canvas.width !== width || canvas.height !== height) {
+            canvas.width = width;
+            canvas.height = height;
+          }
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        let isVisible = true;
+        const observer = new IntersectionObserver((entries) => {
+          isVisible = entries[0].isIntersecting;
+        }, { threshold: 0.05 });
+        observer.observe(canvas.parentElement || canvas);
+
+        let startTime = performance.now();
+        function render(now) {
+          if (isVisible) {
+            resize();
+            const elapsed = (now - startTime) * 0.001;
+            const uniformData = new Float32Array([elapsed, pointer.x, pointer.y, 0]);
+            device.queue.writeBuffer(uniformBuffer, 0, uniformData);
+
+            const commandEncoder = device.createCommandEncoder();
+            const textureView = context.getCurrentTexture().createView();
+            const pass = commandEncoder.beginRenderPass({
+              colorAttachments: [{
+                view: textureView,
+                clearValue: { r: 0, g: 0, b: 0, a: 0 },
+                loadOp: 'clear',
+                storeOp: 'store'
+              }]
+            });
+
+            pass.setPipeline(pipeline);
+            pass.setBindGroup(0, bindGroup);
+            pass.draw(6);
+            pass.end();
+
+            device.queue.submit([commandEncoder.finish()]);
+          }
+          requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+      } catch (err) {
+        initCanvas2DFallback(canvas);
+      }
+
+      function initCanvas2DFallback(canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = (canvas.width = canvas.clientWidth);
+        let height = (canvas.height = canvas.clientHeight);
+
+        window.addEventListener('resize', () => {
+          width = canvas.width = canvas.clientWidth;
+          height = canvas.height = canvas.clientHeight;
+        });
+
+        let t = 0;
+        function drawFallback() {
+          ctx.clearRect(0, 0, width, height);
+          t += 0.015;
+          const grad = ctx.createRadialGradient(
+            width * 0.5 + Math.sin(t) * 100, height * 0.4 + Math.cos(t * 0.8) * 60, 20,
+            width * 0.5, height * 0.5, width * 0.6
+          );
+          grad.addColorStop(0, 'rgba(37, 99, 235, 0.12)');
+          grad.addColorStop(0.5, 'rgba(6, 182, 212, 0.06)');
+          grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
+          requestAnimationFrame(drawFallback);
+        }
+        requestAnimationFrame(drawFallback);
+      }
+    })();
+
+    // =========================================================================
+    // 6. ULTRA-LIGHTWEIGHT PARALLAX ENGINE (Inspired by wagerfield/parallax)
+    // =========================================================================
+    (function initHeroParallax() {
+      const scene = document.getElementById('hero-parallax-scene');
+      if (!scene) return;
+
+      const layers = Array.from(scene.querySelectorAll('.parallax-layer[data-depth]')).map(el => ({
+        el,
+        depth: parseFloat(el.getAttribute('data-depth')) || 0.2
+      }));
+
+      let targetX = 0, targetY = 0;
+      let currentX = 0, currentY = 0;
+      let isMoving = false;
+      let isVisible = true;
+
+      window.addEventListener('mousemove', (e) => {
+        const rect = scene.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        targetX = (e.clientX - centerX) / (window.innerWidth / 2);
+        targetY = (e.clientY - centerY) / (window.innerHeight / 2);
+        isMoving = true;
+      }, { passive: true });
+
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', (e) => {
+          if (e.gamma !== null && e.beta !== null) {
+            targetX = Math.max(-1, Math.min(1, e.gamma / 30));
+            targetY = Math.max(-1, Math.min(1, (e.beta - 45) / 30));
+            isMoving = true;
+          }
+        }, { passive: true });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        isVisible = entries[0].isIntersecting;
+      }, { threshold: 0.1 });
+      observer.observe(scene);
+
+      function updateParallax() {
+        if (isVisible && isMoving) {
+          currentX += (targetX - currentX) * 0.08;
+          currentY += (targetY - currentY) * 0.08;
+
+          const maxOffset = 40;
+          const maxTilt = 7;
+
+          layers.forEach(({ el, depth }) => {
+            const moveX = (currentX * maxOffset * depth).toFixed(2);
+            const moveY = (currentY * maxOffset * depth).toFixed(2);
+            const rotX = (-currentY * maxTilt * depth).toFixed(2);
+            const rotY = (currentX * maxTilt * depth).toFixed(2);
+
+            el.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+          });
+
+          if (Math.abs(targetX - currentX) < 0.001 && Math.abs(targetY - currentY) < 0.001) {
+            isMoving = false;
+          }
+        }
+        requestAnimationFrame(updateParallax);
+      }
+      requestAnimationFrame(updateParallax);
+    })();
   </script>
 </body>
 </html>

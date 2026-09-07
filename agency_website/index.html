@@ -492,6 +492,25 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 220px;
+    }
+
+    .terminal-ssl-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-full);
+      padding: 2px 8px;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
     }
 
     .terminal-content {
@@ -515,12 +534,26 @@
 
     .metric-val {
       font-family: var(--font-mono);
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 4px;
+      white-space: nowrap;
+      line-height: 1.1;
+    }
+
+    .metric-val svg {
+      flex-shrink: 0;
+    }
+
+    .metric-denom {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      opacity: 0.85;
+      margin-left: 2px;
     }
 
     .metric-val.emerald { color: #34d399; }
@@ -1041,35 +1074,31 @@
       color: var(--text-muted);
     }
 
-    /* Floating WhatsApp Button */
-    .wa-float-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      background: #25d366;
-      color: #ffffff;
-      padding: 12px 20px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .wa-float-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
-    }
-
     /* Responsive Queries */
     @media (max-width: 960px) {
-      .hero-section { padding: 120px 0 70px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-section { padding: 120px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .parallax-viewport {
+        height: auto;
+        perspective: none;
+        display: block;
+        margin-top: 10px;
+      }
+      .parallax-scene {
+        height: auto;
+        transform: none !important;
+      }
+      .terminal-card {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none !important;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(56, 189, 248, 0.1);
+      }
+      .float-badge { display: none; }
       .tracks-grid { grid-template-columns: 1fr; }
       .guarantees-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid { grid-template-columns: 1fr; }
@@ -1079,16 +1108,43 @@
     }
 
     @media (max-width: 640px) {
-      .hero-section { padding: 100px 0 50px; }
+      .container { padding: 0 16px; }
+      .site-header { padding: 10px 0; }
+      .brand-link { gap: 8px; }
+      .brand-icon svg { width: 30px; height: 30px; }
+      .brand-name { font-size: 15px; }
+      .brand-tag { font-size: 9px; padding: 1px 6px; }
+      .btn-nav { padding: 6px 12px; font-size: 12px; gap: 4px; }
+      .hero-section { padding: 80px 0 35px; }
+      .hero-title { font-size: clamp(25px, 6.8vw, 32px); line-height: 1.2; }
+      .hero-desc { font-size: 14.5px; margin-bottom: 22px; line-height: 1.6; }
+      .hero-actions { flex-direction: column; width: 100%; gap: 10px; margin-bottom: 24px; }
+      .btn-glow-primary, .btn-glass-secondary { width: 100%; justify-content: center; min-height: 48px; }
       .nav-links { display: none; }
-      .hero-trust-list { grid-template-columns: 1fr; }
+      .hero-trust-list { grid-template-columns: 1fr; gap: 8px; }
+      .terminal-bar { padding: 10px 12px; }
+      .terminal-url { max-width: 150px; font-size: 10.5px; }
+      .terminal-content { padding: 14px 12px; }
+      .terminal-metrics { gap: 8px; margin-bottom: 12px; }
+      .metric-box { padding: 10px 10px; }
+      .metric-val { font-size: 18px; gap: 4px; }
+      .metric-denom { font-size: 11.5px; }
+      .speed-test-bar { padding: 8px 10px; font-size: 10.5px; }
       .deliverables-grid { grid-template-columns: 1fr; }
       .guarantees-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-      .contact-box { padding: 24px 18px; }
-      .price-card-hero { padding: 32px 20px; }
-      .float-badge { display: none; }
+      .contact-box { padding: 24px 16px; }
+      .form-control { font-size: 16px; } /* Prevents iOS Safari auto-zoom on input focus */
+      .price-card-hero { padding: 26px 16px; }
+      .price-val { font-size: 36px; }
+    }
+
+    @media (max-width: 360px) {
+      .brand-tag { display: none; }
+      .brand-name { font-size: 14px; }
+      .btn-nav span { font-size: 11.5px; }
+      .btn-nav svg { display: none; }
     }
   </style>
 </head>
@@ -1237,9 +1293,12 @@
                 </div>
                 <div class="terminal-url">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  <span>https://bisnis-anda.vercel.app</span>
+                  <span>bisnis-anda.vercel.app</span>
                 </div>
-                <div style="width: 32px;"></div>
+                <div class="terminal-ssl-badge">
+                  <span class="pulse-dot" style="width: 5px; height: 5px;"></span>
+                  <span>LIVE</span>
+                </div>
               </div>
 
               <div class="terminal-content">
@@ -1247,7 +1306,7 @@
                   <div class="metric-box">
                     <div class="metric-val emerald">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>99 / 100</span>
+                      <span>99</span><span class="metric-denom">/100</span>
                     </div>
                     <div class="metric-label">Google PageSpeed</div>
                   </div>
@@ -1263,9 +1322,9 @@
                 <div class="speed-test-bar">
                   <div class="speed-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                    <span>Vercel Edge Global CDN &middot; SSL Active</span>
+                    <span>Vercel Edge Global CDN</span>
                   </div>
-                  <span style="font-size: 11px; color: #94a3b8; font-family: monospace;">A+ Rated</span>
+                  <span style="font-size: 11px; color: #94a3b8; font-family: monospace; white-space: nowrap;">A+ Rated</span>
                 </div>
               </div>
             </div>
@@ -1615,11 +1674,6 @@
     </div>
   </footer>
 
-  <!-- Floating WA Button -->
-  <a href="https://wa.me/6285128013767?text=Halo%20Website%20Updater%20Studio%2C%20saya%20ingin%20konsultasi%20website" target="_blank" rel="noopener noreferrer" class="wa-float-btn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-    <span>Chat WhatsApp</span>
-  </a>
 
   <!-- =========================================================================
        9. LIGHTWEIGHT WEBGPU ENGINE + GYROSCOPE/CURSOR 3D PARALLAX ENGINE
@@ -1875,6 +1929,15 @@
       }
 
       function updateParallax() {
+        if (window.innerWidth <= 960) {
+          scene.style.transform = '';
+          layers.forEach(layer => {
+            layer.style.transform = '';
+          });
+          requestAnimationFrame(updateParallax);
+          return;
+        }
+
         currentX += (targetX - currentX) * friction;
         currentY += (targetY - currentY) * friction;
 

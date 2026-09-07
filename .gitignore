@@ -1,0 +1,30 @@
+# Sensitive credentials & environment variables
+.env
+.env.*
+!.env.example
+
+# Client folders & data (yg punya client gaperlu git)
+clients/
+
+# WhatsApp sessions & credentials
+.whatsapp_session/
+*/.whatsapp_session/
+
+# Python cache & temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel CLI metadata
+.vercel/
+
+# Temporary scratch files
+scratch/
+test.pdf

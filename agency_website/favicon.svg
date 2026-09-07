@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8f9fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Squircle -->
+  <rect x="6" y="6" width="116" height="116" rx="26" fill="url(#bgGrad)" stroke="#dfe1e5" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- 4 Google Dots in header -->
+  <circle cx="32" cy="28" r="4.5" fill="#4285F4"/>
+  <circle cx="45" cy="28" r="4.5" fill="#EA4335"/>
+  <circle cx="58" cy="28" r="4.5" fill="#FBBC05"/>
+  <circle cx="71" cy="28" r="4.5" fill="#34A853"/>
+
+  <!-- Minimalist Divider Line -->
+  <line x1="24" y1="40" x2="104" y2="40" stroke="#f1f3f4" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Stylized Letter W (Google Blue) -->
+  <path d="M 28 50 L 38 92 L 48 64 L 58 92 L 68 50" fill="none" stroke="#1A73E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Stylized Letter U with Upward Updater Arrow (Google Green) -->
+  <path d="M 76 50 L 76 76 C 76 90, 100 90, 100 76 L 100 52" fill="none" stroke="#34A853" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Sleek Upward Arrow Accent (Google Red) -->
+  <path d="M 94 60 L 100 50 L 106 60" fill="none" stroke="#EA4335" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

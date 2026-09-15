@@ -14,10 +14,10 @@
 ### Solusi "Dropship Website" Website Updater:
 - **0 Menit Koding:** Mesin otomatis meng-scrape profil bisnis target, menyusun katalog produk nyata, men-deploy ke Vercel Cloud (<0.5 detik), dan mengintegrasikan WhatsApp Closing Machine.
 - **100% Whitelabel:** Dokumen Proposal PDF resmi dan website live 100% menyandang nama agensi, nomor WhatsApp, dan logo freelancer. Klien tidak pernah tahu kami yang mengerjakannya di belakang layar.
-- **Margin Bersih Rp 2.000.000+ Per Prospek:**
-  - Freelancer menjual ke klien: **Rp 2.500.000 – Rp 4.900.000** (atau skema langganan **Rp 250.000/bulan**)
-  - Biaya lisensi fulfillment ke kita: **Rp 490.000** (flat sekali bayar)
-  - **Keuntungan bersih langsung masuk ke kantong freelancer:** **Rp 2.000.000 – Rp 4.400.000 per closing!**
+- **Margin Bersih Rp 1.140.000+ Per Prospek:**
+  - Rekomendasi jual ke klien UKM: **Rp 1.490.000** (Harga standar resmi, closing cepat) atau bebas dinaikkan **Rp 2.500.000 – Rp 5.000.000** jika dibundling jasa Anda
+  - Biaya lisensi fulfillment ke kita: **Rp 350.000** (flat sekali bayar terima beres)
+  - **Keuntungan bersih langsung masuk ke kantong freelancer:** **Rp 1.140.000 – Rp 4.650.000 per closing!**
 
 ---
 
@@ -66,8 +66,8 @@ Gunakan materi promosi di bawah ini untuk diposting di grup Facebook (*Komunitas
 > 💡 **Cara Kerjanya Sederhana:**
 > 1. Anda cukup berikan nama bisnis target klien Anda (misal: distributor, klinik, ekspedisi, pabrik).
 > 2. Mesin otomatis kami akan membangun **Website Modern Super Cepat (<0.5 detik)** + **PDF Proposal Resmi** lengkap atas nama agensi/brand Anda sendiri dalam 1 menit!
-> 3. Anda kirimkan live demo & PDF tersebut ke calon klien. Begitu klien bayar Rp 2.500.000, Anda hanya membayar biaya fulfillment ke kami Rp 490.000.
-> 4. **Profit bersih Rp 2.000.000+ langsung milik Anda 100%!**
+> 3. Anda kirimkan live demo & PDF tersebut ke calon klien. Begitu klien bayar harga resmi Rp 1.490.000 (atau lebih tinggi sesuai tarif Anda), Anda hanya membayar biaya lisensi ke kami flat Rp 350.000.
+> 4. **Profit bersih Rp 1.140.000+ langsung milik Anda 100%!**
 >
 > 🏷️ **100% Whitelabel:** Nama kami tidak akan pernah muncul. Seluruh kredit pembuatan, footer, dan dokumen proposal menyandang brand Anda.
 >
@@ -84,7 +84,7 @@ Gunakan materi promosi di bawah ini untuk diposting di grup Facebook (*Komunitas
 > 
 > Kami punya infrastruktur *Whitelabel Web Generator Engine* yang memungkinkan agensi/freelancer bikin prototipe website interaktif & proposal PDF resmi dalam hitungan menit untuk klien korporat/UKM. 
 >
-> Sistem ini 100% whitelabel atas nama brand Kakak sendiri, dengan margin profit Rp 2-3 juta per klien tanpa kakak harus coding manual dari nol.
+> Sistem ini 100% whitelabel atas nama brand Kakak sendiri, dengan margin profit Rp 1,1 - 3 juta per klien tanpa kakak harus coding manual dari nol.
 > 
 > Boleh kami kirimkan contoh prototipe live dan skema kemitraan santai via WhatsApp? 
 > Link WhatsApp kami: https://wa.me/6285128013767"
@@ -96,7 +96,7 @@ Gunakan materi promosi di bawah ini untuk diposting di grup Facebook (*Komunitas
 1. **Pendaftaran Mitra:** Freelancer mengisi nama agensi, nomor WhatsApp bisnis, dan logo (opsional).
 2. **Generate Pitching Kit:** Mitra menjalankan CLI atau mengirimkan link website lama / link Google Maps target klien mereka ke sistem.
 3. **Closing ke Klien:** Mitra mengirimkan pesan pendekatan WhatsApp (SOP Step 1 Permission Hook) + Live Demo Vercel + PDF Proposal.
-4. **Pembayaran Klien:** Klien membayar Rp 2.500.000 langsung ke rekening/VA mitra freelancer.
-5. **Aktivasi ke Sistem Kami:** Mitra membayar Rp 490.000 (via Midtrans QRIS/VA) ke sistem kami.
+4. **Pembayaran Klien:** Klien membayar Rp 1.490.000 (atau lebih tinggi) langsung ke rekening/VA mitra freelancer.
+5. **Aktivasi ke Sistem Kami:** Mitra membayar flat Rp 350.000 (via Midtrans QRIS/VA) ke sistem kami.
 6. **Migrasi Kilat 15 Menit:** Tim teknis kami mengarahkan DNS domain resmi klien sampai live tanpa downtime.
-7. **Selesai:** Klien puas karena prosesnya kilat, mitra freelancer untung bersih Rp 2.000.000+ tanpa pusing teknis.
+7. **Selesai:** Klien puas karena prosesnya kilat, mitra freelancer untung bersih Rp 1.140.000+ tanpa pusing teknis.

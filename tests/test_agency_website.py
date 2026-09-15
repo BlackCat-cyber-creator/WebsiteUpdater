@@ -41,10 +41,12 @@ def test_agency_website_desktop_layout():
         title = page.title()
         assert "Website Updater Studio" in title, f"Unexpected page title: {title}"
         
-        # 2. Dual Pricing verification
+        # 2. Pricing verification - Purely Jalur A and Jalur B Flat Rp 1.490.000 (No monthly fees)
         body_text = page.inner_text("body")
         assert "Rp 1.490.000" in body_text, "Flat pricing Rp 1.490.000 must be present on page"
-        assert "Rp 99.000" in body_text, "Cloud pricing Rp 99.000 must be present on page"
+        assert "Jalur A" in body_text, "Jalur A must be present on page"
+        assert "Jalur B" in body_text, "Jalur B must be present on page"
+        assert "Rp 99.000" not in body_text, "Old 99k monthly scheme must NOT be present"
         assert "$100" not in body_text, "Old $100 USD pricing must NOT be present"
         
         # 3. WhatsApp Closing Machine section
@@ -69,6 +71,40 @@ def test_agency_website_desktop_layout():
             assert os.path.exists(os.path.join(AGENCY_DIR, policy)), f"{policy} must exist"
             
         assert len(console_errors) == 0, f"Page had console errors: {console_errors}"
+        browser.close()
+
+def test_mitra_page_desktop_layout():
+    """Verify mitra.html desktop layout is clean, full-width, and not distorted."""
+    mitra_html = os.path.join(AGENCY_DIR, "mitra.html")
+    assert os.path.exists(mitra_html), f"mitra.html must exist at {mitra_html}"
+    mitra_url = f"file:///{mitra_html.replace(os.sep, '/')}"
+    
+    with sync_playwright() as p:
+        browser = None
+        for ch in ["msedge", "chrome", None]:
+            try:
+                browser = p.chromium.launch(channel=ch, headless=True)
+                break
+            except Exception:
+                continue
+                
+        assert browser is not None
+        context = browser.new_context(viewport={"width": 1280, "height": 900})
+        page = context.new_page()
+        page.goto(mitra_url, wait_until="load")
+        
+        body_text = page.inner_text("body")
+        assert "Rp 1.490.000" in body_text, "Official selling price must be 1.490.000"
+        assert "Rp 350.000" in body_text or "Rp 350rb" in body_text, "Partner tech fee must be flat 350k"
+        assert "Rp 150.000" in body_text, "Passive team commission +150k must be present"
+        
+        # Check that .profit-box is wide and full width (not trapped in a 260px grid cell)
+        profit_box = page.query_selector(".profit-box")
+        assert profit_box is not None, ".profit-box must exist"
+        box_rect = profit_box.bounding_box()
+        assert box_rect is not None
+        assert box_rect["width"] > 700, f"Profit box should be full width on desktop (>700px), got {box_rect['width']}px"
+        
         browser.close()
 
 def test_agency_website_mobile_layout():
@@ -122,7 +158,6 @@ def test_live_deployed_vercel_website():
         assert "Website Updater Studio" in page.title()
         body = page.inner_text("body")
         assert "Rp 1.490.000" in body
-        assert "Rp 99.000" in body
         assert "WhatsApp Closing Machine" in body
         
         browser.close()

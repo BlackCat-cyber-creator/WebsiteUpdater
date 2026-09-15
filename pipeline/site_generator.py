@@ -9,7 +9,7 @@ import re
 import json
 import urllib.parse
 from datetime import datetime
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from bs4 import BeautifulSoup
 from pipeline.deployer.vercel_deployer import VercelDeployer
 from pipeline.researcher.business_researcher import BusinessResearcher

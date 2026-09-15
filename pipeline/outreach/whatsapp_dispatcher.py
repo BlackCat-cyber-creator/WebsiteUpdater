@@ -561,7 +561,7 @@ class WhatsAppDispatcher:
         print(f"\n[REPLY LISTENER] Memeriksa balasan WhatsApp untuk {len(contacted_leads)} kontak...")
         detected_replies = []
 
-        price_str = "Rp 1.490.000 (Flat all-in) atau Rp 99.000/bln (Cloud Managed)"
+        price_str = "Rp 1.490.000 (Flat all-in terima beres tanpa biaya bulanan)"
 
         with sync_playwright() as p:
             browser_context = p.chromium.launch_persistent_context(

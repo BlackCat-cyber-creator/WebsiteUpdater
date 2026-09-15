@@ -18,14 +18,14 @@ from typing import Dict, Any, Optional
 
 from pipeline.quotation import get_live_usd_idr_rate
 
+from pipeline.db import get_db, PipelineDatabase
+
 INVOICES_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "clients", "invoices.json"))
 
 
 class PaymentGateway:
-    def __init__(self, invoices_path: Optional[str] = None):
-        self.invoices_path = invoices_path or INVOICES_FILE
-        os.makedirs(os.path.dirname(self.invoices_path), exist_ok=True)
-        self.invoices = self._load_invoices()
+    def __init__(self, db: Optional[PipelineDatabase] = None):
+        self.db = db or get_db()
 
         # Midtrans Credentials
         self.server_key = os.environ.get("MIDTRANS_SERVER_KEY", "").strip()
@@ -37,31 +37,22 @@ class PaymentGateway:
             else "https://app.sandbox.midtrans.com/snap/v1"
         )
 
-    def _load_invoices(self) -> Dict[str, Any]:
-        if os.path.exists(self.invoices_path):
-            try:
-                with open(self.invoices_path, "r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                pass
-        return {"invoices": {}, "last_updated": None}
+    @property
+    def invoices(self) -> Dict[str, Any]:
+        return {"invoices": self.db.get_all_invoices(), "last_updated": datetime.now().isoformat()}
 
     def _save_invoices(self):
-        self.invoices["last_updated"] = datetime.now().isoformat()
-        with open(self.invoices_path, "w", encoding="utf-8") as f:
-            json.dump(self.invoices, f, indent=2, ensure_ascii=False)
+        self.db.sync_invoices_to_json()
 
     def calculate_pricing(self) -> Dict[str, Any]:
-        """Calculates live USD to IDR rates for $100 flat turn-key service."""
-        rate = get_live_usd_idr_rate()
-        usd_price = 100
-        idr_price = round((usd_price * rate) / 1000) * 1000
+        """Calculates Indonesian high-converting turn-key pricing (Rp 1.490.000 flat)."""
+        idr_price = 1490000
         idr_formatted = f"Rp {idr_price:,.0f}".replace(",", ".")
-        price_display = f"$100 USD (setara {idr_formatted} kurs live)"
+        price_display = f"{idr_formatted} (Paket Siap Pakai Terima Beres)"
         return {
-            "usd": usd_price,
+            "usd": 95,
             "idr": idr_price,
-            "rate": rate,
+            "rate": 15684,
             "idr_formatted": idr_formatted,
             "display": price_display
         }
@@ -89,6 +80,7 @@ class PaymentGateway:
 
         invoice_data = {
             "invoice_id": inv_number,
+            "order_id": inv_number,
             "domain": domain,
             "business_name": business_name,
             "whatsapp": whatsapp,
@@ -121,8 +113,7 @@ class PaymentGateway:
                 invoice_data["payment_url"] = snap_res.get("redirect_url")
                 print(f"[+] [MIDTRANS SNAP READY] URL Pembayaran: {snap_res.get('redirect_url')}")
 
-        self.invoices["invoices"][inv_number] = invoice_data
-        self._save_invoices()
+        self.db.save_invoice(invoice_data)
 
         print(f"\n[PAYMENT GATEWAY] Invoice berhasil dibuat: {inv_number}")
         print(f"  Klien        : {business_name} ({domain})")
@@ -150,6 +141,17 @@ class PaymentGateway:
                     "quantity": 1,
                     "name": "Turn-Key Website Modern + SEO"
                 }
+            ],
+            "enabled_payments": [
+                "credit_card",
+                "gopay",
+                "shopeepay",
+                "other_qris",
+                "bca_va",
+                "bni_va",
+                "bri_va",
+                "echannel",
+                "permata_va"
             ]
         }
 
@@ -182,14 +184,68 @@ class PaymentGateway:
 
     def verify_midtrans_signature(self, order_id: str, status_code: str, gross_amount: str, signature_key: str) -> bool:
         """Verifies SHA512 signature from Midtrans webhook notification."""
-        if not self.server_key or not signature_key:
-            return True
+        if not self.server_key:
+            print("[!] SECURITY: Midtrans server_key not configured — rejecting webhook signature verification.")
+            return False
+        if not signature_key:
+            print("[!] SECURITY: Incoming webhook has no signature_key — rejecting.")
+            return False
+
+        # Midtrans signature format: SHA512(order_id + status_code + gross_amount + ServerKey)
         raw_str = f"{order_id}{status_code}{gross_amount}{self.server_key}"
         computed = hashlib.sha512(raw_str.encode("utf-8")).hexdigest()
-        return computed.lower() == signature_key.lower()
+        if computed.lower() == signature_key.lower():
+            return True
+
+        # Handle decimal variations (e.g. 1766000 vs 1766000.00)
+        if "." in gross_amount:
+            int_gross = gross_amount.split(".")[0]
+            alt_raw = f"{order_id}{status_code}{int_gross}{self.server_key}"
+            if hashlib.sha512(alt_raw.encode("utf-8")).hexdigest().lower() == signature_key.lower():
+                return True
+        else:
+            dec_gross = f"{gross_amount}.00"
+            alt_raw = f"{order_id}{status_code}{dec_gross}{self.server_key}"
+            if hashlib.sha512(alt_raw.encode("utf-8")).hexdigest().lower() == signature_key.lower():
+                return True
+
+        return False
+
+    def verify_midtrans_notification(
+        self,
+        payload_or_order_id: Any,
+        status_code: Optional[str] = None,
+        gross_amount: Optional[str] = None,
+        signature_key: Optional[str] = None
+    ) -> bool:
+        """
+        Verifies Midtrans notification signature key:
+        hashlib.sha512(order_id + status_code + gross_amount + ServerKey)
+        Accepts either a dict payload or individual parameters.
+        """
+        if isinstance(payload_or_order_id, dict):
+            order_id = str(payload_or_order_id.get("order_id") or payload_or_order_id.get("invoice_id") or "")
+            sc = str(payload_or_order_id.get("status_code", ""))
+            ga = str(payload_or_order_id.get("gross_amount", ""))
+            sk = str(payload_or_order_id.get("signature_key", ""))
+        else:
+            order_id = str(payload_or_order_id or "")
+            sc = str(status_code or "")
+            ga = str(gross_amount or "")
+            sk = str(signature_key or "")
+
+        return self.verify_midtrans_signature(
+            order_id=order_id,
+            status_code=sc,
+            gross_amount=ga,
+            signature_key=sk
+        )
 
     def get_invoice(self, invoice_id: str) -> Optional[Dict[str, Any]]:
-        return self.invoices.get("invoices", {}).get(invoice_id)
+        inv = self.db.get_invoice(invoice_id)
+        if not inv:
+            inv = self.db.get_invoice_by_order_id(invoice_id)
+        return inv
 
     def mark_as_paid(self, invoice_id: str) -> Dict[str, Any]:
         """
@@ -205,8 +261,7 @@ class PaymentGateway:
         now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         invoice["status"] = "PAID"
         invoice["paid_at"] = now_str
-        self.invoices["invoices"][invoice_id] = invoice
-        self._save_invoices()
+        self.db.save_invoice(invoice)
 
         print(f"\n[PAYMENT SETTLEMENT] Invoice {invoice_id} telah DIBAYAR LUNAS pada {now_str}!")
         return {"success": True, "invoice": invoice}

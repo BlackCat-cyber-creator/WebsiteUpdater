@@ -1,0 +1,1558 @@
+{
+  "toko_bangunan": {
+    "keywords": [
+      "bangunan",
+      "material",
+      "semen",
+      "besi beton",
+      "baja ringan",
+      "cat tembok",
+      "keramik",
+      "pipa pvc",
+      "toko bangunan",
+      "bahan bangunan",
+      "tb ",
+      "toko besi"
+    ],
+    "trade_name": "Toko Bahan Bangunan & Material Proyek",
+    "headlines": [
+      "Pusat Bahan Bangunan & Material Proyek Terlengkap di {city_area}",
+      "Distributor Pasokan Semen, Besi SNI & Bata Ringan di {city_area}",
+      "Pusat Grosir Bahan Konstruksi, Cat Tembok & Keramik di {city_area}"
+    ],
+    "headline": "Pusat Bahan Bangunan & Material Proyek Terlengkap di {city_area}",
+    "taglines": [
+      "Distributor semen, besi beton SNI, baja ringan, keramik, cat tembok, pipa PVC & perlengkapan pertukangan dengan armada kirim cepat.",
+      "Pasokan material cor pondasi, hebel bata ringan, kawat bendrat, pipa PVC berstandar SNI langsung ke lokasi proyek pembangunan Anda.",
+      "Pilihan aneka cat dinding interior/eksterior, granit mewah, sanitari kamar mandi, dan perlengkapan safety terlengkap harga grosir."
+    ],
+    "tagline": "Distributor semen, besi beton SNI, baja ringan, keramik, cat tembok, pipa PVC & perlengkapan pertukangan dengan armada kirim cepat.",
+    "about_p1": "{name} adalah pusat pengadaan bahan bangunan dan material konstruksi proyek terpercaya di {city_area}. Kami melayani kebutuhan kontraktor proyek, pemborong, tukang profesional, hingga pemilik hunian pribadi dengan jaminan mutu berstandar SNI.",
+    "about_p2": "Didukung pasokan langsung dari produsen semen & besi utama, harga grosir bersahabat, serta kesiapan armada truk angkut mandiri, kami menjamin pasokan material tiba cepat dan tepat waktu di lokasi proyek Anda.",
+    "services": [
+      {
+        "title": "Semen & Mortar Plesteran",
+        "desc": "Semen Portland Gresik, Tiga Roda, Dynamix, mortar instan perekat hebel bata ringan, semen putih & acian anti-retak.",
+        "icon": "🧱",
+        "items": [
+          "Semen Gresik, Tonasa, Tiga Roda & Dynamix",
+          "Mortar Instan Perekat Bata Ringan Hebel",
+          "Semen Putih & Acian Plesteran Halus"
+        ]
+      },
+      {
+        "title": "Besi Beton SNI & Baja Ringan",
+        "desc": "Besi beton polos & ulir bersertifikat SNI resmi, kawat bendrat, wiremesh cor, kanal C truss galvalum, dan reng atap anti-rayap.",
+        "icon": "🏗️",
+        "items": [
+          "Besi Beton Polos & Ulir 6mm s/d 16mm SNI",
+          "Kanal C Truss 75 & Reng Atap Galvalum",
+          "Besi Hollow, Wiremesh Cor & Bendrat"
+        ]
+      },
+      {
+        "title": "Cat Tembok & Waterproofing",
+        "desc": "Pilihan cat dinding interior & eksterior Dulux, Nippon Paint, No Drop pelapis anti bocor dak beton, cat minyak besi/kayu, kuas & roll cat.",
+        "icon": "🎨",
+        "items": [
+          "Cat Tembok Dulux, Nippon Paint & Avitex",
+          "No Drop & Aquaproof Pelapis Anti Bocor",
+          "Cat Minyak Besi/Kayu, Thinner & Kuas"
+        ]
+      },
+      {
+        "title": "Keramik, Granit & Sanitari",
+        "desc": "Lantai granit glaze polished 60x60, keramik dinding kamar mandi/dapur, kloset duduk & jongkok, wastafel, kran stainless serta shower.",
+        "icon": "🛁",
+        "items": [
+          "Granit Glazed Polished 60x60 Mewah",
+          "Keramik Lantai & Dinding Dapur/Kamar Mandi",
+          "Kloset Duduk, Kloset Jongkok & Wastafel"
+        ]
+      },
+      {
+        "title": "Pipa PVC, Talang & Sambungan",
+        "desc": "Pipa air bersih & air kotor Rucika AW/D segala ukuran, fitting knee/socket/tee lengkap, lem pipa PVC solvent cement, dan toren air tangki penguin.",
+        "icon": "🚰",
+        "items": [
+          "Pipa Rucika AW & D Aneka Ukuran",
+          "Fitting Sambungan Knee, Socket, Tee Lengkap",
+          "Lem Pipa Solvent Cement & Tangki Air Penguin"
+        ]
+      },
+      {
+        "title": "Alat Pertukangan, Baut & Safety",
+        "desc": "Sekrup gypsum, baut roofing, dynabolt, cangkul, sekop cor, gerinda potong, meteran ukur, ember cor, dan perlengkapan helm safety proyek.",
+        "icon": "🛠️",
+        "items": [
+          "Baut Roofing, Sekrup Gypsum & Dynabolt",
+          "Cangkul, Sekop Cor, Palu & Ember Adukan",
+          "Meteran Ukur, Helm Safety & Sarung Tangan"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps Resmi"
+      },
+      {
+        "val": "1.500+",
+        "lbl": "Ragam Material Siap Kirim"
+      },
+      {
+        "val": "100% SNI",
+        "lbl": "Besi & Semen Bersertifikat"
+      },
+      {
+        "val": "Armada Siap",
+        "lbl": "Kirim Cepat ke Titik Proyek"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Budi Santoso",
+        "badge": "Kontraktor Perumahan",
+        "stars": "★★★★★",
+        "text": "Pasokan semen dan besi beton selalu tepat waktu ke proyek. Kualitas besi asli SNI tidak pernah mengecewakan, harga grosirnya sangat bersahabat."
+      },
+      {
+        "name": "Hendra Wijaya",
+        "badge": "Pemborong Renovasi",
+        "stars": "★★★★★",
+        "text": "Respon admin via WhatsApp luar biasa cepat. Pesan pagi, siang material pasir dan hebel sudah tiba di lokasi tanpa repot."
+      },
+      {
+        "name": "Siti Rahmawati",
+        "badge": "Pelanggan Rumah Tinggal",
+        "stars": "★★★★★",
+        "text": "Pilihan keramik granit dan cat temboknya lengkap. Pelayanannya ramah dan ongkirnya sangat wajar untuk wilayah sekitar."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Armada Pengiriman Mandiri",
+        "desc": "Armada pick-up dan truk siap antar pesanan cepat langsung ke titik proyek pembangunan Anda tanpa delay."
+      },
+      {
+        "title": "Material Asli Bersertifikat SNI",
+        "desc": "Jaminan mutu spesifikasi besi dan semen asli dari pabrik resmi tanpa manipulasi dimensi atau toleransi palsu."
+      },
+      {
+        "title": "Harga Grosir Proyek & Fleksibel",
+        "desc": "Penawaran harga khusus partai besar untuk kontraktor, pemborong, dan pengembang perumahan."
+      },
+      {
+        "title": "Konsultasi & Estimasi RAB Gratis",
+        "desc": "Tim toko siap membantu menghitung estimasi kebutuhan sak semen, besi cor, dan bata sesuai gambar rencana kerja Anda."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bisa antar material langsung ke lokasi proyek?",
+        "a": "Bisa. Kami memiliki armada pengiriman mandiri (Pick-Up & Truk) yang siap mengantar material semen, besi, pasir, dan hebel langsung ke lokasi proyek Anda tepat waktu."
+      },
+      {
+        "q": "Apakah harga bisa lebih murah untuk pesanan partai besar?",
+        "a": "Tentu! Untuk kontraktor, pemborong, atau pengadaan proyek dalam jumlah besar, kami memberikan harga grosir khusus dan fleksibilitas nota."
+      },
+      {
+        "q": "Bagaimana cara pesan cepat via WhatsApp?",
+        "a": "Cukup pilih kategori material dan kirim daftar kebutuhan Anda melalui formulir WhatsApp di website ini, tim kami akan segera membalas dengan total rincian biaya dan jadwal kirim."
+      }
+    ]
+  },
+  "distributor_sembako": {
+    "keywords": [
+      "sembako",
+      "beras",
+      "minyak goreng",
+      "gula",
+      "tepung",
+      "grosir sembako",
+      "distributor sembako",
+      "toko sembako"
+    ],
+    "trade_name": "Distributor & Grosir Sembako",
+    "headline": "Pusat Grosir & Pasokan Sembako Murah Terlengkap",
+    "tagline": "Penyedia beras premium, minyak goreng, gula pasir, tepung terigu, dan kebutuhan pokok dengan harga distributor partai besar & eceran.",
+    "about_p1": "{name} adalah pusat distribusi dan grosir sembako terpercaya di {city_area}. Kami melayani pasokan harian untuk warung kelontong, rumah makan, catering, koperasi, hingga kebutuhan rumah tangga.",
+    "about_p2": "Kami berkomitmen menjaga kestabilan pasokan bahan pangan pokok, keaslian produk pabrikan, timbangan yang amanah dan presisi, serta pengiriman rutin langsung ke tempat usaha Anda.",
+    "services": [
+      {
+        "title": "Beras Premium & Medium",
+        "desc": "Beras pulen pilihan kemasan 5kg, 10kg, 25kg, hingga 50kg kualitas bersih tanpa pemutih dan tanpa pengawet kimia.",
+        "icon": "🌾"
+      },
+      {
+        "title": "Minyak Goreng Sawit Kemasan",
+        "desc": "Minyak goreng pouch dan jerigen merek ternama (Bimoli, Tropical, Sania, Fortune, MinyaKita) kemasan kartonan grosir.",
+        "icon": "🛢️"
+      },
+      {
+        "title": "Gula Pasir & Tepung Terigu",
+        "desc": "Gula pasir kristal putih karungan 50kg / eceran 1kg, tepung Segitiga Biru, Cakra Kembar, dan tapioka pasokan stabil.",
+        "icon": "🧂"
+      },
+      {
+        "title": "Telur Ayam Negeri Segar",
+        "desc": "Pasokan telur ayam ras segar harian per rak / per peti kayu langsung dari peternak dengan sortasi cangkang utuh.",
+        "icon": "🥚"
+      },
+      {
+        "title": "Mi Instan, Kopi & Susu",
+        "desc": "Grosir kartonan aneka varian mi instan Indomie, kopi sachet, susu kental manis, teh celup, dan bumbu dapur siap kirim.",
+        "icon": "🍜"
+      },
+      {
+        "title": "Paket Sembako Baksos & THR",
+        "desc": "Penyediaan paket bingkisan sembako custom untuk kegiatan bansos perusahaan, CSR, santunan, dan hari raya Idul Fitri.",
+        "icon": "🎁"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Harga Langsung Distributor",
+        "desc": "Margin keuntungan yang bersahabat untuk pedagang eceran dan warung kelontong agar dapat bersaing di pasaran."
+      },
+      {
+        "title": "Stok Pasokan Selalu Tersedia",
+        "desc": "Gudang penyimpanan yang luas menjamin ketersediaan komoditas pokok tanpa risiko kehabisan stok mendadak."
+      },
+      {
+        "title": "Timbangan Amanah & Akurat",
+        "desc": "Pengukuran berat komoditas menggunakan timbangan digital terkalibrasi resmi tanpa pengurangan berat sedikit pun."
+      },
+      {
+        "title": "Pengiriman Rutin Berkala",
+        "desc": "Jadwal drop pesanan rutin ke lokasi warung atau toko Anda demi kelancaran operasional harian."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada minimum pembelian untuk harga grosir?",
+        "a": "Untuk mendapatkan harga grosir distributor, pembelian minimal 1 karton/karung atau akumulasi pembelanjaan tertentu."
+      },
+      {
+        "q": "Bisa antar ke toko kelontong kami?",
+        "a": "Bisa! Kami menyediakan armada antar lokal untuk wilayah jangkauan operasional kami dengan jadwal pengiriman harian."
+      },
+      {
+        "q": "Apakah melayani paket baksos sembako?",
+        "a": "Ya, kami terbiasa menyiapkan ratusan hingga ribuan paket sembako dalam tas spunbond atau kardus sesuai budget pemesan."
+      }
+    ]
+  },
+  "bengkel_las": {
+    "keywords": [
+      "las",
+      "welding",
+      "kanopi",
+      "pagar",
+      "teralis",
+      "railing",
+      "baja ringan",
+      "pintu besi",
+      "bengkel las"
+    ],
+    "trade_name": "Bengkel Las & Fabrikasi Konstruksi Besi",
+    "headline": "Spesialis Fabrikasi Kanopi, Pagar, Teralis & Konstruksi Besi",
+    "tagline": "Pengerjaan rapi, presisi, bergaransi dengan material besi SNI berkualitas untuk hunian dan properti komersial.",
+    "about_p1": "{name} adalah penyedia jasa fabrikasi las dan konstruksi besi profesional di {city_area}. Kami berfokus pada pengerjaan kanopi modern, pagar minimalis, teralis pengaman, hingga struktur baja ringan dengan ketebalan material riil berstandar SNI.",
+    "about_p2": "Didukung oleh tenaga tukang las berpengalaman serta peralatan modern, setiap proyek kami kerjakan dengan teliti mulai dari survey lokasi gratis, konsultasi desain, perakitan presisi, hingga finishing cat anti-karat bergaransi.",
+    "services": [
+      {
+        "title": "Kanopi Minimalis & Alderon",
+        "desc": "Pemasangan kanopi modern dengan rangka besi hollow galvanis tebal dipadukan atap uPVC Alderon, Solarflat, atau Spandek anti-panas dan kedap suara.",
+        "icon": "🏠"
+      },
+      {
+        "title": "Pagar & Pintu Gerbang",
+        "desc": "Pembuatan pagar sliding dorong, lipat, dan pintu gerbang minimalis motif laser cutting dengan proteksi cat dasar epoxy anti-karat.",
+        "icon": "🚪"
+      },
+      {
+        "title": "Teralis Jendela & Pengaman",
+        "desc": "Teralis jendela pengaman rumah dengan desain minimalis estetik atau klasik, presisi pada kusen, dilengkapi kawat nyamuk berkualitas.",
+        "icon": "🪟"
+      },
+      {
+        "title": "Railing Tangga & Balkon",
+        "desc": "Railing tangga interior dan balkon luar ruangan menggunakan material besi hollow, plat perforated, kombinasi kayu, atau stainless steel tahan karat.",
+        "icon": "🪜"
+      },
+      {
+        "title": "Konstruksi Rangka Baja Ringan & WF",
+        "desc": "Pembangunan rangka atap baja ringan, dak mezzanine rumah/ruko, hingga konstruksi besi baja WF untuk gudang dan bangunan komersial.",
+        "icon": "🏗️"
+      },
+      {
+        "title": "Servis & Pengelasan Panggilan",
+        "desc": "Layanan cepat perbaikan engsel pagar aus, penggantian roda gerbang macet, perbaikan atap kanopi bocor, dan las panggilan di lokasi.",
+        "icon": "🔧"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Material SNI Berkualitas",
+        "desc": "Hanya menggunakan besi galvanis dan pipa hollow bersertifikat SNI dengan ketebalan riil tanpa pengurangan spesifikasi."
+      },
+      {
+        "title": "Survey & Desain Gratis",
+        "desc": "Layanan survey pengukuran langsung ke lokasi dan konsultasi model desain tanpa dipungut biaya."
+      },
+      {
+        "title": "Finishing Cat Anti-Karat",
+        "desc": "Setiap sambungan las dihaluskan rapi dan dilapisi primer epoxy anti-karat agar awet bertahun-tahun di segala cuaca."
+      },
+      {
+        "title": "Garansi Hasil Pekerjaan",
+        "desc": "Kami memberikan garansi konstruksi dan pemeliharaan untuk memastikan kepuasan dan ketenangan Anda."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada biaya untuk survey lokasi dan konsultasi?",
+        "a": "Layanan survey pengukuran ke lokasi dan estimasi anggaran biaya (RAB) kami sediakan 100% GRATIS tanpa komitmen."
+      },
+      {
+        "q": "Berapa lama estimasi waktu pengerjaannya?",
+        "a": "Rata-rata pembuatan kanopi atau pagar berkisar 4 hingga 10 hari kerja tergantung volume dan kerumitan desain, diikuti 1 hari pemasangan di lokasi."
+      },
+      {
+        "q": "Bagaimana sistem pembayaran dan garansi?",
+        "a": "Pembayaran bertahap diawali dengan uang muka (DP) setelah desain disepakati, dan pelunasan setelah pekerjaan selesai terpasang sempurna berikut sertifikat garansi pengerjaan."
+      }
+    ]
+  },
+  "toko_plastik": {
+    "keywords": [
+      "plastik",
+      "kemasan",
+      "packaging",
+      "kantong",
+      "kresek",
+      "opp",
+      "pe",
+      "pp",
+      "cup",
+      "mika",
+      "thinwall"
+    ],
+    "trade_name": "Distributor & Grosir Kemasan Plastik",
+    "headline": "Pusat Grosir & Eceran Plastik Kemasan, Karung, Cup & Thinwall",
+    "tagline": "Menyediakan aneka jenis plastik kemasan makanan, kantong kresek, kardus, dan perlengkapan packing terlengkap dengan harga distributor.",
+    "about_p1": "{name} adalah pusat distributor dan grosir perlengkapan kemasan plastik di {city_area}. Kami melayani kebutuhan pelaku UMKM kuliner, toko ritel, industri rumah tangga, hingga kebutuhan hajatan dengan varian ukuran dan ketebalan terlengkap.",
+    "about_p2": "Kami berkomitmen menyediakan produk berkualitas food grade yang aman untuk makanan, pasokan stok yang selalu stabil, serta harga bersaing untuk pembelian partai besar maupun grosir mingguan.",
+    "services": [
+      {
+        "title": "Kantong Kresek & Plastik HD/PE/PP",
+        "desc": "Tersedia kantong kresek putih, hitam, warna-warni berbagai ukuran, plastik bening PP tebal untuk camilan, serta plastik es PE tahan beku.",
+        "icon": "🛍️"
+      },
+      {
+        "title": "Thinwall & Food Container Box",
+        "desc": "Wadah makanan plastik food grade tahan microwave dan freezer (200ml s/d 1500ml), mangkok sup plastik, serta bento box bersekat.",
+        "icon": "🍱"
+      },
+      {
+        "title": "Cup Minuman & Tutup Sealer",
+        "desc": "Gelas cup plastik oval dan datar (12oz, 14oz, 16oz, 22oz), sedotan steril, lid cup sealer polos maupun custom motif untuk bisnis minuman kekinian.",
+        "icon": "🥤"
+      },
+      {
+        "title": "Plastik Packing & Bubble Wrap",
+        "desc": "Perlengkapan packing ekspedisi: stretch film wrapping barang, bubble wrap tebal roll hitam/putih, lakban OPP coklat/bening daya rekat tinggi.",
+        "icon": "📦"
+      },
+      {
+        "title": "Kemasan Standing Pouch & Zipper",
+        "desc": "Standing pouch transparan, alumunium foil, kraft paper zipper untuk kemasan kopi, keripik, biji-bijian, dan bubuk bumbu agar tetap renyah.",
+        "icon": "🫙"
+      },
+      {
+        "title": "Plastik Cor & Karung Beras",
+        "desc": "Plastik roll cor bangunan tebal, karung beras transparan dan rajut putih ukuran 5kg, 10kg, 25kg, hingga 50kg siap kirim.",
+        "icon": "🌾"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Harga Grosir Langsung Pabrik",
+        "desc": "Harga bersahabat untuk pedagang dan pelaku UMKM dengan diskon kuantitas untuk pembelian partai/kartonan."
+      },
+      {
+        "title": "Stok Selalu Siap & Terjaga",
+        "desc": "Ketersediaan stok yang konsisten sehingga rantai pasok operasional bisnis Anda tidak pernah terputus."
+      },
+      {
+        "title": "Material Higienis Food Grade",
+        "desc": "Produk kemasan makanan terjamin aman, higienis, dan tidak berbau bahan kimia berbahaya."
+      },
+      {
+        "title": "Layanan Antar Cepat",
+        "desc": "Melayani pengiriman langsung ke alamat toko atau tempat usaha Anda di wilayah operasional sekitar."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah melayani pembelian eceran atau hanya grosir?",
+        "a": "Kami melayani pembelian eceran per pack maupun grosir partai besar (kartonan/karungan) dengan harga bertingkat yang lebih hemat."
+      },
+      {
+        "q": "Bisa custom cetak sablon logo pada plastik atau cup?",
+        "a": "Ya, kami melayani jasa sablon dan printing custom logo pada cup minuman, kantong kresek, dan standing pouch dengan minimum order bersahabat."
+      },
+      {
+        "q": "Apakah bisa dikirim ke lokasi toko kami?",
+        "a": "Bisa. Kami memiliki armada pengiriman lokal untuk rute berkala, atau pengiriman via ekspedisi kargo/ojek instan sesuai kebutuhan Anda."
+      }
+    ]
+  },
+  "ekspedisi_kargo": {
+    "keywords": [
+      "ekspedisi",
+      "kargo",
+      "cargo",
+      "logistik",
+      "logistic",
+      "sewa truk",
+      "fuso",
+      "tronton",
+      "antar pulau",
+      "pengiriman"
+    ],
+    "trade_name": "Layanan Ekspedisi Kargo & Sewa Truk",
+    "headline": "Jasa Ekspedisi Kargo Darat, Laut & Sewa Truk Terpercaya",
+    "tagline": "Solusi pengiriman barang logistik pabrik, pindahan, material proyek, dan kargo partai besar aman sampai tujuan tepat waktu.",
+    "about_p1": "{name} adalah perusahaan jasa pengiriman kargo dan logistik ekspedisi di {city_area}. Kami melayani rute domestik antar kota dan antar pulau dengan dukungan armada lengkap mulai dari armada Blindvan, CDD, Fuso, hingga Tronton Wingbox.",
+    "about_p2": "Kami mengedepankan keamanan muatan, sistem pemantauan posisi armada yang transparan, asuransi pengiriman terpercaya, serta kemudahan proses penjemputan barang (door to door pickup) langsung dari gudang atau pabrik Anda.",
+    "services": [
+      {
+        "title": "Kargo Darat FTL & LTL",
+        "desc": "Pengiriman kargo ritel perorangan (LTL) maupun sewa satu armada penuh (Full Truckload - FTL) dengan tarif bersaing dan jadwal keberangkatan rutin.",
+        "icon": "🚛"
+      },
+      {
+        "title": "Kargo Laut Antar Pulau",
+        "desc": "Layanan kargo via kapal Roro dan kontainer FCL/LCL untuk rute Jawa, Sumatera, Kalimantan, Sulawesi, hingga wilayah Indonesia Timur.",
+        "icon": "🚢"
+      },
+      {
+        "title": "Sewa Truk Engkel, Fuso & Tronton",
+        "desc": "Penyewaan harian, bulanan, atau kontrak ritase armada Pick Up, CDD Box/Bak, Fuso Berat, hingga Tronton Wingbox kapasitas besar.",
+        "icon": "🚚"
+      },
+      {
+        "title": "Jasa Pindahan Rumah & Kantor",
+        "desc": "Layanan pindahan menyeluruh mencakup armada pengangkut, tenaga angkut profesional, perlindungan packaging barang rentan pecah.",
+        "icon": "📦"
+      },
+      {
+        "title": "Pengiriman Mesin & Alat Berat",
+        "desc": "Spesialis pengangkutan mesin pabrik, genset industri, konstruksi baja, dan material berat dengan armada trailer lowbed profesional.",
+        "icon": "⚙️"
+      },
+      {
+        "title": "Door-to-Door & Free Pickup",
+        "desc": "Layanan gratis jemput barang langsung ke lokasi pabrik atau toko Anda tanpa repot mengantar ke agen atau cabang kami.",
+        "icon": "📍"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Armada Prima & Driver Terlatih",
+        "desc": "Seluruh armada rutin uji berkala (KIR) dikemudikan oleh sopir profesional berlisensi dan berpengalaman."
+      },
+      {
+        "title": "Pelacakan Muatan Transparan",
+        "desc": "Update berkala posisi pengiriman melalui koordinasi langsung via WhatsApp tim operasional lapangan."
+      },
+      {
+        "title": "Opsi Asuransi Penuh",
+        "desc": "Perlindungan komprehensif terhadap risiko kehilangan atau kerusakan selama perjalanan demi ketenangan Anda."
+      },
+      {
+        "title": "Penagihan Fleksibel (TOP)",
+        "desc": "Tersedia sistem pembayaran Term of Payment (TOP) invoice bagi rekanan perusahaan dan pelanggan korporat."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Berapa batas minimum muatan kargo?",
+        "a": "Untuk kargo reguler minimum muatan bervariasi mulai dari 10 kg s/d 50 kg tergantung rute tujuan, atau langsung sewa per ritase armada untuk muatan besar."
+      },
+      {
+        "q": "Apakah barang bisa dijemput ke lokasi kami?",
+        "a": "Ya, kami menyediakan layanan Free Pickup jemput muatan ke gudang, kantor, atau pabrik Anda untuk pengiriman dengan batas volume tertentu."
+      },
+      {
+        "q": "Bagaimana estimasi waktu sampai barang?",
+        "a": "Waktu tempuh bergantung moda dan rute tujuan. Jalur darat Jawa-Bali berkisar 1-3 hari, sedangkan jalur laut antar pulau berkisar 4-8 hari kerja dari keberangkatan kapal."
+      }
+    ]
+  },
+  "kontraktor_interior": {
+    "keywords": [
+      "kontraktor",
+      "interior",
+      "renovasi",
+      "arsitek",
+      "kitchen set",
+      "plafon",
+      "partisi",
+      "kusen aluminium",
+      "epoxy"
+    ],
+    "trade_name": "Kontraktor Bangunan & Desain Interior",
+    "headline": "Jasa Desain Interior, Kitchen Set & Renovasi Bangunan",
+    "tagline": "Mewujudkan ruang hunian dan kantor komersial yang fungsional, estetik, dan presisi dengan material berkualitas terbaik.",
+    "about_p1": "{name} adalah spesialis pengerjaan desain interior dan kontraktor renovasi bangunan terpercaya di {city_area}. Kami berpengalaman menangani interior rumah tinggal, apartemen, ruko, cafe, hingga ruang kantor komersial.",
+    "about_p2": "Kami mengedepankan perencanaan detail berbasis 3D visual, perhitungan anggaran biaya (RAB) yang transparan tanpa pembengkakan biaya, serta pengawasan mutu lapangan yang ketat hingga serah terima kunci.",
+    "services": [
+      {
+        "title": "Custom Kitchen Set & Pantry",
+        "desc": "Pembuatan kitchen set minimalis modern menggunakan bahan plywood/multiplek anti-rayap dilapisi finishing HPL, Duco, atau Akrilik tahan panas.",
+        "icon": "🍳"
+      },
+      {
+        "title": "Interior Kamar & Ruang Tamu",
+        "desc": "Pembuatan backdrop TV mewah, lemari pakaian built-in (wardrobe), meja kerja ergonomis, dan partisi penyekat ruangan elegan.",
+        "icon": "🛋️"
+      },
+      {
+        "title": "Renovasi Rumah & Ruko",
+        "desc": "Layanan renovasi struktural maupun arsitektural: penambahan lantai, perbaikan tata ruang, pengecatan dinding, dan peremajaan fasad bangunan.",
+        "icon": "🔨"
+      },
+      {
+        "title": "Partisi Kaca & Kusen Aluminium",
+        "desc": "Pemasangan kusen pintu dan jendela aluminium premium, pintu geser kaca tempered, serta partisi kantor kedap suara.",
+        "icon": "🏢"
+      },
+      {
+        "title": "Plafon Gypsum & Drop Ceiling",
+        "desc": "Pemasangan rangka hollow galvanis dengan papan plafon gypsum atau PVC motif kayu, lengkap dengan instalasi hidden LED lighting.",
+        "icon": "💡"
+      },
+      {
+        "title": "Epoxy & Flooring Parket",
+        "desc": "Aplikasi lantai cat epoxy berkekuatan tinggi untuk garasi/gudang, serta pemasangan lantai vinyl dan SPC anti-air motif natural.",
+        "icon": "🪵"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Desain 3D Visual Realistis",
+        "desc": "Klien dapat melihat pratinjau tata letak dan kombinasi warna secara detail sebelum proses produksi dimulai."
+      },
+      {
+        "title": "Material Plywood SNI Anti-Rayap",
+        "desc": "Tidak menggunakan serbuk kayu (MDF/Partikel), melainkan multiplek padat berkualitas tinggi yang kokoh puluhan tahun."
+      },
+      {
+        "title": "Transparansi Biaya RAB",
+        "desc": "Rincian spesifikasi material dan biaya tertulis jelas di awal, menjamin tidak ada biaya siluman di tengah pengerjaan."
+      },
+      {
+        "title": "Garansi Pemeliharaan 6 Bulan",
+        "desc": "Jaminan purna jual berupa perbaikan gratis untuk engsel hidrolik, rel laci, dan finishing jika terjadi kendala."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah survey lokasi dan konsultasi awal berbayar?",
+        "a": "Survey pengukuran lokasi dan konsultasi awal kebutuhan interior tidak dipungut biaya (GRATIS) untuk wilayah layanan operasional kami."
+      },
+      {
+        "q": "Berapa lama proses pembuatan furniture custom?",
+        "a": "Untuk kitchen set atau wardrobe kamar, waktu pengerjaan di workshop kami membutuhkan 10 hingga 20 hari kerja, disusul 2-3 hari perakitan di lokasi Anda."
+      },
+      {
+        "q": "Bisa menyesuaikan dengan anggaran yang kami miliki?",
+        "a": "Tentu. Tim desainer kami dapat merekomendasikan pilihan material dan skema tata letak yang paling optimal agar tetap sesuai dengan plafon anggaran Anda."
+      }
+    ]
+  },
+  "klinik_dental": {
+    "keywords": [
+      "gigi",
+      "dental",
+      "dokter gigi",
+      "behel",
+      "ortho",
+      "scaling",
+      "bleaching",
+      "klinik gigi"
+    ],
+    "trade_name": "Klinik Perawatan Gigi & Mulut",
+    "headline": "Klinik Perawatan & Estetika Gigi Modern Terpercaya",
+    "tagline": "Layanan kesehatan gigi keluarga ramah, steril, dan bebas nyeri dengan teknologi kedokteran gigi terkini.",
+    "about_p1": "{name} adalah klinik perawatan gigi modern di {city_area} yang didedikasikan untuk memberikan pelayanan kesehatan gigi komprehensif bagi anak-anak, remaja, hingga dewasa.",
+    "about_p2": "Kami mengutamakan standar sterilisasi medis yang ketat, kenyamanan pasien dengan pendekatan bebas cemas (gentle dentistry), serta dokter gigi profesional berpengalaman untuk mengembalikan senyum percaya diri Anda.",
+    "services": [
+      {
+        "title": "Scaling & Pembersihan Karang",
+        "desc": "Pembersihan karang gigi ultrasonik menyeluruh tanpa rasa sakit untuk mencegah gusi berdarah dan bau mulut tidak sedap.",
+        "icon": "🦷"
+      },
+      {
+        "title": "Pemasangan Behel (Kawat Gigi)",
+        "desc": "Perawatan ortodonti merapikan susunan gigi dengan pilihan behel metal, ceramic estetis, self-ligating Damon, hingga clear aligner.",
+        "icon": "✨"
+      },
+      {
+        "title": "Bleaching / Pemutihan Gigi",
+        "desc": "Tindakan pemutihan gigi profesional in-office dalam 1 sesi untuk mengembalikan warna gigi cerah natural secara aman.",
+        "icon": "😁"
+      },
+      {
+        "title": "Tambal Gigi Estetis & Saraf Gigi",
+        "desc": "Penambalan gigi berlubang menggunakan resin komposit sewarna gigi asli dan perawatan saluran akar (root canal) modern.",
+        "icon": "🩹"
+      },
+      {
+        "title": "Cabut Gigi & Odontektomi Gigi Bungsu",
+        "desc": "Pencabutan gigi steril dengan bius lokal modern yang nyaman, serta bedah minor pengangkatan gigi bungsu impaksi yang miring.",
+        "icon": "🩺"
+      },
+      {
+        "title": "Pemeriksaan Gigi Anak (Pediatrik)",
+        "desc": "Perawatan gigi anak dengan pendekatan ramah dan menyenangkan, termasuk fluoride treatment untuk mencegah gigi keropos.",
+        "icon": "🧸"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Sterilisasi Autoclave Kelas Medis",
+        "desc": "Seluruh instrumen melalui proses sterilisasi suhu tinggi bertingkat demi keamanan mutlak pasien."
+      },
+      {
+        "title": "Metode Perawatan Minim Nyeri",
+        "desc": "Penerapan teknik anestesi modern yang lembut memastikan setiap tindakan berlangsung santai dan nyaman."
+      },
+      {
+        "title": "Pilihan Cicilan Perawatan",
+        "desc": "Tersedia kemudahan skema cicilan untuk perawatan behel gigi dan tindakan estetika tanpa bunga memberatkan."
+      },
+      {
+        "title": "Jadwal Praktik Fleksibel",
+        "desc": "Klinik buka hingga malam hari dan akhir pekan untuk memudahkan kunjungan seusai jam kantor Anda."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah perlu reservasi jadwal terlebih dahulu?",
+        "a": "Sangat disarankan untuk melakukan reservasi via WhatsApp agar Anda tidak perlu menunggu lama dan dokter sudah siap saat Anda tiba."
+      },
+      {
+        "q": "Apakah tindakan scaling gigi terasa sakit atau ngilu?",
+        "a": "Dengan teknologi scaler ultrasonik modern kami, pembersihan karang gigi terasa sangat minim ngilu dan tidak merusak lapisan email gigi."
+      },
+      {
+        "q": "Berapa biaya konsultasi dokter gigi?",
+        "a": "Biaya konsultasi dan pemeriksaan awal sangat terjangkau, dan dokter akan menjelaskan rincian tindakan yang dibutuhkan secara transparan sebelum dimulai."
+      }
+    ]
+  },
+  "percetakan": {
+    "keywords": [
+      "percetakan",
+      "printing",
+      "cetak",
+      "digital printing",
+      "spanduk",
+      "banner",
+      "brosur",
+      "sablon",
+      "offset"
+    ],
+    "trade_name": "Pusat Percetakan & Digital Printing",
+    "headline": "Layanan Percetakan Digital & Offset Terlengkap",
+    "tagline": "Solusi cetak banner kilat, merchandise, box packaging, dan media promosi bisnis dengan warna tajam resolusi tinggi.",
+    "about_p1": "{name} adalah pusat layanan digital printing dan percetakan offset terkemuka di {city_area}. Kami melayani kebutuhan promosi usaha, instansi pemerintahan, event organizer, hingga produk kemasan UMKM.",
+    "about_p2": "Didukung mesin cetak berkecepatan tinggi dengan tinta orisinal anti-luntur, kami menjamin hasil cetakan beresolusi tajam, ketepatan waktu deadline, serta layanan bantuan penyesuaian file desain siap cetak.",
+    "services": [
+      {
+        "title": "Cetak Spanduk & Banner Kilat",
+        "desc": "Cetak banner bahan Flexi China/Korea/Jerman, X-Banner, Roll Up Banner, dan Backdrop panggung dengan warna cerah dan daya tahan outdoor kuat.",
+        "icon": "🖨️"
+      },
+      {
+        "title": "Stiker Label Produk & Kemasan",
+        "desc": "Cetak stiker Bontax, Vinyl, Transparan, Hologram dengan cutting pola presisi (kiss cut / die cut) tahan air untuk label botol dan makanan.",
+        "icon": "🏷️"
+      },
+      {
+        "title": "Brosur, Flyer & Poster",
+        "desc": "Cetak brosur promosi bahan Art Paper 120-150gsm, flyer lipat 2/3, dan poster dinding kualitas offset untuk penyebaran informasi efektif.",
+        "icon": "📄"
+      },
+      {
+        "title": "Box Packaging & Dus Makanan",
+        "desc": "Produksi box makanan bahan Ivory/Duplex food grade, lunch box anti-minyak, corrugated box, dan dus kemasan custom logo produk Anda.",
+        "icon": "📦"
+      },
+      {
+        "title": "Nota, Kwitansi & Buku NCR",
+        "desc": "Cetak nota rangkap 2/3/4 ply kertas NCR tanpa karbon, invoice perusahaan, surat jalan, dan faktur dengan penomoran otomatis (numerator).",
+        "icon": "🧾"
+      },
+      {
+        "title": "Merchandise & Souvenir Kantor",
+        "desc": "Pembuatan mug custom, payung promosi, lanyard ID card, tumbler grafir laser, tas goodie bag spunbond, dan kalender meja/dinding tahunan.",
+        "icon": "🎁"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Cetak Kilat & Tepat Waktu",
+        "desc": "Kapasitas mesin industri memungkinkan pengerjaan cepat untuk deadline mendesak tanpa menurunkan mutu."
+      },
+      {
+        "title": "Akurasi Warna Mesin Jepang",
+        "desc": "Kalibrasi warna berkala menghasilkan kesesuaian cetak yang konsisten antara sampel monitor dan hasil fisik."
+      },
+      {
+        "title": "Bantuan Pengecekan File Gratis",
+        "desc": "Tim setting kami siap memeriksa resolusi dan format file Anda agar terbebas dari hasil cetak pecah atau blur."
+      },
+      {
+        "title": "Pilihan Finishing Lengkap",
+        "desc": "Tersedia opsi laminasi glossy/doff, spot UV, poly emas/perak, embos, dan rel lipat profesional."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bisa cetak spanduk ditunggu?",
+        "a": "Bisa! Untuk file siap cetak dalam kuantitas standar, spanduk atau X-banner dapat selesai dan siap diambil dalam hitungan jam."
+      },
+      {
+        "q": "Apakah ada minimum pemesanan untuk stiker label?",
+        "a": "Minimum order stiker kami sangat fleksibel, mulai dari beberapa lembar A3+ yang dapat memuat puluhan hingga ratusan stiker logo Anda."
+      },
+      {
+        "q": "Bagaimana cara pengiriman file desain?",
+        "a": "File desain format PDF, CDR, PSD, AI, atau TIFF dapat dikirimkan langsung melalui WhatsApp atau link Google Drive ke admin kami."
+      }
+    ]
+  },
+  "otomotif": {
+    "keywords": [
+      "bengkel",
+      "mobil",
+      "motor",
+      "otomotif",
+      "tune up",
+      "ganti oli",
+      "servis ac",
+      "kaki-kaki",
+      "spooring",
+      "body repair"
+    ],
+    "trade_name": "Bengkel Servis & Perawatan Otomotif",
+    "headline": "Bengkel Servis Mesin, AC & Perawatan Mobil Terpercaya",
+    "tagline": "Perawatan kendaraan menyeluruh dengan diagnosa scanner komputer, mekanik handal, dan suku cadang orisinal terjamin.",
+    "about_p1": "{name} adalah bengkel perawatan dan perbaikan kendaraan bermotor terpercaya di {city_area}. Kami menangani perawatan berkala maupun perbaikan berat untuk berbagai merek mobil Asia dan Eropa.",
+    "about_p2": "Didukung alat diagnosa komputer mutakhir (scanner ECU), ruang servis berstandar rapi, serta mekanik berpengalaman puluhan tahun, kami memastikan kendaraan Anda kembali prima, aman, dan nyaman dikendarai.",
+    "services": [
+      {
+        "title": "Tune Up & Ganti Oli Berkala",
+        "desc": "Pembersihan throttle body, ruang bakar (carbon clean), ganti oli mesin orisinal, filter oli, filter udara, dan busi untuk efisiensi BBM maksimal.",
+        "icon": "🛢️"
+      },
+      {
+        "title": "Servis AC Mobil & Flushing",
+        "desc": "Pengisian freon murni, kuras oli kompresor dengan mesin flushing canggih, pembersihan evaporator tanpa bongkar dashboard, dan ganti filter kabin.",
+        "icon": "❄️"
+      },
+      {
+        "title": "Perbaikan Rem & Kaki-Kaki",
+        "desc": "Penggantian kampas rem, bubut piringan cakram, servis shockbreaker, ball joint, tie rod, dan bushing arm untuk kestabilan berkendara.",
+        "icon": "🚗"
+      },
+      {
+        "title": "Diagnosa Scanner ECU Komputer",
+        "desc": "Deteksi cepat dan akurat penyebab lampu check engine menyala, reset sensor elektrikal, kalibrasi transmisi matic, dan sistem injeksi.",
+        "icon": "💻"
+      },
+      {
+        "title": "Overhaul Mesin & Transmisi Matic",
+        "desc": "Turun mesin perbaikan oli rembes, mesin overheat, penggantian packing silinder kop, serta perbaikan transmisi otomatis yang delay atau slip.",
+        "icon": "⚙️"
+      },
+      {
+        "title": "Ganti Aki & Servis Kelistrikan",
+        "desc": "Pengecekan alternator pengisian aki, penggantian aki bergaransi resmi, perbaikan dinamo starter, kabel korsleting, dan lampu kendaraan.",
+        "icon": "🔋"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Diagnosa Akurat Scanner Digital",
+        "desc": "Pengecekan berbasis data komputer sehingga penggantian suku cadang tepat sasaran tanpa coba-coba."
+      },
+      {
+        "title": "Garansi Suku Cadang Orisinal",
+        "desc": "Hanya menyediakan suku cadang asli pabrikan atau genuine aftermarket terpercaya dengan jaminan mutu."
+      },
+      {
+        "title": "Mekanik Berpengalaman & Jujur",
+        "desc": "Transparansi pemeriksaan: pelanggan selalu diberi penjelasan kerusakan dan estimasi biaya sebelum pengerjaan dimulai."
+      },
+      {
+        "title": "Ruang Tunggu Nyaman & Ber-AC",
+        "desc": "Dilengkapi fasilitas ruang tunggu bersih ber-AC, koneksi Wi-Fi gratis, dan minuman santai saat mobil Anda diservis."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah perlu booking service sebelum datang?",
+        "a": "Booking via WhatsApp sangat disarankan terutama di akhir pekan agar slot lift servis dan mekanik telah dipersiapkan khusus untuk Anda."
+      },
+      {
+        "q": "Berapa lama waktu untuk pengerjaan tune up dan ganti oli?",
+        "a": "Layanan servis berkala, tune up, dan ganti oli umumnya memakan waktu 45 hingga 90 menit sehingga bisa ditunggu dengan santai."
+      },
+      {
+        "q": "Apakah ada garansi setelah perbaikan selesai?",
+        "a": "Ya, kami memberikan garansi servis dan suku cadang hingga 14 s/d 30 hari untuk memastikan kendaraan berfungsi sempurna tanpa kendala berulang."
+      }
+    ]
+  },
+  "kuliner_catering": {
+    "keywords": [
+      "katering",
+      "catering",
+      "kuliner",
+      "nasi kotak",
+      "tumpeng",
+      "prasmanan",
+      "bakery",
+      "roti",
+      "kue",
+      "snack box"
+    ],
+    "trade_name": "Katering Harian, Event & Nasi Kotak",
+    "headline": "Layanan Katering Prasmanan, Nasi Kotak & Tumpeng Syukuran",
+    "tagline": "Cita rasa autentik nusantara yang lezat, higienis, dan tersertifikasi halal untuk acara pesta, kantor, dan syukuran keluarga.",
+    "about_p1": "{name} adalah penyedia layanan jasa boga dan katering terpercaya di {city_area}. Kami berpengalaman menyajikan hidangan lezat untuk resepsi pernikahan, seminar kantor, syukuran keluarga, hingga makan siang karyawan.",
+    "about_p2": "Dengan komitmen pemilihan bahan baku segar setiap hari, juru masak berpengalaman, kemasan eksklusif yang rapi, serta ketepatan waktu pengiriman, kami menjamin kepuasan tamu dan kelancaran acara istimewa Anda.",
+    "services": [
+      {
+        "title": "Nasi Kotak (Lunch Box) Eksklusif",
+        "desc": "Menu nasi kotak variatif (Ayam Bakar, Rendang Daging, Empal Gurih, Ikan Bakar) lengkap dengan lauk pendamping, sambal khas, dan buah segar.",
+        "icon": "🍱"
+      },
+      {
+        "title": "Prasmanan (Buffet) Pernikahan & Event",
+        "desc": "Penyajian prasmanan mewah lengkap dengan meja display dekoratif, peralatan pemanas hidangan, dan staf pramusaji profesional berseragam.",
+        "icon": "🍽️"
+      },
+      {
+        "title": "Tumpeng Tradisional & Tumpeng Mini",
+        "desc": "Nasi tumpeng kuning komplit hiasan cantik untuk acara peresmian/syukuran, serta tumpeng mini praktis dalam wadah mika bening personal.",
+        "icon": "🍛"
+      },
+      {
+        "title": "Snack Box & Aneka Kue Basah",
+        "desc": "Paket snack box rapat dan seminar berisi aneka kue tradisional lezat, roti manis, pastel renyah, dan air mineral kemasan.",
+        "icon": "🧁"
+      },
+      {
+        "title": "Katering Harian Kantor & Pabrik",
+        "desc": "Paket makan siang bergizi untuk karyawan kantor atau staf pabrik dengan rotasi menu berganti setiap hari agar tidak membosankan.",
+        "icon": "🥗"
+      },
+      {
+        "title": "Aneka Roti Segar & Tart Ulang Tahun",
+        "desc": "Pemesanan roti manis aneka rasa lembut, bolu gulung oleh-oleh, hingga custom kue tart ulang tahun dengan desain sesuai keinginan Anda.",
+        "icon": "🎂"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Bahan Segar 100% Halal",
+        "desc": "Seluruh bumbu dan bahan pangan bersumber dari pemasok segar pilihan dengan jaminan kehalalan dan kebersihan mutlak."
+      },
+      {
+        "title": "Cita Rasa Mantap & Konsisten",
+        "desc": "Diracik dengan resep bumbu rempah autentik oleh koki berpengalaman sehingga rasa hidangan selalu nikmat memanjakan lidah."
+      },
+      {
+        "title": "Tepat Waktu Tiba di Lokasi",
+        "desc": "Armada katering khusus memastikan pesanan tiba minimal 30-45 menit sebelum waktu acara dimulai."
+      },
+      {
+        "title": "Fleksibilitas Pilihan Menu",
+        "desc": "Menu dapat dikustomisasi menyesuaikan selera keluarga atau batasan anggaran acara tanpa mengorbankan kualitas."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Berapa minimum order untuk pemesanan nasi kotak?",
+        "a": "Minimum pemesanan nasi kotak mulai dari 20 porsi, dan kami melayani pesanan hingga ribuan porsi untuk acara berskala besar."
+      },
+      {
+        "q": "Kapan batas waktu paling lambat untuk memesan?",
+        "a": "Untuk nasi kotak dan tumpeng mini, pemesanan dapat dilakukan H-2. Untuk acara prasmanan atau pernikahan, disarankan booking H-14."
+      },
+      {
+        "q": "Apakah bisa test food sebelum acara berlangsung?",
+        "a": "Bisa! Untuk pemesanan prasmanan di atas 100 porsi, kami menyediakan layanan pengiriman paket sampel (test food) ke rumah Anda."
+      }
+    ]
+  },
+  "apotek_kesehatan": {
+    "keywords": [
+      "apotek",
+      "obat",
+      "alat kesehatan",
+      "alkes",
+      "farmasi",
+      "toko obat",
+      "klinik farma",
+      "vitamin",
+      "suplemen",
+      "resep dokter"
+    ],
+    "trade_name": "Apotek & Toko Obat / Alat Kesehatan Resmi",
+    "headlines": [
+      "Apotek & Toko Alat Kesehatan Resmi Terlengkap di {city_area}",
+      "Pusat Obat Resep BPOM, Vitamin & Alat Medis Steril di {city_area}",
+      "Apotek Terpercaya & Layanan Konsultasi Obat Keluarga di {city_area}"
+    ],
+    "headline": "Apotek & Toko Alat Kesehatan Resmi Terlengkap di {city_area}",
+    "taglines": [
+      "Sedia obat resep dokter resmi BPOM, suplemen imunitas, vitamin keluarga, dan alkes medis steril dengan apoteker berlisensi.",
+      "Jaminan 100% obat asli berizin BPOM, tebus resep dokter kilat, serta konsultasi apoteker gratis via WhatsApp resmi.",
+      "Penyedia kebutuhan medis higienis, termometer, tensimeter, obat generik & paten siap antar ke rumah Anda."
+    ],
+    "tagline": "Sedia obat resep dokter resmi BPOM, suplemen imunitas, vitamin keluarga, dan alkes medis steril dengan apoteker berlisensi.",
+    "about_p1": "{name} adalah apotek dan penyedia perlengkapan medis terpercaya di {city_area}. Kami berkomitmen melayani kebutuhan kesehatan keluarga Anda dengan jaminan 100% obat asli resmi BPOM, penyimpanan berstandar farmasi, serta pelayanan ramah dan amanah.",
+    "about_p2": "Didukung tenaga apoteker berlisensi resmi (SIPA) yang siap memberikan informasi penggunaan obat, dosis tepat, serta konsultasi kesehatan gratis. Kami juga melayani tebus resep dokter dan pengantaran obat kilat ke rumah Anda.",
+    "services": [
+      {
+        "title": "Obat Resep Dokter & Obat Bebas (OTC)",
+        "desc": "Layanan tebus resep dokter cepat, obat paten dan generik resmi BPOM, antibiotik, analgesik, dan obat terapi rutin kronis.",
+        "icon": "💊",
+        "items": [
+          "Tebus Resep Dokter Asli & Lengkap",
+          "Obat Generik & Paten Resmi BPOM",
+          "Antibiotik, Analgesik & Obat Rutin Kronis"
+        ]
+      },
+      {
+        "title": "Alat Kesehatan & Perlengkapan Medis",
+        "desc": "Tensimeter digital Omron, oximeter jari, termometer inframerah, strip tes gula darah/asam urat, kursi roda, dan tabung oksigen.",
+        "icon": "🩺",
+        "items": [
+          "Tensimeter Digital Omron & Jarum Glukosa",
+          "Termometer Inframerah & Oximeter Ujung Jari",
+          "Kursi Roda, Kruk Walker & Tabung Oksigen"
+        ]
+      },
+      {
+        "title": "Multivitamin & Suplemen Imunitas",
+        "desc": "Vitamin C, D3, E, Zinc, suplemen daya tahan tubuh keluarga (Blackmores, Enervon-C, Redoxon), minyak ikan omega-3, dan kalsium tulang.",
+        "icon": "🌿",
+        "items": [
+          "Blackmores, Enervon-C & Redoxon Original",
+          "Minyak Ikan Omega-3 & Kalsium Tulang",
+          "Suplemen Herbal Terdaftar BPOM"
+        ]
+      },
+      {
+        "title": "Perawatan Luka & P3K Rumah Tangga",
+        "desc": "Kasa steril, perban elastis, plester medis anti air, povidone iodine, alkohol 70%, rivanol, dan kotak P3K lengkap siap pakai.",
+        "icon": "🩹",
+        "items": [
+          "Kasa Steril, Plester Medis & Perban Elastis",
+          "Povidone Iodine, Alkohol 70% & Rivanol",
+          "Kotak P3K Lengkap Siap Pakai"
+        ]
+      },
+      {
+        "title": "Nutrisi Ibu, Bayi & Kebutuhan Anak",
+        "desc": "Susu formula bayi, minyak telon, balsam anak, termometer bayi, suplemen nafsu makan, dan penurun demam anak teruji aman.",
+        "icon": "👶",
+        "items": [
+          "Susu Formula Khusus & Nutrisi MPASI",
+          "Minyak Telon, Termometer & Dot BPA-Free",
+          "Vitamin Tumbuh Kembang & Penurun Panas Anak"
+        ]
+      },
+      {
+        "title": "Layanan Antar Obat & Konsultasi WA",
+        "desc": "Kemudahan pesan obat dan konsultasi aturan pakai langsung via WhatsApp dengan privasi terjaga dan pengantaran cepat ke rumah.",
+        "icon": "🛵",
+        "items": [
+          "Kirim Foto Resep via WhatsApp Resmi",
+          "Pengemasan Obat Rapi, Tertutup & Higienis",
+          "Pengantaran Cepat Area {city_area}"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps Resmi"
+      },
+      {
+        "val": "100% BPOM",
+        "lbl": "Jaminan Obat Asli Resmi"
+      },
+      {
+        "val": "Apoteker",
+        "lbl": "Konsultasi Dosis Siaga"
+      },
+      {
+        "val": "Siap Antar",
+        "lbl": "Layanan Kilat ke Rumah"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "dr. Aris Nugroho, Sp.PD",
+        "badge": "Dokter Praktik Mandiri",
+        "stars": "★★★★★",
+        "text": "Stok obat paten dan generik sangat lengkap. Pasien saya sering tebus resep di sini karena ketersediaan obatnya selalu terjamin dan penyimpanan berstandar farmasi resmi."
+      },
+      {
+        "name": "Nurhayati",
+        "badge": "Ibu Rumah Tangga",
+        "stars": "★★★★★",
+        "text": "Pelayanan apoteker sangat ramah dan teliti menjelaskan aturan minum obat untuk anak. Pengiriman via WA juga cepat sekali sampai ke rumah saat kondisi darurat."
+      },
+      {
+        "name": "Ferry Gunawan",
+        "badge": "Pelanggan Obat Rutin",
+        "stars": "★★★★★",
+        "text": "Selalu beli suplemen dan tensimeter di sini. Barangnya asli, bersegel resmi BPOM, dan harganya jauh lebih terjangkau dibanding apotek waralaba lain."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "100% Obat Asli Berizin BPOM",
+        "desc": "Semua obat dan perbekalan kesehatan dipasok langsung dari distributor resmi PBF dengan izin edar Kemenkes sah."
+      },
+      {
+        "title": "Konsultasi Apoteker Berlisensi",
+        "desc": "Apoteker ber-SIPA siap memberikan edukasi aturan pakai, interaksi obat, dan rekomendasi kesehatan yang aman."
+      },
+      {
+        "title": "Penyimpanan Standar Medis",
+        "desc": "Suhu ruangan dan chiller terjaga ketat untuk memastikan stabilitas dan efektivitas khasiat setiap obat."
+      },
+      {
+        "title": "Layanan Antar Resep Cepat",
+        "desc": "Kirim foto resep dokter via WhatsApp, pesanan langsung disiapkan dan diantar ke rumah Anda tanpa antre."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bisakah tebus resep dokter lewat WhatsApp?",
+        "a": "Bisa! Cukup foto resep dokter Anda secara jelas dan kirimkan via WhatsApp di website ini. Apoteker kami akan segera memeriksa dan mengonfirmasi ketersediaan obat."
+      },
+      {
+        "q": "Apakah seluruh produk dijamin asli dan memiliki izin BPOM?",
+        "a": "Ya, 100% obat, vitamin, dan alat kesehatan kami bersumber dari Pedagang Besar Farmasi (PBF) resmi berizin Kemenkes dan BPOM RI."
+      },
+      {
+        "q": "Apakah melayani pengantaran obat ke alamat rumah?",
+        "a": "Kami menyediakan layanan pesan antar kilat untuk wilayah sekitar sehingga Anda tidak perlu keluar rumah saat sedang sakit."
+      }
+    ]
+  },
+  "salon_kecantikan": {
+    "keywords": [
+      "salon",
+      "kecantikan",
+      "barbershop",
+      "spa",
+      "creambath",
+      "facial",
+      "nail art",
+      "eyelash",
+      "hair styling",
+      "makeup",
+      "treatment wajah",
+      "hairstylist"
+    ],
+    "trade_name": "Studio Perawatan Rambut & Salon Kecantikan",
+    "headlines": [
+      "Studio Perawatan Rambut & Kecantikan Modern di {city_area}",
+      "Spesialis Balayage, Smoothing & Perawatan Kulit Glowing di {city_area}",
+      "Salon Kecantikan Eksklusif dengan Terapis Bersertifikat di {city_area}"
+    ],
+    "headline": "Studio Perawatan Rambut & Kecantikan Modern di {city_area}",
+    "taglines": [
+      "Treatment rambut premium, perawatan wajah glowing, nail art, creambath relaksasi dengan terapis berpengalaman dan produk BPOM teruji.",
+      "Wujudkan rambut indah berkilau dan kulit bersih terawat bersama hair stylist andal dalam suasana studio yang privat dan higienis.",
+      "Pilihan perawatan estetika lengkap untuk wanita dan pria dengan pelayanan ramah dan hasil memuaskan."
+    ],
+    "tagline": "Treatment rambut premium, perawatan wajah glowing, nail art, creambath relaksasi dengan terapis berpengalaman dan produk BPOM teruji.",
+    "about_p1": "{name} adalah studio kecantikan dan perawatan rambut terpercaya di {city_area}. Kami menghadirkan ruang relaksasi yang nyaman, higienis, dan modern untuk merawat penampilan dan kesegaran Anda.",
+    "about_p2": "Dikelola oleh tim hair stylist dan beautician profesional bersertifikat, kami menggunakan produk perawatan berstandar internasional yang aman bagi kulit dan rambut Anda demi hasil yang tahan lama dan menawan.",
+    "services": [
+      {
+        "title": "Hair Cut, Styling & Cuci Blow",
+        "desc": "Potong rambut wanita & pria model tren terkini, cuci blow rambut bervolume, dan styling catok rapi tahan seharian.",
+        "icon": "💇‍♀️",
+        "items": [
+          "Haircut Modern Layer, Bob, Pixie & Wolfcut",
+          "Cuci Rambut Pijat Relaksasi & Blow Dry",
+          "Styling Rambut Pesta & Wisuda Rapi"
+        ]
+      },
+      {
+        "title": "Coloring, Balayage & Highlight Rambut",
+        "desc": "Pewarnaan rambut profesional menggunakan cat berkualitas tanpa amonia berlebih, teknik balayage halus, ombre, dan bleaching aman.",
+        "icon": "🎨",
+        "items": [
+          "Fashion Color Ash Grey, Brown & Pastel",
+          "Balayage Halus & Highlight Dimensi Alami",
+          "Toning & Bleaching Proteksi Olaplex"
+        ]
+      },
+      {
+        "title": "Smoothing Keratin & Rebonding Sutra",
+        "desc": "Pelurusan rambut tahan lama dengan formula keratin Brazil yang membuat rambut lembut, lurus alami, berkilau, dan bebas kusut.",
+        "icon": "✨",
+        "items": [
+          "Smoothing Sutra Lurus Natural & Lembut",
+          "Keratin Treatment Anti-Kusut & Mengkilap",
+          "Perawatan Rambut Rusak Akibat Kimia"
+        ]
+      },
+      {
+        "title": "Creambath Tradisional & Spa Rambut",
+        "desc": "Creambath aneka varian ekstrak alami (lidah buaya, alpukat, gingseng), pijatan leher dan pundak rileks, serta hair steamer.",
+        "icon": "💆‍♀️",
+        "items": [
+          "Creambath Nutrisi Ginseng, Lidah Buaya & Kemiri",
+          "Pijat Relaksasi Kulit Kepala, Leher & Pundak",
+          "Hair Steamer & Masker Anti-Rambut Rontok"
+        ]
+      },
+      {
+        "title": "Facial Glowing & Deep Cleansing",
+        "desc": "Perawatan pembersihan wajah mendalam, ekstraksi komedo tanpa bekas, masker pencerah, dan serum penutrisi kulit glowing.",
+        "icon": "🧖‍♀️",
+        "items": [
+          "Deep Cleansing & Ekstraksi Komedo Bersih",
+          "Masker Wajah Kolagen & Serum Glowing BPOM",
+          "Massage Wajah Relaksasi Melancarkan Sirkulasi"
+        ]
+      },
+      {
+        "title": "Manicure, Pedicure & Nail Art Desain",
+        "desc": "Perawatan kuku tangan dan kaki higienis, pengangkatan kutikula rapi, lulur kaki, dan lukis nail art gel aneka motif cantik.",
+        "icon": "💅",
+        "items": [
+          "Manicure & Pedicure Bersih Higienis",
+          "Cat Kuku Gel Awet & Tahan Goresan",
+          "Custom Desain Nail Art Estetik & Korea"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps Resmi"
+      },
+      {
+        "val": "Terapis Ahli",
+        "lbl": "Hair Stylist Bersertifikat"
+      },
+      {
+        "val": "100% BPOM",
+        "lbl": "Produk Rambut & Kulit Aman"
+      },
+      {
+        "val": "Nyaman",
+        "lbl": "Ruang Perawatan Higienis"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Nadia Anggraini",
+        "badge": "Pelanggan Rutin Salon",
+        "stars": "★★★★★",
+        "text": "Hasil balayage dan smoothing di sini juara banget! Rambut tetap lembut dan tidak kering sama sekali. Tempatnya bersih, wangi, dan pelayanannya super memanjakan."
+      },
+      {
+        "name": "Rina Marlina",
+        "badge": "Member Perawatan Wajah",
+        "stars": "★★★★★",
+        "text": "Facial glowing-nya bikin kulit langsung cerah dan komedo bersih tanpa rasa sakit berlebihan. Terapisnya ramah dan sangat teliti."
+      },
+      {
+        "name": "Jessica Tan",
+        "badge": "Pelanggan Hair Treatment",
+        "stars": "★★★★★",
+        "text": "Creambath dan pijatannya rileks banget, capek kerja langsung hilang. Booking jadwal via WA responsif tanpa perlu nunggu antrean lama."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Hair Stylist & Beautician Berpengalaman",
+        "desc": "Ditangani tenaga ahli terlatih yang memahami struktur rambut dan kebutuhan kulit wajah Anda."
+      },
+      {
+        "title": "Produk Terpilih Aman & Berizin BPOM",
+        "desc": "Menggunakan bahan perawatan bermerek resmi yang tidak merusak lapisan rambut atau mengiritasi kulit."
+      },
+      {
+        "title": "Alat Steril & Ruangan Nyaman",
+        "desc": "Seluruh perlengkapan gunting, sisir, dan alat facial disterilkan secara berkala demi kebersihan prima."
+      },
+      {
+        "title": "Booking Mudah via WhatsApp",
+        "desc": "Jadwalkan sesi perawatan Anda terlebih dahulu agar langsung dilayani tanpa membuang waktu mengantre."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah perlu reservasi jadwal terlebih dahulu?",
+        "a": "Sangat disarankan untuk reservasi melalui WhatsApp agar Anda mendapatkan slot jam yang sesuai tanpa perlu menunggu giliran antrean."
+      },
+      {
+        "q": "Berapa lama daya tahan hasil smoothing keratin?",
+        "a": "Hasil smoothing kami umumnya bertahan antara 4 hingga 8 bulan, tergantung tipe rambut dan perawatan harian Anda di rumah."
+      },
+      {
+        "q": "Apakah menerima perawatan untuk pria?",
+        "a": "Ya! Kami melayani potong rambut modern, cuci blow, pewarnaan, dan creambath relaksasi untuk pelanggan pria maupun wanita."
+      }
+    ]
+  },
+  "florist_pet": {
+    "keywords": [
+      "florist",
+      "bunga",
+      "karangan bunga",
+      "buket",
+      "pet shop",
+      "petshop",
+      "pakan kucing",
+      "hewan",
+      "grooming",
+      "akuarium",
+      "ikan hias",
+      "klinik hewan",
+      "dokter hewan",
+      "kucing",
+      "anjing"
+    ],
+    "trade_name": "Florist Rangkaian Bunga & Pet Shop Peliharaan",
+    "headlines": [
+      "Pusat Karangan Bunga Segar & Kebutuhan Hewan Peliharaan di {city_area}",
+      "Florist Karangan Bunga Mewah & Pet Shop Terlengkap di {city_area}",
+      "Toko Bunga Ucapan Cepat & Perlengkapan Anabul Terpercaya di {city_area}"
+    ],
+    "headline": "Pusat Karangan Bunga Segar & Kebutuhan Hewan Peliharaan di {city_area}",
+    "taglines": [
+      "Rangkaian papan bunga ucapan, buket wisuda segar, pakan hewan premium, perlengkapan akuarium, serta layanan grooming dengan pengiriman cepat.",
+      "Penyedia aneka bunga segar hias, pakan nutrisi anabul terlengkap, pasir kucing, dan vitamin hewan peliharaan tersayang.",
+      "Bunga segar setiap hari dan nutrisi hewan peliharaan terbaik dengan pengiriman cepat ke lokasi Anda."
+    ],
+    "tagline": "Rangkaian papan bunga ucapan, buket wisuda segar, pakan hewan premium, perlengkapan akuarium, serta layanan grooming dengan pengiriman cepat.",
+    "about_p1": "{name} adalah pusat penyedia rangkaian bunga segar artistik serta kebutuhan hewan peliharaan terpercaya di {city_area}. Kami berdedikasi menghadirkan karya bunga penuh makna dan produk terbaik bagi kesehatan anabul Anda.",
+    "about_p2": "Didukung oleh perangkai bunga berpengalaman dan staf pencinta hewan yang berpengetahuan, kami memastikan setiap pesanan karangan bunga dibuat rapi tepat waktu, serta pasokan pakan dan nutrisi hewan selalu segar dan berkualitas.",
+    "services": [
+      {
+        "title": "Papan Karangan Bunga Ucapan & Duka Cita",
+        "desc": "Papan bunga pernikahan, selamat & sukses pelantikan, ucapan duka cita dengan rangkaian bunga segar dan bahan kokoh siap kirim.",
+        "icon": "💐",
+        "items": [
+          "Papan Bunga Pernikahan (Happy Wedding)",
+          "Papan Bunga Selamat & Sukses Peresmian Kantor",
+          "Papan Bunga Duka Cita Pengiriman Cepat 24 Jam"
+        ]
+      },
+      {
+        "title": "Buket Bunga Segar Wisuda & Ulang Tahun",
+        "desc": "Hand bouquet mawar merah, lily, tulip, bunga matahari segar dipadukan wrapping korea cantik untuk momen wisuda, lamaran, dan anniversary.",
+        "icon": "🌹",
+        "items": [
+          "Hand Bouquet Mawar Segar Romantis",
+          "Buket Bunga Matahari & Lily Wisuda",
+          "Buket Balon, Boneka & Cokelat Custom"
+        ]
+      },
+      {
+        "title": "Pakan Kucing & Anjing Super Premium",
+        "desc": "Pakan kering (dry food) dan basah (wet food) merek Royal Canin, Pro Plan, Whiskas, Me-O, Kitchen Flavor nutrisi lengkap untuk anabul.",
+        "icon": "🐱",
+        "items": [
+          "Royal Canin, Pro Plan & Hills Science Diet",
+          "Wet Food Pouch & Kaleng Aneka Rasa",
+          "Snack Creamy Treat & Vitamin Bulu/Kulit"
+        ]
+      },
+      {
+        "title": "Grooming Sehat Mandi & Potong Kuku",
+        "desc": "Layanan mandi bersih wangi, sampo anti kutu dan jamur, pengeringan bulu lembut, potong kuku, dan pembersihan telinga anabul.",
+        "icon": "🛁",
+        "items": [
+          "Mandi Sehat Basmi Kutu & Jamur Bergaransi",
+          "Blow Dry Lembut, Potong Kuku & Bersih Telinga",
+          "Styling Cukur Bulu Cantik & Rapi"
+        ]
+      },
+      {
+        "title": "Kandang, Pasir Gumpal & Aksesoris",
+        "desc": "Pasir gumpal wangi (tofu & bentonite), bak pasir litter box, kandang besi lipat tebal, tempat makan otomatis, kalung dan tali tuntun.",
+        "icon": "🐾",
+        "items": [
+          "Pasir Gumpal Bentonite & Pasir Tofu Organik",
+          "Kandang Besi Lipat Aneka Ukuran Kokoh",
+          "Litter Box, Pet Carrier & Mainan Interaktif"
+        ]
+      },
+      {
+        "title": "Akuarium, Pakan Ikan & Aquascape",
+        "desc": "Tangki akuarium kaca bening, filter aerator air, pakan pelet ikan hias, tanaman aquascape, lampu LED, dan obat penjernih air.",
+        "icon": "🐠",
+        "items": [
+          "Pelet Ikan Hias, Cupang & Koi Berkualitas",
+          "Filter Sirkulasi Air & Pompa Aerator Hening",
+          "Lampu LED Aquascape & Tanaman Air Hidup"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps Resmi"
+      },
+      {
+        "val": "Bunga Segar",
+        "lbl": "Rangkaian Bunga Harian"
+      },
+      {
+        "val": "100% Asli",
+        "lbl": "Pakan Nutrisi Resmi Pabrik"
+      },
+      {
+        "val": "Kirim Cepat",
+        "lbl": "Armada Antar Hari Ini"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "drh. Cindy Clarissa",
+        "badge": "Pecinta Hewan & Cat Rescue",
+        "stars": "★★★★★",
+        "text": "Stok pakan Royal Canin dan pasir kucingnya selalu baru dan lengkap. Pelayanannya sangat paham nutrisi hewan, anabul saya selalu cocok belanja di sini."
+      },
+      {
+        "name": "Bayu Pamungkas",
+        "badge": "Penyelenggara Acara / EO",
+        "stars": "★★★★★",
+        "text": "Pesan 5 papan bunga ucapan peresmian kantor, pengerjaannya sangat rapi, bunga segar, dan pengiriman ke lokasi tepat waktu sebelum acara dimulai."
+      },
+      {
+        "name": "Siska Amelia",
+        "badge": "Pelanggan Buket & Florist",
+        "stars": "★★★★★",
+        "text": "Buket bunga wisudanya cantik banget! Bunga mawarnya segar tahan berhari-hari dan wrapping-nya estetik sesuai request foto via WhatsApp."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Bunga Segar Dipetik Harian",
+        "desc": "Semua bunga potong dirawat dalam suhu dingin khusus agar kelopak tetap mekar segar dan wangi tahan lama."
+      },
+      {
+        "title": "Pakan Hewan Bernutrisi Asli",
+        "desc": "Jaminan produk pakan hewan bersegel resmi pabrik dengan tanggal kedaluwarsa panjang untuk kesehatan anabul."
+      },
+      {
+        "title": "Perangkai Bunga Profesional",
+        "desc": "Desain rangkaian bunga estetik, proporsional, dan elegan disesuaikan dengan tema ucapan bahagia maupun duka."
+      },
+      {
+        "title": "Pengiriman Cepat Hari Ini",
+        "desc": "Armada kurir khusus siap mengantar pesanan karangan bunga dan perlengkapan anabul tiba aman tanpa rusak."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bisa pesan bunga papan mendadak hari ini?",
+        "a": "Bisa! Kami menyediakan layanan pembuatan dan pengiriman karangan bunga ekspres dengan estimasi selesai 2-3 jam siap kirim ke lokasi acara."
+      },
+      {
+        "q": "Apakah melayani konsultasi pemilihan pakan kucing/anjing?",
+        "a": "Tentu! Staf kami siap merekomendasikan varian pakan yang tepat sesuai usia, ras, atau kebutuhan diet khusus anabul Anda."
+      },
+      {
+        "q": "Bagaimana cara booking jadwal grooming hewan?",
+        "a": "Cukup hubungi WhatsApp kami untuk memilih paket grooming dan menentukan jam kedatangan agar anabul langsung ditangani terapis."
+      }
+    ]
+  },
+  "toko_elektronik": {
+    "keywords": [
+      "elektronik",
+      "toko elektronik",
+      "ac",
+      "mesin cuci",
+      "kulkas",
+      "televisi",
+      "tv led",
+      "speaker",
+      "audio",
+      "service elektronik",
+      "sparepart elektronik"
+    ],
+    "trade_name": "Toko Elektronik Rumah Tangga & Audio Visual",
+    "headlines": [
+      "Pusat Elektronik Rumah Tangga Bergaransi Resmi di {city_area}",
+      "Distributor AC Inverter, TV LED, Kulkas & Mesin Cuci Terlengkap di {city_area}",
+      "Toko Elektronik Terpercaya dengan Harga Bersahabat & Pasang Profesional di {city_area}"
+    ],
+    "headline": "Pusat Elektronik Rumah Tangga Bergaransi Resmi di {city_area}",
+    "taglines": [
+      "Distributor TV LED, AC hemat listrik, mesin cuci, kulkas inverter, speaker aktif, dan instalasi profesional dengan garansi pabrik resmi.",
+      "Penyedia peralatan elektronik rumah tangga merek ternama (LG, Samsung, Sharp, Panasonic) dengan jaminan mutu dan kemudahan pembayaran.",
+      "Pilihan lengkap elektronik modern hemat daya untuk kenyamanan keluarga Anda dengan layanan antar dan pemasangan teknisi andal."
+    ],
+    "tagline": "Distributor TV LED, AC hemat listrik, mesin cuci, kulkas inverter, speaker aktif, dan instalasi profesional dengan garansi pabrik resmi.",
+    "about_p1": "{name} adalah pusat penjualan elektronik rumah tangga terpercaya di {city_area}. Kami menyediakan berbagai perangkat elektronik modern untuk menunjang kenyamanan hunian dan efisiensi kegiatan harian keluarga Anda.",
+    "about_p2": "Semua produk yang kami jual bergaransi resmi dari prinsipal pabrikan terkemuka, dilengkapi dengan dukungan teknisi instalasi bersertifikat, pengiriman aman, serta konsultasi spesifikasi daya listrik rumah Anda.",
+    "services": [
+      {
+        "title": "Smart TV LED 4K & Soundbar Audio",
+        "desc": "Pilihan Smart TV LED resolusi 4K UHD aneka ukuran (32 s/d 75 inci) lengkap dengan soundbar bioskop rumah merek ternama bergaransi resmi.",
+        "icon": "📺",
+        "items": [
+          "Smart Google TV LED 4K UHD 43, 50 & 55 Inci",
+          "Soundbar Home Theater Bluetooth & Subwoofer",
+          "Bracket Dinding Kokoh & Jasa Pemasangan Rapi"
+        ]
+      },
+      {
+        "title": "AC Split Inverter Hemat Listrik",
+        "desc": "AC Split 1/2 PK s/d 2 PK teknologi inverter low watt (Daikin, Panasonic, Sharp, Gree) lengkap pipa tembaga tebal dan teknisi pasang berpengalaman.",
+        "icon": "❄️",
+        "items": [
+          "AC Inverter Hemat Energi & Dingin Cepat",
+          "Pipa Tembaga Standar Tebal & Kabel Berkualitas",
+          "Jasa Pasang, Vakum Mesin & Garansi Kebocoran"
+        ]
+      },
+      {
+        "title": "Kulkas 1 & 2 Pintu Inverter Modern",
+        "desc": "Lemari es hemat daya, teknologi no-frost tanpa bunga es, kompresor inverter awet, freezer luas, dan rak kaca tempered glass kuat.",
+        "icon": "🧊",
+        "items": [
+          "Kulkas 2 Pintu Inverter Tanpa Bunga Es",
+          "Kulkas 1 Pintu Low Watt Hemat Listrik Kos/Rumah",
+          "Freezer Box Pembeku ASI & Daging Usaha"
+        ]
+      },
+      {
+        "title": "Mesin Cuci Front & Top Loading Otomatis",
+        "desc": "Mesin cuci 1 tabung top loading dan front loading dengan program pencucian higienis, hemat air, serta motor inverter hening getaran.",
+        "icon": "🧺",
+        "items": [
+          "Mesin Cuci Front Loading Hemat Air & Bersih",
+          "Mesin Cuci Top Loading Otomatis 1 Tabung Praktis",
+          "Mesin Cuci 2 Tabung Kapasitas Besar 8-14 Kg"
+        ]
+      },
+      {
+        "title": "Peralatan Dapur & Alat Rumah Tangga",
+        "desc": "Air fryer digital, microwave oven, blender kaca kuat, magic com rice cooker anti-lengket, dispenser galon bawah, dan setrika uap.",
+        "icon": "🍳",
+        "items": [
+          "Air Fryer Digital & Microwave Pemanggang",
+          "Dispenser Galon Bawah Higienis & Praktis",
+          "Rice Cooker Digital, Blender & Kompor Gas Rinnai"
+        ]
+      },
+      {
+        "title": "Speaker Aktif Bluetooth & Karaoke",
+        "desc": "Speaker aktif portable bass mantap, sistem audio karaoke keluarga, mikrofon nirkabel (wireless), dan amplifier power sound system.",
+        "icon": "🔊",
+        "items": [
+          "Speaker Aktif Bluetooth Portable Bass Mantap",
+          "Paket Karaoke Keluarga & Mic Wireless Jernih",
+          "Power Amplifier & Perlengkapan Sound Outdoor"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps Resmi"
+      },
+      {
+        "val": "100% Asli",
+        "lbl": "Produk Bergaransi Resmi"
+      },
+      {
+        "val": "Teknisi Siaga",
+        "lbl": "Instalasi Cepat & Rapi"
+      },
+      {
+        "val": "Siap Antar",
+        "lbl": "Pengiriman Aman ke Rumah"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Ir. Hendro Wijaya",
+        "badge": "Pelanggan Elektronik Rumah",
+        "stars": "★★★★★",
+        "text": "Beli AC Sharp dan TV 50 inci di sini, harganya lebih murah daripada mall besar. Teknisi pasang AC-nya datang tepat waktu dan kerjanya sangat rapi divakum sesuai SOP."
+      },
+      {
+        "name": "Maya Kusuma",
+        "badge": "Ibu Rumah Tangga",
+        "stars": "★★★★★",
+        "text": "Kulkas inverter dan mesin cuci front loading-nya sangat awet dan tagihan listrik tetap hemat. Pelayanan admin WhatsApp sangat membantu menjelaskan kelebihan tiap tipe."
+      },
+      {
+        "name": "David Gunawan",
+        "badge": "Pembeli Sound System & TV",
+        "stars": "★★★★★",
+        "text": "Barangnya 100% original bergaransi resmi pabrik. Barang diantar pada hari yang sama dan dibantu cek fungsi sampai menyala dengan baik."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Jaminan Produk Original & Garansi Resmi",
+        "desc": "Setiap barang disertai kartu garansi resmi dari produsen yang dapat diklaim di service center resmi seluruh Indonesia."
+      },
+      {
+        "title": "Teknisi Instalasi Berpengalaman",
+        "desc": "Pemasangan AC dan braket TV ditangani oleh teknisi terlatih dengan peralatan standar pabrikan demi keamanan maksimal."
+      },
+      {
+        "title": "Harga Kompetitif & Promo Spesial",
+        "desc": "Penawaran harga terbaik bersaing dengan toko ritel besar, didukung opsi pembayaran tunai, transfer, atau cicilan."
+      },
+      {
+        "title": "Pengiriman Aman Langsung ke Rumah",
+        "desc": "Armada pengiriman toko menjaga kondisi fisik perangkat elektronik tetap mulus dan aman hingga ke dalam rumah Anda."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah pembelian sudah termasuk pemasangan?",
+        "a": "Untuk unit AC, kami menyediakan paket pemasangan lengkap termasuk pipa tebal, kabel, bracket, dan jasa vakum teknisi resmi."
+      },
+      {
+        "q": "Bagaimana bila barang mengalami kendala saat diterima?",
+        "a": "Kami memberikan garansi toko tukar unit baru dalam 3-7 hari bila ada cacat pabrik, di samping garansi resmi pabrikan."
+      },
+      {
+        "q": "Bisa minta pengiriman dan instalasi pada hari yang sama?",
+        "a": "Bisa! Untuk pemesanan sebelum jam 14.00, kami mengupayakan pengiriman dan pemasangan pada hari yang sama sesuai jadwal teknisi."
+      }
+    ]
+  }
+}

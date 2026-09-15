@@ -1,160 +1,207 @@
-# 🚀 Website Updater Studio — Autonomous Web Agency Pipeline
+# Website Updater Studio ($100 Turn-Key Engine)
 
-> **Mesin Otomasi Rekayasa Web & Outreach B2B End-to-End untuk UKM Indonesia dengan Model Turn-Key Flat $100 USD (Kurs Live IDR), Integrasi Midtrans Snap Gateway, & Deployer Otomatis Vercel.**
-
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Playwright](https://img.shields.io/badge/Browser-Playwright%20Stealth-2EAD33?logo=playwright)](https://playwright.dev/)
-[![Midtrans Verified](https://img.shields.io/badge/Payment-Midtrans%20Snap-008ABF?logo=mastercard)](https://midtrans.com/)
-[![Vercel Edge](https://img.shields.io/badge/Cloud-Vercel%20Edge%20Hosting-black?logo=vercel)](https://vercel.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-Website Updater Studio adalah platform otomatisasi agensi rekayasa web yang dirancang khusus untuk memodernisasi kehadiran digital bisnis dan UKM di Indonesia. Sistem ini mengombinasikan *stealth web crawling*, analisis performa Google Core Web Vitals, generator website *mobile-first*, auto-deployment cloud Vercel, pembuatan invoice resmi Midtrans berlisensi Bank Indonesia, dan pengiriman proposal penawaran via WhatsApp & Email tanpa menyentuh akun pribadi Anda.
+> **Autonomous Indonesian SME Modernization & Technical SEO Outreach Engine**  
+> Discovers high-potential local Indonesian businesses on Google Maps, generates modern high-converting websites, deploys live previews to Vercel, generates executive PDF proposals, and handles client engagement & Midtrans settlements.
 
 ---
 
-## 🌐 1. Website Agency Resmi (`agency_website/`)
+## Architecture Overview
 
-Sistem ini dilengkapi landing page agensi produksi berstandar *Swiss Minimalist* dan performa tinggi di folder `agency_website/`:
-- **Live URL**: [https://websiteupdater.vercel.app](https://websiteupdater.vercel.app)
-- **Desain & Arsitektur Visual**:
-  - Background shader ambient dinamis berbasis **WebGPU WGSL** dengan fallback Canvas 2D (< 4KB script weight).
-  - 3D Gyroscope & Cursor Parallax Terminal interaktif yang menampilkan metrik *Google PageSpeed 99/100* dan kecepatan *0.48s LCP*.
-  - Kalkulator konversi kurs $100 USD &rarr; Rupiah secara *real-time*.
-  - 100% responsif dan teruji bebas *horizontal overflow* pada seluruh resolusi layar (320px, 360px, 375px, 768px, 1024px, 1440px).
-  - Halaman legal & kepatuhan resmi: [Terms](/terms), [Privacy](/privacy), [Refund](/refund), dan [Delivery](/delivery).
+```
+[Google Maps Scanner] -> [Business Researcher (Gemini AI)]
+                               |
+            +------------------+------------------+
+            |                                     |
+    [Track A: Web Baru]                  [Track B: Modernisasi]
+(Bisnis tanpa website resmi)           (Audit SEO website lama)
+            |                                     |
+            +------------------+------------------+
+                               |
+          [Jinja2 Template Engine (pipeline/templates)]
+            |                                     |
+   (site/turnkey.html)                  (pdf/proposal_*.html)
+            |                                     |
+   [Vercel Cloud Deploy]                 [Executive PDF Pitch]
+            |                                     |
+            +------------------+------------------+
+                               |
+                    [Review Dashboard Server]
+                               |
+                   [WhatsApp & Email Dispatch]
+```
+
+### Key Components
+- **`auto_outreach.py`**: CLI orchestrator for lead harvesting, modernization, review dashboard, and outreach dispatch.
+- **`pipeline/scanner/google_maps_scanner.py`**: Local Indonesian SME harvester with:
+  - **Brand Sanitizer (`clean_business_brand_name`)**: Strips parenthetical noise e.g. `(Part of ...)` / `(Cabang ...)`, normalizes ALL CAPS to Title Case, and protects Indonesian legal acronyms (`PT`, `CV`, `UD`, `TB`, `PD`).
+  - **Phantom Lead Shield (`EXCLUDED_MAPS_DOMAINS`)**: Intercepts `wa.me`, `linktr.ee`, and bio links, extracts the direct mobile phone number, clears website URL, and routes accurately to **Track A (Web Baru)**.
+- **`pipeline/deployer/vercel_deployer.py`**: Automated Vercel cloud deployer with brand-first concise slugification (`clean_slug`).
+- **`pipeline/templates/`**: Centralized Jinja2 template repository for:
+  - `site/turnkey.html`: Modern responsive client website template.
+  - `pdf/proposal_track_a.html`: 4-page executive proposal for businesses without a website.
+  - `pdf/proposal_track_b.html`: Executive technical SEO audit proposal for website modernizations.
+- **`pipeline/outreach/message_formatter.py`**: High-Status Minimalist copywriting engine (cold outreach psychology, zero false flattery, directing prospect to Page 3 of attached PDF).
+- **`pipeline/outreach/whatsapp_dispatcher.py`**: WhatsApp Web Playwright dispatcher with persistent session (`clients/.whatsapp_session`), instant non-WA number detection, and Meta cooldown handling.
+- **`pipeline/db/database.py`**: Thread-safe SQLite persistence layer (`pipeline.db`) with WAL mode, tracking lead statuses and invoices.
+- **`pipeline/outreach/dashboard_server.py`**: Dynamic, real-time review dashboard server with no-cache headers, token security, and 1-click approvals.
 
 ---
 
-## 🎯 2. Dua Jalur Operasi Utama (Dual-Track Model)
+## Getting Started (Local Development)
 
-Sistem membedakan prospek bisnis menjadi dua jalur operasional yang jelas:
+### 1. Prerequisites
+- Python 3.10+
+- Microsoft Edge or Google Chrome (for local PDF printing & WhatsApp Web)
 
-```
-                              [ PROSPEK UKM INDONESIA ]
-                                          │
-                  ┌───────────────────────┴───────────────────────┐
-                  ▼                                               ▼
-      [ JALUR A: BISNIS TANPA WEB ]                   [ JALUR B: WEB LAMA / USANG ]
-   - Terdaftar di Google Maps                    - Memiliki website lama
-   - Belum memiliki website resmi                - Lambat / tidak mobile-friendly
-   - Dibuatkan landing page baru                 - Direkayasa ulang total (PageSpeed 95+)
-   - Vercel cloud hosting instan                 - Proposal PDF 4 Halaman dikirim via WA
-   - $100 Flat Turn-Key                          - $100 Flat Turn-Key
-```
+### 2. Installation
+```bash
+# Clone and enter directory
+cd Websiteupdater
 
-### Jalur A: Pembuatan Website Baru dari Nol
-- **Target**: Bisnis menengah yang memiliki Google Business Profile / Google Maps dengan banyak ulasan positif namun belum memiliki website resmi.
-- **Solusi**: Membangun landing page baru dengan desain elegan, mobile-first, integrasi Google Search Console, dan hosting cloud gratis selamanya di Vercel.
+# Install Python dependencies
+pip install -r requirements.txt
 
-### Jalur B: Rekayasa Ulang & Modernisasi Website Usang
-- **Target**: Bisnis yang website-nya lambat, dibangun dengan template lama (WordPress/Blogger/Custom lawas), atau rusak di layar smartphone.
-- **Solusi**: Mengikis (*scrape*) seluruh konten asli tanpa merusak identitas brand, mengoptimalkan skor Google PageSpeed dari merah ke hijau (95+), mengompilasi gambar modern WebP/AVIF, dan melampirkan dokumen proposal audit eksekutif PDF 4 halaman.
-
----
-
-## 💳 3. Gerbang Pembayaran Resmi Midtrans ($100 Turn-Key)
-
-Sistem terintegrasi langsung dengan API Midtrans Snap ([pipeline/payment/payment_gateway.py](pipeline/payment/payment_gateway.py)):
-- **Kalkulasi Kurs Live**: Otomatis mengonversi biaya flat $100 USD menjadi Rupiah dengan pembulatan ribuan (contoh: Rp 1.766.000).
-- **Metode Pembayaran**:
-  - **QRIS**: GoPay, OVO, DANA, ShopeePay, LinkAja, BCA Mobile QR.
-  - **Virtual Account Bank**: BCA, Mandiri, BRI, BNI, Permata.
-  - **Kartu Kredit / Debit**: Standar keamanan PCI-DSS Level 1 & 3D Secure.
-- **Webhook & Auto-Fulfillment**: Endpoint `/api/payment-webhook` memverifikasi signature SHA-512 resmi. Saat pembayaran berstatus `settlement`, invoice otomatis ditandai `PAID` dan bot WhatsApp langsung mengirimkan berkas/tautan serah terima kepada klien.
-
----
-
-## 📂 4. Struktur Direktori Proyek
-
-```
-Websiteupdater/
-├── .env                              # Kredensial rahasia (SMTP Email, WhatsApp, Vercel, Midtrans)
-├── .env.example                      # Template variabel lingkungan
-├── auto_outreach.py                  # CLI Runner Utama (Harvesting, Outreach, Dashboard)
-├── run_pipeline.py                   # Pipeline Runner untuk 1 URL Spesifik
-├── PROMPT_REFINE_PIPELINE.md         # Master Prompt AI Agent & Panduan Eksekusi Lengkap
-├── README.md                         # Dokumentasi Lengkap Proyek
-├── agency_website/                   # Source Code Website Agency Resmi (Vercel Ready)
-│   ├── index.html                    # Landing Page Utama (WebGPU + 3D Parallax Terminal)
-│   ├── terms.html                    # Syarat & Ketentuan Layanan
-│   ├── privacy.html                  # Kebijakan Privasi Data & Midtrans
-│   ├── refund.html                   # Kebijakan Garansi 60 Hari & Refund
-│   ├── delivery.html                 # Kebijakan Serah Terima Digital
-│   └── vercel.json                   # Konfigurasi Routing & Clean URLs Vercel
-├── pipeline/                         # Mesin Pemroses Inti
-│   ├── scanner/                      # Harvester Google Maps & Pengaya Kontak (Enricher)
-│   ├── scraper.py                    # Scraper adaptif konten & aset asli (Scrapling)
-│   ├── auditor.py                    # Auditor teknis Google PageSpeed & SEO
-│   ├── style_analyzer.py             # Analisis identitas warna, font, dan elemen visual
-│   ├── quotation.py                  # Mesin kurs real-time USD ke IDR
-│   ├── site_generator.py             # Generator website modern Jalur A & Jalur B
-│   ├── pdf_generator.py              # Generator proposal eksekutif PDF 4 halaman
-│   ├── deployer/                     # Auto-deployer instan ke Vercel Cloud
-│   ├── delivery/                     # Packaging source code ZIP & panduan cPanel
-│   ├── payment/                      # Gateway pembayaran Midtrans Snap & Webhook
-│   └── outreach/                     # Modul pengirim WhatsApp, Email, & Dashboard Web
-└── clients/                          # Direktori Penyimpanan Data & Deliverables
-    ├── .whatsapp_session/            # Sesi login browser WhatsApp (Tersimpan Permanen)
-    ├── invoices.json                 # Database status invoice Midtrans
-    ├── outreach_history.json         # Database prospek & riwayat interaksi
-    └── {client_slug}/                # Berkas deliverable masing-masing klien
+# Install Playwright browser binaries
+playwright install chromium
 ```
 
----
-
-## ⚡ 5. Panduan Perintah Cepat (Quickstart Commands)
-
-### 1. Buka Dasbor Web Lokal (Command Center):
-```powershell
-python auto_outreach.py --dashboard
+### 3. Environment Variables
+Copy `.env.example` to `.env` and fill in your API keys:
+```bash
+cp .env.example .env
 ```
-Buka browser di `http://localhost:8080` untuk melihat antrean klien, pratinjau live demo, status pembayaran, dan tombol aksi 1-klik.
+Key variables:
+- `GEMINI_API_KEY`: For business profiling, copywriting, and SEO audit generation.
+- `VERCEL_TOKEN`: For automated live demo deployment.
+- `MIDTRANS_SERVER_KEY`: For $100 live-rate invoice generation.
+- `DASHBOARD_TOKEN`: Secret token for securing the review dashboard.
+- `WA_PROVIDER`: Set to `meta` for Official Meta WhatsApp Cloud API (or `playwright` for old browser mode).
+- `META_WHATSAPP_TOKEN`: Permanent System User Access Token dari Meta Business Manager.
+- `META_PHONE_NUMBER_ID`: Phone Number ID dari Meta App dashboard.
+- `META_WEBHOOK_VERIFY_TOKEN`: Token rahasia verifikasi webhook (default: `website_updater_verify_token`).
 
-### 2. Berburu Prospek UKM dari Google Maps:
-```powershell
-# Mencari bisnis lokal yang belum punya website atau websitenya usang:
-python auto_outreach.py --scan-gmaps "bengkel mobil jakarta barat" --max-leads 10
-python auto_outreach.py --scan-gmaps "klinik gigi surabaya" --max-leads 5
-```
+### Panduan Singkat Setup Meta WhatsApp Cloud API (Jalur 2 Official)
+1. Buka [Meta for Developers](https://developers.facebook.com/) dan buat App bertipe **Other > Business**.
+2. Di dashboard App, tambahkan produk **WhatsApp** lalu klik **API Setup**.
+3. Anda akan langsung mendapatkan:
+   - **Temporary Access Token** (atau buat permanent token via *Business Settings > System Users*).
+   - **Phone Number ID** (salin ke `META_PHONE_NUMBER_ID`).
+4. Di bagian **Configuration > Webhook**:
+   - Masukkan Callback URL: `https://domain-anda.com/api/wa/webhook` (atau URL Ngrok untuk testing lokal).
+   - Masukkan Verify Token: `website_updater_verify_token` (sama dengan `META_WEBHOOK_VERIFY_TOKEN` di `.env`).
+   - Subscribe ke event field: **`messages`**.
+5. Selesai! Pesan outreach akan dikirim secara instan lewat server resmi Meta tanpa membuka browser sama sekali.
 
-### 3. Otomatisasi Bangun Website & Deploy Demo ke Vercel:
-```powershell
-python auto_outreach.py --auto-modernize
-```
-
-### 4. Memproses 1 Website Tertentu Secara Cepat:
-```powershell
-python run_pipeline.py --url https://bisnisklien.com --output clients/bisnisklien
-```
-
-### 5. Setup & Pengiriman Pesan Penawaran (Outreach):
-```powershell
-# Setup WhatsApp Web (Hanya perlu scan QR sekali saja):
+### 4. Running the Pipeline
+```bash
+# 1. Setup dedicated WhatsApp account (one-time QR scan):
 python auto_outreach.py --setup-wa
 
-# Kirim pesan penawaran otomatis via WhatsApp:
-python auto_outreach.py --send-wa
+# 2. Search & harvest SME leads from Google Maps (10 to 1,000 reviews & mobile HP):
+python auto_outreach.py --maps "toko bahan bangunan balikpapan" --limit 3
 
-# Kirim pesan penawaran via Email:
-python auto_outreach.py --send-email
+# 3. Batch modernize leads in queue (generate websites, Vercel deploys, PDF proposals, ZIP packages):
+python auto_outreach.py --auto-modernize
+
+# 4. Launch dynamic review dashboard server (Laptop: http://localhost:8080 & HP LAN sync):
+python auto_outreach.py --dashboard
 ```
 
 ---
 
-## 🤖 6. Panduan Menyempurnakan Pipeline (AI Refinement)
+## 24/7 Cloud Deployment (Docker & VPS)
 
-Untuk panduan menyempurnakan kode, menambahkan fitur baru dengan AI Agent, atau troubleshooting mendalam, silakan rujuk dokumen:
-👉 **[PROMPT_REFINE_PIPELINE.md](PROMPT_REFINE_PIPELINE.md)**
+To run continuously and autonomously on a Linux VPS (Ubuntu 22.04+):
+
+```bash
+# Build and run containers
+docker compose up -d updater-dashboard
+
+# Check logs
+docker compose logs -f updater-dashboard
+```
+*Note: The official Playwright Docker base image (`mcr.microsoft.com/playwright/python:v1.40.0-jammy`) packages all required Linux GUI & audio libraries out of the box, eliminating headless browser dependency issues.*
 
 ---
 
-## 🔒 7. Keamanan & Persistensi Data (State Persistence)
+## 🚀 ROADMAP & NEXT PLANS (Prioritas Utama)
 
-- **Sesi WhatsApp**: Disimpan dalam folder `clients/.whatsapp_session/` menggunakan profil Microsoft Edge terisolasi. Setelah login sekali, Anda tidak perlu scan QR lagi selamanya.
-- **Kredensial Sensitif**: Seluruh API Key (Vercel, Midtrans, Email SMTP) berada di file lokal `.env` dan tidak pernah masuk ke git commit (`.gitignore`).
-- **Pencegahan Spam**: Log `clients/outreach_history.json` mencatat setiap nomor kontak dan domain untuk mencegah pengiriman pesan ganda.
+Berdasarkan evaluasi operasional lapangan dan umpan balik sistem, berikut adalah ringkasan peningkatan strategis yang telah dan sedang diimplementasikan:
+
+### 1. Kualitas Output & Error Prevention (Human-in-the-Loop Workflow)
+
+> **Catatan Operasional:** Desain visual website dibangun berstandar tinggi menggunakan intelligence **`ui-ux-pro-max`**. Sistem beroperasi dengan model **Human-in-the-Loop**:
+> 1. AI & Scanner otomatis melakukan pencarian leads, ekstraksi kontak, pembuatan website Swiss Minimalist, dan proposal PDF.
+> 2. Hasilnya masuk ke **Review Dashboard (`auto_outreach.py --dashboard`)**.
+> 3. Pengguna melakukan review visual cepat, lalu klik **✓ Centang** untuk mengirim via Playwright/Meta API, atau klik **📱 Buka Chat di HP / Web** untuk mengirim langsung lewat aplikasi WhatsApp di smartphone.
+
+**Checklist Integrasi & Audit Error:**
+- [x] **UI/UX Pro Max Intelligence:** Terintegrasi di `gemini_synthesizer.py` (blacklist klise, 6 item spesifik, persona ulasan realistis) dan `niche_themes.json` (palet warna psikologi industri).
+- [x] **Brand Cleaning & Sanitization Engine:** Membersihkan teks kurung/cabang `(Part of ...)` / `(Cabang ...)` / `(Pusat)` dan mengubah huruf kapital teriak (ALL CAPS) menjadi Title Case elegan dengan perlindungan akronim hukum (`PT`, `CV`, `UD`, `TB`, `PD`, dll.) via `clean_business_brand_name()`.
+- [x] **Phantom Lead Shield & Exclusion Filter:** Menghentikan phantom lead seperti *"Share on WhatsApp"* dengan memfilter link WhatsApp (`wa.me`, `whatsapp.com`) dan bio link (`linktr.ee`, `bit.ly`, dll.) dari kolom website Google Maps, mengekstrak nomor HP langsung, dan menetapkannya secara akurat ke **Jalur A (Web Baru)**.
+- [x] **Copywriting Psikologi Penjualan (High-Status Minimalist & PDF-First):** Menghapus false flattery murahan, menerapkan peer-to-peer cold calling psychology, dan menempatkan link demo serta QR code smartphone eksklusif di **Halaman 3 PDF Proposal**, bukan di teks chat mentah (mencegah spam flag dan meningkatkan perceived value).
+- [x] **Deteksi Cepat Nomor Non-WhatsApp:** Otomatis mendeteksi popup dialog nomor tidak terdaftar di WhatsApp dalam 1 detik, menutup popup secara aman, dan menandai status sebagai `invalid_phone` (`Bukan Nomor WA ✕`).
+- [x] **Dynamic Review Dashboard & Anti-Caching:** Dashboard memuat data segar langsung dari SQLite (`pipeline.db`) pada setiap request tanpa caching statis, dengan integrasi token auth yang aman pada aksi `Discard` dan `Approve`.
+- [x] **Kalimantan SME Harvester:** Modul pencarian regional khusus UKM berkembang di Kalimantan (Balikpapan, Samarinda, Pontianak, Banjarmasin, Palangka Raya) dengan filter ulasan sweet spot 10–1.000 review.
+- [x] **Perbaikan Bug `site_generator.py` & Header `turnkey.html`:** Menghilangkan potensi `NameError` dan menutup blok komentar ASCII.
 
 ---
 
-## 👨‍💻 Tim Pengembang
-*Website Updater Studio — High-Performance Web Engineering, Mobile-First Modernization & Local SEO Dominance.*
+### 2. Realita Anti-Ban WhatsApp: Apakah Benar-Benar Bisa Anti-Ban?
+
+> **Pertanyaan Kritis:** *Apakah WhatsApp benar-benar bisa 100% Anti-Ban jika menggunakan script otomasi?*
+
+**Fakta Nyata Keamanan WhatsApp:**
+1. **Mitos "Script Anti-Ban":** Tidak ada otomasi browser (Playwright/Selenium) yang 100% anti-ban. WhatsApp (Meta) memiliki AI pendeteksi spam yang menganalisis bukan hanya browser, tetapi **pola interaksi manusia**.
+2. **Pemicu Utama Banned Bukan Kode, Tapi Manusia:**
+   Sekitar **80-90% banned terjadi karena penerima menekan tombol "Laporkan & Blokir" (Report Spam)**. Jika kita mengirim link proposal dan dokumen PDF panjang secara tiba-tiba ke nomor yang belum menyimpan kontak kita, penerima akan menganggapnya spam mencurigakan.
+
+**Strategi Nyata yang Terbukti Bertahan:**
+- [ ] **Two-Step Permission Outreach (Sangat Krusial):**
+  - **Pesan 1:** Hanya sapaan ramah dan meminta izin (tanpa link / tanpa lampiran):
+    > *"Selamat siang Pak/Bu [Nama Usaha]. Salam kenal, saya dari tim Web Studio. Kami sedang meninjau kehadiran digital bisnis di [Kota], apakah ini nomor resmi manajemen yang bisa kami hubungi?"*
+  - **Pesan 2:** Link demo Vercel dan PDF **hanya dikirim jika mereka membalas**. Begitu ada balasan dua arah, WhatsApp menganggapnya percakapan valid antar-manusia (resiko banned turun drastis).
+- [ ] **Batas Volume Harian:** Maksimal 15–20 kontak baru per hari per nomor WhatsApp.
+- [ ] **Human Keystroke Simulation:** Mengetik dengan delay acak 40–110ms per karakter dan jeda 60–180 detik antar nomor.
+
+---
+
+### 3. Evaluasi & Riset Alternatif Playwright (Arsitektur Lebih Ringan & Tahan Banting)
+
+Playwright saat ini digunakan untuk 3 fungsi berbeda. Berikut hasil riset dan opsi alternatif yang jauh lebih efisien:
+
+| Fungsi | Playwright Saat Ini | Alternatif Terbaik | Keunggulan Alternatif |
+| :--- | :--- | :--- | :--- |
+| **WhatsApp Outreach** | Playwright Chromium (Berat, rawan ban) | **1. Official WhatsApp Cloud API**<br>**2. Baileys / Evolution API** | **Resiko ban 0% (Official API)**, tanpa browser, konsumsi RAM hemat (~30MB vs 500MB), webhook instan untuk respon cepat. |
+| **Generate Proposal PDF** | Playwright Headless PDF | **1. Direct Chrome CLI (`--print-to-pdf`)**<br>**2. WeasyPrint**<br>**3. Gotenberg Container** | Sudah ada fallback direct CLI bawaan. WeasyPrint atau Gotenberg tidak membutuhkan runtime Python Playwright sama sekali. |
+| **Harvest Leads Google Maps** | Playwright Browser Scrape | **1. Google Places API (New)**<br>**2. Scrapling / curl_cffi** | Eksekusi JSON instan dalam hitungan milidetik, tanpa overhead memuat elemen UI Google Maps. |
+
+#### Rekomendasi Roadmap WhatsApp:
+1. **Opsi Teraman (100% Anti-Ban): Meta Official WhatsApp Cloud API**
+   - Menggunakan API resmi Meta Graph API (`POST https://graph.facebook.com/...`).
+   - Gratis 1.000 percakapan pertama per bulan.
+   - Tidak memerlukan server browser sama sekali.
+2. **Opsi Self-Hosted (Tanpa Browser): Evolution API (Baileys Engine)**
+   - Microservice Docker berbasis Node.js yang berkomunikasi langsung via protokol WebSocket multi-device WhatsApp (bukan otomasi browser UI).
+   - Menyediakan REST API lokal (`http://localhost:8080/message/sendText`) yang dapat dipanggil langsung oleh Python.
+
+---
+
+## Menjalankan Pengujian (Testing)
+
+Proyek ini dilengkapi dengan rangkaian automated unit & integration test untuk memastikan stabilitas:
+
+```bash
+# Menjalankan seluruh test suite
+python -m pytest
+
+# Menjalankan test modul tertentu
+python -m pytest tests/test_pdf.py
+python -m pytest tests/test_templates.py
+python -m pytest tests/test_database.py
+```
+
+---
+
+## Lisensi & Hak Milik
+Hak Cipta © 2026 Website Updater Studio. Seluruh hak cipta dilindungi undang-undang.

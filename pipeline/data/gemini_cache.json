@@ -1,0 +1,1080 @@
+{
+  "693d45f2d3443621": {
+    "business_name": "Apotek K",
+    "city": "Surabaya",
+    "trade_name": "Apotek & Layanan Alat Kesehatan Berizin Resmi SIA",
+    "headline": "Tebus Resep Dokter dan Kebutuhan Medis Akurat di Surabaya",
+    "tagline": "Sedia obat resep asli, vitamin Blackmores, alat kesehatan Omron, dan layanan tebus resep via WhatsApp dengan verifikasi Apoteker.",
+    "about_p1": "Apotek K hadir sebagai mitra kesehatan tepercaya di Surabaya, melayani penebusan resep dokter secara presisi dan penyediaan obat-obatan esensial berizin BPOM. Didukung oleh tim apoteker berlisensi STRA (Surat Tanda Registrasi Apoteker), kami memastikan setiap dosis dan aturan pakai obat diverifikasi secara ketat sebelum sampai ke tangan Anda.",
+    "about_p2": "Kami menjamin keaslian 100% untuk seluruh produk farmasi, mulai dari obat terapi kronis, suplemen kesehatan import, hingga alat ukur medis digital. Dengan sistem penyimpanan suhu terkontrol (cold chain) untuk insulin dan vaksin, kualitas efikasi obat tetap terjaga sempurna hingga ke rumah Anda di seluruh wilayah Surabaya.",
+    "services": [
+      {
+        "title": "Penebusan Resep Obat Dokter",
+        "desc": "Layanan tebus resep digital dan fisik dengan verifikasi langsung oleh Apoteker penanggung jawab.",
+        "icon": "first-aid",
+        "items": [
+          "Verifikasi dosis & interaksi obat oleh Apoteker STRA",
+          "Penyediaan obat paten & generik berstandar BPOM",
+          "Kemasan kedap udara dengan label aturan pakai jelas"
+        ]
+      },
+      {
+        "title": "Suplemen & Vitamin Imunitas",
+        "desc": "Suplemen kesehatan harian untuk menjaga daya tahan tubuh dari merek global terpercaya.",
+        "icon": "pill",
+        "items": [
+          "Blackmores Multivitamins & Minerals isi 120 tablet",
+          "CDR (Calcium D Redoxon) rasa jeruk tube isi 15",
+          "Nutrimax Vitamin C 30s Max untuk lambung sensitif"
+        ]
+      },
+      {
+        "title": "Alat Kesehatan & Diagnostik Mandiri",
+        "desc": "Peralatan pemantauan kesehatan berkala bersertifikat AKL Kemenkes RI untuk penggunaan di rumah.",
+        "icon": "stethoscope",
+        "items": [
+          "Tensimeter Digital Omron HEM-7120 akurasi tinggi",
+          "Alat Cek Gula Darah, Kolesterol, Asam Urat EasyTouch GCU",
+          "Termometer Infrared Microlife non-kontak"
+        ]
+      },
+      {
+        "title": "Perawatan Luka & Pertolongan Pertama",
+        "desc": "Kebutuhan medis darurat, antiseptik, perban steril, dan cairan pembersih luka.",
+        "icon": "package",
+        "items": [
+          "Cairan antiseptik Betadine Solution 30ml & 60ml",
+          "Kasa steril Hydrogel & perban elastis Hansaplast",
+          "Cairan infus NaCl 0.9% Otsuka untuk irigasi luka"
+        ]
+      },
+      {
+        "title": "Obat Terapi Penyakit Kronis",
+        "desc": "Penyediaan obat rutin untuk penderita hipertensi, diabetes, dan kolesterol dengan kontrol ketat.",
+        "icon": "pill",
+        "items": [
+          "Amlodipine 5mg / 10mg generik berlogo (OGB)",
+          "Metformin 500mg / 850mg untuk terapi diabetes",
+          "Atorvastatin 10mg / 20mg penurun kolesterol darah"
+        ]
+      },
+      {
+        "title": "Layanan Cold-Chain & Insulin",
+        "desc": "Penyimpanan khusus suhu 2-8°C untuk menjaga efektivitas hormon insulin dan sediaan sensitif.",
+        "icon": "package",
+        "items": [
+          "Insulin Lantus / Novorapid Flexpen original",
+          "Penyimpanan khusus Chiller Medis berkalibrasi",
+          "Pengiriman aman menggunakan cool pack khusus"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps (Ulasan Asli)"
+      },
+      {
+        "val": "100% Asli",
+        "lbl": "Jaminan Obat Lolos BPOM"
+      },
+      {
+        "val": "2 Orang",
+        "lbl": "Apoteker Standby Ber-STRA"
+      },
+      {
+        "val": "< 45 Menit",
+        "lbl": "Sameday Delivery Surabaya"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "dr. Hendrawan",
+        "badge": "Dokter Praktik Mandiri - Surabaya Timur",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu merujuk pasien menebus resep di Apotek K. Apotekernya sangat teliti, selalu melakukan konfirmasi ulang jika ada dosis resep yang membutuhkan penyesuaian. Ketersediaan obat jantung dan diabetesnya sangat konsisten."
+      },
+      {
+        "name": "Siti Aminah",
+        "badge": "Pasien Rutin Terapi Diabetes",
+        "stars": "★★★★★",
+        "text": "Setiap bulan saya menebus insulin Novorapid di sini. Pengirimannya selalu menyertakan ice pack sehingga suhunya tetap dingin terjaga sampai rumah saya di Rungkut. Harganya transparan dan pelayanannya ramah."
+      },
+      {
+        "name": "Budi Santoso",
+        "badge": "Koordinator K3 PT Surabaya Sejahtera",
+        "stars": "★★★★★",
+        "text": "Kami memesan isi ulang kotak P3K untuk 3 area pabrik kami. Semua item mulai dari kasa steril, povidone iodine, hingga obat pereda nyeri dikirim lengkap dengan tanggal kedaluwarsa yang masih sangat panjang (minimal 2 tahun ke depan)."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Verifikasi Apoteker Resmi",
+        "desc": "Setiap resep dokter ditelaah langsung oleh Apoteker berlisensi STRA untuk mencegah risiko interaksi obat yang berbahaya."
+      },
+      {
+        "title": "Penyimpanan Suhu Terstandar",
+        "desc": "Obat-obatan sensitif seperti insulin disimpan dalam chiller medis khusus bersuhu 2-8 derajat Celcius dengan pemantauan digital 24 jam."
+      },
+      {
+        "title": "Sistem Batch & Expired Date Ketat",
+        "desc": "Kami menerapkan sistem FEFO (First Expired First Out) yang ketat, menjamin Anda tidak akan pernah menerima obat yang mendekati masa kedaluwarsa."
+      },
+      {
+        "title": "Kemudahan Tebus Resep via WhatsApp",
+        "desc": "Cukup foto resep dokter Anda, kirim ke WhatsApp kami, tim apoteker akan menghitung estimasi biaya dan menyiapkan obat untuk langsung dikirim."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bagaimana cara menebus resep dokter secara online melalui WhatsApp?",
+        "a": "Cukup foto lembar resep dokter Anda dengan jelas, lalu kirimkan melalui chat WhatsApp kami. Apoteker kami akan memverifikasi ketersediaan obat, menghitung total biaya, dan menjelaskan aturan pakai sebelum obat dikirim ke alamat Anda."
+      },
+      {
+        "q": "Apakah semua obat yang dijual di Apotek K dijamin keasliannya dan terdaftar di BPOM?",
+        "a": "Ya, 100% produk obat, suplemen, dan alat kesehatan di Apotek K bersumber langsung dari Distributor Resmi (PBF) berizin. Seluruh produk memiliki nomor registrasi BPOM atau AKL Kemenkes RI yang dapat dilacak."
+      },
+      {
+        "q": "Apakah Apotek K melayani pengiriman obat dingin seperti Insulin ke luar wilayah Surabaya?",
+        "a": "Untuk menjaga efektivitas obat dingin (suhu 2-8°C), saat ini kami hanya melayani pengiriman area Surabaya dan sekitarnya menggunakan kurir instan yang dilengkapi dengan kemasan khusus (cool bag & ice pack)."
+      }
+    ],
+    "service_options": [
+      "Penebusan Resep Obat Dokter",
+      "Suplemen & Vitamin Imunitas",
+      "Alat Kesehatan & Diagnostik Mandiri",
+      "Perawatan Luka & Pertolongan Pertama",
+      "Obat Terapi Penyakit Kronis",
+      "Layanan Cold-Chain & Insulin"
+    ],
+    "rating_display": "Terverifikasi",
+    "reviews_display": "Ulasan Asli",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "165facb12bdda0ed": {
+    "business_name": "Apotek K",
+    "city": "Surabaya",
+    "trade_name": "Apotek & Layanan Alat Kesehatan Berizin Resmi SIA",
+    "headline": "Tebus Resep Dokter dan Kebutuhan Medis Akurat di Surabaya",
+    "tagline": "Sedia obat resep asli, vitamin Blackmores, alat kesehatan Omron, dan layanan tebus resep via WhatsApp dengan verifikasi Apoteker.",
+    "about_p1": "Apotek K hadir sebagai mitra kesehatan tepercaya di Surabaya, melayani penebusan resep dokter secara presisi dan penyediaan obat-obatan esensial berizin BPOM. Didukung oleh tim apoteker berlisensi STRA (Surat Tanda Registrasi Apoteker), kami memastikan setiap dosis dan aturan pakai obat diverifikasi secara ketat sebelum sampai ke tangan Anda.",
+    "about_p2": "Kami menjamin keaslian 100% untuk seluruh produk farmasi, mulai dari obat terapi kronis, suplemen kesehatan import, hingga alat ukur medis digital. Dengan sistem penyimpanan suhu terkontrol (cold chain) untuk insulin dan vaksin, kualitas efikasi obat tetap terjaga sempurna hingga ke rumah Anda di seluruh wilayah Surabaya.",
+    "services": [
+      {
+        "title": "Penebusan Resep Obat Dokter",
+        "desc": "Layanan tebus resep digital dan fisik dengan verifikasi langsung oleh Apoteker penanggung jawab.",
+        "icon": "first-aid",
+        "items": [
+          "Verifikasi dosis & interaksi obat oleh Apoteker STRA",
+          "Penyediaan obat paten & generik berstandar BPOM",
+          "Kemasan kedap udara dengan label aturan pakai jelas"
+        ]
+      },
+      {
+        "title": "Suplemen & Vitamin Imunitas",
+        "desc": "Suplemen kesehatan harian untuk menjaga daya tahan tubuh dari merek global terpercaya.",
+        "icon": "pill",
+        "items": [
+          "Blackmores Multivitamins & Minerals isi 120 tablet",
+          "CDR (Calcium D Redoxon) rasa jeruk tube isi 15",
+          "Nutrimax Vitamin C 30s Max untuk lambung sensitif"
+        ]
+      },
+      {
+        "title": "Alat Kesehatan & Diagnostik Mandiri",
+        "desc": "Peralatan pemantauan kesehatan berkala bersertifikat AKL Kemenkes RI untuk penggunaan di rumah.",
+        "icon": "stethoscope",
+        "items": [
+          "Tensimeter Digital Omron HEM-7120 akurasi tinggi",
+          "Alat Cek Gula Darah, Kolesterol, Asam Urat EasyTouch GCU",
+          "Termometer Infrared Microlife non-kontak"
+        ]
+      },
+      {
+        "title": "Perawatan Luka & Pertolongan Pertama",
+        "desc": "Kebutuhan medis darurat, antiseptik, perban steril, dan cairan pembersih luka.",
+        "icon": "package",
+        "items": [
+          "Cairan antiseptik Betadine Solution 30ml & 60ml",
+          "Kasa steril Hydrogel & perban elastis Hansaplast",
+          "Cairan infus NaCl 0.9% Otsuka untuk irigasi luka"
+        ]
+      },
+      {
+        "title": "Obat Terapi Penyakit Kronis",
+        "desc": "Penyediaan obat rutin untuk penderita hipertensi, diabetes, dan kolesterol dengan kontrol ketat.",
+        "icon": "pill",
+        "items": [
+          "Amlodipine 5mg / 10mg generik berlogo (OGB)",
+          "Metformin 500mg / 850mg untuk terapi diabetes",
+          "Atorvastatin 10mg / 20mg penurun kolesterol darah"
+        ]
+      },
+      {
+        "title": "Layanan Cold-Chain & Insulin",
+        "desc": "Penyimpanan khusus suhu 2-8°C untuk menjaga efektivitas hormon insulin dan sediaan sensitif.",
+        "icon": "package",
+        "items": [
+          "Insulin Lantus / Novorapid Flexpen original",
+          "Penyimpanan khusus Chiller Medis berkalibrasi",
+          "Pengiriman aman menggunakan cool pack khusus"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps (Ulasan Asli)"
+      },
+      {
+        "val": "100% Asli",
+        "lbl": "Jaminan Obat Lolos BPOM"
+      },
+      {
+        "val": "2 Orang",
+        "lbl": "Apoteker Standby Ber-STRA"
+      },
+      {
+        "val": "< 45 Menit",
+        "lbl": "Sameday Delivery Surabaya"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "dr. Hendrawan",
+        "badge": "Dokter Praktik Mandiri - Surabaya Timur",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu merujuk pasien menebus resep di Apotek K. Apotekernya sangat teliti, selalu melakukan konfirmasi ulang jika ada dosis resep yang membutuhkan penyesuaian. Ketersediaan obat jantung dan diabetesnya sangat konsisten."
+      },
+      {
+        "name": "Siti Aminah",
+        "badge": "Pasien Rutin Terapi Diabetes",
+        "stars": "★★★★★",
+        "text": "Setiap bulan saya menebus insulin Novorapid di sini. Pengirimannya selalu menyertakan ice pack sehingga suhunya tetap dingin terjaga sampai rumah saya di Rungkut. Harganya transparan dan pelayanannya ramah."
+      },
+      {
+        "name": "Budi Santoso",
+        "badge": "Koordinator K3 PT Surabaya Sejahtera",
+        "stars": "★★★★★",
+        "text": "Kami memesan isi ulang kotak P3K untuk 3 area pabrik kami. Semua item mulai dari kasa steril, povidone iodine, hingga obat pereda nyeri dikirim lengkap dengan tanggal kedaluwarsa yang masih sangat panjang (minimal 2 tahun ke depan)."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Verifikasi Apoteker Resmi",
+        "desc": "Setiap resep dokter ditelaah langsung oleh Apoteker berlisensi STRA untuk mencegah risiko interaksi obat yang berbahaya."
+      },
+      {
+        "title": "Penyimpanan Suhu Terstandar",
+        "desc": "Obat-obatan sensitif seperti insulin disimpan dalam chiller medis khusus bersuhu 2-8 derajat Celcius dengan pemantauan digital 24 jam."
+      },
+      {
+        "title": "Sistem Batch & Expired Date Ketat",
+        "desc": "Kami menerapkan sistem FEFO (First Expired First Out) yang ketat, menjamin Anda tidak akan pernah menerima obat yang mendekati masa kedaluwarsa."
+      },
+      {
+        "title": "Kemudahan Tebus Resep via WhatsApp",
+        "desc": "Cukup foto resep dokter Anda, kirim ke WhatsApp kami, tim apoteker akan menghitung estimasi biaya dan menyiapkan obat untuk langsung dikirim."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bagaimana cara menebus resep dokter secara online melalui WhatsApp?",
+        "a": "Cukup foto lembar resep dokter Anda dengan jelas, lalu kirimkan melalui chat WhatsApp kami. Apoteker kami akan memverifikasi ketersediaan obat, menghitung total biaya, dan menjelaskan aturan pakai sebelum obat dikirim ke alamat Anda."
+      },
+      {
+        "q": "Apakah semua obat yang dijual di Apotek K dijamin keasliannya dan terdaftar di BPOM?",
+        "a": "Ya, 100% produk obat, suplemen, dan alat kesehatan di Apotek K bersumber langsung dari Distributor Resmi (PBF) berizin. Seluruh produk memiliki nomor registrasi BPOM atau AKL Kemenkes RI yang dapat dilacak."
+      },
+      {
+        "q": "Apakah Apotek K melayani pengiriman obat dingin seperti Insulin ke luar wilayah Surabaya?",
+        "a": "Untuk menjaga efektivitas obat dingin (suhu 2-8°C), saat ini kami hanya melayani pengiriman area Surabaya dan sekitarnya menggunakan kurir instan yang dilengkapi dengan kemasan khusus (cool bag & ice pack)."
+      }
+    ],
+    "service_options": [
+      "Penebusan Resep Obat Dokter",
+      "Suplemen & Vitamin Imunitas",
+      "Alat Kesehatan & Diagnostik Mandiri",
+      "Perawatan Luka & Pertolongan Pertama",
+      "Obat Terapi Penyakit Kronis",
+      "Layanan Cold-Chain & Insulin"
+    ],
+    "rating_display": "Terverifikasi",
+    "reviews_display": "Ulasan Asli",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "6e9f5a92cd70e3ec": {
+    "business_name": "Toko Test Packager",
+    "city": "Lokal & Sekitarnya",
+    "trade_name": "Layanan Instalasi Listrik & Perbaikan Pipa Profesional",
+    "headline": "Teknisi Listrik dan Pipa Panggilan 24 Jam Area Jabodetabek",
+    "tagline": "Solusi cepat perbaikan pipa bocor Rucika dan instalasi panel listrik Schneider bergaransi resmi tanpa biaya siluman.",
+    "about_p1": "Toko Test Packager menghadirkan tim teknisi bersertifikat BNSP untuk mengatasi segala permasalahan kelistrikan dan pemipaan di rumah, ruko, maupun gedung perkantoran Anda di wilayah Jabodetabek. Kami berkomitmen memberikan penanganan darurat yang cepat, aman, dan sesuai dengan standar PUIL (Persyaratan Umum Instalasi Listrik).",
+    "about_p2": "Kami menjamin transparansi biaya dengan sistem estimasi tertulis sebelum pengerjaan dimulai. Setiap material pengganti yang kami gunakan, mulai dari kabel Supreme, pipa PVC Rucika JIS, hingga MCB Schneider, dijamin 100% original dan dilengkapi dengan garansi hasil kerja hingga 30 hari.",
+    "services": [
+      {
+        "title": "Deteksi & Perbaikan Pipa Bocor",
+        "desc": "Metode deteksi kebocoran pipa air bersih dan air kotor tanpa membongkar seluruh dinding menggunakan perangkat sensor akustik.",
+        "icon": "pipe-plumbing",
+        "items": [
+          "Deteksi titik bocor presisi dengan alat ultrasonic",
+          "Sistem penyambungan pipa PVC Rucika AW",
+          "Perbaikan pipa tembaga dan pipa PPR air panas"
+        ]
+      },
+      {
+        "title": "Instalasi & Peremajaan Kabel Rumah",
+        "desc": "Pemasangan kabel listrik baru atau penggantian kabel usang standar SNI untuk mencegah korsleting dan bahaya kebakaran.",
+        "icon": "wrench",
+        "items": [
+          "Pemasangan kabel Supreme NYM 3x2.5mm",
+          "Penggantian instalasi listrik jalur utama",
+          "Pemasangan grounding sistem pengaman petir"
+        ]
+      },
+      {
+        "title": "Perbaikan & Perakitan Panel Listrik",
+        "desc": "Penyusunan ulang jalur MCB, pembagian beban daya, dan perakitan panel distribusi listrik 1-phase maupun 3-phase.",
+        "icon": "building",
+        "items": [
+          "Instalasi MCB Box Schneider original",
+          "Pembagian beban daya listrik seimbang",
+          "Pemasangan Earth Leakage Circuit Breaker (ELCB)"
+        ]
+      },
+      {
+        "title": "Pemasangan & Servis Pompa Air",
+        "desc": "Instalasi baru, penggantian otomatis, dan gulung dinamo pompa air sumur dangkal maupun jet pump berbagai merek.",
+        "icon": "package",
+        "items": [
+          "Instalasi pressure switch dan otomatis radar",
+          "Pemasangan pompa booster Shimizu dan Wasser",
+          "Pengeboran ulang sumur bor tersumbat"
+        ]
+      },
+      {
+        "title": "Pemasangan Sanitasi & Fitting Plumbing",
+        "desc": "Pemasangan unit toilet, wastafel, bathtub, kran air, dan water heater dengan jaminan bebas bocor pada sambungan.",
+        "icon": "tiles-floor",
+        "items": [
+          "Pemasangan closet duduk TOTO dan kran air",
+          "Instalasi water heater Ariston gas/listrik",
+          "Pemasangan floor drain anti-bau dan anti-sumbat"
+        ]
+      },
+      {
+        "title": "Audit Kelayakan Instalasi Listrik",
+        "desc": "Pemeriksaan menyeluruh terhadap beban daya, kondisi kabel, dan sistem proteksi listrik untuk keamanan bangunan komersial.",
+        "icon": "roof-home",
+        "items": [
+          "Pengukuran tahanan isolasi kabel dengan Megger",
+          "Pengecekan suhu panel menggunakan thermal camera",
+          "Penerbitan laporan rekomendasi kelayakan PUIL"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "Terverifikasi",
+        "lbl": "Google Maps (Ulasan Asli)"
+      },
+      {
+        "val": "100% SNI",
+        "lbl": "Kabel & Material Original"
+      },
+      {
+        "val": "30 Hari",
+        "lbl": "Garansi Hasil Pekerjaan"
+      },
+      {
+        "val": "24/7 Siaga",
+        "lbl": "Layanan Darurat Panggilan"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Budi Santoso",
+        "badge": "Ketua RT / Pengelola Cluster Perumahan",
+        "stars": "★★★★★",
+        "text": "Sangat puas dengan penanganan korsleting listrik semalam. Teknisi datang 30 menit setelah dihubungi via WA. Kabel yang diganti beneran merk Supreme 2.5mm dan MCB diganti Schneider baru. Rumah aman kembali."
+      },
+      {
+        "name": "Rina Wijaya",
+        "badge": "Pemilik Usaha Laundry Kiloan",
+        "stars": "★★★★★",
+        "text": "Pompa booster untuk mesin cuci laundry saya mati total. Teknisi dari Toko Test Packager langsung mendeteksi otomatisnya yang rusak dan langsung diganti hari itu juga dengan sparepart original. Kerjaannya rapi!"
+      },
+      {
+        "name": "Hendra Kurniawan",
+        "badge": "Kontraktor Renovasi Ruko",
+        "stars": "★★★★★",
+        "text": "Sering langganan untuk sub-pekerjaan plumbing ruko. Sambungan pipa Rucika rapi, tidak ada rembesan sama sekali di dak beton. Invoice transparan, rincian materialnya jelas dan tidak ada biaya tambahan siluman."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Teknisi Bersertifikat BNSP",
+        "desc": "Seluruh pekerjaan kelistrikan dan plumbing ditangani langsung oleh teknisi lokal profesional yang memiliki sertifikasi kompetensi resmi."
+      },
+      {
+        "title": "Transparansi Rencana Anggaran Biaya",
+        "desc": "Kami memberikan rincian harga material dan jasa secara tertulis sebelum pekerjaan dimulai. Tidak ada biaya tersembunyi di akhir pengerjaan."
+      },
+      {
+        "title": "Garansi Pekerjaan Up To 30 Hari",
+        "desc": "Kami memberikan jaminan garansi tertulis selama 30 hari untuk memastikan hasil perbaikan pipa dan instalasi listrik Anda berfungsi sempurna."
+      },
+      {
+        "title": "Material Standar SNI & JIS",
+        "desc": "Hanya menggunakan material berkualitas tinggi seperti pipa Rucika AW, kabel Supreme, dan MCB Schneider untuk keamanan jangka panjang."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Bagaimana sistem penentuan biaya perbaikan atau instalasi?",
+        "a": "Biaya ditentukan berdasarkan hasil survei lokasi atau foto/video kerusakan yang dikirim melalui WhatsApp. Kami akan mengirimkan penawaran harga tertulis sebelum teknisi mulai bekerja."
+      },
+      {
+        "q": "Apakah ada garansi jika pipa bocor kembali atau listrik korsleting lagi?",
+        "a": "Ya, kami memberikan garansi perbaikan gratis hingga 30 hari sejak tanggal pengerjaan selesai untuk masalah yang sama pada titik yang kami perbaiki."
+      },
+      {
+        "q": "Berapa lama waktu tunggu kedatangan teknisi setelah kami memesan?",
+        "a": "Untuk area layanan Jabodetabek, teknisi darurat kami siap meluncur ke lokasi Anda dalam waktu 30 hingga 60 menit setelah konfirmasi jadwal melalui WhatsApp."
+      }
+    ],
+    "service_options": [
+      "Deteksi & Perbaikan Pipa Bocor",
+      "Instalasi & Peremajaan Kabel Rumah",
+      "Perbaikan & Perakitan Panel Listrik",
+      "Pemasangan & Servis Pompa Air",
+      "Pemasangan Sanitasi & Fitting Plumbing",
+      "Audit Kelayakan Instalasi Listrik"
+    ],
+    "rating_display": "Terverifikasi",
+    "reviews_display": "Ulasan Asli",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "d52bc2d74a490222": {
+    "business_name": "Toko Bangunan Sentosa",
+    "city": "Lokal & Sekitarnya",
+    "trade_name": "Pusat Bahan Bangunan & Material Struktur Proyek",
+    "headline": "Distributor Besi Beton SNI dan Semen Gresik Terlengkap di Merdeka",
+    "tagline": "Menyediakan material struktur, sistem perpipaan Rucika, dan cat Dulux dengan pengiriman armada truk mandiri langsung ke lokasi proyek Anda.",
+    "about_p1": "Toko Bangunan Sentosa yang berlokasi di Jl. Merdeka No. 10 adalah mitra tepercaya para kontraktor dan pemilik rumah di wilayah lokal dan sekitarnya. Kami mengkhususkan diri dalam penyediaan material struktural fondasi, sistem perpipaan modern, hingga finishing dinding berkualitas tinggi untuk memastikan setiap tahap pembangunan berjalan tanpa hambatan.",
+    "about_p2": "Dengan sistem manajemen stok real-time, kami menjamin ketersediaan semen, besi beton ulir, baja ringan, hingga cat oplosan komputer (tinting). Seluruh armada pengiriman kami siap mengantar pesanan Anda tepat waktu guna menjaga efisiensi jadwal kerja proyek Anda.",
+    "services": [
+      {
+        "title": "Semen & Material Fondasi",
+        "desc": "Semen portland kualitas tinggi dan agregat kasar/halus standar konstruksi sipil.",
+        "icon": "building",
+        "items": [
+          "Semen Gresik PPC & OPC Kemasan 40kg / 50kg",
+          "Pasir Pasang Lumajang Murni tanpa Campuran Lumpur",
+          "Batu Belah Gunung untuk Fondasi Rumah Tinggal"
+        ]
+      },
+      {
+        "title": "Besi Beton & Baja Ringan SNI",
+        "desc": "Besi beton ulir/polos bersertifikat SNI resmi serta rangka atap baja ringan antikarat.",
+        "icon": "steel-beam",
+        "items": [
+          "Besi Beton Ulir Dia 10mm, 12mm, 16mm Toleransi 0.2mm",
+          "Baja Ringan Truss C75 Tebal 0.75mm Standar SNI",
+          "Reng Baja Ringan G300 Tebal 0.45mm"
+        ]
+      },
+      {
+        "title": "Sistem Perpipaan & Fitting",
+        "desc": "Pipa PVC dan PPR untuk instalasi air bersih bertekanan maupun pembuangan air kotor.",
+        "icon": "pipe-plumbing",
+        "items": [
+          "Pipa PVC Rucika Standard Kelas AW & D (0.5 - 4 inch)",
+          "Fitting PVC Rucika (Elbow, Tee, Socket) Tebal",
+          "Pipa PPR Westpex untuk Instalasi Air Panas"
+        ]
+      },
+      {
+        "title": "Cat & Pelapis Kedap Air",
+        "desc": "Cat dinding interior/eksterior sistem tinting komputer dan pelapis antibocor.",
+        "icon": "paint-bucket",
+        "items": [
+          "Cat Interior Dulux Catylac & Dulux Pentalite Tinting",
+          "Cat Eksterior Nippon Paint Weatherbond",
+          "Aquaproof Pelapis Kedap Air Kemasan 4kg & 20kg"
+        ]
+      },
+      {
+        "title": "Atap & Penutup Langit-Langit",
+        "desc": "Genteng metal, spandek, serta papan gipsum plafon presisi tinggi.",
+        "icon": "roof-home",
+        "items": [
+          "Atap Spandek Galvalum Tebal 0.3mm & 0.35mm",
+          "Genteng Metal Pasir Ukuran 2x4 Daun",
+          "Papan Gipsum Jayaboard 9mm & Hollow Galvalum 2x4"
+        ]
+      },
+      {
+        "title": "Keramik & Granit Lantai",
+        "desc": "Lantai granit homogen dan keramik dinding berbagai motif modern berkualitas ekspor.",
+        "icon": "tiles-floor",
+        "items": [
+          "Granit Homogeneous Tile 60x60cm Double Loading",
+          "Keramik Roman 30x30cm Tekstur Kasar Kamar Mandi",
+          "Semen Instan MU-400 Perekat Keramik di Atas Keramik"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.8 ★",
+        "lbl": "Google Maps (85+ Ulasan)"
+      },
+      {
+        "val": "100% SNI",
+        "lbl": "Jaminan Produk Asli & Bersertifikat"
+      },
+      {
+        "val": "3 Armada",
+        "lbl": "Truk & Pick-Up Siap Kirim Hari Ini"
+      },
+      {
+        "val": "15 Menit",
+        "lbl": "Respon Cepat Estimasi Rencana Anggaran Biaya"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Bambang Purwanto",
+        "badge": "Mandor Proyek Perumahan",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu dengan ketersediaan Besi Beton SNI di Sentosa. Toleransi ukurannya sangat presisi sesuai spesifikasi teknis dinas PU. Pengiriman besi menggunakan truk crane mereka sendiri jadi besi tidak melengkung saat tiba di proyek."
+      },
+      {
+        "name": "Siti Aminah",
+        "badge": "Pemilik Rumah Renovasi Mandiri",
+        "stars": "★★★★★",
+        "text": "Pelayanan ramah sekali, saya awam soal bangunan tapi dibantu menghitung kebutuhan semen MU dan cat Dulux sesuai luas dinding rumah saya. Kiriman semen sampai sore hari itu juga, bebas biaya ongkir karena masih area lokal."
+      },
+      {
+        "name": "Hendra Wijaya",
+        "badge": "Kontraktor Sipil & Developer",
+        "stars": "★★★★★",
+        "text": "Toko bangunan paling konsisten menjaga stok pipa Rucika AW dan fitting-nya. Sangat jarang kosong. Sistem pembayaran termin untuk proyek komersial juga sangat transparan dan didukung invoice resmi."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Armada Pengiriman Mandiri Cepat",
+        "desc": "Kami mengoperasikan 3 armada truk pengirim sendiri untuk memastikan material struktur tiba di lokasi proyek Anda tepat waktu, menghindari delay pekerjaan tukang."
+      },
+      {
+        "title": "Jaminan Keaslian Produk 100%",
+        "desc": "Seluruh produk semen, besi beton, pipa Rucika, dan cat Dulux disuplai langsung dari distributor resmi pabrikan, lengkap dengan sertifikat uji SNI."
+      },
+      {
+        "title": "Konsultasi Estimasi Volume Material",
+        "desc": "Cukup kirimkan coretan sketsa atau gambar kerja rumah Anda ke WhatsApp kami, tim estimator kami akan membantu menghitung estimasi kebutuhan material secara presisi."
+      },
+      {
+        "title": "Fleksibilitas Metode Pembayaran",
+        "desc": "Kami menerima transfer bank instan, pembayaran kartu debit/kredit di toko, serta sistem pembayaran bertahap khusus untuk kontraktor mitra terdaftar."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada batas minimum pembelian material untuk mendapatkan layanan gratis ongkir?",
+        "a": "Ya, gratis ongkir berlaku untuk pengiriman wilayah lokal & sekitarnya dengan pembelian minimal 20 sak semen, atau total pembelanjaan material campuran senilai Rp 1.500.000."
+      },
+      {
+        "q": "Apakah Besi Beton yang dijual memiliki sertifikat uji tarik SNI resmi?",
+        "a": "Tentu. Semua besi beton ulir maupun polos yang kami sediakan diproduksi oleh pabrikan berstandar SNI dan kami dapat melampirkan mill sheet/sertifikat uji pabrik untuk kebutuhan audit proyek Anda."
+      },
+      {
+        "q": "Berapa lama waktu yang dibutuhkan untuk proses oplos (tinting) cat Dulux atau Nippon Paint?",
+        "a": "Proses pencampuran warna menggunakan mesin tinting komputer resmi kami hanya membutuhkan waktu 5 hingga 10 menit per kaleng, langsung bisa Anda bawa pulang atau dikirim hari itu juga."
+      }
+    ],
+    "service_options": [
+      "Semen & Material Fondasi",
+      "Besi Beton & Baja Ringan SNI",
+      "Sistem Perpipaan & Fitting",
+      "Cat & Pelapis Kedap Air",
+      "Atap & Penutup Langit-Langit",
+      "Keramik & Granit Lantai"
+    ],
+    "rating_display": "4.8",
+    "reviews_display": "85+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "07369c3cec185242": {
+    "business_name": "Toko Bangunan Sentosa",
+    "city": "Lokal & Sekitarnya",
+    "trade_name": "Pusat Bahan Bangunan & Material Struktur Proyek",
+    "headline": "Distributor Besi Beton SNI dan Semen Gresik Terlengkap di Merdeka",
+    "tagline": "Menyediakan material struktur, sistem perpipaan Rucika, dan cat Dulux dengan pengiriman armada truk mandiri langsung ke lokasi proyek Anda.",
+    "about_p1": "Toko Bangunan Sentosa yang berlokasi di Jl. Merdeka No. 10 adalah mitra tepercaya para kontraktor dan pemilik rumah di wilayah lokal dan sekitarnya. Kami mengkhususkan diri dalam penyediaan material struktural fondasi, sistem perpipaan modern, hingga finishing dinding berkualitas tinggi untuk memastikan setiap tahap pembangunan berjalan tanpa hambatan.",
+    "about_p2": "Dengan sistem manajemen stok real-time, kami menjamin ketersediaan semen, besi beton ulir, baja ringan, hingga cat oplosan komputer (tinting). Seluruh armada pengiriman kami siap mengantar pesanan Anda tepat waktu guna menjaga efisiensi jadwal kerja proyek Anda.",
+    "services": [
+      {
+        "title": "Semen & Material Fondasi",
+        "desc": "Semen portland kualitas tinggi dan agregat kasar/halus standar konstruksi sipil.",
+        "icon": "building",
+        "items": [
+          "Semen Gresik PPC & OPC Kemasan 40kg / 50kg",
+          "Pasir Pasang Lumajang Murni tanpa Campuran Lumpur",
+          "Batu Belah Gunung untuk Fondasi Rumah Tinggal"
+        ]
+      },
+      {
+        "title": "Besi Beton & Baja Ringan SNI",
+        "desc": "Besi beton ulir/polos bersertifikat SNI resmi serta rangka atap baja ringan antikarat.",
+        "icon": "steel-beam",
+        "items": [
+          "Besi Beton Ulir Dia 10mm, 12mm, 16mm Toleransi 0.2mm",
+          "Baja Ringan Truss C75 Tebal 0.75mm Standar SNI",
+          "Reng Baja Ringan G300 Tebal 0.45mm"
+        ]
+      },
+      {
+        "title": "Sistem Perpipaan & Fitting",
+        "desc": "Pipa PVC dan PPR untuk instalasi air bersih bertekanan maupun pembuangan air kotor.",
+        "icon": "pipe-plumbing",
+        "items": [
+          "Pipa PVC Rucika Standard Kelas AW & D (0.5 - 4 inch)",
+          "Fitting PVC Rucika (Elbow, Tee, Socket) Tebal",
+          "Pipa PPR Westpex untuk Instalasi Air Panas"
+        ]
+      },
+      {
+        "title": "Cat & Pelapis Kedap Air",
+        "desc": "Cat dinding interior/eksterior sistem tinting komputer dan pelapis antibocor.",
+        "icon": "paint-bucket",
+        "items": [
+          "Cat Interior Dulux Catylac & Dulux Pentalite Tinting",
+          "Cat Eksterior Nippon Paint Weatherbond",
+          "Aquaproof Pelapis Kedap Air Kemasan 4kg & 20kg"
+        ]
+      },
+      {
+        "title": "Atap & Penutup Langit-Langit",
+        "desc": "Genteng metal, spandek, serta papan gipsum plafon presisi tinggi.",
+        "icon": "roof-home",
+        "items": [
+          "Atap Spandek Galvalum Tebal 0.3mm & 0.35mm",
+          "Genteng Metal Pasir Ukuran 2x4 Daun",
+          "Papan Gipsum Jayaboard 9mm & Hollow Galvalum 2x4"
+        ]
+      },
+      {
+        "title": "Keramik & Granit Lantai",
+        "desc": "Lantai granit homogen dan keramik dinding berbagai motif modern berkualitas ekspor.",
+        "icon": "tiles-floor",
+        "items": [
+          "Granit Homogeneous Tile 60x60cm Double Loading",
+          "Keramik Roman 30x30cm Tekstur Kasar Kamar Mandi",
+          "Semen Instan MU-400 Perekat Keramik di Atas Keramik"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.8 ★",
+        "lbl": "Google Maps (85+ Ulasan)"
+      },
+      {
+        "val": "100% SNI",
+        "lbl": "Jaminan Produk Asli & Bersertifikat"
+      },
+      {
+        "val": "3 Armada",
+        "lbl": "Truk & Pick-Up Siap Kirim Hari Ini"
+      },
+      {
+        "val": "15 Menit",
+        "lbl": "Respon Cepat Estimasi Rencana Anggaran Biaya"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Bambang Purwanto",
+        "badge": "Mandor Proyek Perumahan",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu dengan ketersediaan Besi Beton SNI di Sentosa. Toleransi ukurannya sangat presisi sesuai spesifikasi teknis dinas PU. Pengiriman besi menggunakan truk crane mereka sendiri jadi besi tidak melengkung saat tiba di proyek."
+      },
+      {
+        "name": "Siti Aminah",
+        "badge": "Pemilik Rumah Renovasi Mandiri",
+        "stars": "★★★★★",
+        "text": "Pelayanan ramah sekali, saya awam soal bangunan tapi dibantu menghitung kebutuhan semen MU dan cat Dulux sesuai luas dinding rumah saya. Kiriman semen sampai sore hari itu juga, bebas biaya ongkir karena masih area lokal."
+      },
+      {
+        "name": "Hendra Wijaya",
+        "badge": "Kontraktor Sipil & Developer",
+        "stars": "★★★★★",
+        "text": "Toko bangunan paling konsisten menjaga stok pipa Rucika AW dan fitting-nya. Sangat jarang kosong. Sistem pembayaran termin untuk proyek komersial juga sangat transparan dan didukung invoice resmi."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Armada Pengiriman Mandiri Cepat",
+        "desc": "Kami mengoperasikan 3 armada truk pengirim sendiri untuk memastikan material struktur tiba di lokasi proyek Anda tepat waktu, menghindari delay pekerjaan tukang."
+      },
+      {
+        "title": "Jaminan Keaslian Produk 100%",
+        "desc": "Seluruh produk semen, besi beton, pipa Rucika, dan cat Dulux disuplai langsung dari distributor resmi pabrikan, lengkap dengan sertifikat uji SNI."
+      },
+      {
+        "title": "Konsultasi Estimasi Volume Material",
+        "desc": "Cukup kirimkan coretan sketsa atau gambar kerja rumah Anda ke WhatsApp kami, tim estimator kami akan membantu menghitung estimasi kebutuhan material secara presisi."
+      },
+      {
+        "title": "Fleksibilitas Metode Pembayaran",
+        "desc": "Kami menerima transfer bank instan, pembayaran kartu debit/kredit di toko, serta sistem pembayaran bertahap khusus untuk kontraktor mitra terdaftar."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada batas minimum pembelian material untuk mendapatkan layanan gratis ongkir?",
+        "a": "Ya, gratis ongkir berlaku untuk pengiriman wilayah lokal & sekitarnya dengan pembelian minimal 20 sak semen, atau total pembelanjaan material campuran senilai Rp 1.500.000."
+      },
+      {
+        "q": "Apakah Besi Beton yang dijual memiliki sertifikat uji tarik SNI resmi?",
+        "a": "Tentu. Semua besi beton ulir maupun polos yang kami sediakan diproduksi oleh pabrikan berstandar SNI dan kami dapat melampirkan mill sheet/sertifikat uji pabrik untuk kebutuhan audit proyek Anda."
+      },
+      {
+        "q": "Berapa lama waktu yang dibutuhkan untuk proses oplos (tinting) cat Dulux atau Nippon Paint?",
+        "a": "Proses pencampuran warna menggunakan mesin tinting komputer resmi kami hanya membutuhkan waktu 5 hingga 10 menit per kaleng, langsung bisa Anda bawa pulang atau dikirim hari itu juga."
+      }
+    ],
+    "service_options": [
+      "Semen & Material Fondasi",
+      "Besi Beton & Baja Ringan SNI",
+      "Sistem Perpipaan & Fitting",
+      "Cat & Pelapis Kedap Air",
+      "Atap & Penutup Langit-Langit",
+      "Keramik & Granit Lantai"
+    ],
+    "rating_display": "4.8",
+    "reviews_display": "85+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "68d050ef7d22d6ea": {
+    "business_name": "Bisnis Klien",
+    "city": "Surabaya",
+    "trade_name": "Toko Bahan Bangunan & Distributor Material Proyek",
+    "headline": "Suplai Material Struktur SNI Terlengkap Langsung ke Proyek Surabaya Anda",
+    "tagline": "Distribusi besi beton, semen Gresik, pipa Rucika, dan material finishing berkualitas tinggi dengan armada pengiriman cepat se-Gerbangkertosusila.",
+    "about_p1": "Bisnis Klien hadir sebagai mitra tepercaya bagi kontraktor dan pemilik rumah di Surabaya sejak melayani kebutuhan konstruksi dari Jl. Merdeka 10. Kami memfokuskan diri pada penyediaan material struktural dan arsitektural bersertifikat SNI untuk memastikan kekuatan bangunan Anda bertahan puluhan tahun.",
+    "about_p2": "Dengan manajemen stok real-time, kami menjamin ketersediaan semen, besi tulangan, baja ringan, hingga sistem perpipaan tanpa inden lama. Transparansi volume dan akurasi timbangan adalah komitmen mutlak kami untuk mencegah pembengkakan anggaran proyek Anda.",
+    "services": [
+      {
+        "title": "Besi Beton & Baja Struktural",
+        "desc": "Suplai besi beton polos dan ulir standar SNI sertifikat mill test untuk kekuatan fondasi optimal.",
+        "icon": "steel-beam",
+        "items": [
+          "Besi Beton Ulir D10, D13, D16 (Standar Krakatau Steel)",
+          "Wiremesh M6, M8, M10 Lembaran & Roll",
+          "Baja IWF & H-Beam Standar Konstruksi"
+        ]
+      },
+      {
+        "title": "Semen & Mortar Instan",
+        "desc": "Semen Portland tipe I dan mortar instan untuk efisiensi plesteran, acian, dan perekat bata ringan.",
+        "icon": "building",
+        "items": [
+          "Semen Gresik Portland Type I 40kg & 50kg",
+          "Mortar Utama MU-380 Perekat Bata Ringan",
+          "MU-200 Acian Plesteran Dinding Presisi"
+        ]
+      },
+      {
+        "title": "Sistem Perpipaan & Sanitasi",
+        "desc": "Pipa PVC, uPVC, dan PPR berkualitas tinggi untuk instalasi air bersih bertekanan dan pembuangan kotoran.",
+        "icon": "pipe-plumbing",
+        "items": [
+          "Pipa Rucika Standard Kelas AW & D (0.5 hingga 6 inci)",
+          "Pipa PPR Wavin Tigris untuk Air Panas",
+          "Fitting PVC Rucika & Lem Pipa Isarplas"
+        ]
+      },
+      {
+        "title": "Cat & Bahan Finishing Dinding",
+        "desc": "Pilihan cat dinding interior dan eksterior tahan cuaca ekstrem dengan teknologi tinting komputer.",
+        "icon": "paint-bucket",
+        "items": [
+          "Cat Eksterior Dulux Weathershield (Anti-Jamur)",
+          "Cat Interior Jotun Majestic True Beauty",
+          "Waterproofing Propan Ultraproof Anti-Bocor"
+        ]
+      },
+      {
+        "title": "Atap & Rangka Baja Ringan",
+        "desc": "Rangka atap baja ringan galvalum anti-karat dan penutup atap modern presisi tinggi.",
+        "icon": "roof-home",
+        "items": [
+          "Rangka Baja Ringan Truss C75 Ketebalan 0.75mm",
+          "Atap Spandek Galvalum Lebar 1 Meter",
+          "Genteng Beton Flat minimalis Cisokan"
+        ]
+      },
+      {
+        "title": "Keramik & Granite Tile",
+        "desc": "Lantai granite tile homogeneous tile dan keramik dinding presisi untuk estetika modern.",
+        "icon": "tiles-floor",
+        "items": [
+          "Granite Tile Roman Granit 60x60 cm Polished",
+          "Keramik Dinding Milan 25x50 cm Glossy",
+          "Semen Nat Keramik AM 53 Anti-Jamur"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.8 ★",
+        "lbl": "Google Maps (50+ Ulasan)"
+      },
+      {
+        "val": "100% SNI",
+        "lbl": "Jaminan Keaslian Material"
+      },
+      {
+        "val": "24 Jam",
+        "lbl": "Estimasi Pengiriman Surabaya Area"
+      },
+      {
+        "val": "2.500+",
+        "lbl": "Proyek Sukses Didistribusikan"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Budi Santoso",
+        "badge": "Kontraktor Utama CV Mukti Karya",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu dengan pengiriman semen Gresik dan besi beton yang selalu tepat waktu ke site proyek kami di Dharmahusada. Dokumen mill test besi juga lengkap dilampirkan, sangat profesional!"
+      },
+      {
+        "name": "Ir. Hermawan",
+        "badge": "Arsitek & Pengawas Proyek",
+        "stars": "★★★★★",
+        "text": "Stok pipa Rucika AW dan mortar MU-380 di Bisnis Klien selalu ready dalam jumlah besar. Layanan sales via WhatsApp sangat responsif memberikan penawaran harga resmi dengan cepat."
+      },
+      {
+        "name": "Ibu Ratna Ningsih",
+        "badge": "Pemilik Rumah (Renovasi Mandiri)",
+        "stars": "★★★★★",
+        "text": "Beli cat Dulux Weathershield dan keramik Roman di sini dibantu hitungkan estimasi kebutuhannya oleh staf toko. Kirim ke Jl. Merdeka dekat toko gratis ongkir dan langsung diturunkan dengan rapi."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Pengiriman Armada Sendiri",
+        "desc": "Kami memiliki armada truk engkel dan pick-up pribadi untuk memastikan material konstruksi tiba di lokasi proyek Surabaya tepat waktu tanpa ketergantungan ekspedisi pihak ketiga."
+      },
+      {
+        "title": "Sertifikasi & Garansi SNI",
+        "desc": "Seluruh produk besi tulangan, baja ringan, dan semen yang kami jual memiliki sertifikasi SNI resmi dan jaminan keaslian langsung dari produsen utama."
+      },
+      {
+        "title": "Konsultasi Estimasi Volume",
+        "desc": "Tim teknis kami siap membantu menghitung estimasi kebutuhan material (seperti volume semen, jumlah besi, atau luasan granite) berdasarkan gambar kerja Anda guna menekan pemborosan."
+      },
+      {
+        "title": "Sistem Pembayaran Fleksibel",
+        "desc": "Kami menyediakan opsi pembayaran termin untuk kontraktor mitra terverifikasi serta kemudahan transaksi transfer bank instan dengan invoice resmi berstempel."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada batas minimal order untuk pengiriman gratis di wilayah Surabaya?",
+        "a": "Ya, untuk wilayah dalam kota Surabaya, kami memberikan gratis ongkir untuk pembelian minimal 50 sak semen, atau total pembelanjaan material campuran senilai Rp 3.000.000 menggunakan armada kami."
+      },
+      {
+        "q": "Apakah besi beton yang dijual dilengkapi sertifikat Mill Test?",
+        "a": "Tentu. Semua besi beton polos dan ulir standar Krakatau Steel (KS) atau Hanil yang kami distribusikan dilengkapi dengan sertifikat Mill Test resmi yang dapat diminta saat pemesanan."
+      },
+      {
+        "q": "Bagaimana cara melakukan pemesanan material untuk proyek skala besar?",
+        "a": "Anda cukup mengirimkan Bill of Quantities (BoQ) atau daftar kebutuhan material Anda ke WhatsApp kami. Tim estimator kami akan mengirimkan Surat Penawaran Harga (SPH) resmi dalam waktu maksimal 2 jam."
+      }
+    ],
+    "service_options": [
+      "Besi Beton & Baja Struktural",
+      "Semen & Mortar Instan",
+      "Sistem Perpipaan & Sanitasi",
+      "Cat & Bahan Finishing Dinding",
+      "Atap & Rangka Baja Ringan",
+      "Keramik & Granite Tile"
+    ],
+    "rating_display": "4.8",
+    "reviews_display": "50+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "1bbb0ed7a523ce4a": {
+    "business_name": "Bisnis Klien",
+    "city": "Surabaya",
+    "trade_name": "Toko Bahan Bangunan & Distributor Material Proyek",
+    "headline": "Suplai Material Struktur SNI Terlengkap Langsung ke Proyek Surabaya Anda",
+    "tagline": "Distribusi besi beton, semen Gresik, pipa Rucika, dan material finishing berkualitas tinggi dengan armada pengiriman cepat se-Gerbangkertosusila.",
+    "about_p1": "Bisnis Klien hadir sebagai mitra tepercaya bagi kontraktor dan pemilik rumah di Surabaya sejak melayani kebutuhan konstruksi dari Jl. Merdeka 10. Kami memfokuskan diri pada penyediaan material struktural dan arsitektural bersertifikat SNI untuk memastikan kekuatan bangunan Anda bertahan puluhan tahun.",
+    "about_p2": "Dengan manajemen stok real-time, kami menjamin ketersediaan semen, besi tulangan, baja ringan, hingga sistem perpipaan tanpa inden lama. Transparansi volume dan akurasi timbangan adalah komitmen mutlak kami untuk mencegah pembengkakan anggaran proyek Anda.",
+    "services": [
+      {
+        "title": "Besi Beton & Baja Struktural",
+        "desc": "Suplai besi beton polos dan ulir standar SNI sertifikat mill test untuk kekuatan fondasi optimal.",
+        "icon": "steel-beam",
+        "items": [
+          "Besi Beton Ulir D10, D13, D16 (Standar Krakatau Steel)",
+          "Wiremesh M6, M8, M10 Lembaran & Roll",
+          "Baja IWF & H-Beam Standar Konstruksi"
+        ]
+      },
+      {
+        "title": "Semen & Mortar Instan",
+        "desc": "Semen Portland tipe I dan mortar instan untuk efisiensi plesteran, acian, dan perekat bata ringan.",
+        "icon": "building",
+        "items": [
+          "Semen Gresik Portland Type I 40kg & 50kg",
+          "Mortar Utama MU-380 Perekat Bata Ringan",
+          "MU-200 Acian Plesteran Dinding Presisi"
+        ]
+      },
+      {
+        "title": "Sistem Perpipaan & Sanitasi",
+        "desc": "Pipa PVC, uPVC, dan PPR berkualitas tinggi untuk instalasi air bersih bertekanan dan pembuangan kotoran.",
+        "icon": "pipe-plumbing",
+        "items": [
+          "Pipa Rucika Standard Kelas AW & D (0.5 hingga 6 inci)",
+          "Pipa PPR Wavin Tigris untuk Air Panas",
+          "Fitting PVC Rucika & Lem Pipa Isarplas"
+        ]
+      },
+      {
+        "title": "Cat & Bahan Finishing Dinding",
+        "desc": "Pilihan cat dinding interior dan eksterior tahan cuaca ekstrem dengan teknologi tinting komputer.",
+        "icon": "paint-bucket",
+        "items": [
+          "Cat Eksterior Dulux Weathershield (Anti-Jamur)",
+          "Cat Interior Jotun Majestic True Beauty",
+          "Waterproofing Propan Ultraproof Anti-Bocor"
+        ]
+      },
+      {
+        "title": "Atap & Rangka Baja Ringan",
+        "desc": "Rangka atap baja ringan galvalum anti-karat dan penutup atap modern presisi tinggi.",
+        "icon": "roof-home",
+        "items": [
+          "Rangka Baja Ringan Truss C75 Ketebalan 0.75mm",
+          "Atap Spandek Galvalum Lebar 1 Meter",
+          "Genteng Beton Flat minimalis Cisokan"
+        ]
+      },
+      {
+        "title": "Keramik & Granite Tile",
+        "desc": "Lantai granite tile homogeneous tile dan keramik dinding presisi untuk estetika modern.",
+        "icon": "tiles-floor",
+        "items": [
+          "Granite Tile Roman Granit 60x60 cm Polished",
+          "Keramik Dinding Milan 25x50 cm Glossy",
+          "Semen Nat Keramik AM 53 Anti-Jamur"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.8 ★",
+        "lbl": "Google Maps (50+ Ulasan)"
+      },
+      {
+        "val": "100% SNI",
+        "lbl": "Jaminan Keaslian Material"
+      },
+      {
+        "val": "24 Jam",
+        "lbl": "Estimasi Pengiriman Surabaya Area"
+      },
+      {
+        "val": "2.500+",
+        "lbl": "Proyek Sukses Didistribusikan"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Budi Santoso",
+        "badge": "Kontraktor Utama CV Mukti Karya",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu dengan pengiriman semen Gresik dan besi beton yang selalu tepat waktu ke site proyek kami di Dharmahusada. Dokumen mill test besi juga lengkap dilampirkan, sangat profesional!"
+      },
+      {
+        "name": "Ir. Hermawan",
+        "badge": "Arsitek & Pengawas Proyek",
+        "stars": "★★★★★",
+        "text": "Stok pipa Rucika AW dan mortar MU-380 di Bisnis Klien selalu ready dalam jumlah besar. Layanan sales via WhatsApp sangat responsif memberikan penawaran harga resmi dengan cepat."
+      },
+      {
+        "name": "Ibu Ratna Ningsih",
+        "badge": "Pemilik Rumah (Renovasi Mandiri)",
+        "stars": "★★★★★",
+        "text": "Beli cat Dulux Weathershield dan keramik Roman di sini dibantu hitungkan estimasi kebutuhannya oleh staf toko. Kirim ke Jl. Merdeka dekat toko gratis ongkir dan langsung diturunkan dengan rapi."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Pengiriman Armada Sendiri",
+        "desc": "Kami memiliki armada truk engkel dan pick-up pribadi untuk memastikan material konstruksi tiba di lokasi proyek Surabaya tepat waktu tanpa ketergantungan ekspedisi pihak ketiga."
+      },
+      {
+        "title": "Sertifikasi & Garansi SNI",
+        "desc": "Seluruh produk besi tulangan, baja ringan, dan semen yang kami jual memiliki sertifikasi SNI resmi dan jaminan keaslian langsung dari produsen utama."
+      },
+      {
+        "title": "Konsultasi Estimasi Volume",
+        "desc": "Tim teknis kami siap membantu menghitung estimasi kebutuhan material (seperti volume semen, jumlah besi, atau luasan granite) berdasarkan gambar kerja Anda guna menekan pemborosan."
+      },
+      {
+        "title": "Sistem Pembayaran Fleksibel",
+        "desc": "Kami menyediakan opsi pembayaran termin untuk kontraktor mitra terverifikasi serta kemudahan transaksi transfer bank instan dengan invoice resmi berstempel."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada batas minimal order untuk pengiriman gratis di wilayah Surabaya?",
+        "a": "Ya, untuk wilayah dalam kota Surabaya, kami memberikan gratis ongkir untuk pembelian minimal 50 sak semen, atau total pembelanjaan material campuran senilai Rp 3.000.000 menggunakan armada kami."
+      },
+      {
+        "q": "Apakah besi beton yang dijual dilengkapi sertifikat Mill Test?",
+        "a": "Tentu. Semua besi beton polos dan ulir standar Krakatau Steel (KS) atau Hanil yang kami distribusikan dilengkapi dengan sertifikat Mill Test resmi yang dapat diminta saat pemesanan."
+      },
+      {
+        "q": "Bagaimana cara melakukan pemesanan material untuk proyek skala besar?",
+        "a": "Anda cukup mengirimkan Bill of Quantities (BoQ) atau daftar kebutuhan material Anda ke WhatsApp kami. Tim estimator kami akan mengirimkan Surat Penawaran Harga (SPH) resmi dalam waktu maksimal 2 jam."
+      }
+    ],
+    "service_options": [
+      "Besi Beton & Baja Struktural",
+      "Semen & Mortar Instan",
+      "Sistem Perpipaan & Sanitasi",
+      "Cat & Bahan Finishing Dinding",
+      "Atap & Rangka Baja Ringan",
+      "Keramik & Granite Tile"
+    ],
+    "rating_display": "4.8",
+    "reviews_display": "50+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  }
+}

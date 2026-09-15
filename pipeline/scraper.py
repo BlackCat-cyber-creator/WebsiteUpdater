@@ -79,11 +79,13 @@ class ClientWebsiteScraper:
         contacts = self._extract_contacts(adaptor, raw_html)
         socials = self._extract_socials(adaptor, raw_html)
         images = self._extract_all_images(adaptor, url)
+        logo_url = self._extract_logo(adaptor, metadata, url)
 
         parsed_data = {
             "url": url,
             "domain": domain,
             "brand_name": brand_name,
+            "logo_url": logo_url,
             "status": status,
             "raw_html": raw_html,
             "scrapling_markdown": scrapling_markdown,
@@ -100,7 +102,7 @@ class ClientWebsiteScraper:
 
         # Download authentic assets locally
         if assets_dir:
-            self._download_assets(images, assets_dir)
+            self._download_assets(images, assets_dir, logo_url=logo_url)
 
         return parsed_data
 
@@ -306,8 +308,20 @@ class ClientWebsiteScraper:
         clean_email = emails[0].strip().lower() if emails else ""
 
         # WhatsApp
-        whatsapps = re.findall(r'(?:wa\.me|api\.whatsapp\.com/send\?phone=)(\d+)', raw_html, re.IGNORECASE)
+        whatsapps = re.findall(r'(?:wa\.me/|api\.whatsapp\.com/send/?\?phone=|whatsapp\.com/send/?\?phone=)(\d+)', raw_html, re.IGNORECASE)
         clean_wa = whatsapps[0].strip() if whatsapps else ""
+        if not clean_wa:
+            tel_matches = re.findall(r'href=[\'"]tel:([+0-9\- ]+)[\'"]', raw_html, re.IGNORECASE)
+            for t in tel_matches:
+                t_num = re.sub(r'\D', '', t)
+                if t_num.startswith('08') or t_num.startswith('628'):
+                    clean_wa = t_num if t_num.startswith('62') else '62' + t_num[1:]
+                    break
+        if not clean_wa:
+            mobile_matches = re.findall(r'(?:08\d{8,11}|628\d{8,11})', raw_html)
+            if mobile_matches:
+                m_num = mobile_matches[0]
+                clean_wa = m_num if m_num.startswith('62') else '62' + m_num[1:]
 
         # Address / Location
         address = ""
@@ -336,6 +350,66 @@ class ClientWebsiteScraper:
                 socials[platform] = clean
         return socials
 
+    def _extract_logo(self, res, metadata: Dict[str, Any], base_url: str) -> str:
+        """Extracts the official company brand logo URL with prioritized selectors."""
+        def resolve_url(u):
+            if not u:
+                return ""
+            if hasattr(res, "urljoin"):
+                return res.urljoin(u)
+            return urllib.parse.urljoin(base_url, u)
+
+        # 1. Check explicit logo selectors
+        logo_selectors = [
+            "img.logo::attr(src)",
+            "img.brand::attr(src)",
+            "a.navbar-brand img::attr(src)",
+            "a.logo img::attr(src)",
+            ".navbar-brand img::attr(src)",
+            ".logo img::attr(src)",
+            "header img[src*='logo']::attr(src)",
+            "nav img[src*='logo']::attr(src)",
+            "img[alt*='logo']::attr(src)",
+            "img[src*='logo']::attr(src)",
+            "header img[src*='Logo']::attr(src)",
+            "img[alt*='Logo']::attr(src)",
+            "header .logo img::attr(src)",
+            "header img::attr(src)",
+            "nav img::attr(src)"
+        ]
+        for sel in logo_selectors:
+            try:
+                cand = res.css(sel).get()
+                if cand:
+                    return resolve_url(cand)
+            except Exception:
+                continue
+
+        # Python-level case-insensitive search over all images
+        try:
+            for img in res.css("img"):
+                src = img.attrib.get("src") or ""
+                alt = img.attrib.get("alt") or ""
+                cls = img.attrib.get("class") or ""
+                combined = f"{src} {alt} {cls}".lower()
+                if "logo" in combined or "brand" in combined:
+                    if src:
+                        return resolve_url(src)
+        except Exception:
+            pass
+
+        # 2. Check OpenGraph image
+        og_img = metadata.get("og_image")
+        if og_img:
+            return resolve_url(og_img)
+
+        # 3. Check favicon
+        fav = metadata.get("favicon")
+        if fav:
+            return resolve_url(fav)
+
+        return ""
+
     def _extract_all_images(self, res, base_url: str) -> List[Dict[str, str]]:
         """Extracts authentic images and media tags for local caching."""
         def resolve_url(u):
@@ -353,17 +427,47 @@ class ClientWebsiteScraper:
             if src and src not in seen:
                 seen.add(src)
                 full = resolve_url(src)
-                # Keep images with valid extensions
+                # Keep images with valid extensions or known image patterns
                 fn = os.path.basename(urllib.parse.urlparse(full).path) or "image.png"
-                if any(fn.lower().endswith(ext) for ext in [".png", ".jpg", ".jpeg", ".webp", ".svg", ".ico"]):
+                if any(fn.lower().endswith(ext) for ext in [".png", ".jpg", ".jpeg", ".webp", ".svg", ".ico"]) or "logo" in full.lower():
+                    if not any(fn.lower().endswith(ext) for ext in [".png", ".jpg", ".jpeg", ".webp", ".svg", ".ico"]):
+                        fn = "brand_image.png"
                     imgs.append({"filename": fn, "url": full, "alt": alt})
 
         return imgs[:25]
 
-    def _download_assets(self, images: List[Dict[str, str]], target_dir: str):
-        """Downloads authentic client media assets locally."""
+    def _download_assets(self, images: List[Dict[str, str]], target_dir: str, logo_url: str = ""):
+        """Downloads authentic client media assets locally, guaranteeing brand logo presence."""
         os.makedirs(target_dir, exist_ok=True)
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+
+        # Prioritize downloading the official company brand logo
+        if logo_url:
+            logo_ext = "png"
+            parsed_path = urllib.parse.urlparse(logo_url).path.lower()
+            if parsed_path.endswith(".jpg") or parsed_path.endswith(".jpeg"):
+                logo_ext = "jpg"
+            elif parsed_path.endswith(".webp"):
+                logo_ext = "webp"
+            elif parsed_path.endswith(".svg"):
+                logo_ext = "svg"
+            
+            logo_dest = os.path.join(target_dir, f"logo.{logo_ext}")
+            try:
+                req = urllib.request.Request(logo_url, headers=headers)
+                with urllib.request.urlopen(req, timeout=12) as resp:
+                    content = resp.read()
+                    if len(content) > 100:
+                        with open(logo_dest, "wb") as f:
+                            f.write(content)
+                        # Also save a standard logo.png copy for quick lookup
+                        if logo_ext != "png":
+                            with open(os.path.join(target_dir, "logo.png"), "wb") as f:
+                                f.write(content)
+                        print(f"  [+] Official brand logo saved -> {logo_dest} ({len(content):,} bytes)")
+            except Exception as e:
+                print(f"  [!] Notice: Could not download logo from {logo_url}: {e}")
+
         for item in images:
             fn = item["filename"]
             url = item["url"]
@@ -373,7 +477,6 @@ class ClientWebsiteScraper:
                     req = urllib.request.Request(url, headers=headers)
                     with urllib.request.urlopen(req, timeout=10) as resp:
                         content = resp.read()
-                        # Only write if not empty
                         if len(content) > 100:
                             with open(dest, "wb") as f:
                                 f.write(content)

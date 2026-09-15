@@ -34,29 +34,32 @@ class QuotationEngine:
         seo_score = audit.get("seo_score", 45)
         ux_score = audit.get("ux_score", 44)
 
-        # Calculate live dollar to IDR exchange rate for $100 flat
-        rate = get_live_usd_idr_rate()
-        price_usd_num = 100
-        price_idr_num = round((price_usd_num * rate) / 1000) * 1000
-        price_usd = f"${price_usd_num} USD"
-        price_idr = f"Rp {price_idr_num:,.0f}".replace(",", ".")
+        # Indonesian High-Converting Pricing Model
+        price_flat_num = 1490000
+        price_monthly_num = 99000
+        price_idr = f"Rp {price_flat_num:,.0f}".replace(",", ".")
+        price_monthly = f"Rp {price_monthly_num:,.0f} / bln".replace(",", ".")
+        price_usd = price_idr  # Deprecate raw USD display in favor of clean IDR
 
         package = {
-            "name": "Paket Transformasi Digital & Dominasi SEO (All-In-One Turn-Key)",
-            "price_usd": price_usd,
+            "name": "Paket Transformasi Digital & Mesin Penjualan WhatsApp",
+            "price_usd": price_idr,
             "price_idr": price_idr,
-            "exchange_rate": f"1 USD = Rp {rate:,.0f}".replace(",", "."),
+            "price_flat_idr": price_idr,
+            "price_monthly_idr": price_monthly,
+            "exchange_rate": "Investasi Flat Tanpa Biaya Tambahan",
             "phases_count": 1,
-            "timeline": "Langsung Siap Pakai (Instant Turn-Key Handover)",
-            "summary": f"Website modernisasi untuk {client_name} telah 100% selesai kami bangun dan siap ditayangkan di domain resmi Anda — dilengkapi optimasi SEO Google kelas satu, kecepatan sub-detik, dan desain visual terstandarisasi.",
+            "timeline": "Langsung Siap Pakai (Migrasi Kilat 15 Menit Terima Beres)",
+            "summary": f"Website modernisasi untuk {client_name} telah 100% selesai kami bangun dan siap ditayangkan di domain resmi Anda — dilengkapi WhatsApp Closing Machine, kecepatan sub-detik, dan dominasi pencarian lokal Google.",
             "deliverables": [
                 f"Dominasi SEO Google dengan Schema.org JSON-LD (LocalBusiness & Service resmi untuk {client_name})",
                 "Penulisan Ulang Meta Title & Meta Description teroptimasi kata kunci bernilai komersial tinggi",
                 "Struktur Heading Hierarchy (H1-H3) terstandarisasi untuk membangun otoritas topik di Google",
                 "Desain UI/UX Modern Berbasis Standar Swiss Minimalist (100% responsif di smartphone & tablet)",
-                "Integrasi WhatsApp Direct Routing & Formulir Konsultasi Instan langsung terformat ke WhatsApp Sales",
+                "Integrasi WhatsApp Fast-Order & Formulir Pemesanan Langsung terformat rapi ke WhatsApp Sales",
                 "Peningkatan Kecepatan Akses Sub-Detik & Skor Core Web Vitals Hijau (LCP < 1.2s)",
-                "Penyerahan Source Code Lengkap + Garansi Teknis & Panduan Perawatan 60 Hari"
+                "Layanan Migrasi Kilat 15 Menit Terima Beres ke Domain Utama Anda (Garansi 100% Zero-Downtime)",
+                "Garansi Teknis & Pemeliharaan 60 Hari Penuh Tanpa Biaya Tambahan"
             ]
         }
 

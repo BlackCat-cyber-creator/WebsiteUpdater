@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  updater-dashboard:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DASHBOARD_TOKEN=secret_token
+      - MIDTRANS_SERVER_KEY=${MIDTRANS_SERVER_KEY}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - ./clients:/app/clients
+    command: ["python", "auto_outreach.py", "--dashboard"]
+
+  updater-batch:
+    build: .
+    environment:
+      - MIDTRANS_SERVER_KEY=${MIDTRANS_SERVER_KEY}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - ./clients:/app/clients
+    command: ["python", "auto_outreach.py", "--auto-modernize"]
+    profiles: ["batch"]

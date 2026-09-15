@@ -11,6 +11,53 @@ from typing import Dict, Any, List, Optional
 from scrapling.fetchers import Fetcher
 
 
+def is_indonesian_landline(raw_phone: str) -> bool:
+    """
+    Detects if a phone number is an Indonesian PSTN landline (telepon kantor / rumah).
+    All Indonesian regional landlines start with 02x, 03x, 04x, 05x, 06x, 07x, 09x
+    (or +622, +623, +624, +625, +626, +627, +629).
+    Examples: 021 (Jabodetabek), 022 (Bandung), 024 (Semarang), 031 (Surabaya),
+    0341 (Malang), 0251 (Bogor), 061 (Medan), 0711 (Palembang), 0411 (Makassar), etc.
+    """
+    if not raw_phone:
+        return False
+    digits = re.sub(r"[^\d]", "", raw_phone)
+    if digits.startswith("62"):
+        digits = "0" + digits[2:]
+    elif digits.startswith("+62"):
+        digits = "0" + digits[3:]
+    
+    # Non-08 area codes are PSTN landlines
+    if re.match(r"^0[2345679]\d{6,10}$", digits):
+        return True
+    return False
+
+
+def is_indonesian_mobile(raw_phone: str) -> bool:
+    """
+    Checks if a phone number is a valid Indonesian mobile / WhatsApp number (diawali 08... / +628...).
+    """
+    if not raw_phone:
+        return False
+    digits = re.sub(r"[^\d]", "", raw_phone)
+    if digits.startswith("08") and 10 <= len(digits) <= 14:
+        return True
+    if digits.startswith("628") and 11 <= len(digits) <= 15:
+        return True
+    if digits.startswith("8") and 9 <= len(digits) <= 13:
+        return True
+    return False
+
+
+EXCLUDED_DOMAINS = [
+    "google.", "facebook.com", "instagram.com", "tiktok.com", "youtube.com", "t.me", "telegram.me",
+    "wa.me", "whatsapp.com", "api.whatsapp.com", "linktr.ee", "bit.ly", "s.id", "bio.link",
+    "campsite.bio", "taplink.cc", "desty.page", "lynk.id", "msha.ke",
+    "tokopedia.com", "shopee.co.id", "lazada.co.id", "bukalapak.com", "blibli.com", "olx.co.id",
+    "jne.co.id", "sicepat.com", "jtexpress.co.id", "tiki.id", "posindonesia.co.id", "wahana.com"
+]
+
+
 class IndonesianBusinessScanner:
     def __init__(self):
         self.headers = {
@@ -18,15 +65,30 @@ class IndonesianBusinessScanner:
             "Accept-Language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"
         }
 
-    def normalize_indonesian_phone(self, raw_phone: str) -> Optional[str]:
-        """Normalizes Indonesian phone/WhatsApp numbers to international 628xxxxxxxx format."""
+    def normalize_indonesian_phone(self, raw_phone: str, mobile_only: bool = True) -> Optional[str]:
+        """
+        Normalizes Indonesian phone/WhatsApp numbers to international 628xxxxxxxx format.
+        By default (mobile_only=True), automatically rejects PSTN landlines (021, 031, etc.)
+        and only returns mobile numbers suitable for WhatsApp outreach.
+        """
         if not raw_phone:
             return None
-        # Extract digits
+        
+        # Check and filter out PSTN landlines
+        if is_indonesian_landline(raw_phone):
+            if mobile_only:
+                return None
+            digits = re.sub(r"[^\d]", "", raw_phone)
+            if digits.startswith("0"):
+                return "62" + digits[1:]
+            elif digits.startswith("62"):
+                return digits
+            return None
+
         digits = re.sub(r"[^\d]", "", raw_phone)
         if not digits:
             return None
-        
+
         # Convert local 08xx to 628xx
         if digits.startswith("08"):
             digits = "62" + digits[1:]
@@ -36,22 +98,13 @@ class IndonesianBusinessScanner:
             digits = "62" + digits[3:]
         elif digits.startswith("628"):
             pass
-        elif digits.startswith("021") or digits.startswith("022") or digits.startswith("031"):
-            # Landline
-            digits = "62" + digits[1:]
         else:
-            if len(digits) < 10 or len(digits) > 15:
-                return None
-            
-        # Indonesian mobile numbers (628...) must be 11 to 14 digits long
-        if digits.startswith("628"):
-            if 11 <= len(digits) <= 14:
-                return digits
             return None
 
-        # Landlines (6221..., 6231...)
-        if len(digits) >= 10 and len(digits) <= 13:
+        # Indonesian mobile numbers (628...) must be 11 to 15 digits long
+        if digits.startswith("628") and 11 <= len(digits) <= 15:
             return digits
+
         return None
 
     def extract_contacts_from_html(self, html: str, url: str) -> Dict[str, Any]:
@@ -110,6 +163,8 @@ class IndonesianBusinessScanner:
             url = "https://" + url
 
         domain = urllib.parse.urlparse(url).netloc.lower().replace("www.", "")
+        if any(ex in domain for ex in EXCLUDED_DOMAINS) or "wa.me" in domain:
+            return None
 
         try:
             res = Fetcher.get(url, stealthy_headers=True, timeout=12)
@@ -125,6 +180,10 @@ class IndonesianBusinessScanner:
                 return None
 
             title = res.css("title::text").get() or ""
+            # Reject generic or messaging titles
+            t_low = title.lower().strip()
+            if any(inv in t_low for inv in ["share on whatsapp", "whatsapp", "login", "sign in", "just a moment", "cloudflare", "404 not found", "access denied"]):
+                return None
             meta_desc = res.css('meta[name="description"]::attr(content)').get() or ""
             contacts = self.extract_contacts_from_html(html, url)
 

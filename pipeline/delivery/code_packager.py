@@ -145,7 +145,8 @@ class CodePackager:
         target_out_dir = output_dir or os.path.dirname(os.path.normpath(site_dir))
         os.makedirs(target_out_dir, exist_ok=True)
 
-        clean_slug = re.sub(r"[^a-zA-Z0-9_\-]", "_", client_slug).strip("_")
+        from pipeline.deployer.vercel_deployer import VercelDeployer
+        clean_slug = VercelDeployer.clean_slug(domain or client_slug).replace("-", "_")
         zip_filename = f"{clean_slug}_Clean_Source_Code.zip"
         zip_path = os.path.join(target_out_dir, zip_filename)
 
@@ -165,21 +166,25 @@ class CodePackager:
         with open(seo_path, "w", encoding="utf-8") as f:
             f.write(seo_md)
 
+        audit_md_path = os.path.join(target_out_dir, "LAPORAN_AUDIT_SEO.md")
+
         # Build ZIP archive
         print(f"\n[CODE PACKAGER] Membuat arsip delivery untuk: {biz_name}...")
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
             # 1. Add documentation at root of ZIP
             zipf.writestr("PANDUAN_PEMASANGAN_CPANEL.md", cpanel_md)
             zipf.writestr("SEO_CONFIGURATION_GUIDE.md", seo_md)
+            if os.path.exists(audit_md_path):
+                zipf.write(audit_md_path, "LAPORAN_AUDIT_SEO.md")
 
-            # 2. Add all site files
+            # 2. Add all site files under website_prototype/
             for root, dirs, files in os.walk(site_dir):
-                if ".git" in root.split(os.sep):
+                if ".git" in root.split(os.sep) or "docs" in root.split(os.sep):
                     continue
                 for f in files:
                     full_p = os.path.join(root, f)
                     rel_p = os.path.relpath(full_p, site_dir)
-                    zipf.write(full_p, rel_p)
+                    zipf.write(full_p, os.path.join("website_prototype", rel_p))
 
         file_size_mb = os.path.getsize(zip_path) / (1024 * 1024)
         print(f"[+] [SUCCESS] Paket Source Code berhasil dibuat: {zip_path} ({file_size_mb:.2f} MB)")
@@ -193,3 +198,63 @@ class CodePackager:
             "seo_guide": os.path.abspath(seo_path),
             "download_url": f"/api/download-package?client={clean_slug}"
         }
+
+    def package_client(
+        self,
+        client_id: str = "",
+        business_name: str = "",
+        domain: str = "",
+        output_dir: Optional[str] = None,
+        phone: str = ""
+    ) -> Dict[str, Any]:
+        """
+        Automatically packages a client's website code into a production-ready .zip archive
+        in clients/<id>/ along with cPanel and Google SEO guides.
+        """
+        identifier = (client_id or domain or "client").strip()
+        from pipeline.deployer.vercel_deployer import VercelDeployer
+        clean_slug = VercelDeployer.clean_slug(identifier).replace("-", "_")
+        domain_slug = identifier.replace(".", "_").replace("-", "_")
+
+        base_clients_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "clients"))
+
+        # Determine target client directory
+        if output_dir:
+            client_dir = os.path.abspath(output_dir)
+        else:
+            candidates = [
+                os.path.join(base_clients_dir, identifier),
+                os.path.join(base_clients_dir, clean_slug),
+                os.path.join(base_clients_dir, domain_slug)
+            ]
+            client_dir = candidates[0]
+            for cand in candidates:
+                if os.path.exists(cand) and os.path.isdir(cand):
+                    client_dir = cand
+                    break
+
+        os.makedirs(client_dir, exist_ok=True)
+        site_dir = os.path.join(client_dir, "site")
+
+        # Ensure site files exist; if not, synthesize turnkey site
+        if not os.path.exists(os.path.join(site_dir, "index.html")):
+            try:
+                from pipeline.site_generator import SiteGenerator
+                sg = SiteGenerator()
+                sg.generate_turnkey_site(
+                    business_name=business_name or clean_slug.replace("_", " ").title(),
+                    phone=phone,
+                    output_dir=client_dir
+                )
+            except Exception as e:
+                print(f"[!] Warning generating turnkey site for packager: {e}")
+
+        # Package the code
+        return self.package_client_code(
+            site_dir=site_dir,
+            client_slug=clean_slug,
+            output_dir=client_dir,
+            business_name=business_name,
+            domain=domain or identifier
+        )
+

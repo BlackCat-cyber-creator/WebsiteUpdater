@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Proposal Pembuatan Website Resmi & Kehadiran Digital - {{ biz_name }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 12mm 14mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b; background: #ffffff; line-height: 1.45; font-size: 11px;
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+    }
+    .document-container { max-width: 820px; margin: 0 auto; }
+    .page { page-break-after: always; min-height: 255mm; position: relative; padding-bottom: 22px; }
+    .page:last-child { page-break-after: auto; }
+    .header-bar { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 3px solid #1268b3; margin-bottom: 14px; }
+    .logo-container { display: flex; align-items: center; gap: 10px; }
+    .brand-monogram { width: 38px; height: 38px; background: #0d4d87; color: #ffffff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; }
+    .brand-text h2 { font-size: 16px; font-weight: 800; color: #0d4d87; letter-spacing: -0.02em; }
+    .brand-text p { font-size: 9.5px; color: #64748b; font-weight: 500; }
+    .header-meta { text-align: right; font-size: 9.5px; color: #475569; }
+    .doc-pill { display: inline-block; background: #f0f6ff; color: #1268b3; border: 1px solid #bfdbfe; padding: 2px 7px; border-radius: 4px; font-weight: 700; font-size: 9px; margin-bottom: 2px; }
+    .title-block { background: linear-gradient(135deg, #0d4d87 0%, #1268b3 100%); color: #ffffff; padding: 14px 18px; border-radius: 8px; margin-bottom: 14px; }
+    .title-block h1 { font-size: 17px; font-weight: 800; margin-bottom: 3px; line-height: 1.25; }
+    .title-block p { font-size: 10.5px; opacity: 0.92; color: #e0f2fe; }
+    .meta-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 10.5px; }
+    .meta-table th, .meta-table td { border: 1px solid #e2e8f0; padding: 6px 10px; }
+    .meta-table th { background: #f8fafc; color: #475569; width: 26%; text-align: left; }
+    .meta-table td { background: #ffffff; color: #0f172a; }
+    .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+    .card-title { font-size: 12px; font-weight: 700; color: #0d4d87; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .footer-bar { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 8.5px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 5px; }
+    .deliv-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+    .deliv-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 7px 10px; font-size: 10px; display: flex; align-items: flex-start; gap: 7px; }
+    .badge-ok { background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 8.5px; }
+    .badge-alert { background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 8.5px; }
+    .anchor-table { width: 100%; border-collapse: collapse; font-size: 10px; margin-top: 6px; }
+    .anchor-table th { background: #0d4d87; color: #ffffff; padding: 6px 8px; text-align: left; font-weight: 700; }
+    .anchor-table td { padding: 6px 8px; border-bottom: 1px solid #e2e8f0; }
+    .anchor-table tr:nth-child(even) { background: #f8fafc; }
+    .anchor-bad { color: #dc2626; font-weight: 600; }
+    .anchor-good { color: #16a34a; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="document-container">
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page">
+      <div class="header-bar">
+        <div class="logo-container">
+          <div class="brand-monogram">{{ monogram }}</div>
+          <div class="brand-text">
+            <h2>{{ biz_name }}</h2>
+            <p>Verifikasi Profil Google & Penawaran Aset Digital Resmi</p>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="doc-pill">DOKUMEN PROPOSAL RESMI</div>
+          <div>No: <strong>{{ proposal_no }}</strong></div>
+          <div>Tanggal: <strong>{{ today_str }}</strong></div>
+        </div>
+      </div>
+
+      <div class="title-block">
+        <h1>PROPOSAL PEMBUATAN WEBSITE RESMI & DOMINASI GOOGLE SEARCH</h1>
+        <p>{{ headline }} • Wilayah Layanan {{ display_area }}</p>
+      </div>
+
+      <table class="meta-table">
+        <tr><th>Nama Bisnis / Toko</th><td><strong>{{ biz_name }}</strong></td></tr>
+        <tr><th>Kategori Bidang Usaha</th><td><strong>{{ trade_name }}</strong></td></tr>
+        <tr><th>Profil Google Maps</th><td><span class="badge-ok">TERVERIFIKASI AKTIF</span> — Rating <strong>{{ rating }}</strong> ({{ reviews }}+ Ulasan Pelanggan Terpercaya)</td></tr>
+        <tr><th>Status Website Resmi</th><td><span class="badge-alert">BELUM MEMILIKI WEBSITE RESMI</span> (Celah Potensi Terbuka Lebar)</td></tr>
+        <tr><th>Saluran Kontak Resmi</th><td>WhatsApp: <strong>{{ phone }}</strong> | Lokasi: {{ address }}</td></tr>
+      </table>
+
+      <div class="card">
+        <div class="card-title">📌 LATAR BELAKANG & RINGKASAN EKSEKUTIF</div>
+        <p style="font-size: 10.5px; color: #334155; line-height: 1.55; margin-bottom: 7px;">
+          Selamat atas reputasi luar biasa yang telah dibangun oleh <strong>{{ biz_name }}</strong> di Google Maps. Bisnis Anda telah terbukti melayani pelanggan di {{ city }} dengan dedikasi tinggi, tercermin dari rating memuaskan dan puluhan ulasan positif.
+        </p>
+        <p style="font-size: 10.5px; color: #334155; line-height: 1.55; margin-bottom: 7px;">
+          Namun, riset perilaku konsumen digital Indonesia tahun 2026 membuktikan bahwa <strong>78% calon pembeli yang mencari produk/jasa lewat smartphone di Google Search akan memilih bisnis yang memiliki website resmi</strong> sebelum melakukan transaksi bernilai besar. Bisnis yang hanya mengandalkan profil peta saat ini kehilangan lebih dari 70% peluang pesanan baru karena dianggap belum memiliki entitas web resmi.
+        </p>
+        <p style="font-size: 10.5px; color: #334155; line-height: 1.55;">
+          Melalui proposal ini, tim desainer & web developer kami telah menyiapkan <strong>Prototipe Website Modern Swiss Minimalist siap pakai</strong> yang langsung online di server cloud berkecepatan tinggi, memuat seluruh katalog layanan dan identitas usaha Anda seutuhnya.
+        </p>
+      </div>
+
+      <div class="card" style="background: #f0fdf4; border-color: #bbf7d0;">
+        <div class="card-title" style="color: #166534;">🎯 3 TARGET UTAMA PERTUMBUHAN BISNIS ANDA</div>
+        <ul style="padding-left: 16px; font-size: 10px; color: #166534; line-height: 1.5;">
+          <li><strong>Meningkatkan Kepercayaan Pelanggan 3x Lipat:</strong> Website resmi memberikan jaminan bonafiditas bagi calon pembeli baru dari luar wilayah yang belum pernah berkunjung langsung ke lokasi.</li>
+          <li><strong>Mendominasi Hasil Pencarian Google Search:</strong> Injeksi metadata Google Schema.org LocalBusiness memastikan bisnis Anda tampil di Google Search organik dan Google Knowledge Panel.</li>
+          <li><strong>Keran Penjualan WhatsApp 24/7 Otomatis:</strong> Tombol interaktif terarah langsung menghubungkan calon klien ke nomor WhatsApp resmi Anda dengan format pesanan rapi dan siap diproses.</li>
+        </ul>
+      </div>
+
+      <div class="footer-bar">
+        <div>Proposal Eksekutif Kehadiran Digital • Halaman 1 dari 4</div>
+        <div>{{ partner_brand }} • {{ partner_team }}</div>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page">
+      <div class="header-bar">
+        <div class="brand-text">
+          <h2 style="font-size: 14px;">ANALISIS CELAH EKSISTENSI DIGITAL & KATALOG SPESIALISASI</h2>
+          <p>{{ biz_name }} — Evaluasi Pasar Lokal {{ city }} & Solusi Turn-Key</p>
+        </div>
+        <div class="header-meta">Halaman 2 / 4</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+        <div class="card" style="border-left: 4px solid #dc2626; margin-bottom: 0;">
+          <div class="card-title" style="color: #991b1b;">⚠️ KONDISI SAAT INI (TANPA WEBSITE)</div>
+          <ul style="padding-left: 15px; font-size: 9.5px; color: #334155; line-height: 1.45;">
+            <li>Hanya bergantung pada pencarian Google Maps radius terdekat.</li>
+            <li>Tidak muncul di hasil pencarian web organik Google Search (SERP).</li>
+            <li>Calon pembeli dari luar area ragu bertransaksi tanpa katalog resmi.</li>
+            <li>Tautan dibagikan ke WhatsApp terlihat polos tanpa pratinjau kredibel.</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left: 4px solid #16a34a; margin-bottom: 0;">
+          <div class="card-title" style="color: #166534;">🚀 KONDISI DENGAN WEBSITE RESMI</div>
+          <ul style="padding-left: 15px; font-size: 9.5px; color: #166534; line-height: 1.45;">
+            <li>Mendominasi pencarian kata kunci Google Search di seluruh kota.</li>
+            <li>Profil bisnis berstandar korporasi dengan navigasi instan di smartphone.</li>
+            <li>Integrasi WhatsApp terformat memudahkan closing transaksi cepat.</li>
+            <li>Memiliki aset digital mandiri yang aktif selamanya tanpa biaya sewa.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 6 Concrete Services Discovered by Researcher -->
+      <div class="card" style="margin-bottom: 10px; background: #f0f7ff; border-color: #bfdbfe;">
+        <div class="card-title" style="color: #0d4d87;">📦 6 KATALOG SPESIALISASI YANG KAMI BANGUN PADA WEBSITE RESMI ANDA</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 5px;">
+          {{ services_pdf_html }}
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 0;">
+        <div class="card-title">📊 ANALISIS PSIKOLOGI RISIKO: 3 KERUGIAN JIKA TANPA WEBSITE RESMI</div>
+        
+        <div style="margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px dashed #e2e8f0;">
+          <strong style="color: #0f172a; font-size: 10px;">1. Kebocoran Calon Pelanggan ke Kompetitor (The Silent Competitor Bleed)</strong>
+          <p style="font-size: 9.5px; color: #475569; margin-top: 2px; line-height: 1.4;">
+            Setiap harinya terdapat ratusan pencarian produk/jasa Anda di Google lewat smartphone. Ketika kompetitor Anda memiliki website resmi dengan katalog terstruktur sedangkan bisnis Anda belum, lebih dari 70% calon pembeli otomatis memilih kompetitor karena kejelasan produk dan portofolio mereka.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px dashed #e2e8f0;">
+          <strong style="color: #0f172a; font-size: 10px;">2. Kehilangan Pelanggan Bernilai Transaksi Besar (High-Ticket Clients)</strong>
+          <p style="font-size: 9.5px; color: #475569; margin-top: 2px; line-height: 1.4;">
+            Konsumen korporat, instansi B2B, atau pembeli bernilai besar selalu membutuhkan verifikasi website resmi untuk memastikan legalitas dan kepastian layanan sebelum mentransfer dana. Kehilangan hanya 1 atau 2 pesanan partai besar per bulan bernilai puluhan juta rupiah—jauh melampaui biaya investasi website turn-key ini.
+      <div class="card" style="background: #f8fafc; border-color: #cbd5e1; margin-top: 8px; padding: 9px 12px;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <div style="font-size: 16px;">💡</div>
+          <p style="font-size: 9.5px; color: #334155; line-height: 1.45; margin: 0;">
+            <strong>Catatan Kurasi:</strong> Seluruh rincian layanan, foto produk, jam buka, dan teks deskripsi di atas dapat disesuaikan atau ditambah kapan saja sesuai kebutuhan operasional Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <div>Proposal Eksekutif Kehadiran Digital • Halaman 2 dari 4</div>
+        <div>{{ partner_brand }} • {{ partner_team }}</div>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 3 ================= -->
+    <div class="page">
+      <div class="header-bar">
+        <div class="brand-text">
+          <h2 style="font-size: 14px;">SOLUSI PROTOTIPE WEBSITE RESMI SIAP PAKAI</h2>
+          <p>Didesain Khusus Berstandar Swiss Minimalist & Berkecepatan Sub-Detik</p>
+        </div>
+        <div class="header-meta">Halaman 3 / 4</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">✨ SPESIFIKASI TEKNIS PROTOTIPE WEBSITE BARU ANDA</div>
+        <div class="deliv-list">
+          <div class="deliv-item">
+            <span style="color:#1268b3; font-weight:800;">✓</span>
+            <div><strong>Mobile-First Ultra Cepat:</strong> Kecepatan muat di bawah 0.5 detik, sangat hemat kuota data pelanggan.</div>
+          </div>
+          <div class="deliv-item">
+            <span style="color:#1268b3; font-weight:800;">✓</span>
+            <div><strong>Direct WhatsApp Smart Button:</strong> Pesan pemesanan otomatis terformat rapi ke WhatsApp toko Anda.</div>
+          </div>
+          <div class="deliv-item">
+            <span style="color:#1268b3; font-weight:800;">✓</span>
+            <div><strong>Google Schema.org JSON-LD:</strong> Terdaftar resmi untuk memicu Google Knowledge Panel dan rich snippets.</div>
+          </div>
+          <div class="deliv-item">
+            <span style="color:#1268b3; font-weight:800;">✓</span>
+            <div><strong>Desain Tipografi Modern:</strong> Google Fonts Plus Jakarta Sans dengan tata letak minimalis dan bersih.</div>
+          </div>
+          <div class="deliv-item">
+            <span style="color:#1268b3; font-weight:800;">✓</span>
+            <div><strong>Peta Situs (Sitemap.xml):</strong> Otomatis siap diindeks oleh bot perayap Google Search Console.</div>
+          </div>
+          <div class="deliv-item">
+            <span style="color:#1268b3; font-weight:800;">✓</span>
+            <div><strong>100% Bebas Beban Server:</strong> Arsitektur statis tanpa database rumit yang rentan diretas atau lemot.</div>
+          </div>
+        </div>
+      </div>
+
+      {{ live_demo_html }}
+
+      <div class="card" style="margin-top: 12px;">
+        <div class="card-title">📱 PANDUAN UJI COBA INTERAKTIF DI SMARTPHONE ANDA (100% ZERO RISK)</div>
+        <ol style="padding-left: 16px; font-size: 10px; color: #334155; line-height: 1.55;">
+          <li>Arahkan kamera smartphone Anda ke <strong>QR Code</strong> di banner atas, atau klik tautan live demo di atas.</li>
+          <li>Website akan langsung terbuka secara instan di browser HP Anda tanpa perlu instal aplikasi apa pun.</li>
+          <li>Coba klik tombol <strong>Konsultasi WhatsApp</strong> untuk merasakan simulasi alur pemesanan langsung dari calon pelanggan toko Anda.</li>
+          <li>Uji coba navigasi menu, kejelasan katalog produk, dan kenyamanan membaca teks di berbagai ukuran layar.</li>
+        </ol>
+      </div>
+
+      <div class="footer-bar">
+        <div>Proposal Eksekutif Kehadiran Digital • Halaman 3 dari 4</div>
+        <div>{{ partner_brand }} • {{ partner_team }}</div>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 4 ================= -->
+    <div class="page">
+      <div class="header-bar">
+        <div class="brand-text">
+          <h2 style="font-size: 14px;">PILIHAN INVESTASI & JAMINAN AKTIVASI RESMI</h2>
+          <p>Dua Skema Investasi Fleksibel &middot; Transparan &middot; Tanpa Biaya Tersembunyi</p>
+        </div>
+        <div class="header-meta">Halaman 4 / 4</div>
+      </div>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Biaya Pembuatan</strong></td>
+              <td class="anchor-bad">Rp 5.000.000 – Rp 15.000.000</td>
+              <td class="anchor-good">Flat {{ price_flat_idr }} (atau {{ price_monthly_idr }})</td>
+            </tr>
+            <tr>
+              <td><strong>Pemasangan ke Domain</strong></td>
+              <td class="anchor-bad">Klien disuruh pasang sendiri / ribet</td>
+              <td class="anchor-good">15 Menit Terima Beres oleh Tim Kami</td>
+            </tr>
+            <tr>
+              <td><strong>Waktu Pengerjaan</strong></td>
+              <td class="anchor-bad">3 – 4 Minggu (Banyak revisi & delay)</td>
+              <td class="anchor-good">0 Hari (Website Sudah Selesai 100%)</td>
+            </tr>
+            <tr>
+              <td><strong>Tingkat Risiko</strong></td>
+              <td class="anchor-bad">Tinggi (Wajib DP 50% di awal)</td>
+              <td class="anchor-good">0% Risiko (Coba dulu via HP baru aktivasi)</td>
+            </tr>
+            <tr>
+              <td><strong>Mesin Order WhatsApp</strong></td>
+              <td class="anchor-bad">Hanya link chat biasa tanpa format</td>
+              <td class="anchor-good">Format PO Otomatis ke WA Sales Anda</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-bottom: 10px;">
+        <div class="card-title">📦 APA SAJA YANG ANDA DAPATKAN (LAYANAN TERIMA BERES):</div>
+        <ul style="padding-left: 16px; font-size: 10px; color: #334155; line-height: 1.55;">
+          <li><strong>Layanan Migrasi Kilat 15 Menit (Terima Beres):</strong> Tim teknis kami yang menghubungkan dan memigrasikan website ke domain resmi pilihan Anda (www.{{ safe_domain_slug }}.com / .co.id / .id) dengan jaminan 100% Zero-Downtime tanpa Anda pusing urusan teknis.</li>
+          <li><strong>WhatsApp Closing Machine Terintegrasi:</strong> Setiap tombol produk dan layanan langsung memicu pesan terformat (Purchase Order / Minta Penawaran) langsung ke WhatsApp admin usaha Anda.</li>
+          <li><strong>Optimasi Google Search & Schema LocalBusiness:</strong> Pendaftaran sitemap dan struktur data Google resmi agar profil bisnis Anda mendominasi pencarian lokal Google Maps & Search.</li>
+          <li><strong>Kecepatan Akses Sub-Detik (PageSpeed 95+):</strong> Tampilan ringan dan responsif kilat di smartphone pelanggan pada koneksi 4G/5G di seluruh Indonesia.</li>
+          <li><strong>Garansi Teknis 60 Hari Penuh:</strong> Pendampingan langsung dan jaminan bebas kendala teknis pasca-aktivasi tanpa biaya tambahan.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="background: #eff6ff; border-color: #bfdbfe; margin-bottom: 10px; padding: 9px 12px;">
+        <div class="card-title" style="color: #1e40af; margin-bottom: 3px;">💳 METODE PEMBAYARAN FLEKSIBEL (MIDTRANS SNAP RESMI)</div>
+        <p style="font-size: 9.5px; color: #1e3a8a; line-height: 1.45;">
+          Aktivasi diproses secara aman melalui gerbang pembayaran resmi Midtrans Snap berstandar Bank Indonesia. Mendukung: <strong>QRIS Instan (GoPay, OVO, ShopeePay, Dana)</strong>, <strong>Virtual Account (BCA, Mandiri, BRI, BNI, Permata)</strong>, dan Kartu Kredit.
+        </p>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; padding-top: 8px; border-top: 1px solid #e2e8f0;">
+        <div style="font-size: 9px; color: #64748b; line-height: 1.4;">
+          <strong>{{ partner_brand }}</strong><br>
+          {{ partner_tagline }}<br>
+          {{ partner_contact }}
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 9px; color: #64748b;">Disahkan secara profesional oleh:</div>
+          <div style="font-size: 11px; font-weight: 800; color: #0d4d87; margin-top: 1px;">{{ partner_team }}</div>
+          <div style="font-size: 8.5px; color: #16a34a; font-weight: 700;">PROPOSAL RESMI TERVERIFIKASI ✓</div>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <div>Proposal Eksekutif Kehadiran Digital • Halaman 4 dari 4</div>
+        <div>{{ partner_brand }} • {{ partner_team }}</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

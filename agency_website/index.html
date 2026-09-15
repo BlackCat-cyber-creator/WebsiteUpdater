@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Updater Studio — Rekayasa Web &amp; Modernisasi $100 Turn-Key UKM</title>
-  <meta name="description" content="Studio rekayasa web spesialis performa tinggi, modernisasi website usang, dan optimasi Google Search untuk UKM Indonesia dengan model turn-key flat $100 USD.">
+  <title>Website Updater Studio — Rekayasa Web &amp; WhatsApp Closing Machine UKM</title>
+  <meta name="description" content="Studio rekayasa web spesialis performa kilat, WhatsApp Closing Machine, dan optimasi Google Search untuk UKM Indonesia dengan layanan migrasi terima beres 15 menit.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://websiteupdater.vercel.app/">
 
@@ -16,15 +16,15 @@
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://websiteupdater.vercel.app/">
-  <meta property="og:title" content="Website Updater Studio — Rekayasa Web &amp; Modernisasi $100 Turn-Key">
-  <meta property="og:description" content="Jasa rekayasa web berstandar Swiss Minimalist &amp; optimasi Google Search berkecepatan ekstrim untuk UKM Indonesia. $100 USD Turn-Key.">
+  <meta property="og:title" content="Website Updater Studio — Rekayasa Web &amp; WhatsApp Closing Machine">
+  <meta property="og:description" content="Jasa rekayasa web berkecepatan sub-detik, integrasi mesin pesanan WhatsApp otomatis, dan optimasi Google Maps untuk UKM Indonesia. Terima beres 15 menit.">
   <meta property="og:image" content="https://websiteupdater.vercel.app/favicon.png">
   <meta property="og:site_name" content="Website Updater Studio">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Website Updater Studio — Rekayasa Web &amp; Modernisasi $100 Turn-Key">
-  <meta name="twitter:description" content="Modernisasi website usang menjadi mesin penjualan berkecepatan tinggi dengan garansi PageSpeed 95+. $100 USD.">
+  <meta name="twitter:title" content="Website Updater Studio — Rekayasa Web &amp; WhatsApp Closing Machine">
+  <meta name="twitter:description" content="Modernisasi website usang menjadi mesin penangkap order WhatsApp berkecepatan tinggi dengan garansi PageSpeed 95+.">
   <meta name="twitter:image" content="https://websiteupdater.vercel.app/favicon.png">
 
   <!-- Structured Data (Schema.org) for Google Search Engine Authority -->
@@ -36,8 +36,8 @@
     "url": "https://websiteupdater.vercel.app",
     "logo": "https://websiteupdater.vercel.app/favicon.svg",
     "image": "https://websiteupdater.vercel.app/favicon.png",
-    "description": "Studio rekayasa web spesialis performa tinggi, modernisasi website usang, dan optimasi Google Search untuk UKM Indonesia dengan model turn-key flat $100 USD.",
-    "priceRange": "$100",
+    "description": "Studio rekayasa web spesialis performa tinggi, modernisasi website usang, dan optimasi Google Search untuk UKM Indonesia dengan model terima beres 15 menit.",
+    "priceRange": "Rp 1.490.000",
     "telephone": "+6285128013767",
     "email": "websiteupdater888@gmail.com",
     "address": {
@@ -768,7 +768,7 @@
     }
 
     /* =========================================================================
-       6. TRANSPARENT TURN-KEY PRICING $100
+       6. TRANSPARENT INDONESIAN PRICING (FLAT & CLOUD)
        ========================================================================= */
     .price-card-hero {
       max-width: 860px;
@@ -1111,11 +1111,108 @@
       .price-val { font-size: 36px; }
     }
 
-    @media (max-width: 360px) {
-      .brand-tag { display: none; }
-      .brand-name { font-size: 14px; }
-      .btn-nav span { font-size: 11.5px; }
-      .btn-nav svg { display: none; }
+    /* =========================================================================
+       LIVE ACTIVITY SOCIAL PROOF TOAST WIDGET
+       ========================================================================= */
+    .live-activity-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 9999;
+      background: rgba(13, 19, 33, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 16px rgba(56, 189, 248, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 380px;
+      opacity: 0;
+      transform: translateY(20px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .live-activity-toast.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .toast-pulse-icon {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .toast-pulse-dot {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 9px;
+      height: 9px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+      animation: toastPulse 2s infinite;
+    }
+    @keyframes toastPulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .toast-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex-grow: 1;
+      min-width: 0;
+    }
+    .toast-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    .toast-meta {
+      font-size: 11.5px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toast-meta-tag {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .toast-close {
+      background: none;
+      border: none;
+      color: #64748b;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 4px;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .toast-close:hover {
+      color: #ffffff;
+    }
+    @media (max-width: 640px) {
+      .live-activity-toast {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        max-width: none;
+      }
     }
   </style>
 </head>
@@ -1182,7 +1279,8 @@
 
         <ul class="nav-links">
           <li><a href="#layanan">Layanan</a></li>
-          <li><a href="#harga">Biaya $100</a></li>
+          <li><a href="#harga">Paket Biaya</a></li>
+          <li><a href="#kemitraan" style="color: #38bdf8; font-weight: 700;">Mitra Reseller</a></li>
           <li><a href="#keunggulan">Garansi</a></li>
           <li><a href="#alur-kerja">Alur Kerja</a></li>
           <li><a href="/terms">Syarat &amp; Ketentuan</a></li>
@@ -1207,28 +1305,28 @@
         <div class="hero-content">
           <h1 class="hero-title">
             <span class="grad-text">Modernisasi Website Bisnis Anda.</span><br>
-            <span class="glow-text">Cepat, Elegan, dan Berperingkat Teratas.</span>
+            <span class="glow-text">Mesin Order WhatsApp Berkecepatan Kilat.</span>
           </h1>
 
           <p class="hero-desc">
-            Membangun landing page baru berstandar Swiss Minimalist atau merekayasa ulang website lama menjadi super cepat, mobile-first, dan teroptimasi Google SEO. Serah terima turn-key flat <strong>$100 USD (kurs live Rupiah)</strong> tanpa biaya langganan bulanan.
+            Membangun website baru atau merekayasa ulang website lama menjadi super cepat, mobile-first, dan terintegrasi WhatsApp Closing Machine. Layanan migrasi terima beres 15 menit ke domain resmi Anda dengan paket flat <strong>Rp 1.490.000</strong> atau cloud managed <strong>Rp 99.000/bulan</strong>.
           </p>
 
           <div class="hero-actions">
-            <a href="https://wa.me/6285128013767?text=Halo%20Website%20Updater%20Studio%2C%20saya%20ingin%20konsultasi%20pembuatan%2Fmodernisasi%20website%20turn-key%20%24100" target="_blank" rel="noopener noreferrer" class="btn-glow-primary">
+            <a href="https://wa.me/6285128013767?text=Halo%20Website%20Updater%20Studio%2C%20saya%20ingin%20konsultasi%20layanan%20website%20terima%20beres" target="_blank" rel="noopener noreferrer" class="btn-glow-primary">
               <span>Konsultasi via WhatsApp</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
             <a href="#harga" class="btn-glass-secondary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
-              <span>Lihat Paket Turn-Key $100</span>
+              <span>Lihat Pilihan Paket</span>
             </a>
           </div>
 
           <div class="hero-trust-list">
             <div class="trust-chip">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>100% Hak Milik Source Code</span>
+              <span>Migrasi 15 Menit Terima Beres</span>
             </div>
             <div class="trust-chip">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1313,7 +1411,7 @@
               </div>
               <div>
                 <div class="badge-text-title">Garansi 60 Hari</div>
-                <div class="badge-text-sub">Turn-Key Flat $100 USD</div>
+                <div class="badge-text-sub">Layanan Terima Beres</div>
               </div>
             </div>
 
@@ -1370,59 +1468,105 @@
     </div>
   </section>
 
-  <!-- TRANSPARENT TURN-KEY PRICING $100 -->
+  <!-- TRANSPARENT INDONESIAN PRICING -->
   <section id="harga" class="section-spacer">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Biaya Transparan</span>
-        <h2 class="section-title">Turn-Key Flat $100 USD. Tanpa Biaya Tersembunyi.</h2>
+        <span class="section-tag">Pilihan Paket Investasi</span>
+        <h2 class="section-title">Dua Skema Investasi Fleksibel. 100% Transparan.</h2>
         <p class="section-desc">
-          Satu harga pasti untuk hasil kelas dunia. Pembayaran resmi diproses aman melalui Midtrans Bank Indonesia.
+          Pilih antara paket kepemilikan flat satu kali bayar atau paket sewa cloud managed tanpa biaya awal. Seluruh transaksi diproses resmi melalui Midtrans Bank Indonesia.
         </p>
       </div>
 
-      <div class="price-card-hero">
-        <div class="price-top-badge">Paket Lengkap Siap Pakai</div>
-        <div class="price-flex">
-          <div>
-            <div class="price-num">$100 <span>USD</span></div>
-            <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Biaya pengerjaan turn-key satu kali bayar (one-time fee)</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto;">
+        
+        <!-- CARD 1: PAKET KEMITRAAN FLAT -->
+        <div class="price-card-hero" style="margin: 0; padding: 36px 28px; border-color: rgba(56, 189, 248, 0.4);">
+          <div class="price-top-badge">Paling Populer &bull; Kepemilikan Penuh</div>
+          <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 24px; margin-bottom: 24px;">
+            <div style="font-size: 13px; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Paket Flat Terima Beres</div>
+            <div class="price-num">Rp 1.490.000</div>
+            <p style="color: var(--text-muted); font-size: 12.5px; margin-top: 6px;">Satu kali bayar. Bebas biaya langganan bulanan selamanya.</p>
           </div>
-          <div class="price-idr-box">
-            <div class="price-idr-val" id="live-exchange-val">Memuat Kurs...</div>
-            <div class="price-idr-sub" id="live-exchange-sub">Sesuai Kurs Resmi Bank Indonesia Hari Ini</div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;">
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Layanan Migrasi Kilat 15 Menit ke Domain Resmi Anda</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Integrasi WhatsApp Closing Machine (PO Otomatis)</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Optimasi Skor Google PageSpeed 95+ (Desktop &amp; Mobile)</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Setup Schema.org LocalBusiness, Meta Tag &amp; Sitemap</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Garansi Teknis 60 Hari Penuh Tanpa Biaya Tambahan</span></div>
           </div>
+
+          <a href="#kontak" onclick="selectServiceTrack('Paket Flat Terima Beres (Rp 1.490.000)')" class="btn-glow-primary" style="width: 100%; justify-content: center; font-size: 14.5px;">
+            Pilih Paket Flat Rp 1.490.000 &rarr;
+          </a>
         </div>
 
-        <div class="deliverables-grid">
-          <div class="deliv-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Produksi Source Code Bersih 100% Hak Milik Klien</span>
+        <!-- CARD 2: PAKET CLOUD MANAGED -->
+        <div class="price-card-hero" style="margin: 0; padding: 36px 28px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(9, 14, 26, 0.95) 100%); border-color: rgba(148, 163, 184, 0.25);">
+          <div class="price-top-badge" style="background: linear-gradient(135deg, #10b981, #059669);">Nol Risiko &bull; Zero Upfront</div>
+          <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 24px; margin-bottom: 24px;">
+            <div style="font-size: 13px; color: #34d399; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Paket Sewa Cloud Managed</div>
+            <div class="price-num">Rp 99.000 <span style="font-size: 16px;">/ bln</span></div>
+            <p style="color: var(--text-muted); font-size: 12.5px; margin-top: 6px;">Biaya pembuatan Rp 0 (Gratis). Cukup bayar sewa cloud server.</p>
           </div>
-          <div class="deliv-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Live Cloud Hosting Vercel Edge Server + SSL Gratis Selamanya</span>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;">
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Biaya Pembuatan &amp; Setup: <strong>Rp 0 (GRATIS)</strong></span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Cloud Server Vercel Global Edge Kilat + SSL Selamanya</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Pemeliharaan Teknis Rutin &amp; Update Konten Bebas Pusing</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Dukungan Teknis Langsung via WhatsApp Khusus</span></div>
+            <div class="deliv-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Bebas Berhenti Kapan Saja Tanpa Denda Tersembunyi</span></div>
           </div>
-          <div class="deliv-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Optimasi Skor Google PageSpeed 95+ (Desktop &amp; Mobile)</span>
-          </div>
-          <div class="deliv-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Setup Schema.org, Meta Tag, Sitemap.xml, Robots.txt</span>
-          </div>
-          <div class="deliv-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Integrasi Direct WhatsApp &amp; Formulir Kontak Cepat</span>
-          </div>
-          <div class="deliv-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Garansi Teknis 60 Hari Kalender Penuh Tanpa Biaya Tambahan</span>
-          </div>
+
+          <a href="#kontak" onclick="selectServiceTrack('Paket Sewa Cloud Managed (Rp 99.000/bln)')" class="btn-glass-secondary" style="width: 100%; justify-content: center; font-size: 14.5px;">
+            Pilih Paket Cloud Rp 99rb/bln &rarr;
+          </a>
         </div>
 
-        <a href="#kontak" class="btn-glow-primary" style="width: 100%; justify-content: center; font-size: 16px;">
-          Klaim Jadwal Pengerjaan Sekarang &rarr;
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM KEMITRAAN FREELANCER & RESELLER AGENSI -->
+  <section id="kemitraan" class="section-spacer" style="background: linear-gradient(180deg, rgba(14, 165, 233, 0.04) 0%, rgba(13, 19, 33, 0.9) 100%); border-top: 1px solid rgba(56, 189, 248, 0.15); border-bottom: 1px solid rgba(56, 189, 248, 0.15);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">PROGRAM KEMITRAAN RESELLER &amp; FREELANCER</span>
+        <h2 class="section-title">Jual Website ke Klien Rp 3 – 5 Juta. Bayar ke Kami Rp 350rb Terima Beres.</h2>
+        <p class="section-desc">
+          Punya kemampuan sales, relasi UKM, atau akun Fastwork/Upwork tapi malas ngoding dari nol? Jadikan teknologi kami sebagai pabrik website di belakang layar agensi Anda.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 36px;">
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px; padding: 24px;">
+          <div style="display: inline-block; background: #0284c7; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px;">LANGKAH 1</div>
+          <h3 style="font-size: 16px; color: #fff; margin-bottom: 8px;">1. Masukkan Target Klien</h3>
+          <p style="font-size: 13.5px; color: #94a3b8; line-height: 1.5;">Kirimkan link Google Maps atau domain calon klien Anda. Dalam 1 menit, mesin kami men-generate demo website live Vercel dan proposal audit 4 halaman lengkap.</p>
+        </div>
+
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px; padding: 24px;">
+          <div style="display: inline-block; background: #0284c7; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px;">LANGKAH 2</div>
+          <h3 style="font-size: 16px; color: #fff; margin-bottom: 8px;">2. 100% Whitelabel Brand Anda</h3>
+          <p style="font-size: 13.5px; color: #94a3b8; line-height: 1.5;">Seluruh dokumen proposal PDF dan preview demo tampil menggunakan nama agensi, logo, dan nomor kontak WhatsApp Anda. Klien tidak pernah tahu keberadaan kami.</p>
+        </div>
+
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px; padding: 24px;">
+          <div style="display: inline-block; background: #10b981; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px;">LANGKAH 3</div>
+          <h3 style="font-size: 16px; color: #fff; margin-bottom: 8px;">3. Kantongi Profit Bersih 85%+</h3>
+          <p style="font-size: 13.5px; color: #94a3b8; line-height: 1.5;">Jual ke klien Anda Rp 3.000.000 – Rp 5.000.000. Bayar lisensi ke kami hanya Rp 350.000 – Rp 500.000 per website jadi. Tim kami yang kerjakan migrasinya sampai online.</p>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%); border: 1.5px solid #38bdf8; border-radius: 16px; padding: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div style="max-width: 580px;">
+          <h4 style="font-size: 18px; color: #fff; font-weight: 800; margin-bottom: 6px;">Buka Peluang Bisnis Web Development Skala Agensi Hari Ini</h4>
+          <p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">Kuota mitra dibatasi 15 mitra per regional agar tidak saling bertabrakan target pasar. Mulai tawarkan website ke kenalan bisnis Anda sekarang tanpa risiko modal.</p>
+        </div>
+        <a href="https://wa.me/6285128013767?text=Halo%20Website%20Updater%20Studio%2C%20saya%20tertarik%20bergabung%20dengan%20Program%20Kemitraan%20Reseller%20%2F%20Freelancer%20Web%20(Whitelabel)." target="_blank" rel="noopener noreferrer" class="btn-glow-primary" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);">
+          <span>Daftar Jadi Mitra via WhatsApp ↗</span>
         </a>
       </div>
     </div>
@@ -1526,9 +1670,10 @@
           <div class="form-group">
             <label for="f-track">Pilihan Jalur Layanan</label>
             <select id="f-track" class="form-control" style="background: #0b1120;">
-              <option value="Jalur B: Modernisasi Website Lama">Jalur B: Modernisasi Website Lama ($100 USD)</option>
-              <option value="Jalur A: Pembuatan Landing Page Baru">Jalur A: Pembuatan Landing Page Baru ($100 USD)</option>
-              <option value="Konsultasi &amp; Tanya Jawab Dulu">Konsultasi Khusus / Tanya Jawab Dahulu</option>
+              <option value="Paket Flat Terima Beres (Rp 1.490.000)">Paket Flat Terima Beres (Rp 1.490.000 All-In)</option>
+              <option value="Paket Sewa Cloud Managed (Rp 99.000/bln)">Paket Sewa Cloud Managed (Rp 99.000/bulan)</option>
+              <option value="Program Kemitraan Reseller / Freelancer">Program Kemitraan Reseller / Freelancer (Whitelabel)</option>
+              <option value="Konsultasi Khusus / Tanya Jawab Dahulu">Konsultasi Khusus / Tanya Jawab Dahulu</option>
             </select>
           </div>
 
@@ -1599,7 +1744,7 @@
             <span class="brand-name">Website Updater Studio</span>
           </a>
           <p class="footer-brand-desc">
-            Studio rekayasa web spesialis performa tinggi, mobile-first, dan optimasi Google Search untuk UKM Indonesia dengan model turn-key flat $100 USD.
+            Studio rekayasa web spesialis performa kilat, WhatsApp Closing Machine, dan optimasi Google Search untuk UKM Indonesia dengan model terima beres 15 menit.
           </p>
         </div>
 
@@ -1607,7 +1752,8 @@
           <h4>Navigasi</h4>
           <ul>
             <li><a href="#layanan">Jalur Layanan A &amp; B</a></li>
-            <li><a href="#harga">Rincian Biaya ($100 USD)</a></li>
+            <li><a href="#harga">Pilihan Paket Biaya</a></li>
+            <li><a href="#kemitraan">Kemitraan Reseller</a></li>
             <li><a href="#keunggulan">Keunggulan &amp; Garansi</a></li>
             <li><a href="#alur-kerja">Alur Kerja 3 Langkah</a></li>
           </ul>
@@ -1977,7 +2123,7 @@
       const track = document.getElementById('f-track').value;
       const notes = document.getElementById('f-notes').value.trim();
 
-      let message = `Halo Website Updater Studio,\n\nSaya ingin konsultasi layanan website turn-key $100 USD:\n`;
+      let message = `Halo Website Updater Studio,\n\nSaya ingin konsultasi layanan website:\n`;
       message += `• Nama Narahubung: ${name}\n`;
       message += `• Nama Usaha / Bisnis: ${biz}\n`;
       message += `• Kebutuhan Layanan: ${track}\n`;
@@ -1986,6 +2132,159 @@
 
       const encoded = encodeURIComponent(message);
       window.open(`https://wa.me/6285128013767?text=${encoded}`, '_blank');
+    }
+  </script>
+
+  <!-- Live Activity Social Proof Toast -->
+  <div class="live-activity-toast" id="activityToast" role="status" aria-live="polite">
+    <div class="toast-pulse-icon">
+      <span id="toastIcon">🚀</span>
+      <span class="toast-pulse-dot"></span>
+    </div>
+    <div class="toast-body">
+      <div class="toast-title" id="toastTitle">Website Baru: PT. S**** J***</div>
+      <div class="toast-meta">
+        <span class="toast-meta-tag" id="toastTag">Website Baru (Balikpapan)</span>
+        <span>•</span>
+        <span id="toastTime">Baru saja</span>
+      </div>
+    </div>
+    <button class="toast-close" onclick="dismissActivityToast()" aria-label="Tutup notifikasi">✕</button>
+  </div>
+
+  <script>
+    function selectServiceTrack(trackName) {
+      const selectEl = document.getElementById('f-track');
+      if (selectEl) {
+        selectEl.value = trackName;
+      }
+      const kontakSec = document.getElementById('kontak');
+      if (kontakSec) {
+        kontakSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('f-name') ? document.getElementById('f-name').value.trim() : '';
+      const biz = document.getElementById('f-biz') ? document.getElementById('f-biz').value.trim() : '';
+      const track = document.getElementById('f-track') ? document.getElementById('f-track').value : '';
+      const notes = document.getElementById('f-notes') ? document.getElementById('f-notes').value.trim() : '';
+
+      const waNumber = '6285128013767';
+      const text = `Halo Website Updater Studio,
+
+Saya ingin konsultasi mengenai layanan website resmi:
+• Nama: ${name}
+• Bisnis/Usaha: ${biz}
+• Pilihan Jalur: ${track}
+• Catatan / Tautan Website: ${notes || '-'}
+
+Mohon informasi langkah aktivasi dan pengecekan prototipe. Terima kasih!`;
+
+      const encoded = encodeURIComponent(text);
+      window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
+    }
+
+    // -------------------------------------------------------------------------
+    // E. LIVE SOCIAL PROOF ACTIVITY TICKER (Website Baru & Modernisasi: 0 - 30 Menit)
+    // -------------------------------------------------------------------------
+    const activities = [
+      {
+        icon: "🚀",
+        title: "Website Baru: PT. N********* M****",
+        tag: "Website Baru (Jakarta Selatan)",
+        time: "Baru saja"
+      },
+      {
+        icon: "⚡",
+        title: "Modernisasi: CV. P****** J***",
+        tag: "Modernisasi (Surabaya)",
+        time: "4 menit yang lalu"
+      },
+      {
+        icon: "🚀",
+        title: "Website Baru: PT. S**** B******",
+        tag: "Website Baru (Medan)",
+        time: "9 menit yang lalu"
+      },
+      {
+        icon: "⚡",
+        title: "Modernisasi: Toko B*** U****",
+        tag: "Modernisasi (Denpasar)",
+        time: "13 menit yang lalu"
+      },
+      {
+        icon: "🚀",
+        title: "Website Baru: PT. S**** J***",
+        tag: "Website Baru (Balikpapan)",
+        time: "17 menit yang lalu"
+      },
+      {
+        icon: "⚡",
+        title: "Modernisasi: CV. B**** M******",
+        tag: "Modernisasi (Makassar)",
+        time: "21 menit yang lalu"
+      },
+      {
+        icon: "🚀",
+        title: "Website Baru: Studio K****** A*****",
+        tag: "Website Baru (Bandung)",
+        time: "25 menit yang lalu"
+      },
+      {
+        icon: "⚡",
+        title: "Modernisasi: PT. K**** P******",
+        tag: "Modernisasi (Semarang)",
+        time: "28 menit yang lalu"
+      }
+    ];
+
+    let currentActivityIdx = 0;
+    let toastTimeout = null;
+    let isToastDismissed = false;
+
+    function showNextActivity() {
+      if (isToastDismissed) return;
+      const toast = document.getElementById('activityToast');
+      const iconEl = document.getElementById('toastIcon');
+      const titleEl = document.getElementById('toastTitle');
+      const tagEl = document.getElementById('toastTag');
+      const timeEl = document.getElementById('toastTime');
+
+      if (!toast) return;
+
+      const act = activities[currentActivityIdx];
+      if (iconEl) iconEl.textContent = act.icon;
+      if (titleEl) titleEl.textContent = act.title;
+      if (tagEl) tagEl.textContent = act.tag;
+      if (timeEl) timeEl.textContent = act.time;
+
+      toast.classList.add('show');
+
+      // Tampilkan selama 5 detik
+      setTimeout(() => {
+        toast.classList.remove('show');
+        currentActivityIdx = (currentActivityIdx + 1) % activities.length;
+        // Jeda 4.5 detik sebelum memunculkan aktivitas berikutnya
+        toastTimeout = setTimeout(showNextActivity, 4500);
+      }, 5000);
+    }
+
+    function dismissActivityToast() {
+      const toast = document.getElementById('activityToast');
+      if (toast) toast.classList.remove('show');
+      isToastDismissed = true;
+      if (toastTimeout) clearTimeout(toastTimeout);
+    }
+
+    // Jalankan ticker 800ms setelah DOM siap
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(showNextActivity, 800);
+      });
+    } else {
+      setTimeout(showNextActivity, 800);
     }
   </script>
 </body>

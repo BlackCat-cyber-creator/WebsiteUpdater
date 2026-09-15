@@ -1,0 +1,18 @@
+# Website Updater Studio — Python Dependencies
+# Install: pip install -r requirements.txt
+# Then:    playwright install chromium
+
+# Core scraping & browser automation
+scrapling>=0.4.15
+playwright>=1.62.0
+beautifulsoup4>=4.13.0
+
+# Environment & configuration
+python-dotenv>=1.0.0
+
+# Templating engine
+jinja2>=3.1.6
+
+# Testing
+pytest>=8.0.0
+

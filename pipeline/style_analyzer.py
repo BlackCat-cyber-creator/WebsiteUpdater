@@ -10,29 +10,45 @@ from typing import Dict, Any, List
 
 class WebsiteStyleAnalyzer:
     def __init__(self):
-        # UI/UX Pro Max Product Profile for Logistics & Maritime Cold Chain:
-        # Category: Logistics / Delivery / Freight
-        # Design Philosophy: Swiss Style & Minimalism + Flat Design + Micro-interactions
-        # Landing Pattern: Feature-Rich Showcase + Conversion
         self.pro_max_profile = {
-            "product_type": "Logistics/Maritime Cold Chain",
-            "recommended_style": "Minimalism & Swiss Style + Flat Design",
-            "secondary_styles": "Micro-interactions & Glassmorphism",
-            "typography_pairing": "Modern Professional (Poppins / Plus Jakarta Sans + Open Sans)",
+            "product_type": "B2B Enterprise & Commercial SME",
+            "recommended_style": "Swiss Minimalism & Elevated Modern Clean",
+            "secondary_styles": "Micro-interactions & Crisp Card Layouts",
+            "typography_pairing": "Modern Professional (Plus Jakarta Sans / Inter)",
             "wcag_target": "AA (Contrast Ratio >= 4.5:1)",
             "touch_target_min": "48px"
         }
 
     def analyze(self, raw_html: str, scraped: Dict[str, Any]) -> Dict[str, Any]:
         """Analyzes original CSS, color schemes, typography, and visual components."""
+        brand = scraped.get("brand_name") or "Perusahaan"
+        category = scraped.get("category", "")
+        if not category and scraped.get("layanan") and isinstance(scraped["layanan"], list) and len(scraped["layanan"]) > 0:
+            category = scraped["layanan"][0].get("title", "")
+
+        from pipeline.researcher.ui_ux_integrator import UIUXProMaxIntegrator
+        ui_ux = UIUXProMaxIntegrator()
+        ds = ui_ux.resolve_design_system(brand, category)
+
+        dynamic_profile = {
+            "product_type": ds["product_type"],
+            "recommended_style": ds["style_name"],
+            "landing_pattern": ds["landing_pattern"],
+            "typography_pairing": f"{ds['typography']['heading_font']} / {ds['typography']['body_font']}",
+            "wcag_target": "AA (Contrast Ratio >= 4.5:1)",
+            "touch_target_min": "44px",
+            "anti_patterns": ds["anti_patterns"],
+            "color_mood": ds["color_mood"]
+        }
+
         extracted_colors = self._extract_css_colors(raw_html)
         typography = self._extract_typography(raw_html)
         components = self._extract_component_patterns(raw_html)
-        flaws = self._detect_style_flaws(extracted_colors, typography, raw_html)
-        upgrade_plan = self._formulate_upgrade_plan(extracted_colors, typography, flaws)
+        flaws = self._detect_style_flaws(extracted_colors, typography, raw_html, brand)
+        upgrade_plan = self._formulate_upgrade_plan(extracted_colors, typography, flaws, ds)
 
         return {
-            "ui_ux_pro_max_profile": self.pro_max_profile,
+            "ui_ux_pro_max_profile": dynamic_profile,
             "original_colors": extracted_colors,
             "original_typography": typography,
             "original_components": components,
@@ -105,57 +121,64 @@ class WebsiteStyleAnalyzer:
             })
         return patterns
 
-    def _detect_style_flaws(self, colors: Dict[str, str], typography: Dict[str, Any], html: str) -> List[Dict[str, str]]:
+    def _detect_style_flaws(self, colors: Dict[str, str], typography: Dict[str, Any], html: str, brand: str = "Perusahaan") -> List[Dict[str, str]]:
+        heading_font = typography.get("headings", "Default Display")
+        body_font = typography.get("body", "Default Sans")
+
         return [
             {
-                "issue": "Typography Inconsistency (Anton vs Poppins)",
-                "impact": "High Visual Friction",
-                "description": "The heavy, ultra-condensed 'Anton' display font on headings clashes with geometric 'Poppins', making section titles look dated and unevenly weighted.",
-                "solution": "Unify with UI/UX Pro Max Modern Professional typography: Plus Jakarta Sans / Poppins 700 for crisp corporate headings and Open Sans / Poppins for smooth readability."
+                "issue": f"Konsistensi Tipografi ({heading_font} vs {body_font})",
+                "impact": "Visual Friction",
+                "description": f"Hirarki font judul ({heading_font}) dan isi ({body_font}) belum memiliki perbandingan kontras bobot (weight contrast) yang optimal untuk kenyamanan membaca di mobile.",
+                "solution": "Selaraskan dengan standar UI/UX Pro Max: Plus Jakarta Sans / Inter 700 untuk judul yang tegas dan Inter / Roboto 400 untuk kenyamanan membaca teks deskripsi."
             },
             {
-                "issue": "Hero Contrast & Text Legibility",
-                "impact": "WCAG AA Contrast Failure",
-                "description": "The hero slideshow rotates through images with varying brightness, causing white text to lose contrast without a directional scrim overlay.",
-                "solution": "Implement a dual-tone directional navy gradient overlay (rgba(13, 77, 135, 0.85) to rgba(18, 104, 179, 0.65)) to ensure 100% contrast compliance across all screens."
+                "issue": "Kontras Banner Hero & Keterbacaan Teks",
+                "impact": "WCAG AA Contrast Risk",
+                "description": f"Banner utama {brand} menampilkan background visual yang berisiko mengurangi kontras teks promosi jika diakses di bawah sinar matahari pada layar smartphone.",
+                "solution": "Terapkan directional soft overlay gradient semi-transparan untuk memastikan teks judul dan tombol Call-to-Action 100% terbaca jelas di seluruh perangkat."
             },
             {
-                "issue": "Static Wilayah Presentation (14 Kabupaten Kalbar)",
-                "impact": "Low B2B Usability",
-                "description": "The 14 coverage regencies in West Kalimantan are presented as flat list items with no interactive filtering, map links, or search.",
-                "solution": "Transform into an interactive Regency Explorer where visitors can filter or search Pontianak, Sambas, Sintang, Ketapang, etc., with instantaneous feedback."
+                "issue": "Aksesibilitas Menu & Katalog Produk/Layanan",
+                "impact": "Low Mobile Usability",
+                "description": f"Struktur navigasi dan sajian produk/layanan {brand} masih mengandalkan layout statis tanpa filtering cepat atau tombol aksi WhatsApp langsung.",
+                "solution": "Tingkatkan menjadi grid modern interaktif dengan kartu berdensitas rapi dan tombol 'Konsultasi / Pesan Sekarang' langsung terhubung ke WhatsApp sales."
             },
             {
-                "issue": "Outdated Card Shading & Heavy Borders",
-                "impact": "Visual Clutter",
-                "description": "Thick opaque borders with standard Bootstrap 5 drop shadows create an unnecessary heavy look.",
-                "solution": "Implement UI/UX Pro Max Swiss-inspired flat design with refined 1px translucent borders, subtle hover lift (translateY -4px), and crisp micro-interactions."
+                "issue": "Sinyal Kredibilitas & Trust Badges",
+                "impact": "Low Conversion Signals",
+                "description": f"Informasi keunggulan resmi {brand} belum diperkuat dengan trust badges, ringkasan spesifikasi, dan sertifikasi/legalitas terstruktur.",
+                "solution": "Sematkan barisan badge kredibilitas modern (garansi mutu, respons cepat, dan legalitas resmi) di bawah banner utama."
             }
         ]
 
-    def _formulate_upgrade_plan(self, colors: Dict[str, str], typography: Dict[str, Any], flaws: List[Dict[str, str]]) -> Dict[str, Any]:
+    def _formulate_upgrade_plan(self, colors: Dict[str, str], typography: Dict[str, Any], flaws: List[Dict[str, str]], ds: Any = None) -> Dict[str, Any]:
+        heading_font = ds["typography"]["heading_font"] if ds else "Plus Jakarta Sans"
+        body_font = ds["typography"]["body_font"] if ds else "Poppins"
+        gfonts_url = ds["typography"]["google_fonts_url"] if ds else "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+
         return {
             "retained_brand_colors": {
-                "primary": colors.get("--warna-biru-gelap", "#1268b3"),
-                "secondary": colors.get("--warna-biru-utama", "#2196f3"),
-                "accent": colors.get("--warna-kuning", "#fab853"),
-                "whatsapp": colors.get("--warna-hijau-wa", "#25d366"),
-                "background": colors.get("background_body", "#f0f6ff")
+                "primary": colors.get("--warna-biru-gelap") or (ds["colors"]["primary"] if ds else "#1268b3"),
+                "secondary": colors.get("--warna-biru-utama") or (ds["colors"]["secondary"] if ds else "#2196f3"),
+                "accent": colors.get("--warna-kuning") or (ds["colors"]["accent"] if ds else "#fab853"),
+                "whatsapp": colors.get("--warna-hijau-wa") or (ds["colors"]["wa_green"] if ds else "#059669"),
+                "background": colors.get("background_body") or (ds["colors"]["background"] if ds else "#f0f6ff")
             },
             "modernized_tokens": {
-                "navy_deep": "#0D4D87",
-                "blue_primary": "#1268B3",
-                "blue_bright": "#2196F3",
-                "amber_gold": "#FAB853",
-                "surface_ice": "#F0F6FF",
-                "surface_white": "#FFFFFF",
-                "text_primary": "#1E293B",
-                "text_muted": "#475569"
+                "navy_deep": ds["colors"]["primary"] if ds else "#0D4D87",
+                "blue_primary": ds["colors"]["secondary"] if ds else "#1268B3",
+                "accent_cta": ds["colors"]["accent"] if ds else "#FAB853",
+                "wa_green": ds["colors"]["wa_green"] if ds else "#059669",
+                "surface_ice": ds["colors"]["muted"] if ds else "#F0F6FF",
+                "surface_white": ds["colors"]["card"] if ds else "#FFFFFF",
+                "text_primary": ds["colors"]["foreground"] if ds else "#1E293B",
+                "text_muted": ds["colors"]["muted_foreground"] if ds else "#475569"
             },
             "typography_upgrade": {
-                "headings": "'Plus Jakarta Sans', 'Poppins', sans-serif",
-                "body": "'Poppins', 'Open Sans', sans-serif",
-                "google_fonts_url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+                "headings": f"'{heading_font}', '{body_font}', sans-serif",
+                "body": f"'{body_font}', sans-serif",
+                "google_fonts_url": gfonts_url
             },
             "design_principles": [
                 "Preserve 100% of authentic client copy, structure, photos, and Visi-Misi.",

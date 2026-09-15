@@ -1,0 +1,26 @@
+{
+  "business_profile": {
+    "name": "Website Updater Studio",
+    "category": "Web designer / Information technology company / Business consultant",
+    "description": "Studio rekayasa web & modernisasi UKM Indonesia. Spesialis WhatsApp Closing Machine & Kecepatan Akses Sub-Detik. Layanan migrasi terima beres ke domain resmi dalam 15 menit.",
+    "business_hours": {
+      "open": "08:00",
+      "close": "20:00",
+      "timezone": "WIB",
+      "days": "Senin - Minggu (08:00 - 20:00 WIB)"
+    },
+    "website": "https://websiteupdater.vercel.app",
+    "email": "websiteupdater888@gmail.com",
+    "phone": "+62 851-2801-3767"
+  },
+  "automated_messages": {
+    "greeting_message": "Halo, terima kasih telah menghubungi Website Updater Studio.\n\nKami membantu pemilik bisnis dan UKM menghadirkan website komersial berperforma tinggi dengan integrasi pesanan instan ke WhatsApp sales (tanpa ribet urusan teknis, terima beres langsung aktif di domain Anda).\n\nAgar tim kami dapat membantu dengan tepat, boleh kami ketahui:\n1. Nama Bapak/Ibu & Nama Usaha?\n2. Kebutuhan layanan:\n   [A] Pembuatan Website Baru Siap Pakai\n   [B] Modernisasi & Percepatan Website Lama ke Domain Resmi\n   [C] Ingin uji coba contoh prototipe live khusus bidang usaha Anda\n\nTim teknis kami akan segera membalas pesan Anda dalam beberapa menit.",
+    "away_message": "Halo, terima kasih telah menghubungi Website Updater Studio.\n\nSaat ini Anda menghubungi kami di luar jam operasional (08.00 – 20.00 WIB). Pesan Anda telah tercatat dalam sistem dan akan diprioritaskan oleh tim kami segera saat jam kerja dibuka kembali pukul 08.00 WIB besok pagi.\n\nSambil menunggu, Bapak/Ibu dapat meninjau dokumentasi prototipe live kami di:\n👉 https://websiteupdater.vercel.app\n\nTerima kasih atas perhatian dan kepercayaannya."
+  },
+  "quick_replies": {
+    "/reseller": "Halo Kak! Salam kenal dari Website Updater Studio.\n\nSenang sekali mendengar ketertarikan Anda dengan Program Kemitraan Reseller / Freelancer Whitelabel kami 🤝\n\nMelalui program ini:\n1. 🚀 Mesin kami membuatkan Prototipe Live Vercel + PDF Proposal resmi khusus klien Anda dalam hitungan detik.\n2. 🏷️ 100% Whitelabel: Proposal dan website menyandang nama agensi, nomor WhatsApp, dan logo Anda sendiri. Klien tidak pernah tahu keterlibatan kami.\n3. 💰 Margin Tinggi: Biaya fulfillment ke kami hanya Rp 350.000 – Rp 490.000 per website. Anda bebas menjual ke klien seharga Rp 2.500.000 – Rp 5.000.000 (profit bersih Rp 2 jt+ masuk kantong Anda).\n4. ⚙️ Zero Headache: Kami yang urus migrasi domain, optimasi kecepatan <0.5 detik, dan pemeliharaan teknis.\n\nBoleh info nama agensi / brand Anda dan nomor WA operasional? Tim kami akan aktifkan akun mitra whitelabel Anda hari ini.",
+    "/harga": "Berikut 2 pilihan skema investasi resmi kami:\n\n1. 💎 Paket Flat Terima Beres — Rp 1.490.000 (Sekali Bayar)\n• Hak milik penuh 100% tanpa biaya bulanan\n• Termasuk migrasi kilat 15 menit ke domain resmi\n• WhatsApp Closing Machine terstruktur\n• Garansi teknis 60 hari penuh\n\n2. ☁️ Paket Cloud Managed — Rp 99.000 / bulan\n• Tanpa modal awal besar, siap pakai langsung\n• Cloud Edge Hosting ultra cepat (<0.5 detik) + SSL gratis\n• Maintenance & update berkala otomatis\n• Bebas upgrade atau batal kapan saja\n\nKeduanya sudah termasuk integrasi form pesanan instan ke WhatsApp sales Bapak/Ibu. Kira-kira skema mana yang paling pas untuk kebutuhan saat ini?",
+    "/domain": "Untuk proses migrasi ke domain resmi (misal: www.bisnisanda.com), Bapak/Ibu tidak perlu pusing urusan teknis:\n\n1. Cukup berikan akses ke panel domain (atau tim kami pandu cukup dengan ubah 2 baris DNS CNAME/A Record).\n2. Waktu pengerjaan hanya 15 menit tanpa downtime sama sekali.\n3. Website lama langsung berganti ke versi modern yang baru dengan SSL aktif dan nomor WhatsApp terhubung resmi.\n\nSeluruh proses kami dampingi sampai benar-benar aktif live.",
+    "/closing_machine": "Yang membedakan website kami dari template AI biasa di pasaran adalah fitur WhatsApp Closing Machine:\n\nSetiap pengunjung yang menekan tombol pemesanan atau konsultasi tidak diarahkan ke chat kosong, melainkan otomatis menghasilkan rincian Purchase Order terstruktur:\n• Nama Klien / Perusahaan\n• Kebutuhan Layanan / Produk spesifik\n• Lokasi / Kota Pengiriman\n• Catatan Tambahan\n\nTim sales Bapak/Ibu bisa langsung merespons dengan hitungan harga dan closing jauh lebih cepat tanpa perlu tanya-tanya berulang kali!"
+  }
+}

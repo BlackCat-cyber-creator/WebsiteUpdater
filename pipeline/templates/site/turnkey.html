@@ -1,0 +1,1383 @@
+<!--
+=============================================================================
+TECHNICAL ARCHITECTURE & PERFORMANCE SPECIFICATION
+Engineered & Optimized by: Website Updater Studio (https://websiteupdater.vercel.app)
+Architecture Standard: Clean High-Performance Swiss Minimalist | Target: 95+
+All Rights Reserved.
+=============================================================================
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>{{ business_name }} - {{ headline }}</title>
+  <meta name="description" content="Website resmi {{ business_name }}. {{ tagline }} Hubungi kami via WhatsApp {{ phone }}. Rating {{ rating_display }} ({{ reviews_display }} di Google Maps).">
+  <meta name="author" content="Website Updater Studio">
+  <meta name="generator" content="Website Updater Studio Turn-Key Engine (https://websiteupdater.vercel.app)">
+  <link rel="canonical" href="https://{{ domain }}">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="{{ business_name }} - {{ headline }}">
+  <meta property="og:description" content="{{ tagline }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://{{ domain }}">
+  <meta name="theme-color" content="{{ theme['theme_color'] }}">
+
+  <!-- Google Fonts: UI/UX Pro Max Curated Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="{{ theme.get('google_fonts_url', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap') }}" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      
+      --accent-primary: {{ theme['accent'] }};
+      --accent-hover: {{ theme['accent_hover'] }};
+      --accent-light: {{ theme['accent_light'] }};
+      --accent-border: {{ theme['accent_border'] }};
+      --accent-dark: {{ theme['accent_dark'] }};
+      --accent-shadow: {{ theme['accent_shadow'] }};
+      --accent-secondary: {{ theme['secondary'] }};
+      
+      --accent-orange: {{ theme['accent'] }};
+      --accent-orange-hover: {{ theme['accent_hover'] }};
+      --accent-orange-light: {{ theme['accent_light'] }};
+      
+      --brand-blue: #1e3a8a;
+      --brand-blue-light: #eff6ff;
+      
+      --wa-green: {{ theme.get('wa_green', '#059669') }};
+      --wa-green-hover: {{ theme.get('wa_green_hover', '#047857') }};
+      --wa-green-dark: {{ theme.get('wa_green_dark', '#065f46') }};
+      --wa-green-light: {{ theme.get('wa_green_light', '#ecfdf5') }};
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+      --shadow-sticky: 0 -4px 20px rgba(0, 0, 0, 0.12);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    html {
+      background-color: #0b1329; /* Matches dark footer container to eliminate any bottom gaps */
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: '{{ theme.get('body_font', 'Plus Jakarta Sans') }}', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-bottom: 0 !important; /* Zero gap on desktop and mobile */
+    }
+
+    /* UI/UX Pro Max A11y & Focus Standards */
+    :focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+    }
+    button, a, input, select, textarea {
+      font-family: inherit;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* UI/UX Pro Max SVG Helpers */
+    .cat-svg {
+      color: var(--accent-primary);
+    }
+    .adv-svg {
+      color: var(--brand-blue);
+    }
+    .ui-svg {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .top-icon {
+      color: var(--accent-primary);
+      display: inline-flex;
+      align-items: center;
+      margin-right: 4px;
+    }
+    .btn-svg {
+      margin-right: 2px;
+    }
+
+    h1, h2, h3, h4, .brand-name {
+      font-family: '{{ theme.get('heading_font', 'Rubik') }}', '{{ theme.get('body_font', 'Plus Jakarta Sans') }}', sans-serif;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Utility Notice Bar */
+    .top-bar {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      padding: 7px 0;
+      font-weight: 500;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-bar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .top-bar-item a {
+      color: {{ theme['accent'] }};
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .monogram {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent-primary), {{ theme['accent_dark'] }});
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      box-shadow: 0 4px 12px {{ theme['accent_shadow'] }};
+      flex-shrink: 0;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-weight: 800;
+      font-size: 17px;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+    .brand-tag {
+      font-size: 11.5px;
+      color: var(--accent-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover {
+      color: var(--accent-primary);
+    }
+    .btn-header-wa {
+      background: var(--wa-green);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .btn-header-wa:hover {
+      background: var(--wa-green-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 44px 0 36px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-content {
+      max-width: 840px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .trust-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-hover);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .trust-badge-pill .stars {
+      color: #f59e0b;
+      letter-spacing: 1px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+    .hero h1 span.highlight {
+      color: var(--accent-primary);
+    }
+    .hero-desc {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 30px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .btn-cta-primary {
+      background: var(--wa-green);
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: var(--radius-md);
+      font-size: 15.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+      transition: all 0.15s ease;
+      min-height: 48px;
+    }
+    .btn-cta-primary:hover {
+      background: var(--wa-green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+    .btn-cta-secondary {
+      background: var(--surface);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 15px 24px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 700;
+      border: 1.5px solid var(--border-strong);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      min-height: 48px;
+    }
+    .btn-cta-secondary:hover {
+      background: var(--surface-subtle);
+      border-color: var(--text-main);
+    }
+
+    /* Key Metrics Banner */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .metric-item {
+      text-align: center;
+      padding: 8px;
+    }
+    .metric-val {
+      font-family: 'Rubik', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-bottom: 2px;
+    }
+    .metric-lbl {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Section Utility Styles */
+    section {
+      padding: 56px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+    .section-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .section-title {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .section-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Product Catalog Grid */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .catalog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .catalog-card:hover {
+      border-color: var(--accent-primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .catalog-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .catalog-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-light);
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .catalog-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .catalog-badge {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: block;
+    }
+    .catalog-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .catalog-items {
+      list-style: none;
+      margin: 0 0 18px 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-grow: 1;
+    }
+    .catalog-items li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .catalog-items li span.bullet {
+      color: var(--accent-primary);
+      font-weight: 800;
+    }
+    .btn-card-wa {
+      margin-top: auto;
+      background: var(--wa-green-light);
+      color: var(--wa-green-dark);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      text-decoration: none;
+      padding: 11px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      min-height: 44px;
+    }
+    .btn-card-wa:hover {
+      background: var(--wa-green);
+      color: #fff;
+      border-color: var(--wa-green);
+    }
+
+    /* Why Us / Advantages */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .adv-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .adv-icon-badge {
+      width: 40px;
+      height: 40px;
+      background: var(--brand-blue-light);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-sm);
+      color: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .adv-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+    .adv-content p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Google Reviews Section */
+    .reviews-section {
+      background: #f1f5f9;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-stars {
+      color: #f59e0b;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .review-text {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
+    }
+    .reviewer-avatar {
+      width: 36px;
+      height: 36px;
+      background: #e2e8f0;
+      color: #475569;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .reviewer-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .reviewer-badge {
+      font-size: 11px;
+      color: var(--wa-green-dark);
+      font-weight: 600;
+      display: block;
+    }
+
+    /* Consultation & Order Form */
+    .order-box {
+      background: var(--surface);
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .order-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .form-control {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s ease;
+      min-height: 44px;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary);
+      background: #fff;
+    }
+    .btn-submit-order {
+      grid-column: 1 / -1;
+      background: var(--wa-green);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 15.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      transition: all 0.15s ease;
+      min-height: 48px;
+    }
+    .btn-submit-order:hover {
+      background: var(--wa-green-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Location & Map Card */
+    .location-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-top: 40px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .loc-details h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .loc-details p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .loc-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-maps {
+      background: var(--brand-blue);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+    }
+    .btn-call {
+      background: #f1f5f9;
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+    }
+
+    /* FAQs */
+    .faq-section {
+      padding: 48px 0;
+    }
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faq-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 14.5px;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .faq-a {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Modern Multi-Column Footer */
+    footer {
+      background: #0b1329;
+      color: #94a3b8;
+      padding: 56px 0 28px;
+      font-size: 13.5px;
+      border-top: 1px solid #1e293b;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.3fr 1.5fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .footer-brand-name {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: #f8fafc;
+      display: block;
+      line-height: 1.25;
+    }
+    .footer-brand-tag {
+      font-size: 11px;
+      color: var(--accent-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    .footer-trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      color: #cbd5e1;
+      width: fit-content;
+      margin-top: 4px;
+    }
+    .footer-trust-pill .stars {
+      color: #f59e0b;
+    }
+    .footer-col-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+    .footer-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .footer-icon {
+      color: var(--accent-primary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .footer-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .btn-footer-wa {
+      background: var(--wa-green);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+    }
+    .btn-footer-wa:hover {
+      background: var(--wa-green-hover);
+      transform: translateY(-1px);
+    }
+    .btn-footer-maps {
+      background: rgba(255, 255, 255, 0.07);
+      color: #cbd5e1 !important;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 12.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    .btn-footer-maps:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff !important;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: #64748b;
+    }
+    .footer-subtext {
+      color: #64748b;
+    }
+
+    @media (max-width: 960px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Mobile Sticky Action Bar */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-sticky);
+      padding: 10px 16px;
+      z-index: 999;
+      display: none;
+    }
+    .sticky-bar-inner {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .btn-sticky-wa {
+      flex: 2;
+      background: var(--wa-green);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+    }
+    .btn-sticky-maps {
+      flex: 1;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 48px;
+    }
+    .btn-sticky-call {
+      flex: 1;
+      background: #f8fafc;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 48px;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 860px) {
+      footer {
+        padding-bottom: 96px; /* Clearance for fixed mobile sticky bar inside dark footer container */
+      }
+      .metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-sticky-bar {
+        display: block;
+      }
+      .order-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 30px 0 24px;
+      }
+      .hero h1 {
+        font-size: 26px;
+      }
+      .hero-desc {
+        font-size: 15px;
+      }
+      .btn-cta-primary, .btn-cta-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+      .metrics-bar {
+        grid-template-columns: 1fr 1fr;
+        padding: 14px 10px;
+        gap: 8px;
+      }
+      .metric-val {
+        font-size: 22px;
+      }
+      .metric-lbl {
+        font-size: 11px;
+      }
+      .catalog-card {
+        padding: 18px;
+      }
+      .order-box {
+        padding: 22px 16px;
+      }
+      .top-bar {
+        display: none;
+      }
+    }
+  </style>
+
+  <!-- Schema.org LocalBusiness Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ theme['schema_type'] }}",
+    "name": "{{ business_name }}",
+    "description": "{{ headline }}",
+    "url": "https://{{ domain }}",
+    "telephone": "{{ clean_phone }}",
+    "priceRange": "$$",
+    "openingHours": "{{ hours or 'Mo-Sa 08:00-17:00' }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ address or city }}",
+      "addressLocality": "{{ city }}",
+      "addressCountry": "ID"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ schema_rating_value if schema_rating_value else rating_display }}",
+      "reviewCount": "{{ schema_review_count if schema_review_count else reviews_display.replace('+', '').replace(' Ulasan', '').strip() }}"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Website Updater Studio",
+      "url": "https://websiteupdater.vercel.app"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  {{ top_bar_html }}
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        {{ logo_html }}
+        <div class="brand-text">
+          <span class="brand-name">{{ business_name }}</span>
+          <span class="brand-tag">{{ trade_name }}</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#katalog" class="nav-link">{{ theme['nav_catalog'] }}</a>
+        <a href="#keunggulan" class="nav-link">Keunggulan</a>
+        <a href="#ulasan" class="nav-link">Ulasan Pelanggan</a>
+        <a href="#pemesanan" class="nav-link">{{ theme['nav_order'] }}</a>
+        <a href="https://wa.me/{{ clean_phone }}?text={{ hero_wa_text }}" target="_blank" rel="noopener noreferrer" class="btn-header-wa">
+          <span class="btn-svg">{{ wa_svg }}</span>
+          <span>Chat WhatsApp Resmi</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="trust-badge-pill">
+          <span class="stars">★★★★★</span>
+          <span>{{ trust_badge_text if trust_badge_text else ('Rating ' ~ rating_display ~ ' ★ • ' ~ reviews_display ~ ' di Google Maps') }}</span>
+        </div>
+        <h1>{{ h1_html }}</h1>
+        <p class="hero-desc">{{ tagline }}</p>
+
+        <div class="hero-cta-group">
+          <a href="https://wa.me/{{ clean_phone }}?text={{ hero_wa_text }}" target="_blank" rel="noopener noreferrer" class="btn-cta-primary">
+            <span class="btn-svg">{{ wa_svg }}</span>
+            <span>Tanya Harga & Stok via WA</span>
+            <span style="font-size: 18px; margin-left: 4px;">↗</span>
+          </a>
+          <a href="#katalog" class="btn-cta-secondary">
+            <span>Lihat Katalog 6 Kategori ↓</span>
+          </a>
+        </div>
+
+        {{ metrics_bar_html }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product / Service Catalog Section -->
+  <section id="katalog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">{{ theme['catalog_tag'] }}</span>
+        <h2 class="section-title">{{ theme['catalog_title'] }}</h2>
+        <p class="section-desc">{{ theme['catalog_desc'] or ('Pilihan produk dan layanan berkualitas siap melayani warga ' ~ city ~ '.') }}</p>
+      </div>
+
+      <div class="catalog-grid">
+        {{ catalog_cards_html }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="keunggulan" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">MENGAPA MEMILIH KAMI</span>
+        <h2 class="section-title">{{ theme['advantages_title'] }}</h2>
+        <p class="section-desc">{{ theme['advantages_desc'] or ('Pengalaman dan dedikasi melayani pelanggan di ' ~ city ~ '.') }}</p>
+      </div>
+
+      <div class="advantages-grid">
+        {{ adv_boxes_html }}
+      </div>
+    </div>
+  </section>
+
+  {{ reviews_section_html }}
+
+  <!-- Consultation & Order Form -->
+  <section id="pemesanan">
+    <div class="container">
+      <div class="order-box">
+        <div class="section-header" style="margin-bottom: 20px; text-align: left;">
+          <span class="section-tag">FORMULIR KONSULTASI & ESTIMASI</span>
+          <h2 class="section-title" style="font-size: 26px;">{{ theme['order_title'] }}</h2>
+          <p class="section-desc" style="margin: 0;">{{ theme['order_desc'] }}</p>
+        </div>
+
+        <form onsubmit="handleOrderSubmit(event)" class="order-form-grid">
+          <div class="form-group">
+            <label for="order_name">Nama Lengkap / Instansi</label>
+            <input type="text" id="order_name" class="form-control" placeholder="Contoh: Pak Anton / Ibu Maya" required>
+          </div>
+
+          <div class="form-group">
+            <label for="order_category">Kategori Kebutuhan Utama</label>
+            <select id="order_category" class="form-control" required>
+              {{ options_html }}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="order_area">Lokasi Pengiriman di {{ city }}</label>
+            <select id="order_area" class="form-control" required>
+              {{ area_options_html }}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="order_urgency">Jadwal Kebutuhan</label>
+            <select id="order_urgency" class="form-control">
+              <option value="Segera / Hari Ini">Segera / Hari Ini</option>
+              <option value="Dalam 1-3 Hari Ini">Dalam 1-3 Hari Ini</option>
+              <option value="Minggu Depan / Tahap Persiapan">Minggu Depan / Tahap Persiapan</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="order_notes">Rincian Kebutuhan / Pertanyaan (Opsional)</label>
+            <textarea id="order_notes" class="form-control" rows="3" placeholder="Tuliskan produk yang dicari, jumlah, varian, atau pertanyaan lain..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-order">
+            <span>Kirim Rincian ke WhatsApp {{ business_name }} 💬</span>
+          </button>
+        </form>
+
+        <!-- Location Information Box -->
+        <div class="location-card">
+          <div class="loc-details">
+            <h3>📍 Alamat Operasional {{ business_name }}</h3>
+            <p><strong>{{ address if address else ('Melayani Area ' ~ city ~ ' & Sekitarnya') }}</strong></p>
+            <p>Jam Layanan: {{ hours }}</p>
+          </div>
+          <div class="loc-actions">
+            <a href="https://www.google.com/maps/search/{{ urllib.parse.quote_plus(business_name) }}" target="_blank" class="btn-maps">
+              <span>🗺️ Buka di Google Maps ↗</span>
+            </a>
+            <a href="tel:{{ clean_phone }}" class="btn-call">
+              <span>📞 Telepon: {{ phone }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TANYA JAWAB</span>
+        <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+        <p class="section-desc">Informasi praktis seputar ketersediaan produk, layanan antar, dan metode pemesanan kami.</p>
+      </div>
+      <div class="faq-grid">
+        {{ faqs_html }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Multi-Column Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Profile -->
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            {{ logo_html }}
+            <div>
+              <span class="footer-brand-name">{{ business_name }}</span>
+              <span class="footer-brand-tag">{{ trade_name }}</span>
+            </div>
+          </div>
+          <p class="footer-desc">{{ tagline }}</p>
+          <div class="footer-trust-pill">
+            <span class="stars">★★★★★</span>
+            <span>{{ trust_badge_text if trust_badge_text else ('Rating ' ~ rating_display ~ ' ★ di Google Maps') }}</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigasi Cepat -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#katalog">{{ theme['nav_catalog'] }}</a></li>
+            <li><a href="#keunggulan">Keunggulan Toko</a></li>
+            <li><a href="#ulasan">Ulasan Pelanggan Google</a></li>
+            <li><a href="#pemesanan">{{ theme['nav_order'] }}</a></li>
+            <li><a href="#faq">Tanya Jawab (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Layanan & Jam Operasional -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Jam Layanan</h4>
+          <p class="footer-info-item">
+            <span class="footer-icon">{{ clock_svg }}</span>
+            <span>{{ hours }}</span>
+          </p>
+          <h4 class="footer-col-title" style="margin-top: 14px;">Wilayah Pengiriman</h4>
+          <p class="footer-info-item">
+            <span class="footer-icon">{{ truck_svg }}</span>
+            <span>Melayani pengiriman langsung ke seluruh wilayah {{ city }} & titik proyek sekitarnya.</span>
+          </p>
+        </div>
+
+        <!-- Col 4: Kontak & WhatsApp Resmi -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Alamat & Kontak</h4>
+          <p class="footer-info-item">
+            <span class="footer-icon">{{ map_pin_svg }}</span>
+            <span>{{ address if address else ('Kota ' ~ city ~ ', Indonesia') }}</span>
+          </p>
+          <div class="footer-cta-group">
+            <a href="https://wa.me/{{ clean_phone }}?text={{ hero_wa_text }}" target="_blank" rel="noopener noreferrer" class="btn-footer-wa">
+              <span class="btn-svg">{{ wa_svg }}</span>
+              <span>Chat WhatsApp Resmi</span>
+            </a>
+            <a href="https://www.google.com/maps/search/{{ urllib.parse.quote_plus(business_name) }}" target="_blank" rel="noopener noreferrer" class="btn-footer-maps">
+              <span class="btn-svg">{{ map_pin_svg }}</span>
+              <span>Buka Google Maps ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 {{ business_name }}. Seluruh hak cipta dilindungi.</p>
+        <p class="footer-subtext">Website resmi dihadirkan untuk kemudahan informasi stok, estimasi harga, dan pemesanan warga {{ city }}.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Action Bar (SVG Icons, Zero Emojis) -->
+  <div class="mobile-sticky-bar" id="mobileActionBar">
+    <div class="sticky-bar-inner">
+      <a href="https://wa.me/{{ clean_phone }}?text={{ hero_wa_text }}" target="_blank" rel="noopener noreferrer" class="btn-sticky-wa">
+        <span class="btn-svg">{{ wa_svg }}</span>
+        <span>{{ theme['sticky_wa_text'] if theme.get('sticky_wa_text') else 'Tanya WA' }}</span>
+      </a>
+      <a href="https://www.google.com/maps/search/{{ urllib.parse.quote_plus(business_name) }}" target="_blank" rel="noopener noreferrer" class="btn-sticky-maps">
+        <span class="btn-svg">{{ map_pin_svg }}</span>
+        <span>Lokasi</span>
+      </a>
+      <a href="tel:{{ clean_phone }}" class="btn-sticky-call">
+        <span class="btn-svg">{{ phone_svg }}</span>
+        <span>Telp</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('order_name').value.trim();
+      const category = document.getElementById('order_category').value;
+      const area = document.getElementById('order_area').value;
+      const urgency = document.getElementById('order_urgency').value;
+      const notes = document.getElementById('order_notes').value.trim();
+      const phone = '{{ clean_phone }}';
+
+      const message = "Halo {{ business_name }},\n\nSaya menemukan kontak via website resmi.\nSaya ingin minta info ketersediaan stok & estimasi harga resmi:\n• Nama/Proyek: " + name + "\n• Kebutuhan: " + category + "\n• Lokasi Kirim: " + area + "\n• Waktu Kebutuhan: " + urgency + "\n• Catatan: " + (notes || '-') + "\n\nMohon info estimasi penawaran harga & ketersediaannya. Terima kasih!";
+      
+      const encoded = encodeURIComponent(message);
+      window.open('https://wa.me/' + phone + '?text=' + encoded, '_blank');
+    }
+  </script>
+</body>
+</html>

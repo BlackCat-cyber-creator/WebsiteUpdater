@@ -33,6 +33,36 @@ class WebsiteAuditor:
             "ux_and_conversion": []
         }
 
+        brand = scraped.get("brand_name") or meta.get("title", "Perusahaan").split("|")[0].split("-")[0].strip()
+        domain = scraped.get("domain") or scraped.get("url", "").replace("https://", "").replace("http://", "").split("/")[0]
+
+        # Determine contextual trade/services & commercial keyword example
+        services = scraped.get("layanan", [])
+        svc_names = [s.get("title", "") for s in services if s.get("title") and len(s.get("title", "")) > 3]
+
+        kw_text = (meta.get("keywords", "") + " " + meta.get("meta_description", "") + " " + meta.get("title", "")).lower()
+        if any(w in kw_text for w in ["kertas", "paper", "plano", "atk", "buku"]):
+            sample_kw = f"Distributor Kertas, Supplier Plano & Kertas Cetak Berkualitas - {brand}"
+            industry_niche = "produk kertas & percetakan"
+        elif any(w in kw_text for w in ["plastik", "kemasan", "packaging", "opp", "kresek"]):
+            sample_kw = f"Distributor Plastik, Pabrik Kemasan & Kantong PP/PE - {brand}"
+            industry_niche = "produk plastik & packaging"
+        elif any(w in kw_text for w in ["las", "besi", "kanopi", "bengkel", "pagar", "tralis"]):
+            sample_kw = f"Bengkel Las Kanopi, Pagar Besi & Tralis Minimalis - {brand}"
+            industry_niche = "bengkel las & konstruksi besi"
+        elif any(w in kw_text for w in ["kargo", "ekspedisi", "cargo", "logistik", "truk"]):
+            sample_kw = f"Jasa Ekspedisi Kargo Darat/Laut & Logistik Terpercaya - {brand}"
+            industry_niche = "ekspedisi kargo & logistik"
+        elif any(w in kw_text for w in ["bangunan", "semen", "genteng", "batu", "kontraktor", "depo", "material"]):
+            sample_kw = f"Distributor Bahan Bangunan, Depo Material Konstruksi - {brand}"
+            industry_niche = "material bangunan & konstruksi"
+        elif svc_names:
+            sample_kw = f"Layanan {svc_names[0]} & Solusi Terpercaya - {brand}"
+            industry_niche = svc_names[0].lower()
+        else:
+            sample_kw = f"Distributor & Supplier Resmi Terpercaya - {brand}"
+            industry_niche = "produk & layanan utama"
+
         # -------------------------------------------------------------
         # 1. Head Tags & Headings Audit (OpenSEO Rule 1)
         # -------------------------------------------------------------
@@ -46,7 +76,7 @@ class WebsiteAuditor:
                 "severity": "CRITICAL",
                 "type": "title",
                 "category": "Head tags & headings",
-                "message": f"Tag <title> terlalu pendek ({len(title)} karakter: '{title}'). Kehilangan kata kunci komersial Google seperti 'Jasa Ekspedisi Frozen Food & Kargo Laut Cold Chain Antar Pulau'."
+                "message": f"Tag <title> terlalu pendek ({len(title)} karakter: '{title}'). Kehilangan kata kunci komersial Google seperti '{sample_kw}'."
             }
             seo_issues.append(issue)
             openseo_categories["head_and_headings"].append(issue)
@@ -61,12 +91,12 @@ class WebsiteAuditor:
                 "severity": "CRITICAL",
                 "type": "meta_description",
                 "category": "Head tags & headings",
-                "message": "Meta description tidak ditemukan (missing). Google SERP menampilkan potongan teks acak, menurunkan Click-Through Rate (CTR) calon pengirim kargo B2B."
+                "message": f"Meta description tidak ditemukan (missing). Google SERP menampilkan potongan teks acak, menurunkan Click-Through Rate (CTR) calon pembeli dan mitra {brand}."
             }
             seo_issues.append(issue)
             openseo_categories["head_and_headings"].append(issue)
         elif len(desc) < 80:
-            issue = {"severity": "HIGH", "type": "meta_description", "category": "Head tags & headings", "message": f"Meta description terlalu pendek ({len(desc)} karakter). Belum mencakup spesialisasi muatan beku, rute Kalbar, dan call-to-action."}
+            issue = {"severity": "HIGH", "type": "meta_description", "category": "Head tags & headings", "message": f"Meta description terlalu pendek ({len(desc)} karakter). Belum mencakup spesialisasi {industry_niche}, jangkauan pengiriman/operasional, dan ajakan bertindak (call-to-action)."}
             seo_issues.append(issue)
             openseo_categories["head_and_headings"].append(issue)
 
@@ -87,7 +117,7 @@ class WebsiteAuditor:
             "severity": "CRITICAL",
             "type": "schema_org",
             "category": "Indexability & canonical",
-            "message": "Tidak ada Schema.org JSON-LD (LogisticsService, LocalBusiness, PostalAddress). Akibatnya Google tidak menampilkan profil bisnis lengkap dan rute Marunda - Pontianak di Google Knowledge Panel."
+            "message": f"Tidak ada Schema.org JSON-LD (LocalBusiness, Organization, PostalAddress). Akibatnya Google tidak menampilkan profil bisnis terverifikasi, jam operasional, dan kontak resmi {brand} di Google Knowledge Panel."
         }
         seo_issues.append(issue_schema)
         openseo_categories["indexability_and_schema"].append(issue_schema)

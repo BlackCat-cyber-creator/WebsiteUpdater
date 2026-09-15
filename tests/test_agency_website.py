@@ -97,3 +97,31 @@ def test_agency_website_mobile_layout():
         assert len(pricing_cards) >= 2, f"Expected 2 price cards, found {len(pricing_cards)}"
         
         browser.close()
+
+def test_live_deployed_vercel_website():
+    """Verify the live production deployment on Vercel responds with HTTP 200 and correct content."""
+    live_url = "https://websiteupdater.vercel.app"
+    with sync_playwright() as p:
+        browser = None
+        for ch in ["msedge", "chrome", None]:
+            try:
+                browser = p.chromium.launch(channel=ch, headless=True)
+                break
+            except Exception:
+                continue
+                
+        assert browser is not None
+        page = browser.new_page()
+        resp = page.goto(live_url, wait_until="load", timeout=30000)
+        assert resp is not None, "Failed to get response from live Vercel URL"
+        assert resp.status == 200, f"Live URL returned non-200 status: {resp.status}"
+        
+        # Verify title & key texts
+        assert "Website Updater Studio" in page.title()
+        body = page.inner_text("body")
+        assert "Rp 1.490.000" in body
+        assert "Rp 99.000" in body
+        assert "WhatsApp Closing Machine" in body
+        
+        browser.close()
+

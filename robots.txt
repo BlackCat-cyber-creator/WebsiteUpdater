@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://websiteupdater.vercel.app/sitemap.xml

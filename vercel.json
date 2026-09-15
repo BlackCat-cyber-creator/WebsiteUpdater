@@ -1,17 +1,5 @@
 {
+  "name": "websiteupdater",
   "version": 2,
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/agency_website/index.html" },
-    { "source": "/terms", "destination": "/agency_website/terms.html" },
-    { "source": "/privacy", "destination": "/agency_website/privacy.html" },
-    { "source": "/refund", "destination": "/agency_website/refund.html" },
-    { "source": "/delivery", "destination": "/agency_website/delivery.html" },
-    { "source": "/sitemap.xml", "destination": "/agency_website/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/agency_website/robots.txt" },
-    { "source": "/favicon.png", "destination": "/agency_website/favicon.png" },
-    { "source": "/favicon.svg", "destination": "/agency_website/favicon.svg" },
-    { "source": "/favicon.ico", "destination": "/agency_website/favicon.ico" },
-    { "source": "/(.*)", "destination": "/agency_website/$1" }
-  ]
+  "cleanUrls": true
 }

@@ -15,89 +15,215 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #ffffff;
-      --bg-surface: #f8fafc;
-      --border-color: #e2e8f0;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #64748b;
-      --accent-blue: #2563eb;
-      --accent-blue-hover: #1d4ed8;
-      --radius-md: 10px;
-      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06);
+      --bg-void: #060913;
+      --bg-surface: #0d1322;
+      --bg-surface-elevated: #162036;
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --text-primary: #ffffff;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #3b82f6;
+      --accent-emerald: #10b981;
+      --radius-lg: 16px;
+      --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      line-height: 1.65;
-      padding: 40px 20px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-void);
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.2), transparent 70%),
+        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.08), transparent 50%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      padding: 48px 20px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
     .container {
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto;
-      background: var(--surface);
-      padding: 40px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-cyan);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .back-btn:hover {
+      color: #ffffff;
+      transform: translateX(-3px);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border: 1px solid var(--border-accent);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-emerald);
     }
     h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 28px;
-      margin-bottom: 8px;
-      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 10px;
     }
     .meta-date {
       color: var(--text-muted);
-      font-size: 13px;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+      margin-bottom: 32px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
     h2 {
-      font-size: 18px;
-      color: var(--primary);
-      margin-top: 24px;
-      margin-bottom: 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18.5px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-top: 32px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    p, li {
-      color: #cbd5e1;
+    p {
+      color: var(--text-secondary);
       margin-bottom: 16px;
-      font-size: 14.5px;
+      font-size: 15px;
+      line-height: 1.8;
     }
-    ul { padding-left: 20px; margin-bottom: 16px; }
-    .back-btn {
-      display: inline-block;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 14px;
+    ul {
+      padding-left: 24px;
       margin-bottom: 20px;
     }
-    .back-btn:hover {
+    li {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: #ffffff;
       text-decoration: underline;
+    }
+    .policy-footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+    .policy-footer-links {
+      display: flex;
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 24px 14px; }
+      .container { padding: 24px 18px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 16.5px; }
+      p, li { font-size: 14px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <a href="/" class="back-btn">&larr; Kembali ke Beranda Website Updater Studio</a>
+    <div class="top-nav">
+      <a href="/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Kembali ke Beranda Website Updater Studio
+      </a>
+      <span class="badge"><span class="badge-dot"></span> Midtrans KYC Verified</span>
+    </div>
+
     <h1>Syarat &amp; Ketentuan Layanan (Terms of Service)</h1>
-    <div class="meta-date">Terakhir diperbarui: September 2026 &middot; Midtrans Merchant KYC Verified</div>
+    <div class="meta-date">
+      <span>Terakhir diperbarui: September 2026</span>
+      <span>&middot;</span>
+      <span>Website Updater Studio Indonesia</span>
+    </div>
 
     <h2>1. Ruang Lingkup Layanan</h2>
-    <p>Website Updater Studio menyediakan jasa rekayasa perangkat lunak web, pembuatan website komersial baru (Jalur A), modernisasi website lama (Jalur B), optimalisasi mesin pencari Google SEO, dan penyerahan sistem terima beres dengan pilihan paket kemitraan flat Rp 1.490.000 atau paket cloud managed Rp 99.000 / bulan.</p>
+    <p>Website Updater Studio menyediakan jasa rekayasa perangkat lunak web, pembuatan website komersial baru (Jalur A), modernisasi website lama (Jalur B), optimalisasi mesin pencari Google SEO, dan penyerahan sistem terima beres dengan pilihan paket flat <strong>Rp 1.490.000</strong> atau paket cloud managed <strong>Rp 99.000 / bulan</strong>.</p>
 
     <h2>2. Hak Milik Intelektual (100% IP Transfer)</h2>
     <p>Setelah pembayaran dilunasi penuh oleh Klien, seluruh hak kekayaan intelektual (IP) dan kepemilikan mutlak atas kode sumber (source code HTML, CSS, JavaScript, dan berkas aset) dialihkan sepenuhnya kepada Klien. Klien berhak mengunggah, mengedit, memindahkan, atau meng-hosting website pada server mana pun tanpa kewajiban membayar royalti berkelanjutan.</p>
 
     <h2>3. Sistem Pembayaran &amp; Keamanan</h2>
-    <p>Seluruh transaksi pembayaran diproses secara resmi melalui gerbang pembayaran berlisensi Bank Indonesia (Midtrans), mendukung metode QRIS, Virtual Account Bank (BCA, Mandiri, BRI, BNI), dan Kartu Kredit dengan enkripsi standar PCI-DSS Level 1. Tidak ada biaya langganan bulanan pasca-serah terima.</p>
+    <p>Seluruh transaksi pembayaran diproses secara resmi melalui gerbang pembayaran berlisensi Bank Indonesia (Midtrans), mendukung metode QRIS, Virtual Account Bank (BCA, Mandiri, BRI, BNI), dan Kartu Kredit dengan enkripsi standar PCI-DSS Level 1. Tidak ada biaya tersembunyi pasca-serah terima.</p>
 
     <h2>4. Kewajiban Klien</h2>
     <p>Klien bertanggung jawab atas keabsahan seluruh materi teks, foto produk, logo dagang, dan informasi bisnis yang diserahkan untuk dicantumkan pada website.</p>
 
     <h2>5. Hukum yang Berlaku</h2>
     <p>Syarat dan ketentuan ini tunduk dan ditafsirkan berdasarkan hukum Negara Republik Indonesia. Segala perselisihan yang timbul diutamakan untuk diselesaikan melalui musyawarah mufakat.</p>
+
+    <div class="policy-footer">
+      <span>&copy; 2026 Website Updater Studio. Seluruh hak cipta dilindungi.</span>
+      <div class="policy-footer-links">
+        <a href="/privacy">Privasi</a>
+        <a href="/refund">Garansi &amp; Refund</a>
+        <a href="/delivery">Serah Terima</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>

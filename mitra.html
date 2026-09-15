@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Kemitraan Reseller &amp; Freelancer — Website Updater Studio</title>
+  <meta name="description" content="Program Kemitraan Reseller & Freelancer Web. Jual website ke klien dengan brand Anda sendiri, kami tangani seluruh teknis dan coding di belakang layar.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --border-card: rgba(56, 189, 248, 0.2);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-blue: #38bdf8;
+      --accent-emerald: #10b981;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+    }
+    .step-tag {
+      display: inline-block;
+      background: #0284c7;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    .step-tag.green { background: #10b981; }
+    .step-card h3 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .step-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .profit-box {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1.5px solid #38bdf8;
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .profit-info h2 {
+      font-size: 24px;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .profit-info p {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      line-height: 1.5;
+      max-width: 540px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+    }
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .benefit-icon {
+      color: #34d399;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .benefit-item div h4 {
+      font-size: 14.5px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .benefit-item div p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      padding-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div style="margin-bottom: 32px;">
+      <a href="/" style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent-blue); text-decoration: none; font-size: 14px; font-weight: 600;">
+        &larr; Halaman Utama Website Updater Studio
+      </a>
+    </div>
+
+    <div class="badge">Program Khusus Mitra &amp; Freelancer</div>
+    <h1>Jual Website ke Klien Rp 3 – 5 Juta.<br>Serahkan Teknis ke Kami Rp 350rb.</h1>
+    <p class="subtitle">
+      Punya kemampuan sales, relasi bisnis UKM, atau akun freelance di Fastwork/Upwork tapi malas ngoding dari nol? Jadikan teknologi kami sebagai pabrik website di belakang layar agensi Anda.
+    </p>
+
+    <div class="card-grid">
+      <div class="step-card">
+        <span class="step-tag">LANGKAH 1</span>
+        <h3>1. Masukkan Target Klien</h3>
+        <p>Kirimkan link Google Maps atau domain calon klien Anda. Dalam hitungan menit, sistem kami men-generate demo website live Vercel dan proposal audit lengkap.</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-tag">LANGKAH 2</span>
+        <h3>2. 100% Whitelabel Brand Anda</h3>
+        <p>Seluruh dokumen proposal PDF dan preview demo live menggunakan nama agensi, logo, dan nomor kontak WhatsApp Anda sendiri. Klien tidak pernah tahu kami yang mengerjakan.</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-tag green">LANGKAH 3</span>
+        <h3>3. Kantongi Profit Bersih 85%+</h3>
+        <p>Jual ke klien Anda seharga Rp 3.000.000 – Rp 5.000.000. Biaya lisensi ke kami hanya Rp 350.000 – Rp 500.000 per website jadi. Tim kami yang kerjakan migrasinya sampai online.</p>
+      </div>
+    </div>
+
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <div class="benefit-icon">✓</div>
+        <div>
+          <h4>Tanpa Perlu Bisa Coding</h4>
+          <p>HTML, CSS, arsitektur sub-detik, dan WhatsApp Closing Machine kami yang buatkan.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">✓</div>
+        <div>
+          <h4>Domain Migration 15 Menit</h4>
+          <p>Migrasi zero downtime langsung ke domain resmi klien tanpa ribet urus DNS.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">✓</div>
+        <div>
+          <h4>Garansi Teknis 60 Hari</h4>
+          <p>Jika ada kendala pada website klien, tim teknis kami yang siap membantu perbaikan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="profit-box">
+      <div class="profit-info">
+        <h2>Daftar Jadi Mitra Agensi Kami Sekarang</h2>
+        <p>Kuota mitra dibatasi 15 mitra per regional agar tidak saling bertabrakan target pasar. Mulai tawarkan website ke kenalan bisnis Anda sekarang tanpa risiko modal.</p>
+      </div>
+      <a href="https://wa.me/6285128013767?text=Halo%20Website%20Updater%20Studio%2C%20saya%20tertarik%20bergabung%20dengan%20Program%20Kemitraan%20Reseller%20%2F%20Freelancer%20Web%20(Whitelabel)." target="_blank" rel="noopener noreferrer" class="btn-wa">
+        Daftar Kemitraan via WhatsApp &rarr;
+      </a>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Website Updater Studio &middot; Khusus Akses Mitra &amp; Reseller Berlisensi
+    </div>
+  </div>
+
+</body>
+</html>

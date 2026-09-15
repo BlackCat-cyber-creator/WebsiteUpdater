@@ -50,10 +50,12 @@ def test_agency_website_desktop_layout():
         # 3. WhatsApp Closing Machine section
         assert "WhatsApp Closing Machine" in body_text, "WhatsApp Closing Machine section must be present"
         
-        # 4. Kemitraan / Reseller section
+        # 4. Kemitraan / Reseller must NOT be on client homepage (price integrity protection)
         kemitraan = page.query_selector("#kemitraan")
-        assert kemitraan is not None, "#kemitraan section must exist"
-        assert "kemitraan reseller" in kemitraan.inner_text().lower()
+        assert kemitraan is None, "#kemitraan section must NOT be exposed on client homepage"
+        assert "Rp 350.000" not in body_text, "Wholesale/reseller price must NOT be visible to end clients"
+        assert "Rp 350rb" not in body_text, "Wholesale/reseller price must NOT be visible to end clients"
+        assert os.path.exists(os.path.join(AGENCY_DIR, "mitra.html")), "mitra.html must exist as dedicated ads page"
         
         # 5. WhatsApp links
         wa_links = page.query_selector_all('a[href*="wa.me"]')

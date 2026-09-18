@@ -132,7 +132,7 @@ def main():
     print(f"  UX Score: {audit_report['ux_score']}/100")
     print(f"  Commercial Keywords Identified: {len(audit_report['keyword_targets'])}")
 
-    # 4. Quotation Engine (Single-phase $100 flat turn-key offer)
+    # 4. Quotation Engine (Rp 1.490.000 flat all-in turn-key offer)
     print("\n[Step 4/7] [Quotation] Generating Commercial Price Quotation & Pitch Proposal...")
     qe = QuotationEngine()
     quotation = qe.generate_quotation(scraped_data, audit_report, style_report)

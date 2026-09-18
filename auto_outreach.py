@@ -1,8 +1,8 @@
 """
-Master Autonomous Lead Finder & Outreach Orchestrator ($100 Turn-Key Engine).
+Master Autonomous Lead Finder & Outreach Orchestrator (Rp 1.490.000 Flat Turn-Key Engine).
 Discovers Indonesian SME businesses (Dual-Track: Track A Web Baru vs Track B Modernisasi),
 generates Swiss Minimalist websites or audits technical SEO gaps, deploys to Vercel,
-packages clean source code for cPanel, and handles live-rate WhatsApp engagement & settlements.
+packages clean source code for cPanel, and handles WhatsApp engagement & settlements.
 
 Usage:
   # 1. Setup dedicated WhatsApp account (one-time QR scan):
@@ -23,7 +23,7 @@ Usage:
   # 6. Package clean source code .ZIP & cPanel guide:
   python auto_outreach.py --package suncargo.sunfrozencargo.com
 
-  # 7. Generate $100 live-rate invoice link:
+  # 7. Generate Rp 1.490.000 flat invoice link:
   python auto_outreach.py --create-invoice suncargo.sunfrozencargo.com
 """
 
@@ -47,7 +47,7 @@ from pipeline.commands.context import execute_pipeline_for_client
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Autonomous Indonesian Mid-Tier Business Scanner & Outreach System ($100 Turn-Key Engine)")
+    parser = argparse.ArgumentParser(description="Autonomous Indonesian Mid-Tier Business Scanner & Outreach System (Rp 1.490.000 Flat Turn-Key Engine)")
     parser.add_argument("--setup-wa", action="store_true", help="Launch interactive WhatsApp Web QR setup for dedicated account")
     parser.add_argument("--maps", type=str, default="", help="Search local developing SME businesses directly from Google Maps (e.g. 'distributor bahan plastik surabaya')")
     parser.add_argument("--query", type=str, default="", help="Search query (e.g. 'ekspedisi surabaya makassar')")
@@ -67,7 +67,7 @@ def main():
     parser.add_argument("--listen-replies", action="store_true", help="Scan WhatsApp Web for incoming replies and auto-dispatch demo/options")
     parser.add_argument("--deploy-vercel", type=str, default="", help="Deploy a specific client's website to Vercel")
     parser.add_argument("--package", type=str, default="", help="Package clean source code .ZIP and guides for a client domain")
-    parser.add_argument("--create-invoice", type=str, default="", help="Generate live-rate invoice (Rp 1.490.000 / dual pricing) with payment link for a client")
+    parser.add_argument("--create-invoice", type=str, default="", help="Generate Rp 1.490.000 flat invoice link with payment link for a client")
     parser.add_argument("--simulate-payment", type=str, default="", help="Simulate a PAID webhook event for an invoice ID to test auto-fulfillment")
     parser.add_argument("--auto-modernize", action="store_true", help="Batch process and modernize all leads in queue (generate websites, deploy to Vercel, generate PDF proposals)")
     parser.add_argument("--min-reviews", type=int, default=10, help="Minimum Google Maps review count filter (Default: 10)")

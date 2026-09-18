@@ -36,9 +36,9 @@ class BusinessResearcher:
     def __init__(self):
         self.gemini_synth = GeminiBusinessSynthesizer()
 
-    def extract_city(self, address: str, business_name: str) -> str:
-        """Extracts recognizable Indonesian city/regency name from address or business name."""
-        combined = f"{address} {business_name}".strip()
+    def extract_city(self, address: str, business_name: str, query: str = "") -> str:
+        """Extracts recognizable Indonesian city/regency name from address, business name, or query."""
+        combined = f"{address} {business_name} {query}".strip()
         combined_lower = combined.lower()
 
         # 1. Regex check for explicit 'Kota X' or 'Kabupaten Y'
@@ -104,40 +104,162 @@ class BusinessResearcher:
     def get_niche_key(self, trade_key: str, category: str = "", business_name: str = "") -> str:
         """Maps trade_key or category text to a canonical industry niche color palette."""
         haystack = f" {trade_key} {category} {business_name} ".lower()
-        if trade_key == "apotek_kesehatan" or any(self._matches_kw(w, haystack) for w in ["apotek", "obat", "farmasi", "dental", "gigi", "medis", "kesehatan", "dokter", "alkes", "klinik farma", "klinik_spesialis"]):
+
+        # 0. Collision Prevention Overrides (High-Priority Disambiguation)
+        # 0a. Automotive disguised as Beauty Salon, Clinic, or Laundry
+        if any(self._matches_kw(w, haystack) for w in [
+            "salon mobil", "salon motor", "salon helm", "detailing", "car wash", "cuci mobil", "cuci motor",
+            "klinik mobil", "klinik motor", "klinik aki", "klinik helm"
+        ]):
+            return "otomotif"
+
+        # 0b. Electronics & Technical Services disguised as Clinic
+        if any(self._matches_kw(w, haystack) for w in [
+            "klinik hp", "klinik laptop", "klinik komputer", "klinik printer", "klinik ac", "klinik gitar"
+        ]):
+            return "jasa_teknik"
+
+        # 0c. Machining / Engineering disguised as Dental (gigi)
+        if any(self._matches_kw(w, haystack) for w in ["roda gigi", "bengkel bubut", "sparepart bubut"]):
+            return "jasa_teknik"
+
+        # 0d. Financial Services & Cooperatives disguised as Flora (bunga)
+        if any(self._matches_kw(w, haystack) for w in ["koperasi", "simpan pinjam", "bunga pinjaman", "bunga bank", "bunga rendah", "bpr", "gadai"]):
+            return "layanan_profesional"
+
+        # 0e. Retail / Grocery Stores disguised as Culinary (warung / sembako)
+        if any(self._matches_kw(w, haystack) for w in ["warung kelontong", "warung madura", "toko sembako", "toko kelontong", "toko madura", "agen sembako"]):
+            return "modern_clean"
+
+        # 0f. Personal Services disguised as Construction (tukang)
+        if any(self._matches_kw(w, haystack) for w in ["tukang cukur", "barbershop", "pangkas rambut"]):
+            return "estetika"
+        if any(self._matches_kw(w, haystack) for w in ["tukang jahit", "penjahit", "taylor", "tailor", "vermak"]):
+            return "modern_clean"
+        if any(self._matches_kw(w, haystack) for w in ["tukang kunci", "ahli kunci", "duplikat kunci"]):
+            return "jasa_teknik"
+
+        # 1. Professional, Legal, Notary & Corporate B2B (High Priority to prevent construction/home collision)
+        if trade_key == "layanan_profesional" or any(self._matches_kw(w, haystack) for w in ["hukum", "notaris", "pengacara", "advokat", "konsultan pajak", "konsultan hukum", "akuntan", "kantor hukum", "kantor pengacara", "kantor notaris", "amdal", "sertifikasi iso"]):
+            return "layanan_profesional"
+
+        # 2. Specialized Freight, Cargo & Heavy Transport (Separate from Automotive Repair)
+        if trade_key in ("ekspedisi_kargo", "ekspedisi_spesialis") or any(self._matches_kw(w, haystack) for w in ["ekspedisi", "kargo", "cargo", "tronton", "wingbox", "trailer", "fuso", "kontainer", "fcl", "lcl", "pengiriman barang", "angkutan barang"]):
+            return "logistik_kargo"
+
+        # 3. Home Technical Services & AC Maintenance (Separate from Automotive)
+        if any(self._matches_kw(w, haystack) for w in ["servis ac", "cuci ac", "teknisi ac", "pendingin", "hvac", "kelistrikan", "teknisi listrik", "plumbing", "pompa air"]):
+            return "jasa_teknik"
+
+        # 4. Education, Tutoring & Training
+        if any(self._matches_kw(w, haystack) for w in ["bimbel", "kursus", "les", "pelatihan", "edukasi", "sekolah", "bimbingan belajar", "kursus bahasa", "training center"]):
+            return "edukasi"
+
+        # 5. Property, Real Estate & Housing Developer
+        if any(self._matches_kw(w, haystack) for w in ["properti", "perumahan", "developer", "kavling", "residence", "agen properti", "cluster"]):
+            return "properti"
+
+        # 6. Physiotherapy & Clinical Rehabilitation
+        if any(self._matches_kw(w, haystack) for w in ["fisioterapi", "physio", "terapi", "rehabilitasi"]):
+            return "fisioterapi_klinik"
+
+        # 7. Frozen Food & Cold Chain
+        if any(self._matches_kw(w, haystack) for w in ["frozen food", "makanan beku", "nugget", "sosis", "cold storage", "horeca"]):
+            return "frozen_food"
+
+        # 8. Healthcare, Pharmacy & Dental Clinics
+        if trade_key in ("apotek_kesehatan", "klinik_dental") or any(self._matches_kw(w, haystack) for w in ["apotek", "obat", "farmasi", "dental", "gigi", "medis", "kesehatan", "dokter", "alkes", "klinik farma", "klinik_spesialis", "klinik"]):
             return "kesehatan"
-        if trade_key == "florist_pet" or any(self._matches_kw(w, haystack) for w in ["florist", "bunga", "pet", "petshop", "hewan", "kucing", "anjing", "tanaman", "akuarium", "ikan hias"]):
-            return "flora_fauna"
+
+        # 9. Beauty, Spa & Salon
         if trade_key == "salon_kecantikan" or any(self._matches_kw(w, haystack) for w in ["salon", "kecantikan", "barbershop", "spa", "creambath", "facial", "nail", "eyelash", "makeup", "aesthetic", "skincare"]):
             return "estetika"
+
+        # 10. Florist & Pet Care
+        if trade_key == "florist_pet" or any(self._matches_kw(w, haystack) for w in ["florist", "bunga", "pet", "petshop", "hewan", "kucing", "anjing", "tanaman", "akuarium", "ikan hias"]):
+            return "flora_fauna"
+
+        # 11. Food, Culinary & Catering
         if trade_key in ("kuliner_catering", "distributor_sembako") or any(self._matches_kw(w, haystack) for w in ["kuliner", "catering", "roti", "bakery", "kue", "sembako", "beras", "makanan", "restoran", "kafe", "warung", "snack", "tumpeng"]):
             return "kuliner"
-        if trade_key in ("toko_bangunan", "bengkel_las", "kontraktor_interior", "kontraktor_komersial") or any(self._matches_kw(w, haystack) for w in ["bangunan", "bengkel las", "las", "kontraktor", "material", "konstruksi", "semen", "besi", "interior", "baja", "genteng", "kusen", "tukang", "epoxy", "hvac"]):
+
+        # 12. Construction, Materials & Fabrication
+        if trade_key in ("toko_bangunan", "bengkel_las", "kontraktor_interior", "kontraktor_komersial") or any(self._matches_kw(w, haystack) for w in ["bangunan", "bengkel las", "las", "kontraktor", "material", "konstruksi", "semen", "besi", "interior", "baja", "genteng", "kusen", "tukang", "epoxy"]):
             return "konstruksi"
-        if trade_key in ("otomotif", "ekspedisi_kargo", "ekspedisi_spesialis") or any(self._matches_kw(w, haystack) for w in ["otomotif", "motor", "mobil", "bengkel mobil", "bengkel motor", "ban", "oli", "servis", "kargo", "ekspedisi", "truk", "reefer", "tronton"]):
+
+        # 13. Automotive Repair & Vehicles
+        if trade_key == "otomotif" or any(self._matches_kw(w, haystack) for w in ["otomotif", "motor", "mobil", "bengkel mobil", "bengkel motor", "ban", "oli", "servis mobil", "servis motor", "tuneup", "tune up", "cuci mobil", "car wash", "detailing"]):
             return "otomotif"
+
         return "modern_clean"
+
+    def _map_niche_to_trade(self, niche_id: str) -> str:
+        if niche_id == "ekspedisi_spesialis" and "ekspedisi_kargo" in self.TRADE_PROFILES:
+            return "ekspedisi_kargo"
+        if niche_id == "kontraktor_komersial" and "kontraktor_interior" in self.TRADE_PROFILES:
+            return "kontraktor_interior"
+        if niche_id == "klinik_spesialis" and "klinik_dental" in self.TRADE_PROFILES:
+            return "klinik_dental"
+        if niche_id in ("frozen_food", "distributor_frozen") and "frozen_food" in self.TRADE_PROFILES:
+            return "frozen_food"
+        return niche_id
 
     def identify_trade(self, business_name: str, category: str = "", query: str = "") -> str:
         """Determines the primary trade profile by matching keywords, including B2B niche matrix."""
         haystack = f" {business_name} {category} {query} ".lower()
+
+        # 0. Collision Prevention Overrides (High-Priority Disambiguation)
+        # 0a. Frozen Food & Cold Chain Products (High Priority to prevent falling into B2B Industrial Distributor)
+        if any(self._matches_kw(w, haystack) for w in [
+            "frozen food", "makanan beku", "sosis", "nugget", "bakso beku", "dimsum",
+            "seafood beku", "kentang beku", "french fries", "ayam beku", "daging beku", "cold storage", "horeca"
+        ]):
+            return "frozen_food" if "frozen_food" in self.TRADE_PROFILES else "general"
+
+        if any(self._matches_kw(w, haystack) for w in [
+            "salon mobil", "salon motor", "salon helm", "detailing", "car wash", "cuci mobil", "cuci motor",
+            "klinik mobil", "klinik motor", "klinik aki", "klinik helm"
+        ]):
+            return "otomotif"
+        if any(self._matches_kw(w, haystack) for w in [
+            "klinik hp", "klinik laptop", "klinik komputer", "klinik printer", "klinik ac", "klinik gitar"
+        ]):
+            return "jasa_teknik" if "jasa_teknik" in self.TRADE_PROFILES else "general"
+        if any(self._matches_kw(w, haystack) for w in ["koperasi", "simpan pinjam", "bunga pinjaman", "bunga bank", "bpr"]):
+            return "layanan_profesional"
+        if any(self._matches_kw(w, haystack) for w in ["warung kelontong", "warung madura", "toko sembako", "toko kelontong"]):
+            return "general"
+
+        # 1. High-Priority Direct Trade Matching for Professional & Specialized Sectors
+        if any(self._matches_kw(w, haystack) for w in ["hukum", "notaris", "pengacara", "advokat", "konsultan pajak", "konsultan hukum", "akuntan", "kantor hukum", "kantor pengacara", "amdal", "sertifikasi iso"]):
+            return "layanan_profesional"
+
+        if any(self._matches_kw(w, haystack) for w in ["ekspedisi", "kargo", "cargo", "tronton", "wingbox", "trailer", "fuso", "kontainer", "fcl", "lcl"]):
+            return "ekspedisi_kargo"
+
+        if any(self._matches_kw(w, haystack) for w in ["distributor packaging", "supplier industri", "bahan kimia industri", "karton box pabrik", "distributor b2b"]):
+            return "b2b_distributor"
+
+        # 2. Check predefined trade profiles
         for trade_key, profile in self.TRADE_PROFILES.items():
             for kw in profile.get("keywords", []):
                 if self._matches_kw(kw, haystack):
                     return trade_key
 
-        # Check against High-Value Niche Matrix taxonomy
+        # 3. Check against High-Value Niche Matrix taxonomy with strict multi-word matching
+        stop_words = {"jasa", "sewa", "truk", "alat", "kantor", "toko", "pusat", "mitra", "solusi", "layanan", "usaha", "cv", "pt", "ud", "dan", "yang", "untuk", "ahli", "terbaik"}
         for niche_id, niche_info in HIGH_VALUE_NICHE_TAXONOMY.items():
             for sub in niche_info.get("sub_niches", []):
-                words = [w for w in re.split(r'[\s_]+', sub) if len(w) >= 4 and w not in ["jasa", "sewa", "truk", "alat"]]
-                if any(self._matches_kw(w, haystack) for w in words):
-                    if niche_id == "ekspedisi_spesialis" and "ekspedisi_kargo" in self.TRADE_PROFILES:
-                        return "ekspedisi_kargo"
-                    if niche_id == "kontraktor_komersial" and "kontraktor_interior" in self.TRADE_PROFILES:
-                        return "kontraktor_interior"
-                    if niche_id == "klinik_spesialis" and "klinik_dental" in self.TRADE_PROFILES:
-                        return "klinik_dental"
-                    return niche_id
+                sub_clean = sub.lower().strip()
+                # Check exact phrase first
+                if sub_clean in haystack:
+                    return self._map_niche_to_trade(niche_id)
+                # Or check if at least 2 distinct non-stopword tokens match together
+                words = [w for w in re.split(r'[\s_]+', sub_clean) if len(w) >= 4 and w not in stop_words]
+                if len(words) >= 2:
+                    matched_count = sum(1 for w in words if self._matches_kw(w, haystack))
+                    if matched_count >= 2:
+                        return self._map_niche_to_trade(niche_id)
 
         return "general"
 
@@ -381,7 +503,7 @@ class BusinessResearcher:
                     "items": [
                         "Material & Bahan Pilihan Terbaik",
                         "Jaminan Mutu & Ketahanan Produk",
-                        "Ketersediaan Stok Terjaga"
+                        "Standar Mutu & Layanan Terjaga"
                     ]
                 },
                 {
@@ -448,11 +570,12 @@ class BusinessResearcher:
                 base_metrics[3]
             ]
         else:
+            m4_val = "Siap Kirim" if niche_key in ["frozen_food", "kuliner", "konstruksi", "logistik_kargo", "flora_fauna"] else "Siap Melayani"
             resolved_metrics = [
                 m1,
                 {"val": "100%", "lbl": "Standar Mutu Terjamin"},
                 {"val": "Resmi", "lbl": "Layanan Terpercaya"},
-                {"val": "Siap Kirim", "lbl": f"Layanan Cepat Area {city}"}
+                {"val": m4_val, "lbl": f"Layanan Cepat Area {city}"}
             ]
 
         # Sector-specific review personas
@@ -555,6 +678,10 @@ class BusinessResearcher:
         """Emergency fail-safe profile guarantee so the pipeline never crashes."""
         clean_name = re.split(r'[|\-–•—]', business_name or "Usaha Lokal")[0].strip() or "Usaha Lokal"
         city = self.extract_city(address or "", clean_name)
+        from pipeline.researcher.ui_ux_integrator import UIUXProMaxIntegrator
+        sanitized = UIUXProMaxIntegrator.sanitize_ratings(rating, review_count)
+        has_real_rating = bool(sanitized.get("rating_float", 0) > 0)
+        has_real_reviews = bool(sanitized.get("review_count_int", 0) > 0)
         return {
             "business_name": clean_name,
             "city": city,
@@ -586,21 +713,21 @@ class BusinessResearcher:
                 {"q": "Metode pembayaran apa saja yang didukung?", "a": "Kami menerima transfer bank dan pembayaran digital resmi."}
             ],
             "metrics": [
-                {"val": "Terpercaya", "lbl": "Google Maps Resmi"},
+                {"val": sanitized["metric_rating_text"] if has_real_rating else "Terverifikasi", "lbl": f"Google Maps ({sanitized['reviews_display']})" if has_real_reviews else "Google Maps Resmi"},
                 {"val": "100%", "lbl": "Standar Mutu"},
                 {"val": "Resmi", "lbl": "Layanan Terpercaya"},
-                {"val": "Siap Kirim", "lbl": f"Area {city}"}
+                {"val": "Siap Kirim" if niche_key in ["frozen_food", "kuliner", "konstruksi", "logistik_kargo", "flora_fauna"] else "Siap Melayani", "lbl": f"Area {city}"}
             ],
-            "reviews": [
-                {"name": "Budi Santoso", "badge": "Pelanggan Terverifikasi", "stars": "★★★★★", "text": f"Pelayanan di {clean_name} sangat cepat dan memuaskan. Sangat direkomendasikan!"},
-                {"name": "Siti Rahmawati", "badge": "Pelanggan Terverifikasi", "stars": "★★★★★", "text": "Respon WhatsApp ramah dan informatif. Produk tiba dengan selamat dan kualitas bagus."},
-                {"name": "Hendra Wijaya", "badge": "Pelanggan Terverifikasi", "stars": "★★★★★", "text": "Harga terjangkau dan mutu terjamin. Sudah beberapa kali pesan dan selalu puas."}
+            "reviews": [] if not has_real_reviews else [
+                {"name": "Pelanggan Terverifikasi", "badge": f"Warga {city}", "stars": sanitized["rating_display"], "text": f"Pelayanan di {clean_name} sangat memuaskan, respon cepat dan mutu terpercaya."}
             ],
             "service_options": [f"Layanan Utama {clean_name}", "Konsultasi Cepat via WhatsApp", "Penyediaan Produk Berkualitas", "Pesanan Partai & Khusus", "Pengiriman Cepat & Aman", "Dukungan Purna Jual"],
-            "rating_display": "★★★★★",
-            "reviews_display": "Pelanggan Terverifikasi",
-            "trust_badge_text": "Pelanggan Terverifikasi",
-            "sanitized_ratings": {"rating_float": 5.0, "review_count_int": 10, "rating_display": "★★★★★", "reviews_display": "Pelanggan Terverifikasi", "metric_rating_text": "5.0", "trust_badge_text": "Pelanggan Terverifikasi"},
+            "rating_display": sanitized["rating_display"],
+            "reviews_display": sanitized["reviews_display"],
+            "trust_badge_text": sanitized["trust_badge_text"],
+            "sanitized_ratings": sanitized,
+            "has_real_reviews": has_real_reviews,
+            "has_real_rating": has_real_rating,
             "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
             "source": "rule_based (emergency_fallback)"
         }
@@ -622,7 +749,7 @@ class BusinessResearcher:
         """
         try:
             clean_name = re.split(r'[|\-–•—]', business_name)[0].strip()
-            city = self.extract_city(address, business_name)
+            city = self.extract_city(address, business_name, query=query)
             subdistrict = self.extract_subdistrict(address)
             geo_area = f"{subdistrict}, {city}" if subdistrict and subdistrict.lower() not in city.lower() else city
 

@@ -1554,5 +1554,130 @@
         "a": "Bisa! Untuk pemesanan sebelum jam 14.00, kami mengupayakan pengiriman dan pemasangan pada hari yang sama sesuai jadwal teknisi."
       }
     ]
+  },
+  "frozen_food": {
+    "keywords": [
+      "frozen food",
+      "makanan beku",
+      "sosis",
+      "nugget",
+      "bakso beku",
+      "dimsum",
+      "seafood beku",
+      "kentang beku",
+      "french fries",
+      "horeca",
+      "cold storage",
+      "distributor frozen"
+    ],
+    "trade_name": "Distributor & Grosir Frozen Food Resmi",
+    "headlines": [
+      "Pusat Grosir & Eceran Frozen Food Terlengkap di {city_area}",
+      "Distributor Sosis, Olahan Seafood & Camilan Beku di {city_area}",
+      "Pasokan Frozen Food Segar & Higienis Rantai Dingin di {city_area}"
+    ],
+    "headline": "Pusat Grosir & Eceran Frozen Food Terlengkap di {city_area}",
+    "taglines": [
+      "Penyedia sosis, olahan daging, seafood, kentang, dan camilan beku berkualitas dengan sistem rantai pendingin -18°C higienis.",
+      "Stok lengkap produk olahan beku brand ternama berizin BPOM & Halal untuk kafe, resto, katering, dan reseller.",
+      "Grosir frozen food tangan pertama dengan jaminan suhu beku terjaga dan pengiriman cepat berinsulasi."
+    ],
+    "tagline": "Penyedia sosis, olahan daging, seafood, kentang, dan camilan beku berkualitas dengan sistem rantai pendingin -18°C higienis.",
+    "about_p1": "{name} adalah distributor dan agen grosir frozen food terpercaya di {city_area}. Kami melayani kebutuhan pasokan bahan baku makanan beku untuk usaha kafe, resto, katering, kedai kuliner, reseller, hingga kebutuhan konsumsi rumah tangga.",
+    "about_p2": "Didukung penyimpanan cold storage standar industri -18°C, perputaran stok yang terjaga segar, serta pengiriman berpendingin tepat waktu, kami menjamin mutu dan kesegaran produk tetap prima sampai di tangan Anda.",
+    "services": [
+      {
+        "title": "Olahan Daging & Sosis Premium",
+        "desc": "Sosis sapi dan ayam aneka ukuran, bakso sapi super, smoked beef, dan patty burger dari brand ternama berstandar BPOM & Halal.",
+        "icon": "🥩",
+        "items": [
+          "Sosis Bakar Jumbo & Frankfurter Kanzler",
+          "Bakso Sapi Halus & Urat Bernardi 1kg",
+          "Smoked Beef & Patty Burger Kualitas Resto"
+        ]
+      },
+      {
+        "title": "Aneka Olahan Seafood & Dimsum Beku",
+        "desc": "Olahan seafood segar dengan teknik pembekuan cepat (IQF) serta aneka dimsum gurih siap kukus atau goreng.",
+        "icon": "🍤",
+        "items": [
+          "Fish Dumpling Cheese & Fish Roll Cedea",
+          "Tempura Udang & Otak-otak Ikan Sunny Gold",
+          "Siomay Ayam, Hakau & Dimsum Homemade 20pcs"
+        ]
+      },
+      {
+        "title": "Kentang Olahan & Sayuran Beku",
+        "desc": "Kentang goreng aneka potongan (shoestring, crinkle, wedges) serta mix vegetable segar untuk pendamping menu resto.",
+        "icon": "🍟",
+        "items": [
+          "Aviko & Golden Farm Shoestring Fries 1kg",
+          "Crinkle Cut Fries & Potato Wedges",
+          "Mix Vegetables Jagung Manis, Wortel & Buncis"
+        ]
+      },
+      {
+        "title": "Keju Mozzarella & Produk Dairy",
+        "desc": "Bahan baku keju leleh elastis kualitas terbaik untuk topping pizza, geprek, martabak, dan roti bakar.",
+        "icon": "🧀",
+        "items": [
+          "Mozzarella Anchor Shredded & Block 1kg",
+          "Kraft & Meg Quick Melt Elastis",
+          "Mentega, Margarin & Whipping Cream Dairy"
+        ]
+      },
+      {
+        "title": "Nugget & Camilan Cepat Saji",
+        "desc": "Pilihan chicken nugget renyah, karage, katsu, pastel, kroket, dan roti maryam lezat praktis disajikan.",
+        "icon": "🍗",
+        "items": [
+          "Chicken Nugget & Katsu Crispy",
+          "Roti Maryam Gurih & Kebab Frozen Siap Panggang",
+          "Pastel, Risoles Mayo & Cireng Salju Crispy"
+        ]
+      },
+      {
+        "title": "Bumbu Instan, Saus & Pelengkap",
+        "desc": "Saus sambal, saus tomat, mayones, saus keju, bumbu tabur, dan minyak goreng pelengkap sajian kuliner.",
+        "icon": "🥫",
+        "items": [
+          "Mayones Mayumi & Del Monte Saus 1kg",
+          "Saus BBQ, Black Pepper & Cheese Sauce",
+          "Bumbu Tabur Gurih Aneka Varian Rasa"
+        ]
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Cold Chain Storage -18°C Terjaga",
+        "desc": "Penyimpanan dalam deep freezer industri memastikan produk tidak pernah mencair sebelum dikirim."
+      },
+      {
+        "title": "100% Produk Halal & BPOM Resmi",
+        "desc": "Seluruh produk bersertifikat Halal MUI dan izin edar resmi BPOM terpercaya."
+      },
+      {
+        "title": "Harga Ecer & Grosir Kompetitif",
+        "desc": "Skema harga grosir bertingkat yang sangat menguntungkan untuk margin usaha kuliner dan reseller."
+      },
+      {
+        "title": "Pengiriman Cepat & Berinsulasi",
+        "desc": "Armada pengantaran dengan cool box / therma-pack menjaga suhu makanan beku tetap dingin sempurna."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah ada minimal pembelian untuk mendapatkan harga grosir?",
+        "a": "Ya, kami menyediakan potongan harga grosir untuk pembelian per-karton atau minimal nominal belanja tertentu. Hubungi WhatsApp admin kami untuk daftar harga grosir lengkap."
+      },
+      {
+        "q": "Bagaimana menjaga kualitas produk saat pengiriman?",
+        "a": "Semua pengiriman kami kemas dengan therma-pack khusus atau cool box agar suhu beku produk tetap terjaga stabil sampai di lokasi Anda."
+      },
+      {
+        "q": "Apakah bisa melayani kemitraan reseller atau dropship?",
+        "a": "Bisa sekali! Kami membuka peluang kemitraan reseller dengan harga modal ramah dan materi promosi siap pakai. Silakan chat kami via WhatsApp untuk bergabung."
+      }
+    ]
   }
 }

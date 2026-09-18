@@ -260,37 +260,37 @@ Hasilkan JSON dengan struktur berikut:
     {{
       "title": "Nama Layanan/Produk Konkret 1",
       "desc": "Penjelasan detail produk, varian, dan spesifikasi riil",
-      "icon": "Slug icon (building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / pill / first-aid / stethoscope / wrench / car / scissors / sparkles / coffee / utensils / shopping-bag / package)",
+      "icon": "Slug icon (drumstick / fish / cooking-pot / utensils / wheat / snowflake / flame / store / activity / bone / first-aid / pill / stethoscope / building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / wrench / car / scissors / sparkles / coffee / shopping-bag / package)",
       "items": ["Item/spesifikasi 1", "Item/spesifikasi 2", "Item/spesifikasi 3"]
     }},
     {{
       "title": "Nama Layanan/Produk Konkret 2",
       "desc": "Penjelasan detail produk, varian, dan spesifikasi riil",
-      "icon": "Slug icon (building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / pill / first-aid / stethoscope / wrench / car / scissors / sparkles / coffee / utensils / shopping-bag / package)",
+      "icon": "Slug icon (drumstick / fish / cooking-pot / utensils / wheat / snowflake / flame / store / activity / bone / first-aid / pill / stethoscope / building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / wrench / car / scissors / sparkles / coffee / shopping-bag / package)",
       "items": ["Item/spesifikasi 1", "Item/spesifikasi 2", "Item/spesifikasi 3"]
     }},
     {{
       "title": "Nama Layanan/Produk Konkret 3",
       "desc": "Penjelasan detail produk, varian, dan spesifikasi riil",
-      "icon": "Slug icon (building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / package)",
+      "icon": "Slug icon (drumstick / fish / cooking-pot / utensils / wheat / snowflake / flame / store / activity / bone / first-aid / pill / stethoscope / building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / wrench / car / scissors / sparkles / coffee / shopping-bag / package)",
       "items": ["Item/spesifikasi 1", "Item/spesifikasi 2", "Item/spesifikasi 3"]
     }},
     {{
       "title": "Nama Layanan/Produk Konkret 4",
       "desc": "Penjelasan detail produk, varian, dan spesifikasi riil",
-      "icon": "Slug icon (building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / package)",
+      "icon": "Slug icon (drumstick / fish / cooking-pot / utensils / wheat / snowflake / flame / store / activity / bone / first-aid / pill / stethoscope / building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / wrench / car / scissors / sparkles / coffee / shopping-bag / package)",
       "items": ["Item/spesifikasi 1", "Item/spesifikasi 2", "Item/spesifikasi 3"]
     }},
     {{
       "title": "Nama Layanan/Produk Konkret 5",
       "desc": "Penjelasan detail produk, varian, dan spesifikasi riil",
-      "icon": "Slug icon (building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / package)",
+      "icon": "Slug icon (drumstick / fish / cooking-pot / utensils / wheat / snowflake / flame / store / activity / bone / first-aid / pill / stethoscope / building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / wrench / car / scissors / sparkles / coffee / shopping-bag / package)",
       "items": ["Item/spesifikasi 1", "Item/spesifikasi 2", "Item/spesifikasi 3"]
     }},
     {{
       "title": "Nama Layanan/Produk Konkret 6",
       "desc": "Penjelasan detail produk, varian, dan spesifikasi riil",
-      "icon": "Slug icon (building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / package)",
+      "icon": "Slug icon (drumstick / fish / cooking-pot / utensils / wheat / snowflake / flame / store / activity / bone / first-aid / pill / stethoscope / building / steel-beam / pipe-plumbing / paint-bucket / roof-home / tiles-floor / wrench / car / scissors / sparkles / coffee / shopping-bag / package)",
       "items": ["Item/spesifikasi 1", "Item/spesifikasi 2", "Item/spesifikasi 3"]
     }}
   ],

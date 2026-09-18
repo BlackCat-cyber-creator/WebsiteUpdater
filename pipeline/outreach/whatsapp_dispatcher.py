@@ -14,7 +14,7 @@ import urllib.parse
 from typing import Dict, Any, List, Optional
 from playwright.sync_api import sync_playwright
 
-from pipeline.quotation import get_live_usd_idr_rate
+
 from pipeline.deployer.vercel_deployer import VercelDeployer
 
 SESSION_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "clients", ".whatsapp_session"))

@@ -62,7 +62,7 @@ Kami baru saja meninjau website Anda ({domain}). Bisnis Anda memiliki profil lay
 
 Sebagai bagian dari inisiatif peningkatan standar digital bisnis di Indonesia, tim kami telah menyusun satu dokumen proposal dan audit komprehensif, serta merancang konsep purwarupa tampilan website yang jauh lebih modern, cepat diakses dari HP, dan ramah Google SEO.
 
-Biaya pengerjaan turn-key all-in kami tawarkan flat $100 USD (flat kurs terjangkau tanpa biaya tersembunyi), mencakup redesain total, copywriting profesional, optimasi SEO, hingga serah terima source code lengkap.
+Biaya pengerjaan turn-key all-in kami tawarkan flat Rp 1.490.000 (investasi terjangkau tanpa biaya tersembunyi), mencakup redesain total, copywriting profesional, optimasi SEO, hingga serah terima source code lengkap.
 
 Dokumen detail proposal eksekutif 4 halaman telah kami lampirkan bersama email ini (PDF).
 
@@ -117,7 +117,7 @@ Layanan Desain & Modernisasi Website Profesional
 
   <div class="price-tag">
     <div style="font-size: 13px; color: #047857; text-transform: uppercase; letter-spacing: 0.5px;">Paket Turn-Key Modernisasi Lengkap</div>
-    <div class="amount">$100 USD <span style="font-size: 15px; font-weight: 400; color: #065f46;">(Flat Kurs IDR / All-Inclusive)</span></div>
+    <div class="amount">Rp 1.490.000 <span style="font-size: 15px; font-weight: 400; color: #065f46;">(Investasi Flat All-Inclusive)</span></div>
     <div style="font-size: 12px; color: #059669; margin-top: 4px;">Termasuk redesain penuh, copywriting, mobile & SEO optimization, serah terima kode bersih.</div>
   </div>
 

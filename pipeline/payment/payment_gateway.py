@@ -1,6 +1,7 @@
 """
-Payment Gateway Module ($100 USD Live Rate Turn-Key Engine).
-Generates official invoices with live USD to IDR rates, QRIS, and Virtual Accounts.
+Payment Gateway Module (Rp 1.490.000 Flat Turn-Key Engine).
+Generates official invoices with QRIS, Virtual Accounts, and Midtrans Snap integration.
+All pricing is fixed flat IDR — no live USD rate fetching needed.
 Integrates with Midtrans Snap API (Production / Sandbox) and webhook notifications
 for 100% automated settlement directly into merchant bank accounts.
 """
@@ -66,7 +67,7 @@ class PaymentGateway:
         base_url: str = "http://localhost:8080"
     ) -> Dict[str, Any]:
         """
-        Creates a new official $100 payment invoice.
+        Creates a new official Rp 1.490.000 flat payment invoice.
         If Midtrans Server Key is configured, generates official Midtrans Snap transaction.
         Otherwise provides built-in high-converting checkout with Virtual Accounts & QRIS.
         """

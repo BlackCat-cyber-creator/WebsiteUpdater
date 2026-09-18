@@ -53,35 +53,39 @@ class UIUXProMaxIntegrator:
 
     # Indonesian trade terms to UI/UX Pro Max product categories mapping
     INDONESIAN_TAXONOMY_MAP = [
-        # Construction & Building Materials
-        (r"(bangunan|material|semen|bata|genteng|proyek|konstruksi|keramik|pipa|cat|kayu|besi|baja|kusen|pasir)", "Construction/Architecture"),
-        # Medical, Health, Pharmacy
-        (r"(apotek|obat|farmasi|resep|vitamin)", "Pharmacy/Drug Store"),
-        (r"(klinik|dokter|medis|kesehatan|laboratorium|faskes)", "Medical Clinic"),
-        (r"(gigi|dental|behel|dokter gigi)", "Medical Clinic"),
+        # Professional & Legal Services (High Priority)
+        (r"\b(hukum|notaris|pengacara|advokat|konsultan|pajak|akuntan)\b", "Legal Services"),
+        (r"\b(properti|perumahan|tanah|kavling|developer|sewa rumah|agen properti|residence|cluster)\b", "Real Estate/Property"),
+        (r"\b(kursus|les|bimbel|edukasi|pelatihan|sekolah|bimbingan belajar)\b", "Educational App"),
+        # Freight, Logistics & Specialized Cargo
+        (r"\b(ekspedisi|kargo|cargo|logistik|kontainer|fcl|lcl|tronton|wingbox|trailer|fuso|pengiriman barang)\b", "Hyperlocal Services"),
+        # Medical, Health, Pharmacy, Physiotherapy
+        (r"\b(apotek|obat|farmasi|resep|vitamin)\b", "Pharmacy/Drug Store"),
+        (r"\b(klinik|dokter|medis|kesehatan|laboratorium|faskes|fisioterapi|physio|terapi|rehabilitasi|akupuntur|bidan|keperawatan)\b", "Medical Clinic"),
+        (r"\b(gigi|dental|behel|dokter gigi)\b", "Medical Clinic"),
+        # Frozen Food, Cold Storage, Food Wholesale
+        (r"(frozen food|makanan beku|nugget|sosis|dimsum|seafood beku|dori|daging slice|kentang beku|cold storage|horeca)", "Food Delivery App"),
         # Automotive & Transport
-        (r"(bengkel|servis|sparepart|motor|mobil|oli|ban|tuneup|spooring|bubut)", "Automotive/Car Dealership"),
+        (r"\b(bengkel mobil|bengkel motor|bengkel|servis motor|servis mobil|tuneup|spooring|bubut)\b|\b(oli|ban|sparepart|motor|mobil)\b", "Automotive/Car Dealership"),
         (r"(cuci mobil|cuci motor|car wash|detailing)", "Hyperlocal Services"),
         # Beauty, Wellness, Grooming
-        (r"(salon|barbershop|pangkas|rambut|skincare|facial|spa|massage|refleksi|estetika)", "Beauty/Spa/Wellness Service"),
+        (r"\b(salon|barbershop|pangkas|rambut|skincare|facial|spa|massage|refleksi|estetika)\b", "Beauty/Spa/Wellness Service"),
         # Food, Restaurant, Cafe
-        (r"(restoran|rumah makan|cafe|kafe|warung|kedai|kopi|coffee|bakery|roti|kue|catering|kuliner)", "Restaurant/Food Service"),
-        # Hyperlocal Services & Maintenance
-        (r"(laundry|cuci baju|cuci sepatu|dry clean)", "Hyperlocal Services"),
-        (r"(plafon|atap|bocor|renovasi|tukang|las|kanopi|teralis|kusen aluminium)", "Home Services (Plumber/Electrician)"),
-        (r"(ac|pendingin|servis ac|cuci ac|kelistrikan|listrik)", "Home Services (Plumber/Electrician)"),
+        (r"\b(restoran|rumah makan|cafe|kafe|warung|kedai|kopi|coffee|bakery|roti|kue|catering|kuliner)\b", "Restaurant/Food Service"),
+        # Hyperlocal Services & Home Maintenance
+        (r"\b(laundry|cuci baju|cuci sepatu|dry clean)\b", "Hyperlocal Services"),
+        (r"\b(plafon|atap|bocor|renovasi|tukang|\blas\b|kanopi|teralis|kusen aluminium)\b", "Home Services (Plumber/Electrician)"),
+        (r"(\bac\b|pendingin|servis ac|cuci ac|kelistrikan|listrik|teknisi ac)", "Home Services (Plumber/Electrician)"),
+        # Construction & Building Materials
+        (r"\b(bangunan|material|semen|bata|genteng|proyek|konstruksi|keramik|pipa|\bcat\b|kayu|besi|baja|kusen|pasir)\b", "Construction/Architecture"),
         # Retail & Local Commerce
-        (r"(sembako|toko kelontong|minimarket|grosir)", "Grocery & Shopping List"),
-        (r"(florist|toko bunga|buket|tanaman|bibit)", "Florist/Plant Shop"),
-        (r"(pet shop|hewan|kucing|anjing|pakan|grooming|vet|dokter hewan)", "Veterinary Clinic"),
-        (r"(elektronik|komputer|laptop|hp|handphone|gadget|printer|cctv|service hp)", "Consumer Electronics Store"),
-        (r"(pakaian|butik|konveksi|sablon|jahit|fashion|distro)", "E-commerce"),
-        # Professional Services
-        (r"(hukum|notaris|pengacara|advokat|konsultan|pajak|akuntan)", "Legal Services"),
-        (r"(properti|perumahan|tanah|kavling|developer|sewa rumah|agen properti)", "Real Estate/Property"),
-        (r"(percetakan|digital printing|cetak|offset|fotocopy|banner)", "B2B Service"),
-        (r"(kursus|les|bimbel|edukasi|pelatihan|sekolah)", "Educational App"),
-        (r"(gym|fitness|fitnes|senam|yoga|muay thai)", "Fitness/Gym App")
+        (r"\b(sembako|toko kelontong|minimarket|grosir)\b", "Grocery & Shopping List"),
+        (r"\b(florist|toko bunga|buket|tanaman|bibit)\b", "Florist/Plant Shop"),
+        (r"\b(pet shop|hewan|kucing|anjing|pakan|grooming|vet|dokter hewan)\b", "Veterinary Clinic"),
+        (r"\b(elektronik|komputer|laptop|hp|handphone|gadget|printer|cctv|service hp)\b", "Consumer Electronics Store"),
+        (r"\b(pakaian|butik|konveksi|sablon|jahit|fashion|distro)\b", "E-commerce"),
+        (r"\b(percetakan|digital printing|cetak|offset|fotocopy|banner)\b", "B2B Service"),
+        (r"\b(gym|fitness|fitnes|senam|yoga|muay thai)\b", "Fitness/Gym App")
     ]
 
     def __init__(self):
@@ -273,7 +277,14 @@ class UIUXProMaxIntegrator:
                 "wa_green": wa_green,
                 "wa_green_hover": wa_green_hover,
                 "wa_green_light": wa_green_light,
-                "wa_green_dark": wa_green_dark
+                "wa_green_dark": wa_green_dark,
+                "dark_bg": "#090d16",
+                "dark_surface": "#111827",
+                "dark_surface_subtle": "#1e293b",
+                "dark_border": "rgba(255, 255, 255, 0.08)",
+                "dark_border_strong": "rgba(255, 255, 255, 0.15)",
+                "dark_foreground": "#f8fafc",
+                "dark_muted_foreground": "#94a3b8"
             },
             "typography": {
                 "pairing_name": typo_row.get("Font Pairing Name", "Industrial Precision"),
@@ -455,6 +466,8 @@ STRICT ANTI-PATTERNS (FORBIDDEN):
             trust_badge_text = f"{trust_rating_text} • Ulasan Terverifikasi"
 
         return {
+            "has_real_rating": rating_val > 0,
+            "has_real_reviews": review_count > 0,
             "rating_float": rating_val if rating_val > 0 else 4.5,
             "rating_display": rating_display,
             "metric_rating_text": metric_rating_text,
@@ -531,6 +544,64 @@ STRICT ANTI-PATTERNS (FORBIDDEN):
             '<path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/>'
             '</svg>'
         ),
+        # Food, Frozen & Culinary
+        "snowflake": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/><polyline points="10 4 12 2 14 4"/><polyline points="10 20 12 22 14 20"/><polyline points="4 10 2 12 4 14"/><polyline points="20 10 22 12 20 14"/>'
+            '</svg>'
+        ),
+        "drumstick": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M15.4 15.63a7.875 6.002 0 0 0 3.13-5.63 6 6 0 0 0-6-6 7.875 6.002 0 0 0-5.63 3.13c-2.42 2.87-2.12 7.18.7 10 2.82 2.82 7.13 3.12 10 .7l.8-.8"/>'
+            '<path d="m8.33 15.67-3.33 3.33a2.121 2.121 0 0 1-3-3l3.33-3.33"/>'
+            '</svg>'
+        ),
+        "fish": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"/>'
+            '<path d="M18 12v.5"/><path d="M16 17.93a10.97 10.97 0 0 1-5.5-2.93"/><path d="M7 10.5 2 7v10l5-3.5Z"/><circle cx="16.5" cy="9.5" r="1"/>'
+            '</svg>'
+        ),
+        "cooking-pot": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M2 12h20"/><path d="M20 12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-6"/><path d="M4 8h16"/><path d="m15 4-1 4"/><path d="m9 4 1 4"/>'
+            '</svg>'
+        ),
+        "wheat": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="m2 22 10-10"/><path d="m16 8-4 4"/><path d="M3.5 12.5 5 11a3.5 3.5 0 0 1 5 5l-1.5 1.5a3.5 3.5 0 0 1-5-5Z"/><path d="M7.5 8.5 9 7a3.5 3.5 0 0 1 5 5l-1.5 1.5a3.5 3.5 0 0 1-5-5Z"/><path d="M11.5 4.5 13 3a3.5 3.5 0 0 1 5 5l-1.5 1.5a3.5 3.5 0 0 1-5-5Z"/>'
+            '</svg>'
+        ),
+        "flame": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3.5z"/>'
+            '</svg>'
+        ),
+        "store": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/>'
+            '</svg>'
+        ),
+        # Health, Clinic, Physical Therapy & Rehabilitation
+        "activity": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'
+            '</svg>'
+        ),
+        "bone": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M17 10c.7-.7 1.6-1 2.5-1a3.5 3.5 0 1 0-3.5 3.5c0 .9.3 1.8 1 2.5l-6 6c-.7-.7-1.6-1-2.5-1a3.5 3.5 0 1 0 3.5-3.5c0-.9-.3-1.8-1-2.5l6-6Z"/>'
+            '</svg>'
+        ),
         # Automotive & Repair
         "wrench": (
             '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
@@ -585,6 +656,69 @@ STRICT ANTI-PATTERNS (FORBIDDEN):
             'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
             '<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>'
             '<path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>'
+            '</svg>'
+        ),
+        # Professional & Legal
+        "scale": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>'
+            '<path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>'
+            '</svg>'
+        ),
+        "file-text": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>'
+            '<path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>'
+            '</svg>'
+        ),
+        "briefcase": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/>'
+            '</svg>'
+        ),
+        # Education & Learning
+        "graduation-cap": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>'
+            '<path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>'
+            '</svg>'
+        ),
+        "book-open": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>'
+            '</svg>'
+        ),
+        # Home Technical, HVAC & Electricity
+        "fan": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z"/><circle cx="12" cy="12" r="2"/>'
+            '</svg>'
+        ),
+        "zap": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>'
+            '</svg>'
+        ),
+        # Heavy Freight & Real Estate
+        "truck-trailer": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/>'
+            '<path d="M19 18h2a1 1 0 0 0 1-1v-5l-3-4h-5v10Z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M2 12h12"/>'
+            '</svg>'
+        ),
+        "building-2": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>'
+            '<path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>'
             '</svg>'
         ),
         "truck": (
@@ -649,6 +783,32 @@ STRICT ANTI-PATTERNS (FORBIDDEN):
             'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
             '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'
             '</svg>'
+        ),
+        "sun": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/>'
+            '<path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/>'
+            '<path d="m19.07 4.93-1.41 1.41"/>'
+            '</svg>'
+        ),
+        "moon": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>'
+            '</svg>'
+        ),
+        "search": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'
+            '</svg>'
+        ),
+        "filter": (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="{cls}">'
+            '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>'
+            '</svg>'
         )
     }
 
@@ -657,41 +817,167 @@ STRICT ANTI-PATTERNS (FORBIDDEN):
         template = self.SVG_ICONS.get(icon_name, self.SVG_ICONS["package"])
         return template.format(size=size, cls=cls)
 
+    def _has_kw(self, text: str, keywords: List[str]) -> bool:
+        """Helper to match keywords using word boundaries for single words or exact phrase matching."""
+        for kw in keywords:
+            if " " in kw:
+                if kw in text:
+                    return True
+            else:
+                if re.search(r'\b' + re.escape(kw) + r'\b', text, re.IGNORECASE):
+                    return True
+        return False
+
     def resolve_catalog_icon(self, title: str, raw_icon: str = "") -> str:
-        """Intelligently maps catalog title or raw input into high-quality inline SVG."""
-        text = f"{title} {raw_icon}".lower()
-        if any(k in text for k in ["semen", "perekat", "mortar", "bata", "beton", "cor", "pasir"]):
-            return self.get_svg_icon("building", size=24, cls="cat-svg")
-        if any(k in text for k in ["besi", "baja", "wiremesh", "tulangan", "rangka", "ulir"]):
-            return self.get_svg_icon("steel-beam", size=24, cls="cat-svg")
-        if any(k in text for k in ["pipa", "air", "pvc", "rucika", "keran", "plumbing"]):
-            return self.get_svg_icon("pipe-plumbing", size=24, cls="cat-svg")
-        if any(k in text for k in ["cat", "pelapis", "dinding", "vinilex", "dulux", "warna"]):
-            return self.get_svg_icon("paint-bucket", size=24, cls="cat-svg")
-        if any(k in text for k in ["atap", "genteng", "spandek", "penutup", "zincalume"]):
-            return self.get_svg_icon("roof-home", size=24, cls="cat-svg")
-        if any(k in text for k in ["keramik", "lantai", "granit", "ubin", "plint"]):
-            return self.get_svg_icon("tiles-floor", size=24, cls="cat-svg")
-        if any(k in text for k in ["obat", "resep", "vitamin", "kapsul", "tablet", "farmasi"]):
-            return self.get_svg_icon("pill", size=24, cls="cat-svg")
-        if any(k in text for k in ["medis", "kesehatan", "perban", "p3k", "darurat"]):
-            return self.get_svg_icon("first-aid", size=24, cls="cat-svg")
-        if any(k in text for k in ["dokter", "pemeriksaan", "klinik", "diagnosa", "tensi"]):
-            return self.get_svg_icon("stethoscope", size=24, cls="cat-svg")
-        if any(k in text for k in ["servis", "reparasi", "bengkel", "mesin", "perbaikan", "alat"]):
-            return self.get_svg_icon("wrench", size=24, cls="cat-svg")
-        if any(k in text for k in ["mobil", "motor", "kendaraan", "otomotif", "transmisi"]):
-            return self.get_svg_icon("car", size=24, cls="cat-svg")
-        if any(k in text for k in ["rambut", "potong", "cukur", "barber", "grooming"]):
-            return self.get_svg_icon("scissors", size=24, cls="cat-svg")
-        if any(k in text for k in ["perawatan", "treatment", "facial", "glowing", "spa", "kecantikan"]):
-            return self.get_svg_icon("sparkles", size=24, cls="cat-svg")
-        if any(k in text for k in ["kopi", "coffee", "minuman", "teh", "espresso"]):
-            return self.get_svg_icon("coffee", size=24, cls="cat-svg")
-        if any(k in text for k in ["makanan", "hidangan", "kuliner", "menu", "porsi", "catering"]):
+        """
+        Intelligently maps catalog title or raw input into high-quality inline SVG.
+        Prioritizes authentic domain keywords in title before falling back to raw icon slug.
+        Uses word-boundary matching to prevent false positive substring collisions.
+        """
+        title_lower = title.lower()
+        raw_lower = raw_icon.lower().strip()
+
+        # 1. Sausage, Meatball & Savory Dishes (Sosis, Bakso, Pentol, Kuliner, Porsi)
+        if self._has_kw(title_lower, ["sosis", "bakso", "pentol", "kuliner", "hidangan", "porsi", "catering", "prasmanan", "makanan", "menu", "santapan"]):
             return self.get_svg_icon("utensils", size=24, cls="cat-svg")
-        if any(k in text for k in ["belanja", "toko", "produk", "eceran", "tas"]):
+
+        # 2. Poultry, Meat & Chicken Delicacies (Nugget, Olahan Ayam, Katsu, Daging, Beef)
+        if self._has_kw(title_lower, ["nugget", "ayam", "chicken", "daging", "bebek", "katsu", "karage", "sapi", "beef", "fillet", "unggas", "rolade", "steak"]):
+            return self.get_svg_icon("drumstick", size=24, cls="cat-svg")
+
+        # 3. Seafood, Fish & Marine Products (Ikan, Udang, Cumi, Dori, Crab Stick, Salmon)
+        if self._has_kw(title_lower, ["seafood", "ikan", "dori", "udang", "cumi", "crab", "fish", "salmon", "tuna", "kakap", "gurame", "bandeng", "laut", "olahan laut"]):
+            return self.get_svg_icon("fish", size=24, cls="cat-svg")
+
+        # 4. Dimsum, Steamboat, Suki, Siomay & Soups
+        if self._has_kw(title_lower, ["dimsum", "steamboat", "suki", "shabu", "siomay", "kuah", "sup", "soup", "tomyam", "hotpot", "dumpling", "gyoza", "wonton", "hakau"]):
+            return self.get_svg_icon("cooking-pot", size=24, cls="cat-svg")
+
+        # 5. Fries, Bread, Pastry & Bakery (Kentang, French Fries, Roti, Pastry, Donat, Gandum)
+        if self._has_kw(title_lower, ["kentang", "french fries", "roti", "pastry", "bakery", "croissant", "donat", "tepung", "gandum", "snack", "gorengan", "frozen potato"]):
+            return self.get_svg_icon("wheat", size=24, cls="cat-svg")
+
+        # 6. Cold Storage, Frozen & Ice (Makanan Beku, Cold Storage, Es, Ice Cream)
+        if self._has_kw(title_lower, ["frozen", "beku", "cold storage", "ice cream", "es batu", "chilled", "freezer"]):
+            return self.get_svg_icon("snowflake", size=24, cls="cat-svg")
+
+        # 7. BBQ, Grill & Spicy Flavors (Panggang, Bakar, Grill, BBQ, Pedas, Saus)
+        if self._has_kw(title_lower, ["panggang", "bakar", "grill", "bbq", "pedas", "sambal", "saus", "marinasi"]):
+            return self.get_svg_icon("flame", size=24, cls="cat-svg")
+
+        # 8. Wholesale, Reseller & Store Packages (Grosir, Reseller, Agen, Toko, Eceran)
+        if self._has_kw(title_lower, ["grosir", "reseller", "agen", "distributor", "toko", "kulakan", "horeca", "paket usaha", "kemitraan"]):
+            return self.get_svg_icon("store", size=24, cls="cat-svg")
+
+        # 9. Physiotherapy, Movement, Sports Injury & Rehab (Fisioterapi, Cedera, Terapi, Gerak)
+        if self._has_kw(title_lower, ["fisioterapi", "physio", "cedera", "olahraga", "otot", "stroke", "rehabilitasi", "terapi fisik", "gerak", "postur", "atlet", "pemulihan", "kebugaran"]):
+            return self.get_svg_icon("activity", size=24, cls="cat-svg")
+
+        # 10. Orthopedics, Bone, Joints & Spine (Tulang, Sendi, Saraf Kejepit, Skoliosis)
+        if self._has_kw(title_lower, ["tulang", "sendi", "saraf", "kejepit", "skoliosis", "ortopedi", "rematik", "asam urat", "pinggang", "leher"]):
+            return self.get_svg_icon("bone", size=24, cls="cat-svg")
+
+        # 11. Pharmacy, Medicine & Vitamins (Obat, Resep, Vitamin, Farmasi, Kapsul)
+        if self._has_kw(title_lower, ["obat", "resep", "vitamin", "kapsul", "tablet", "farmasi", "suplemen"]):
+            return self.get_svg_icon("pill", size=24, cls="cat-svg")
+
+        # 12. Medical Clinic & Emergency (Medis, Kesehatan, Klinik, P3K, UGD, Rawat)
+        if self._has_kw(title_lower, ["medis", "kesehatan", "perban", "p3k", "darurat", "klinik", "ugd", "rawat", "faskes"]):
+            return self.get_svg_icon("first-aid", size=24, cls="cat-svg")
+
+        # 13. Doctor & Consultation (Dokter, Diagnosa, Tensi, Rekam Medis)
+        if self._has_kw(title_lower, ["dokter", "pemeriksaan", "diagnosa", "tensi", "konsultasi dokter", "rekam medis"]):
+            return self.get_svg_icon("stethoscope", size=24, cls="cat-svg")
+
+        # 14. Construction: Steel, Metal, Wiremesh & Rebar (Must precede general cement)
+        if self._has_kw(title_lower, ["besi", "baja", "wiremesh", "tulangan", "rangka", "ulir", "kanal c", "hollow", "tralis"]):
+            return self.get_svg_icon("steel-beam", size=24, cls="cat-svg")
+
+        # 15. Construction: Paint, Coating & Wall Finishes (Must precede general cement)
+        if self._has_kw(title_lower, ["cat", "pelapis", "dinding", "vinilex", "dulux", "warna", "thinner", "kuas", "waterproofing"]):
+            return self.get_svg_icon("paint-bucket", size=24, cls="cat-svg")
+
+        # 16. Construction: Plumbing, Pipes & Water
+        if self._has_kw(title_lower, ["pipa", "air", "pvc", "rucika", "keran", "plumbing", "tandon", "fitting", "sanitari"]):
+            return self.get_svg_icon("pipe-plumbing", size=24, cls="cat-svg")
+
+        # 17. Construction: Roof, Tiles & Truss
+        if self._has_kw(title_lower, ["atap", "genteng", "spandek", "penutup", "zincalume", "alderon", "polycarbonate", "kanopi"]):
+            return self.get_svg_icon("roof-home", size=24, cls="cat-svg")
+
+        # 18. Construction: Ceramic & Flooring
+        if self._has_kw(title_lower, ["keramik", "lantai", "granit", "ubin", "plint", "vinyl lantai"]):
+            return self.get_svg_icon("tiles-floor", size=24, cls="cat-svg")
+
+        # 19. Construction: Cement, Sand, Brick & Concrete
+        if self._has_kw(title_lower, ["semen", "perekat", "mortar", "bata", "beton", "cor", "pasir", "pondasi", "batu"]):
+            return self.get_svg_icon("building", size=24, cls="cat-svg")
+
+        # 20. Home Services: HVAC, AC & Cooling (Must precede general mechanic)
+        if self._has_kw(title_lower, ["ac", "air conditioner", "pendingin", "cuci ac", "service ac", "servis ac", "freon", "blower", "exhaust", "hvac"]):
+            return self.get_svg_icon("fan", size=24, cls="cat-svg")
+
+        # 21. Home Services: Electrical & Power (Must precede general mechanic)
+        if self._has_kw(title_lower, ["listrik", "kelistrikan", "instalasi listrik", "panel", "korsleting", "genset", "daya"]):
+            return self.get_svg_icon("zap", size=24, cls="cat-svg")
+
+        # 22. Legal Documents, Contracts & Compliance (Must precede general litigation)
+        if self._has_kw(title_lower, ["akta", "kontrak", "perjanjian", "audit", "perizinan", "dokumen", "legalitas", "haki", "paten", "npwp", "oss", "pemberkasan"]):
+            return self.get_svg_icon("file-text", size=24, cls="cat-svg")
+
+        # 23. Legal, Law & Litigation (Scale of Justice)
+        if self._has_kw(title_lower, ["hukum", "advokat", "perkara", "litigasi", "pidana", "perdata", "somasi", "pengadilan", "notaris", "legal", "sengketa", "bantuan hukum"]):
+            return self.get_svg_icon("scale", size=24, cls="cat-svg")
+
+        # 24. Corporate Consulting & Business Advisory
+        if self._has_kw(title_lower, ["konsultan", "manajemen", "bisnis", "advisory", "keuangan", "pajak", "corporate", "laporan keuangan"]):
+            return self.get_svg_icon("briefcase", size=24, cls="cat-svg")
+
+        # 25. Education, Tutoring & Academic Programs
+        if self._has_kw(title_lower, ["bimbel", "les", "kursus", "pendidikan", "ujian", "utbk", "snbt", "toefl", "ielts", "akademik", "beasiswa", "sekolah", "kuliah", "siswa"]):
+            return self.get_svg_icon("graduation-cap", size=24, cls="cat-svg")
+
+        # 26. Learning Modules, Classes & Workshops
+        if self._has_kw(title_lower, ["modul", "materi", "buku", "kurikulum", "silabus", "pelatihan", "workshop", "bootcamp", "privat", "kelas"]):
+            return self.get_svg_icon("book-open", size=24, cls="cat-svg")
+
+        # 27. Heavy Freight, Cargo & Fleet Charter (Must precede general vehicles)
+        if self._has_kw(title_lower, ["kargo", "kontainer", "tronton", "fuso", "wingbox", "charter", "fcl", "lcl", "trailer", "truk"]):
+            return self.get_svg_icon("truck-trailer", size=24, cls="cat-svg")
+
+        # 28. Real Estate, Housing & Property Development
+        if self._has_kw(title_lower, ["properti", "perumahan", "cluster", "residence", "kavling", "tanah", "apartemen", "ruko", "villa", "townhouse", "tipe"]):
+            return self.get_svg_icon("building-2", size=24, cls="cat-svg")
+
+        # 29. Automotive & Mechanics (Servis, Bengkel, Mesin, Oli, Sparepart)
+        if self._has_kw(title_lower, ["servis", "reparasi", "bengkel", "mesin", "perbaikan", "alat", "tune up", "ganti oli", "sparepart", "bubut"]):
+            return self.get_svg_icon("wrench", size=24, cls="cat-svg")
+
+        # 30. Vehicles & Wash (Mobil, Motor, Kendaraan, Cuci Mobil)
+        if self._has_kw(title_lower, ["mobil", "motor", "kendaraan", "otomotif", "transmisi", "cuci mobil", "car wash", "detailing"]):
+            return self.get_svg_icon("car", size=24, cls="cat-svg")
+
+        # 31. Hair & Barber (Rambut, Potong, Cukur, Barber)
+        if self._has_kw(title_lower, ["rambut", "potong", "cukur", "barber", "grooming", "creambath", "styling"]):
+            return self.get_svg_icon("scissors", size=24, cls="cat-svg")
+
+        # 32. Beauty, Spa & Aesthetics (Skincare, Facial, Glowing, Spa)
+        if self._has_kw(title_lower, ["perawatan", "treatment", "facial", "glowing", "spa", "kecantikan", "estetika", "skincare"]):
+            return self.get_svg_icon("sparkles", size=24, cls="cat-svg")
+
+        # 33. Coffee & Beverages (Kopi, Kafe, Minuman, Teh)
+        if self._has_kw(title_lower, ["kopi", "coffee", "minuman", "teh", "espresso", "latte", "boba", "jus"]):
+            return self.get_svg_icon("coffee", size=24, cls="cat-svg")
+
+        # 34. Shopping, Fashion & Retail (Belanja, Toko, Eceran, Tas, Busana)
+        if self._has_kw(title_lower, ["belanja", "eceran", "tas", "baju", "pakaian", "fashion", "butik"]):
             return self.get_svg_icon("shopping-bag", size=24, cls="cat-svg")
+
+        # Fallback to direct raw_icon slug if recognized
+        if raw_lower in self.SVG_ICONS:
+            return self.get_svg_icon(raw_lower, size=24, cls="cat-svg")
+
+        # Default fallback
         return self.get_svg_icon("package", size=24, cls="cat-svg")
 
     def resolve_advantage_icon(self, idx: int, category: str = "") -> str:

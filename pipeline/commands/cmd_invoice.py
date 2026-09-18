@@ -7,7 +7,7 @@ from pipeline.commands.context import CommandContext
 
 
 def cmd_create_invoice(ctx: CommandContext, args) -> None:
-    """Generates $100 live-rate invoice link for a client."""
+    """Generates Rp 1.490.000 flat invoice link for a client."""
     target_domain = args.create_invoice.strip()
     lead = ctx.tracker.get_lead(target_domain) or {}
     b_name = lead.get("business_name", target_domain)

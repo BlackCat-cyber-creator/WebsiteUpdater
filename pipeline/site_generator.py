@@ -7,6 +7,7 @@ layout, and branding, and performs professional tidying and technical SEO enhanc
 import os
 import re
 import json
+import html
 import urllib.parse
 from datetime import datetime
 from typing import Dict, Any, List, Optional
@@ -14,6 +15,7 @@ from bs4 import BeautifulSoup
 from pipeline.deployer.vercel_deployer import VercelDeployer
 from pipeline.researcher.business_researcher import BusinessResearcher
 from pipeline.researcher.ui_ux_integrator import UIUXProMaxIntegrator
+from pipeline.outreach.meta_wa_client import normalize_phone_e164
 
 
 from pipeline.templates.renderer import render_template
@@ -29,6 +31,34 @@ except Exception:
 class SiteGenerator:
     def __init__(self):
         pass
+
+    @staticmethod
+    def _resolve_card_image(niche_key: str, title: str) -> Optional[str]:
+        """Resolves authentic, appetizing category visuals for consumer & F&B niches."""
+        t_low = title.lower()
+        if niche_key == "frozen_food":
+            if any(w in t_low for w in ["daging", "sosis", "bakso", "beef", "burger"]):
+                return "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["seafood", "ikan", "udang", "dimsum", "dumpling", "siomay", "tempura"]):
+                return "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["kentang", "sayur", "fries", "potato", "vegetable"]):
+                return "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["keju", "dairy", "mozzarella", "cheese", "mentega"]):
+                return "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["nugget", "camilan", "snack", "pastry", "katsu", "kebab", "maryam"]):
+                return "https://images.unsplash.com/photo-1562967914-608f82629710?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["bumbu", "saus", "sauce", "mayo", "sambal"]):
+                return "https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=600&auto=format&fit=crop&q=80"
+            return "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80"
+        elif niche_key == "kuliner":
+            if any(w in t_low for w in ["roti", "bakery", "pastry", "croissant"]):
+                return "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["kue", "cake", "tart", "brownies"]):
+                return "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80"
+            if any(w in t_low for w in ["katering", "nasi", "tumpeng", "prasmanan", "ayam"]):
+                return "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop&q=80"
+            return "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop&q=80"
+        return None
 
     def generate(self, scraped: Dict[str, Any], style_analysis: Dict[str, Any], audit: Dict[str, Any], output_dir: str) -> str:
         """
@@ -109,7 +139,8 @@ class SiteGenerator:
                         "headers": [
                             {"key": "X-Content-Type-Options", "value": "nosniff"},
                             {"key": "X-Frame-Options", "value": "DENY"},
-                            {"key": "X-XSS-Protection", "value": "1; mode=block"}
+                            {"key": "X-XSS-Protection", "value": "1; mode=block"},
+                            {"key": "Content-Security-Policy", "value": "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:; img-src 'self' https: data: blob:;"}
                         ]
                     }
                 ]
@@ -178,6 +209,27 @@ class SiteGenerator:
                         else:
                             new_parts.append(img_url)
                     tag["srcset"] = ", ".join(new_parts)
+
+        # Resolve relative url(...) in all <style> tags and inline style attributes to absolute HTTPS
+        def _rewrite_css_urls(css_text: str) -> str:
+            if not css_text or "url(" not in css_text:
+                return css_text
+            def _replace_url(match):
+                raw_u = match.group(1).strip("'\" \t\r\n")
+                if not raw_u or raw_u.startswith(("http://", "https://", "data:", "#")):
+                    return match.group(0)
+                abs_u = urllib.parse.urljoin(base_url, raw_u)
+                if abs_u.startswith("http://"):
+                    abs_u = "https://" + abs_u[7:]
+                return f'url("{abs_u}")'
+            return re.sub(r'url\s*\(\s*([^)]+)\s*\)', _replace_url, css_text)
+
+        for s_tag in soup.find_all("style"):
+            if s_tag.string:
+                s_tag.string = _rewrite_css_urls(s_tag.string)
+
+        for el in soup.find_all(attrs={"style": True}):
+            el["style"] = _rewrite_css_urls(el["style"])
 
         # Tidy up empty or missing img alt tags for SEO image ranking
         # and inject Core Web Vitals optimizations (loading=lazy, decoding=async)
@@ -283,29 +335,37 @@ class SiteGenerator:
             if not head.find("meta", attrs={"name": name}):
                 head.append(soup.new_tag("meta", attrs={"name": name, "content": val}))
 
-        # Schema.org JSON-LD Structured Data
-        if not head.find("script", attrs={"type": "application/ld+json"}):
-            contact = scraped.get("kontak", {})
-            schema_data = {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": brand,
-                "url": base_url,
-                "description": best_desc,
-                "telephone": contact.get("whatsapp") or contact.get("phone", ""),
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": contact.get("address", "Indonesia"),
-                    "addressCountry": "ID"
-                }
-            }
-            socials = scraped.get("social_media", {})
-            if socials:
-                schema_data["sameAs"] = list(socials.values())
+        # Schema.org JSON-LD Structured Data: Clean up legacy Microdata & duplicate JSON-LD across document
+        for old_sc in soup.find_all("script", attrs={"type": "application/ld+json"}):
+            old_sc.decompose()
+        for attr in ["itemscope", "itemtype", "itemprop"]:
+            for item in soup.find_all(attrs={attr: True}):
+                del item[attr]
 
-            sc_tag = soup.new_tag("script", attrs={"type": "application/ld+json"})
-            sc_tag.string = json.dumps(schema_data, indent=2, ensure_ascii=False)
-            head.append(sc_tag)
+        contact = scraped.get("kontak", {})
+        raw_contact_ph = contact.get("whatsapp") or contact.get("phone", "")
+        clean_contact_ph = f"+{normalize_phone_e164(raw_contact_ph)}" if raw_contact_ph else ""
+        schema_data = {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": brand,
+            "url": base_url,
+            "description": best_desc,
+            "telephone": clean_contact_ph,
+            "priceRange": "Rp",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": contact.get("address", "Indonesia"),
+                "addressCountry": "ID"
+            }
+        }
+        socials = scraped.get("social_media", {})
+        if socials:
+            schema_data["sameAs"] = list(socials.values())
+
+        sc_tag = soup.new_tag("script", attrs={"type": "application/ld+json"})
+        sc_tag.string = json.dumps(schema_data, indent=2, ensure_ascii=False)
+        head.append(sc_tag)
 
         # -------------------------------------------------------------
         # 3. SEMANTIC H1: Ensure exactly one semantic H1 exists for Google
@@ -396,7 +456,7 @@ class SiteGenerator:
         city_extracted = researcher.extract_city(address, business_name)
         clean_slug = VercelDeployer.get_preview_slug(business_name, track="track_a_new_web", city=city_extracted)
         domain = f"{clean_slug}.vercel.app"
-        clean_phone = re.sub(r"[^\d]", "", phone)
+        clean_phone = normalize_phone_e164(phone) if phone else "628123456789"
 
         # Quick Trade Research & Semantic Synthesis
         profile = researcher.research_business(
@@ -471,29 +531,68 @@ class SiteGenerator:
             else:
                 theme[tk] = tv
 
-        # Apply WCAG AA color tokens from UI/UX Pro Max
-        theme["primary"] = colors["primary"]
-        theme["theme_color"] = colors["primary"]
-        theme["accent"] = colors["accent"]
-        theme["accent_hover"] = colors["accent_hover"]
-        theme["accent_light"] = colors["accent_light"]
-        theme["accent_border"] = colors["accent_border"]
-        theme["accent_dark"] = colors["accent_dark"]
-        theme["secondary"] = colors["secondary"]
+        # Apply WCAG AA color tokens from UI/UX Pro Max and Niche Themes
+        # Prioritize raw_theme accents if explicitly configured for industry
+        accent_color = raw_theme.get("accent") or colors["accent"]
+        theme["accent"] = accent_color
+        theme["accent_hover"] = raw_theme.get("accent_hover") or colors.get("accent_hover") or ui_ux._adjust_hex_brightness(accent_color, -0.15)
+        theme["accent_light"] = raw_theme.get("accent_light") or colors.get("accent_light") or ui_ux._adjust_hex_tint(accent_color, 0.92)
+        theme["accent_border"] = raw_theme.get("accent_border") or colors.get("accent_border") or ui_ux._adjust_hex_tint(accent_color, 0.70)
+        theme["accent_dark"] = raw_theme.get("accent_dark") or colors.get("accent_dark") or ui_ux._adjust_hex_brightness(accent_color, -0.25)
+        try:
+            r = int(accent_color[1:3], 16)
+            g = int(accent_color[3:5], 16)
+            b = int(accent_color[5:7], 16)
+            theme["accent_shadow"] = raw_theme.get("accent_shadow") or f"rgba({r}, {g}, {b}, 0.25)"
+            theme["accent_rgb"] = f"{r}, {g}, {b}"
+        except Exception:
+            theme["accent_shadow"] = "rgba(14, 165, 233, 0.25)"
+            theme["accent_rgb"] = "14, 165, 233"
+
+        theme["primary"] = raw_theme.get("theme_color") or colors["primary"]
+        theme["theme_color"] = raw_theme.get("theme_color") or accent_color
+        theme["secondary"] = raw_theme.get("secondary") or colors["secondary"]
         theme["background"] = colors.get("background", "#f8fafc")
         theme["card"] = colors.get("card", "#ffffff")
         theme["border"] = colors.get("border", "#e2e8f0")
         theme["foreground"] = colors.get("foreground", "#0f172a")
         theme["muted_foreground"] = colors.get("muted_foreground", "#64748b")
-        theme["ring"] = colors.get("ring", colors["accent"])
+        theme["ring"] = colors.get("ring", accent_color)
         theme["wa_green"] = colors["wa_green"]
         theme["wa_green_hover"] = colors["wa_green_hover"]
         theme["wa_green_light"] = colors["wa_green_light"]
         theme["wa_green_dark"] = colors["wa_green_dark"]
+        theme["dark_bg"] = colors.get("dark_bg", "#090d16")
+        theme["dark_surface"] = colors.get("dark_surface", "#111827")
+        theme["dark_surface_subtle"] = colors.get("dark_surface_subtle", "#1e293b")
+        theme["dark_border"] = colors.get("dark_border", "rgba(255, 255, 255, 0.08)")
+        theme["dark_border_strong"] = colors.get("dark_border_strong", "rgba(255, 255, 255, 0.15)")
+        theme["dark_foreground"] = colors.get("dark_foreground", "#f8fafc")
+        theme["dark_muted_foreground"] = colors.get("dark_muted_foreground", "#94a3b8")
         theme["google_fonts_url"] = typo["google_fonts_url"]
         theme["heading_font"] = typo["heading_font"]
         theme["body_font"] = typo["body_font"]
         theme["motion_preset"] = ds.get("motion", {})
+
+        # Clean city & address logic to prevent "Lokal & Sekitarnya & Sekitarnya"
+        clean_city_name = re.sub(r'\s*&\s*sekitarnya\b', '', city, flags=re.I).strip()
+        if not clean_city_name or clean_city_name.lower() in ["lokal", "wilayah", "seluruh"]:
+            area_service_label = "Wilayah Layanan & Sekitarnya"
+            footer_city_display = "Seluruh Wilayah Layanan, Indonesia"
+        else:
+            area_service_label = f"Area {clean_city_name} & Sekitarnya"
+            footer_city_display = f"Kota {clean_city_name}, Indonesia"
+
+        if address and address.strip():
+            addr_str = address.strip()
+            if re.match(r'^melayani\b', addr_str, re.I):
+                clean_address_display = addr_str
+            elif any(w in addr_str.lower() for w in ["jl.", "jalan", "komplek", "ruko", "blok", "no.", "rt/rw"]):
+                clean_address_display = addr_str
+            else:
+                clean_address_display = f"Melayani {addr_str}"
+        else:
+            clean_address_display = f"Melayani {area_service_label}"
 
         # Highlight city in headline if present
         h1_html = headline
@@ -508,6 +607,11 @@ class SiteGenerator:
         clock_svg = ui_ux.get_svg_icon("clock", size=15, cls="ui-svg")
         help_svg = ui_ux.get_svg_icon("help-circle", size=18, cls="faq-svg")
         check_svg = ui_ux.get_svg_icon("check", size=14, cls="bullet-svg")
+        sun_svg = ui_ux.get_svg_icon("sun", size=18, cls="theme-toggle-icon sun-icon")
+        moon_svg = ui_ux.get_svg_icon("moon", size=18, cls="theme-toggle-icon moon-icon")
+        search_svg = ui_ux.get_svg_icon("search", size=16, cls="search-svg")
+        filter_svg = ui_ux.get_svg_icon("filter", size=14, cls="filter-svg")
+        sparkles_svg = ui_ux.get_svg_icon("sparkles", size=16, cls="ui-svg")
 
         # 1. Top Utility Notice Bar (Vector SVG, Zero Emojis)
         top_bar_html = f"""
@@ -515,20 +619,56 @@ class SiteGenerator:
   <div class="top-bar">
     <div class="container top-bar-inner">
       <div class="top-bar-item">
-        <span class="top-icon">{map_pin_svg}</span> <span>{address or f'Melayani Area {city} & Sekitarnya'} | Buka {hours}</span>
+        <span class="top-icon">{map_pin_svg}</span> <span>{clean_address_display} | Buka {hours}</span>
       </div>
       <div class="top-bar-item">
-        <span class="top-icon">{truck_svg}</span> <span>{theme.get("top_bar_label", "Layanan Cepat")}: <a href="tel:{clean_phone}">{phone}</a></span>
+        <span class="top-icon">{truck_svg if niche_key in ['frozen_food', 'kuliner', 'konstruksi', 'logistik_kargo'] else phone_svg}</span> <span>{theme.get("top_bar_label", "Layanan Cepat")}: <a href="tel:{clean_phone}">{phone}</a></span>
       </div>
     </div>
   </div>"""
 
-        # 2. Key Metrics Bar
+        # 2. Key Metrics Bar (Intelligent Niche-Aware Fallback)
+        default_lbl_2 = "Produk & Layanan Resmi"
+        default_lbl_3 = "Standar Mutu Teruji"
+        default_lbl_4 = f"Area Layanan {city}"
+        if niche_key in ["layanan_profesional"]:
+            default_lbl_2 = "Kerahasiaan Terjamin (NDA)"
+            default_lbl_3 = "Tim Ahli Berlisensi"
+            default_lbl_4 = "Konsultasi Cepat"
+        elif niche_key in ["kesehatan", "fisioterapi_klinik"]:
+            default_lbl_2 = "Tenaga Medis Berlisensi"
+            default_lbl_3 = "Higienis & Terstandar"
+            default_lbl_4 = f"Siap Melayani Warga {city}"
+        elif niche_key in ["edukasi"]:
+            default_lbl_2 = "Kurikulum & Modul Teruji"
+            default_lbl_3 = "Tutor Berpengalaman"
+            default_lbl_4 = "Kelas Interaktif"
+        elif niche_key in ["logistik_kargo"]:
+            default_lbl_2 = "Armada Sendiri Terawat"
+            default_lbl_3 = "Jaminan Asuransi Muatan"
+            default_lbl_4 = "Jangkauan Antarkota"
+        elif niche_key in ["jasa_teknik"]:
+            default_lbl_2 = "Teknisi Berpengalaman"
+            default_lbl_3 = "Garansi Pengerjaan"
+            default_lbl_4 = f"Panggilan Cepat Area {city}"
+        elif niche_key in ["properti"]:
+            default_lbl_2 = "Legalitas SHM Aman"
+            default_lbl_3 = "Lokasi Bernilai Tinggi"
+            default_lbl_4 = "Survey Lokasi Fleksibel"
+        elif niche_key in ["frozen_food", "kuliner"]:
+            default_lbl_2 = "100% Halal & Segar"
+            default_lbl_3 = "Kualitas Rasa Higienis"
+            default_lbl_4 = f"Kirim Cepat Area {city}"
+        elif niche_key in ["konstruksi"]:
+            default_lbl_2 = "Material Standar SNI"
+            default_lbl_3 = "Stok Gudang Siap Kirim"
+            default_lbl_4 = "Armada Angkut Proyek"
+
         metrics = profile.get("metrics") or [
             {"val": f"{rating_display} ★", "lbl": "Google Maps Terverifikasi"},
-            {"val": "1.500+", "lbl": "Material / Produk Siap Kirim"},
-            {"val": "100% Asli", "lbl": "Standar Mutu SNI & Resmi"},
-            {"val": "Armada Siap", "lbl": "Kirim Cepat ke Lokasi"}
+            {"val": "100% Asli", "lbl": default_lbl_2},
+            {"val": "Resmi", "lbl": default_lbl_3},
+            {"val": "Terpercaya", "lbl": default_lbl_4}
         ]
         metrics_bar_items = "".join([f"""
           <div class="metric-item">
@@ -540,8 +680,9 @@ class SiteGenerator:
           {metrics_bar_items}
         </div>"""
 
-        # 3. Rich Catalog Cards with bullet items & dedicated WA buttons (Phosphor/Lucide SVGs)
+        # 3. Rich Catalog Cards with bullet items, search attributes & dual action buttons
         catalog_cards_html = ""
+        structured_catalog = []
         badge_labels = theme.get("badge_labels", [
             "100% Asli & Teruji",
             "Kualitas Terbaik",
@@ -550,39 +691,123 @@ class SiteGenerator:
             "Pilihan Favorit",
             "Layanan Profesional"
         ])
+        categories = []
         for idx, s in enumerate(profile.get("services", [])):
             stitle = s.get("title", "Layanan")
             sdesc = s.get("desc", "")
             sbadge = badge_labels[idx % len(badge_labels)]
             sicon_svg = ui_ux.resolve_catalog_icon(stitle, s.get("icon", ""))
+            if niche_key in ["frozen_food", "konstruksi", "kuliner", "flora_fauna"]:
+                item_1 = f"{stitle} Grade A Teruji"
+                item_2 = f"Ketersediaan Pasokan & Stok {city}"
+            elif niche_key in ["kesehatan", "fisioterapi_klinik"]:
+                item_1 = f"Standar Klinis {stitle} Resmi"
+                item_2 = f"Fasilitas Higienis & Steril {city}"
+            elif niche_key in ["layanan_profesional"]:
+                item_1 = f"Konsultasi {stitle} Berlisensi"
+                item_2 = f"Kerahasiaan & Standar Etika Profesi"
+            elif niche_key in ["jasa_teknik"]:
+                item_1 = f"Pengerjaan {stitle} Bergaransi"
+                item_2 = f"Teknisi Berpengalaman Area {city}"
+            elif niche_key in ["edukasi"]:
+                item_1 = f"Kurikulum {stitle} Teruji"
+                item_2 = f"Pendampingan Tutor Berpengalaman"
+            elif niche_key in ["logistik_kargo"]:
+                item_1 = f"Layanan {stitle} Terjadwal"
+                item_2 = f"Jaminan Asuransi & Lacak Kiriman"
+            elif niche_key in ["estetika"]:
+                item_1 = f"Treatment {stitle} Steril"
+                item_2 = f"Terapis Berpengalaman & Bersertifikat"
+            elif niche_key in ["otomotif"]:
+                item_1 = f"Servis {stitle} Standar Pabrikan"
+                item_2 = f"Suku Cadang Teruji Area {city}"
+            elif niche_key in ["properti"]:
+                item_1 = f"Unit {stitle} Lokasi Strategis"
+                item_2 = f"Legalitas Aman & Bebas Sengketa"
+            else:
+                item_1 = f"Layanan {stitle} Terstandar"
+                item_2 = f"Pelayanan Profesional Area {city}"
+
             items = s.get("items") or [
-                f"{stitle} Grade A Teruji",
-                f"Ketersediaan Stok Gudang {city}",
+                item_1,
+                item_2,
                 "Konsultasi & Garansi Kepuasan"
             ]
             items_html = "".join([f'<li><span class="bullet">{check_svg}</span> {item}</li>' for item in items])
-            wa_text = urllib.parse.quote_plus(
-                f"Halo Manajemen {business_name},\n\n"
-                f"Saya tertarik dengan produk/layanan *{stitle}* dari katalog website resmi Anda.\n"
-                f"Boleh minta info spesifikasi, ketersediaan stok, dan penawaran harganya untuk area {city}? Terima kasih!"
-            )
-            catalog_cards_html += f"""
-        <div class="catalog-card">
+            
+            prompt_template = theme.get("card_wa_prompt_template")
+            if prompt_template:
+                card_wa_prompt = prompt_template.replace("{business_name}", business_name).replace("{title}", stitle).replace("{city}", city)
+            elif niche_key in ["frozen_food", "konstruksi", "kuliner", "flora_fauna"]:
+                card_wa_prompt = (
+                    f"Halo Manajemen {business_name},\n\n"
+                    f"Saya tertarik dengan produk/layanan *{stitle}* dari katalog website resmi Anda.\n"
+                    f"Boleh minta info spesifikasi, ketersediaan stok, dan penawaran harganya untuk area {city}? Terima kasih!"
+                )
+            else:
+                card_wa_prompt = (
+                    f"Halo Manajemen {business_name},\n\n"
+                    f"Saya tertarik dengan layanan *{stitle}* dari website resmi Anda.\n"
+                    f"Boleh minta info detail layanan, prosedur, dan penawaran biayanya untuk area {city}? Terima kasih!"
+                )
+            wa_text = urllib.parse.quote(card_wa_prompt)
+            structured_catalog.append({
+                "title": stitle,
+                "desc": sdesc,
+                "badge": sbadge,
+                "items": items
+            })
+            if stitle not in categories:
+                categories.append(stitle)
+            escaped_stitle = html.escape(stitle, quote=True)
+            card_img_url = self._resolve_card_image(niche_key, stitle)
+            if card_img_url:
+                card_fallback_url = "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" if niche_key == "frozen_food" else "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop&q=80"
+                card_img_html = (
+                    f'<div class="catalog-card-image">'
+                    f'<img src="{card_img_url}" alt="{escaped_stitle}" loading="lazy" decoding="async" '
+                    f'width="600" height="338" style="aspect-ratio: 16 / 9;" '
+                    f'onerror="this.onerror=null; this.src=\'{card_fallback_url}\'; this.onerror=function(){{this.style.opacity=\'0\'; this.parentElement.classList.add(\'img-fallback-active\');}}; ">'
+                    f'<span class="card-glass-badge">{sbadge}</span>'
+                    f'</div>'
+                )
+                header_html = f"""
+          <div class="catalog-header-clean">
+            <h3 class="catalog-title">{stitle}</h3>
+          </div>"""
+            else:
+                card_img_html = ""
+                header_html = f"""
           <div class="catalog-header">
             <div class="catalog-icon">{sicon_svg}</div>
-            <div>
+            <div class="catalog-title-wrap">
               <h3 class="catalog-title">{stitle}</h3>
               <span class="catalog-badge">{sbadge}</span>
             </div>
-          </div>
+          </div>"""
+
+            catalog_cards_html += f"""
+        <div class="catalog-card" data-category="{stitle.lower()}" data-search="{stitle.lower()} {sdesc.lower()} {' '.join(items).lower()}">
+          {card_img_html}{header_html}
           <p class="catalog-desc">{sdesc}</p>
           <ul class="catalog-items">
             {items_html}
           </ul>
-          <a href="https://wa.me/{clean_phone}?text={wa_text}" target="_blank" rel="noopener noreferrer" class="btn-card-wa">
-            <span>{theme.get("card_btn_text", "Pesan via WA ↗")}</span>
-          </a>
+          <div class="catalog-card-footer">
+            <a href="https://wa.me/{clean_phone}?text={wa_text}" target="_blank" rel="noopener noreferrer" class="btn-card-wa">
+              <span>{theme.get("card_btn_text", "Pesan via WA ↗")}</span>
+            </a>
+            <button type="button" class="btn-card-estimate" data-service-title="{escaped_stitle}" onclick="selectServiceForEstimate(this.dataset.serviceTitle)">
+              <span>{theme.get("card_estimate_btn", "Minta Estimasi ↓")}</span>
+            </button>
+          </div>
         </div>"""
+
+        # Filter pills for catalog
+        filter_pills_html = '<button type="button" class="filter-pill active" onclick="filterCatalog(\'all\', this)">Semua Kategori</button>'
+        for cat in categories[:6]:
+            cat_safe = cat.replace("'", "\\'").replace('"', '&quot;')
+            filter_pills_html += f'<button type="button" class="filter-pill" onclick="filterCatalog(\'{cat.lower()}\', this)">{cat}</button>'
 
         # 4. Advantages Boxes (Vector SVGs)
         adv_boxes_html = ""
@@ -597,36 +822,25 @@ class SiteGenerator:
           </div>
         </div>"""
 
-        # 5. Reviews Section
-        reviews = profile.get("reviews") or [
-            {
-                "name": "Budi Pratama",
-                "badge": f"Pembeli Terverifikasi Google Maps {city}",
-                "stars": "★★★★★",
-                "text": f"Pelayanan di {business_name} sangat memuaskan. Respon admin WhatsApp ramah, pengiriman cepat ke lokasi proyek, dan harga bersaing."
-            },
-            {
-                "name": "Hendra Setiawan",
-                "badge": f"Kontraktor Proyek {city}",
-                "stars": "★★★★★",
-                "text": "Sangat terbantu untuk kebutuhan proyek rutin kami. Kualitas material dan barang terjamin, armada kirim tepat waktu dan barang sampai aman."
-            },
-            {
-                "name": "Siti Rahmawati",
-                "badge": f"Pemilik Hunian di {city}",
-                "stars": "★★★★★",
-                "text": "Beli untuk renovasi rumah, dilayani sangat baik dan cepat. Konsultasi kebutuhan dihitung dengan jujur dan jelas."
-            }
-        ]
-        reviews_cards_html = ""
-        for r in reviews[:3]:
-            rname = r.get("name", "Pelanggan Terverifikasi")
-            rparts = rname.split()
-            rinitials = (rparts[0][0] + (rparts[1][0] if len(rparts) > 1 else "")).upper()
-            rbadge = r.get("badge", "Pembeli Terverifikasi Google")
-            rstars = r.get("stars", "★★★★★")
-            rtext = r.get("text", "")
-            reviews_cards_html += f"""
+        # 5. Reviews Section (Authentic Niche-Adaptive Fallback or Quality Commitment)
+        has_real_reviews = bool(sanitized.get("has_real_reviews", False))
+        reviews = profile.get("reviews") or []
+        if has_real_reviews and reviews:
+            reviews_cards_html = ""
+            for r in reviews[:3]:
+                rname = r.get("name", "Pelanggan Terverifikasi")
+                # Robust initial extraction: strip non-alphanumeric chars (parentheses, brackets, symbols)
+                clean_words = [re.sub(r'[^A-Za-z0-9]', '', w) for w in rname.split() if re.sub(r'[^A-Za-z0-9]', '', w)]
+                if len(clean_words) >= 2:
+                    rinitials = (clean_words[0][0] + clean_words[1][0]).upper()
+                elif clean_words:
+                    rinitials = clean_words[0][:2].upper()
+                else:
+                    rinitials = "PL"
+                rbadge = r.get("badge", f"Pelanggan Google Maps {city}")
+                rstars = r.get("stars", rating_display or "★★★★★")
+                rtext = r.get("text", "")
+                reviews_cards_html += f"""
         <div class="review-card">
           <div class="review-stars">{rstars}</div>
           <p class="review-text">"{rtext}"</p>
@@ -639,17 +853,70 @@ class SiteGenerator:
           </div>
         </div>"""
 
-        reviews_section_html = f"""
+            # Niche-aware social proof description
+            if niche_key in ["frozen_food", "kuliner"]:
+                social_proof_desc = f"Dipercaya oleh pemilik resto, kafe, katering, dan pelanggan setia di {city} dengan reputasi terdaftar di Google Maps."
+            elif niche_key in ["kesehatan", "fisioterapi_klinik", "estetika"]:
+                social_proof_desc = f"Dipercaya oleh pasien, keluarga, dan pelanggan setia di {city} dengan reputasi terdaftar di Google Maps."
+            elif niche_key in ["konstruksi", "jasa_teknik"]:
+                social_proof_desc = f"Dipercaya oleh kontraktor, mandor, dan pemilik bangunan di {city} dengan reputasi terdaftar di Google Maps."
+            else:
+                social_proof_desc = f"Dipercaya oleh pelanggan dan mitra usaha di {city} dengan reputasi terdaftar di Google Maps."
+
+            reviews_section_html = f"""
   <!-- Google Reviews & Social Proof -->
   <section id="ulasan" class="reviews-section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">BUKTI KEPUASAN PELANGGAN</span>
-        <h2 class="section-title">Ulasan Asli Pembeli di Google Maps</h2>
-        <p class="section-desc">Dipercaya oleh kontraktor, mandor, dan pemilik hunian di {city} dengan reputasi bintang {rating_display}.</p>
+        <h2 class="section-title">Ulasan Pembeli di Google Maps</h2>
+        <p class="section-desc">{social_proof_desc}</p>
       </div>
       <div class="reviews-grid">
         {reviews_cards_html}
+      </div>
+    </div>
+  </section>"""
+        else:
+            # Honest Service Guarantee & Credibility Section (Niche-Aware & Leak-Free)
+            guarantees = theme.get("review_guarantees") or [
+                {"title": "Komitmen Mutu Terpercaya", "desc": f"Standar mutu dan pelayanan teruji untuk kepuasan pelanggan di {city}.", "badge": "Mutu Terjamin", "role": "Tim Mutu"},
+                {"title": "Layanan Profesional & Cepat", "desc": "Kemudahan konsultasi dengan respon cepat dan penjelasan ramah terbuka.", "badge": "Respon Cepat", "role": "Customer Care"},
+                {"title": "Kejujuran & Ketepatan Layanan", "desc": f"Dedikasi melayani seluruh pelanggan di {city} dengan amanah dan tepat waktu.", "badge": "Tepat Waktu", "role": "Operasional"}
+            ]
+            
+            guarantee_cards_html = ""
+            for g in guarantees[:3]:
+                gtitle = g.get("title", "Standar Mutu")
+                gdesc = g.get("desc", f"Layanan resmi terstandar bagi pelanggan di {city}.")
+                gbadge = g.get("badge", "Kualitas Terjamin")
+                grole = g.get("role", "Tim Layanan")
+                gwords = [w for w in grole.split() if w]
+                ginitial = (gwords[0][0] + (gwords[1][0] if len(gwords) > 1 else "")).upper()
+                guarantee_cards_html += f"""
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"{gdesc}"</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">{ginitial}</div>
+            <div>
+              <span class="reviewer-name">{gtitle}</span>
+              <span class="reviewer-badge">✓ {gbadge}</span>
+            </div>
+          </div>
+        </div>"""
+
+            reviews_section_html = f"""
+  <!-- Service Commitment & Quality Assurance -->
+  <section id="ulasan" class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">KOMITMEN LAYANAN RESMI</span>
+        <h2 class="section-title">Standar Mutu & Kepuasan Pelanggan</h2>
+        <p class="section-desc">Dedikasi memberikan layanan profesional, respon cepat, dan kepuasan penuh bagi pelanggan di {city}.</p>
+      </div>
+      <div class="reviews-grid">
+        {guarantee_cards_html}
       </div>
     </div>
   </section>"""
@@ -667,19 +934,129 @@ class SiteGenerator:
         options_html = "".join([f'<option value="{opt}">{opt}</option>' for opt in profile["service_options"]])
         options_html += '<option value="Paket Campuran / Kebutuhan Komplit">Paket Campuran / Kebutuhan Komplit</option>'
 
-        area_options = [
-            f"Area Pusat {city}",
-            f"Area Sekitar {city}",
-            f"Wilayah Penyangga / Proyek",
-            "Ambil Langsung di Toko"
-        ]
+        raw_area_options = theme.get("form_area_options")
+        if raw_area_options and isinstance(raw_area_options, list):
+            area_options = [opt.replace("{city}", city) for opt in raw_area_options]
+        elif niche_key in ["konstruksi", "bengkel_las"]:
+            area_options = [
+                f"Area Pusat {city}",
+                f"Area Sekitar {city}",
+                f"Wilayah Penyangga / Titik Proyek",
+                "Ambil Mandiri di Gudang"
+            ]
+        elif niche_key in ["frozen_food", "kuliner"]:
+            area_options = [
+                f"Area Pusat {city}",
+                f"Area Sekitar {city}",
+                f"Luar Kota / Ekspedisi Berpendingin",
+                "Ambil Langsung di Toko / Outlet"
+            ]
+        elif niche_key in ["kesehatan", "fisioterapi_klinik"]:
+            area_options = [
+                f"Area Pusat {city}",
+                f"Area Sekitar {city}",
+                "Kunjungan / Datang ke Lokasi Pasien",
+                "Datang Langsung ke Klinik"
+            ]
+        elif niche_key in ["layanan_profesional"]:
+            area_options = [
+                f"Area Pusat {city}",
+                f"Area Sekitar {city}",
+                "Pertemuan di Kantor Klien",
+                "Konsultasi Daring / Online"
+            ]
+        elif niche_key in ["jasa_teknik"]:
+            area_options = [
+                f"Area Pusat {city}",
+                f"Area Sekitar {city}",
+                "Panggilan ke Rumah / Kantor",
+                "Bawa Unit ke Workshop"
+            ]
+        else:
+            area_options = [
+                f"Area Pusat {city}",
+                f"Area Sekitar {city}",
+                f"Wilayah Sekitar {city}",
+                "Layanan di Lokasi / Kantor"
+            ]
         area_options_html = "".join([f'<option value="{area}">{area}</option>' for area in area_options])
 
-        hero_wa_text = urllib.parse.quote_plus(
+        form_name_label = theme.get("form_name_label", "Nama Lengkap / Instansi")
+        form_name_placeholder = theme.get("form_name_placeholder", "Contoh: Pak Anton / Ibu Maya")
+        form_category_label = theme.get("form_category_label", "Kategori Kebutuhan Utama")
+        form_area_label = theme.get("form_area_label", "Lokasi Pengiriman / Layanan")
+        form_urgency_label = theme.get("form_urgency_label", "Jadwal Kebutuhan")
+        urgency_options = theme.get("form_urgency_options") or [
+            "Segera / Hari Ini",
+            "Dalam 1-3 Hari Ini",
+            "Jadwalkan Pekan Depan",
+            "Tanya Estimasi / Konsultasi Dulu"
+        ]
+        urgency_options_html = "".join([f'<option value="{u}">{u}</option>' for u in urgency_options])
+        form_notes_label = theme.get("form_notes_label", "Rincian Kebutuhan / Pertanyaan (Opsional)")
+        form_notes_placeholder = theme.get("form_notes_placeholder", "Tuliskan produk atau layanan yang dicari, jumlah, atau pertanyaan spesifik lain...")
+        form_submit_text = theme.get("form_submit_text", "Kirim Rincian ke WhatsApp Resmi ↗")
+
+        hero_wa_text = urllib.parse.quote(
             f"Halo Manajemen {business_name},\n\n"
             f"Saya menemukan kontak Anda melalui website resmi ({clean_slug}.vercel.app).\n"
             f"Saya ingin berkonsultasi mengenai kebutuhan produk/layanan untuk wilayah {city}. Boleh minta info katalog & penawaran harga terbarunya? Terima kasih!"
         )
+
+        # Structured Schema.org JSON-LD (Python Serialized for 100% Syntax & Type Safety)
+        schema_dict = {
+            "@context": "https://schema.org",
+            "@type": theme.get("schema_type", "LocalBusiness"),
+            "name": business_name,
+            "description": headline,
+            "url": f"https://{domain}",
+            "telephone": f"+{clean_phone}" if clean_phone else "",
+            "priceRange": "Rp",
+            "openingHours": hours or "Mo-Sa 08:00-17:00",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": clean_address_display or address or "Indonesia",
+                "addressLocality": city,
+                "addressCountry": "ID"
+            }
+        }
+
+        # Only inject aggregateRating if real rating and reviews exist (Google Search Essentials compliance)
+        if sanitized.get("has_real_rating", False) and sanitized.get("has_real_reviews", False):
+            schema_dict["aggregateRating"] = {
+                "@type": "AggregateRating",
+                "ratingValue": f"{sanitized['rating_float']:.1f}",
+                "reviewCount": str(sanitized["review_count_int"])
+            }
+
+        if structured_catalog:
+            schema_dict["hasOfferCatalog"] = {
+                "@type": "OfferCatalog",
+                "name": f"Katalog Resmi {business_name}",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": cat["title"],
+                            "description": cat["desc"]
+                        }
+                    }
+                    for cat in structured_catalog
+                ]
+            }
+
+        schema_dict["creator"] = {
+            "@type": "Organization",
+            "name": "Website Updater Studio",
+            "url": "https://websiteupdater.vercel.app"
+        }
+
+        schema_json_ld = json.dumps(schema_dict, indent=2, ensure_ascii=False)
+
+        footer_area_icon_svg = truck_svg if niche_key in ['frozen_food', 'kuliner', 'konstruksi', 'logistik_kargo', 'flora_fauna'] else map_pin_svg
+        footer_area_coverage_raw = theme.get("footer_area_coverage_template") or "Melayani kebutuhan dan pemesanan area {city} dan sekitarnya."
+        footer_area_coverage = footer_area_coverage_raw.replace("{city}", city or "lokal")
 
         html_content = render_template(
             "site/turnkey.html",
@@ -691,6 +1068,8 @@ class SiteGenerator:
             rating_display=rating_display,
             reviews_display=reviews_display,
             trust_badge_text=trust_badge_text,
+            has_real_reviews=has_real_reviews,
+            schema_json_ld=schema_json_ld,
             schema_rating_value=sanitized.get("schema_rating_value", "4.5"),
             schema_review_count=sanitized.get("schema_review_count", "50"),
             wa_svg=wa_svg,
@@ -715,8 +1094,28 @@ class SiteGenerator:
             faqs_html=faqs_html,
             options_html=options_html,
             area_options_html=area_options_html,
+            form_name_label=form_name_label,
+            form_name_placeholder=form_name_placeholder,
+            form_category_label=form_category_label,
+            form_area_label=form_area_label,
+            form_urgency_label=form_urgency_label,
+            urgency_options_html=urgency_options_html,
+            form_notes_label=form_notes_label,
+            form_notes_placeholder=form_notes_placeholder,
+            form_submit_text=form_submit_text,
             address=address,
-            hours=hours
+            clean_address_display=clean_address_display,
+            footer_city_display=footer_city_display,
+            footer_area_icon_svg=footer_area_icon_svg,
+            footer_area_coverage=footer_area_coverage,
+            hours=hours,
+            filter_pills_html=filter_pills_html,
+            sun_svg=sun_svg,
+            moon_svg=moon_svg,
+            search_svg=search_svg,
+            filter_svg=filter_svg,
+            sparkles_svg=sparkles_svg,
+            structured_catalog=structured_catalog
         )
 
         index_path = os.path.join(site_dir, "index.html")
@@ -757,6 +1156,7 @@ class SiteGenerator:
                             {"key": "X-Content-Type-Options", "value": "nosniff"},
                             {"key": "X-Frame-Options", "value": "DENY"},
                             {"key": "X-XSS-Protection", "value": "1; mode=block"},
+                            {"key": "Content-Security-Policy", "value": "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:; img-src 'self' https: data: blob:;"},
                             {"key": "X-Powered-By", "value": powered_by}
                         ]
                     }

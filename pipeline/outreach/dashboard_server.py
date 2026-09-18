@@ -953,7 +953,7 @@ class OutreachDashboardHandler(SimpleHTTPRequestHandler):
 
                 b_name = (lead.get("business_name") if lead else "") or inv.get("business_name", domain) or domain or "Klien"
                 phone = (lead.get("whatsapp") if lead else "") or inv.get("whatsapp", "")
-                price_display = inv.get("price_display", "$100 USD")
+                price_display = inv.get("price_display", "Rp 1.490.000 (Paket Siap Pakai Terima Beres)")
 
                 vd = VercelDeployer()
                 client_clean = vd.clean_slug(domain or b_name or "client").replace("-", "_")
@@ -1077,8 +1077,8 @@ class OutreachDashboardHandler(SimpleHTTPRequestHandler):
         b_name = inv.get("business_name", "Klien")
         domain = inv.get("domain", "")
         inv_id = inv.get("invoice_id", "")
-        amount_idr = f"Rp {inv.get('amount_idr', 1650000):,.0f}".replace(",", ".")
-        price_display = inv.get("price_display", "$100 USD")
+        amount_idr = f"Rp {inv.get('amount_idr', 1490000):,.0f}".replace(",", ".")
+        price_display = inv.get("price_display", "Rp 1.490.000 (Paket Siap Pakai Terima Beres)")
         status = inv.get("status", "PENDING")
         is_paid = status == "PAID"
         vas = inv.get("virtual_accounts", {})

@@ -1076,5 +1076,621 @@
     "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
     "source": "gemini_ai (gemini-3.5-flash)",
     "model_used": "gemini-3.5-flash"
+  },
+  "aad8ed08a428b6c9": {
+    "business_name": "INDRA Frozen Food Sidoarjo",
+    "city": "Sidoarjo",
+    "trade_name": "Distributor & Pusat Grosir Frozen Food Sidoarjo",
+    "headline": "Pemasok Frozen Food Skala Besar untuk Kuliner dan Reseller Sidoarjo",
+    "tagline": "Sedia aneka nugget, sosis, bakso, dan olahan seafood dari merek Belfoods, Fiesta, dan Champ dengan rantai dingin terjaga.",
+    "about_p1": "INDRA Frozen Food Sidoarjo adalah mitra distribusi utama untuk kebutuhan pangan beku berkualitas tinggi yang berlokasi di Jl. Pahlawan, Sidoarjo. Kami melayani segmen horeka (hotel, restoran, kafe), pelaku UMKM kuliner, kemitraan reseller, hingga konsumsi rumah tangga dengan jaminan rantai pasok dingin (cold chain) yang ketat.",
+    "about_p2": "Kami memastikan seluruh produk disimpan dalam cold storage bersuhu konstan -18°C untuk menjaga kualitas nutrisi, rasa, dan higienitas produk. Dengan armada pengiriman berpendingin khusus, kami siap mengantarkan pesanan Anda secara cepat dan tepat waktu ke seluruh wilayah Sidoarjo dan sekitarnya.",
+    "services": [
+      {
+        "title": "Sosis & Bakso Premium",
+        "desc": "Pilihan sosis sapi, sosis ayam, dan bakso kualitas premium untuk kebutuhan panggangan, tumisan, maupun kuah dari produsen bersertifikat halal.",
+        "icon": "package",
+        "items": [
+          "Sosis Kanzler Singles & Beef Frank 1kg",
+          "Bakso Sapi Sumber Selera isi 50 & 100 pcs",
+          "Sosis Kimbo Reddi & Champ Chicken Sausage"
+        ]
+      },
+      {
+        "title": "Nugget & Olahan Ayam",
+        "desc": "Aneka chicken nugget, chicken strip, dan karage siap saji dengan tekstur renyah di luar dan juicy di dalam.",
+        "icon": "utensils",
+        "items": [
+          "Fiesta Chicken Nugget 500g & 1kg",
+          "Belfoods Royal Nugget & Crunch 500g",
+          "Champ Chicken Nugget kemasan ekonomis 250g"
+        ]
+      },
+      {
+        "title": "Olahan Seafood & Dimsum",
+        "desc": "Variasi produk olahan laut mulai dari crab stick, fish roll, hingga dimsum ayam udang yang siap dikukus atau digoreng.",
+        "icon": "shopping-bag",
+        "items": [
+          "Cedea Steamboat Set 300g & 500g",
+          "Teman Laut Fish Roll & Chikuwa 1kg",
+          "Dimsum Ayam Udang isi 24 pcs dengan saus"
+        ]
+      },
+      {
+        "title": "Kentang Goreng (French Fries)",
+        "desc": "Kentang beku impor dengan potongan shoestring, crinkle cut, dan straight cut yang memiliki ketahanan kerenyahan optimal.",
+        "icon": "package",
+        "items": [
+          "McCain French Fries Shoestring 2.5kg",
+          "Aviko Straight Cut & Crinkle Cut 1kg",
+          "Lutosa Potato Wedges & Pommes 1kg"
+        ]
+      },
+      {
+        "title": "Paket Bahan Kebab & Burger",
+        "desc": "Satu set bahan baku pembuatan burger dan kebab untuk kebutuhan usaha kuliner skala kecil hingga menengah.",
+        "icon": "utensils",
+        "items": [
+          "Kulit Kebab Tortilla Sahara ukuran 20, 22, 24cm",
+          "Daging Kebab Sentra Kebab / Sahara 2kg & 4kg",
+          "Patty Burger Sapi & Ayam Bernardi isi 10 pcs"
+        ]
+      },
+      {
+        "title": "Frozen Pastry & Camilan",
+        "desc": "Adonan pastry beku, donat, dan camilan tradisional siap goreng untuk variasi menu kafe atau camilan keluarga.",
+        "icon": "package",
+        "items": [
+          "Edo Puff Pastry Sheet 750g & Danish Pastry",
+          "Donat Kentang frozen isi 10 pcs",
+          "Roti Maryam Ori & Cokelat isi 5 pcs"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.7 ★",
+        "lbl": "Google Maps (118+ Ulasan)"
+      },
+      {
+        "val": "100% Halal",
+        "lbl": "Sertifikasi MUI & BPOM"
+      },
+      {
+        "val": "-18°C",
+        "lbl": "Suhu Cold Storage Terjaga"
+      },
+      {
+        "val": "Siap Kirim",
+        "lbl": "Armada Kurir Instan Sidoarjo"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Hendra Wijaya",
+        "badge": "Pemilik Kemitraan Franchise Kebab Sidoarjo",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu dengan pasokan bahan kebab dan sosis dari INDRA Frozen Food. Pengiriman cepat, kondisi barang masih sangat beku saat sampai di outlet, dan harganya sangat bersaing untuk grosir."
+      },
+      {
+        "name": "Siti Aminah",
+        "badge": "Pengusaha Catering Prasmanan",
+        "stars": "★★★★★",
+        "text": "Stok produk bermerek seperti Kanzler dan Fiesta selalu ready dalam jumlah banyak. Cold storage mereka sangat bersih, pelayanan ramah, dan lokasi di Jl. Pahlawan sangat mudah diakses."
+      },
+      {
+        "name": "Rian Pratama",
+        "badge": "Reseller Frozen Food Rumahan",
+        "stars": "★★★★★",
+        "text": "Sudah langganan lebih dari setahun untuk isi freezer toko rumahan saya. Harganya bersahabat untuk dijual kembali, dan admin WhatsApp tanggap saat tanya ketersediaan stok."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Rantai Dingin Terjamin",
+        "desc": "Penyimpanan menggunakan cold storage industrial dengan suhu konstan di bawah -18°C untuk mencegah pertumbuhan bakteri."
+      },
+      {
+        "title": "Merek Resmi & Terdaftar",
+        "desc": "Semua produk yang kami distribusikan memiliki izin BPOM RI dan sertifikat Halal resmi dari MUI."
+      },
+      {
+        "title": "Harga Grosir Fleksibel",
+        "desc": "Skema harga khusus untuk reseller, agen, dan pelaku usaha kuliner dengan minimal pembelian tertentu."
+      },
+      {
+        "title": "Pengiriman Cepat Sidoarjo",
+        "desc": "Layanan pengiriman di hari yang sama (same-day delivery) menggunakan box thermal khusus untuk menjaga suhu produk."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah bisa membeli secara eceran atau harus dalam jumlah grosir?",
+        "a": "Kami melayani pembelian eceran langsung di toko Jl. Pahlawan maupun pembelian grosir/kartonan dengan harga khusus untuk reseller dan pelaku usaha kuliner."
+      },
+      {
+        "q": "Bagaimana cara pengiriman untuk menjaga agar produk tidak mencair di jalan?",
+        "a": "Untuk pengiriman area Sidoarjo dan sekitarnya, kami menggunakan kurir instan dengan tas thermal khusus atau ice pack untuk memastikan produk tetap beku hingga ke tangan Anda."
+      },
+      {
+        "q": "Apakah semua produk di INDRA Frozen Food memiliki sertifikasi Halal?",
+        "a": "Ya, seluruh produk pangan beku yang kami jual diproduksi oleh produsen resmi yang telah mengantongi sertifikat Halal MUI serta izin edar resmi dari BPOM."
+      }
+    ],
+    "service_options": [
+      "Sosis & Bakso Premium",
+      "Nugget & Olahan Ayam",
+      "Olahan Seafood & Dimsum",
+      "Kentang Goreng (French Fries)",
+      "Paket Bahan Kebab & Burger",
+      "Frozen Pastry & Camilan"
+    ],
+    "rating_display": "4.7",
+    "reviews_display": "118+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "b2e341c78a49c849": {
+    "business_name": "INDRA Frozen Food Sidoarjo",
+    "city": "Sidoarjo",
+    "trade_name": "Distributor & Pusat Grosir Frozen Food Sidoarjo",
+    "headline": "Pemasok Frozen Food Skala Besar untuk Kuliner dan Reseller Sidoarjo",
+    "tagline": "Sedia aneka nugget, sosis, bakso, dan olahan seafood dari merek Belfoods, Fiesta, dan Champ dengan rantai dingin terjaga.",
+    "about_p1": "INDRA Frozen Food Sidoarjo adalah mitra distribusi utama untuk kebutuhan pangan beku berkualitas tinggi yang berlokasi di Jl. Pahlawan, Sidoarjo. Kami melayani segmen horeka (hotel, restoran, kafe), pelaku UMKM kuliner, kemitraan reseller, hingga konsumsi rumah tangga dengan jaminan rantai pasok dingin (cold chain) yang ketat.",
+    "about_p2": "Kami memastikan seluruh produk disimpan dalam cold storage bersuhu konstan -18°C untuk menjaga kualitas nutrisi, rasa, dan higienitas produk. Dengan armada pengiriman berpendingin khusus, kami siap mengantarkan pesanan Anda secara cepat dan tepat waktu ke seluruh wilayah Sidoarjo dan sekitarnya.",
+    "services": [
+      {
+        "title": "Sosis & Bakso Premium",
+        "desc": "Pilihan sosis sapi, sosis ayam, dan bakso kualitas premium untuk kebutuhan panggangan, tumisan, maupun kuah dari produsen bersertifikat halal.",
+        "icon": "package",
+        "items": [
+          "Sosis Kanzler Singles & Beef Frank 1kg",
+          "Bakso Sapi Sumber Selera isi 50 & 100 pcs",
+          "Sosis Kimbo Reddi & Champ Chicken Sausage"
+        ]
+      },
+      {
+        "title": "Nugget & Olahan Ayam",
+        "desc": "Aneka chicken nugget, chicken strip, dan karage siap saji dengan tekstur renyah di luar dan juicy di dalam.",
+        "icon": "utensils",
+        "items": [
+          "Fiesta Chicken Nugget 500g & 1kg",
+          "Belfoods Royal Nugget & Crunch 500g",
+          "Champ Chicken Nugget kemasan ekonomis 250g"
+        ]
+      },
+      {
+        "title": "Olahan Seafood & Dimsum",
+        "desc": "Variasi produk olahan laut mulai dari crab stick, fish roll, hingga dimsum ayam udang yang siap dikukus atau digoreng.",
+        "icon": "shopping-bag",
+        "items": [
+          "Cedea Steamboat Set 300g & 500g",
+          "Teman Laut Fish Roll & Chikuwa 1kg",
+          "Dimsum Ayam Udang isi 24 pcs dengan saus"
+        ]
+      },
+      {
+        "title": "Kentang Goreng (French Fries)",
+        "desc": "Kentang beku impor dengan potongan shoestring, crinkle cut, dan straight cut yang memiliki ketahanan kerenyahan optimal.",
+        "icon": "package",
+        "items": [
+          "McCain French Fries Shoestring 2.5kg",
+          "Aviko Straight Cut & Crinkle Cut 1kg",
+          "Lutosa Potato Wedges & Pommes 1kg"
+        ]
+      },
+      {
+        "title": "Paket Bahan Kebab & Burger",
+        "desc": "Satu set bahan baku pembuatan burger dan kebab untuk kebutuhan usaha kuliner skala kecil hingga menengah.",
+        "icon": "utensils",
+        "items": [
+          "Kulit Kebab Tortilla Sahara ukuran 20, 22, 24cm",
+          "Daging Kebab Sentra Kebab / Sahara 2kg & 4kg",
+          "Patty Burger Sapi & Ayam Bernardi isi 10 pcs"
+        ]
+      },
+      {
+        "title": "Frozen Pastry & Camilan",
+        "desc": "Adonan pastry beku, donat, dan camilan tradisional siap goreng untuk variasi menu kafe atau camilan keluarga.",
+        "icon": "package",
+        "items": [
+          "Edo Puff Pastry Sheet 750g & Danish Pastry",
+          "Donat Kentang frozen isi 10 pcs",
+          "Roti Maryam Ori & Cokelat isi 5 pcs"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.7 ★",
+        "lbl": "Google Maps (118+ Ulasan)"
+      },
+      {
+        "val": "100% Halal",
+        "lbl": "Sertifikasi MUI & BPOM"
+      },
+      {
+        "val": "-18°C",
+        "lbl": "Suhu Cold Storage Terjaga"
+      },
+      {
+        "val": "Siap Kirim",
+        "lbl": "Armada Kurir Instan Sidoarjo"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Hendra Wijaya",
+        "badge": "Pemilik Kemitraan Franchise Kebab Sidoarjo",
+        "stars": "★★★★★",
+        "text": "Sangat terbantu dengan pasokan bahan kebab dan sosis dari INDRA Frozen Food. Pengiriman cepat, kondisi barang masih sangat beku saat sampai di outlet, dan harganya sangat bersaing untuk grosir."
+      },
+      {
+        "name": "Siti Aminah",
+        "badge": "Pengusaha Catering Prasmanan",
+        "stars": "★★★★★",
+        "text": "Stok produk bermerek seperti Kanzler dan Fiesta selalu ready dalam jumlah banyak. Cold storage mereka sangat bersih, pelayanan ramah, dan lokasi di Jl. Pahlawan sangat mudah diakses."
+      },
+      {
+        "name": "Rian Pratama",
+        "badge": "Reseller Frozen Food Rumahan",
+        "stars": "★★★★★",
+        "text": "Sudah langganan lebih dari setahun untuk isi freezer toko rumahan saya. Harganya bersahabat untuk dijual kembali, dan admin WhatsApp tanggap saat tanya ketersediaan stok."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Rantai Dingin Terjamin",
+        "desc": "Penyimpanan menggunakan cold storage industrial dengan suhu konstan di bawah -18°C untuk mencegah pertumbuhan bakteri."
+      },
+      {
+        "title": "Merek Resmi & Terdaftar",
+        "desc": "Semua produk yang kami distribusikan memiliki izin BPOM RI dan sertifikat Halal resmi dari MUI."
+      },
+      {
+        "title": "Harga Grosir Fleksibel",
+        "desc": "Skema harga khusus untuk reseller, agen, dan pelaku usaha kuliner dengan minimal pembelian tertentu."
+      },
+      {
+        "title": "Pengiriman Cepat Sidoarjo",
+        "desc": "Layanan pengiriman di hari yang sama (same-day delivery) menggunakan box thermal khusus untuk menjaga suhu produk."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Apakah bisa membeli secara eceran atau harus dalam jumlah grosir?",
+        "a": "Kami melayani pembelian eceran langsung di toko Jl. Pahlawan maupun pembelian grosir/kartonan dengan harga khusus untuk reseller dan pelaku usaha kuliner."
+      },
+      {
+        "q": "Bagaimana cara pengiriman untuk menjaga agar produk tidak mencair di jalan?",
+        "a": "Untuk pengiriman area Sidoarjo dan sekitarnya, kami menggunakan kurir instan dengan tas thermal khusus atau ice pack untuk memastikan produk tetap beku hingga ke tangan Anda."
+      },
+      {
+        "q": "Apakah semua produk di INDRA Frozen Food memiliki sertifikasi Halal?",
+        "a": "Ya, seluruh produk pangan beku yang kami jual diproduksi oleh produsen resmi yang telah mengantongi sertifikat Halal MUI serta izin edar resmi dari BPOM."
+      }
+    ],
+    "service_options": [
+      "Sosis & Bakso Premium",
+      "Nugget & Olahan Ayam",
+      "Olahan Seafood & Dimsum",
+      "Kentang Goreng (French Fries)",
+      "Paket Bahan Kebab & Burger",
+      "Frozen Pastry & Camilan"
+    ],
+    "rating_display": "4.7",
+    "reviews_display": "118+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.5-flash)",
+    "model_used": "gemini-3.5-flash"
+  },
+  "2d73346096ae7f1a": {
+    "business_name": "INDRA Frozen Food Sidoarjo",
+    "city": "Sidoarjo",
+    "trade_name": "Distributor & Pusat Grosir Makanan Beku Sidoarjo",
+    "headline": "Pusat Olahan Daging dan Frozen Food Terlengkap di Sidoarjo",
+    "tagline": "Menyediakan nuggets, sosis Kanzler, seafood Cedea, hingga daging impor halal dengan layanan pengiriman instan ke seluruh Sidoarjo.",
+    "about_p1": "INDRA Frozen Food Sidoarjo melayani kebutuhan konsumsi harian keluarga hingga pasokan bahan baku UMKM kuliner di wilayah Sidoarjo dan sekitarnya langsung dari gerai utama di Jl. Raya Sidoarjo No. 88.",
+    "about_p2": "Kami mengoperasikan cold storage bersuhu -18°C secara konstan untuk menjaga rantai dingin produk olahan seperti Bernardi, Fiesta, Kanzler, dan Cedea tetap higienis, segar, dan bersertifikat halal BPOM.",
+    "services": [
+      {
+        "title": "Sosis & Daging Olahan Premium",
+        "desc": "Pilihan sosis sapi dan ayam olahan dari brand terkemuka dengan standar higienis tinggi.",
+        "icon": "drumstick",
+        "items": [
+          "Kanzler Singles & Cocktails",
+          "Bernardi Hotel Beef Sausage",
+          "Fiesta Chicken Sausage 500g"
+        ]
+      },
+      {
+        "title": "Nugget & Olahan Ayam",
+        "desc": "Ayam olahan beku siap goreng dengan varian bubble crumb dan bentuk stik kesukaan keluarga.",
+        "icon": "cooking-pot",
+        "items": [
+          "Fiesta Crispy Chicken Nugget 500g",
+          "Belfoods Royal Chicken Stick",
+          "Champ Chicken Nugget 1kg"
+        ]
+      },
+      {
+        "title": "Seafood & Baso Ikan Cedea",
+        "desc": "Aneka olahan seafood beku untuk kebutuhan steamboat, grill, dan usaha kedai seblak.",
+        "icon": "fish",
+        "items": [
+          "Cedea Dumpling Keju & Kepiting",
+          "Sunfish Dumpling Chicken & Fish",
+          "Crabstick & Chikuwa Cedea 1kg"
+        ]
+      },
+      {
+        "title": "Daging Sapi & Slice Teriyaki",
+        "desc": "Potongan daging sapi segar impor dan lokal bersertifikat halal untuk shabu-shabu dan BBQ.",
+        "icon": "flame",
+        "items": [
+          "Daging Slice US Shortplate 500g",
+          "Daging Cincang Sapi Australia 1kg",
+          "Oxtail / Buntut Sapi Impor"
+        ]
+      },
+      {
+        "title": "Dimsum, Kentang & Pastry Beku",
+        "desc": "Pelengkap hidangan praktis mulai dari kentang goreng renyah hingga dimsum kukus siap saji.",
+        "icon": "wheat",
+        "items": [
+          "French Fries Shoestring Aviko 2.5kg",
+          "Dimsum Ayam Udang Premium 50pcs",
+          "Roti Maryam & Kulit Lumpia"
+        ]
+      },
+      {
+        "title": "Layanan Kurir Frozen Same-Day",
+        "desc": "Sistem pengiriman cepat berpendingin untuk menjaga kondisi produk tetap beku sempurna.",
+        "icon": "package",
+        "items": [
+          "Pengiriman Insulated Thermal Bag",
+          "Layanan Instant Courier Sidoarjo Area",
+          "Paket Carton Box & Dry Ice"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.9 ★",
+        "lbl": "Google Maps (142+ Ulasan)"
+      },
+      {
+        "val": "250+ Jenis",
+        "lbl": "Stok Produk Frozen Ready"
+      },
+      {
+        "val": "100% Halal",
+        "lbl": "Sertifikasi BPOM & MUI"
+      },
+      {
+        "val": "< 2 Jam",
+        "lbl": "Pengiriman Sameday Sidoarjo"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Siti Rahmawati",
+        "badge": "Ibu Rumah Tangga (Candi, Sidoarjo)",
+        "stars": "★★★★★",
+        "text": "Selalu belanja sosis Kanzler dan dumpling Cedea di INDRA Frozen Food. Rantai dinginnya terjamin, pas sampai rumah produk masih beku keras dan fresh. Pengiriman via WA sangat cepat."
+      },
+      {
+        "name": "Budi Santoso",
+        "badge": "Pemilik Kedai Seblak & Steamboat",
+        "stars": "★★★★★",
+        "text": "Untuk stok kedai seblak dan steamboat saya, grosir Cedea dan baso ikan paling lengkap di sini. Harganya transparan untuk pembeli grosir dan selalu siap kirim dalam kurun waktu 1 jam."
+      },
+      {
+        "name": "Dewi Kartika",
+        "badge": "Pengusaha Catering Acara",
+        "stars": "★★★★★",
+        "text": "Sering pesan Daging Slice Shortplate dan French Fries Aviko kemasan 2.5kg untuk event catering. Dagingnya bersih, kadar lemak seimbang, dan pelayanan via chat WhatsApp sangat responsif."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Rantai Cold Chain Standard -18°C",
+        "desc": "Seluruh produk disimpan dalam freezer industri untuk mencegah pencairan dan mempertahankan gizi serta tekstur original."
+      },
+      {
+        "title": "Pengiriman Khusus Thermal Box",
+        "desc": "Setiap armada pengiriman dilengkapi insulated thermal bag sehingga kualitas produk tetap beku hingga tiba di lokasi pelanggan."
+      },
+      {
+        "title": "Sertifikasi Halal & Izin BPOM",
+        "desc": "Semua produk merek ternama yang kami jual memiliki izin edar resmi dan sertifikat halal MUI tanpa kompromi."
+      },
+      {
+        "title": "Layanan Pesan Antar WhatsApp",
+        "desc": "Pemesanan praktis tanpa ribet, stok dicek secara realtime oleh admin dan dikirim menggunakan layanan kurir instant."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Berapa minimal pembelian untuk pengiriman area Sidoarjo?",
+        "a": "Tidak ada minimal order untuk pengiriman area Sidoarjo kota. Kiriman instant langsung diproses menggunakan thermal bag berpendingin."
+      },
+      {
+        "q": "Apakah melayani pembelian grosir untuk usaha restoran atau reseller?",
+        "a": "Ya, kami menyediakan harga khusus kartonan dan grosir untuk produk Kanzler, Fiesta, Cedea, dan Daging Slice bagi pelaku UMKM."
+      },
+      {
+        "q": "Bagaimana menjaga produk agar tidak cair saat dikirim?",
+        "a": "Setiap pesanan dipacking rapi dengan tambahan ice pack atau dry ice serta dibungkus menggunakan kantong insulator khusus."
+      }
+    ],
+    "service_options": [
+      "Sosis & Daging Olahan Premium",
+      "Nugget & Olahan Ayam",
+      "Seafood & Baso Ikan Cedea",
+      "Daging Sapi & Slice Teriyaki",
+      "Dimsum, Kentang & Pastry Beku",
+      "Layanan Kurir Frozen Same-Day"
+    ],
+    "rating_display": "4.9",
+    "reviews_display": "142+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.6-flash)",
+    "model_used": "gemini-3.6-flash"
+  },
+  "54b7bae530637709": {
+    "business_name": "INDRA Frozen Food Sidoarjo",
+    "city": "Sidoarjo",
+    "trade_name": "Distributor & Pusat Grosir Makanan Beku Sidoarjo",
+    "headline": "Pusat Olahan Daging dan Frozen Food Terlengkap di Sidoarjo",
+    "tagline": "Menyediakan nuggets, sosis Kanzler, seafood Cedea, hingga daging impor halal dengan layanan pengiriman instan ke seluruh Sidoarjo.",
+    "about_p1": "INDRA Frozen Food Sidoarjo melayani kebutuhan konsumsi harian keluarga hingga pasokan bahan baku UMKM kuliner di wilayah Sidoarjo dan sekitarnya langsung dari gerai utama di Jl. Raya Sidoarjo No. 88.",
+    "about_p2": "Kami mengoperasikan cold storage bersuhu -18°C secara konstan untuk menjaga rantai dingin produk olahan seperti Bernardi, Fiesta, Kanzler, dan Cedea tetap higienis, segar, dan bersertifikat halal BPOM.",
+    "services": [
+      {
+        "title": "Sosis & Daging Olahan Premium",
+        "desc": "Pilihan sosis sapi dan ayam olahan dari brand terkemuka dengan standar higienis tinggi.",
+        "icon": "drumstick",
+        "items": [
+          "Kanzler Singles & Cocktails",
+          "Bernardi Hotel Beef Sausage",
+          "Fiesta Chicken Sausage 500g"
+        ]
+      },
+      {
+        "title": "Nugget & Olahan Ayam",
+        "desc": "Ayam olahan beku siap goreng dengan varian bubble crumb dan bentuk stik kesukaan keluarga.",
+        "icon": "cooking-pot",
+        "items": [
+          "Fiesta Crispy Chicken Nugget 500g",
+          "Belfoods Royal Chicken Stick",
+          "Champ Chicken Nugget 1kg"
+        ]
+      },
+      {
+        "title": "Seafood & Baso Ikan Cedea",
+        "desc": "Aneka olahan seafood beku untuk kebutuhan steamboat, grill, dan usaha kedai seblak.",
+        "icon": "fish",
+        "items": [
+          "Cedea Dumpling Keju & Kepiting",
+          "Sunfish Dumpling Chicken & Fish",
+          "Crabstick & Chikuwa Cedea 1kg"
+        ]
+      },
+      {
+        "title": "Daging Sapi & Slice Teriyaki",
+        "desc": "Potongan daging sapi segar impor dan lokal bersertifikat halal untuk shabu-shabu dan BBQ.",
+        "icon": "flame",
+        "items": [
+          "Daging Slice US Shortplate 500g",
+          "Daging Cincang Sapi Australia 1kg",
+          "Oxtail / Buntut Sapi Impor"
+        ]
+      },
+      {
+        "title": "Dimsum, Kentang & Pastry Beku",
+        "desc": "Pelengkap hidangan praktis mulai dari kentang goreng renyah hingga dimsum kukus siap saji.",
+        "icon": "wheat",
+        "items": [
+          "French Fries Shoestring Aviko 2.5kg",
+          "Dimsum Ayam Udang Premium 50pcs",
+          "Roti Maryam & Kulit Lumpia"
+        ]
+      },
+      {
+        "title": "Layanan Kurir Frozen Same-Day",
+        "desc": "Sistem pengiriman cepat berpendingin untuk menjaga kondisi produk tetap beku sempurna.",
+        "icon": "package",
+        "items": [
+          "Pengiriman Insulated Thermal Bag",
+          "Layanan Instant Courier Sidoarjo Area",
+          "Paket Carton Box & Dry Ice"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "val": "4.9 ★",
+        "lbl": "Google Maps (142+ Ulasan)"
+      },
+      {
+        "val": "250+ Jenis",
+        "lbl": "Stok Produk Frozen Ready"
+      },
+      {
+        "val": "100% Halal",
+        "lbl": "Sertifikasi BPOM & MUI"
+      },
+      {
+        "val": "< 2 Jam",
+        "lbl": "Pengiriman Sameday Sidoarjo"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Siti Rahmawati",
+        "badge": "Ibu Rumah Tangga (Candi, Sidoarjo)",
+        "stars": "★★★★★",
+        "text": "Selalu belanja sosis Kanzler dan dumpling Cedea di INDRA Frozen Food. Rantai dinginnya terjamin, pas sampai rumah produk masih beku keras dan fresh. Pengiriman via WA sangat cepat."
+      },
+      {
+        "name": "Budi Santoso",
+        "badge": "Pemilik Kedai Seblak & Steamboat",
+        "stars": "★★★★★",
+        "text": "Untuk stok kedai seblak dan steamboat saya, grosir Cedea dan baso ikan paling lengkap di sini. Harganya transparan untuk pembeli grosir dan selalu siap kirim dalam kurun waktu 1 jam."
+      },
+      {
+        "name": "Dewi Kartika",
+        "badge": "Pengusaha Catering Acara",
+        "stars": "★★★★★",
+        "text": "Sering pesan Daging Slice Shortplate dan French Fries Aviko kemasan 2.5kg untuk event catering. Dagingnya bersih, kadar lemak seimbang, dan pelayanan via chat WhatsApp sangat responsif."
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Rantai Cold Chain Standard -18°C",
+        "desc": "Seluruh produk disimpan dalam freezer industri untuk mencegah pencairan dan mempertahankan gizi serta tekstur original."
+      },
+      {
+        "title": "Pengiriman Khusus Thermal Box",
+        "desc": "Setiap armada pengiriman dilengkapi insulated thermal bag sehingga kualitas produk tetap beku hingga tiba di lokasi pelanggan."
+      },
+      {
+        "title": "Sertifikasi Halal & Izin BPOM",
+        "desc": "Semua produk merek ternama yang kami jual memiliki izin edar resmi dan sertifikat halal MUI tanpa kompromi."
+      },
+      {
+        "title": "Layanan Pesan Antar WhatsApp",
+        "desc": "Pemesanan praktis tanpa ribet, stok dicek secara realtime oleh admin dan dikirim menggunakan layanan kurir instant."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Berapa minimal pembelian untuk pengiriman area Sidoarjo?",
+        "a": "Tidak ada minimal order untuk pengiriman area Sidoarjo kota. Kiriman instant langsung diproses menggunakan thermal bag berpendingin."
+      },
+      {
+        "q": "Apakah melayani pembelian grosir untuk usaha restoran atau reseller?",
+        "a": "Ya, kami menyediakan harga khusus kartonan dan grosir untuk produk Kanzler, Fiesta, Cedea, dan Daging Slice bagi pelaku UMKM."
+      },
+      {
+        "q": "Bagaimana menjaga produk agar tidak cair saat dikirim?",
+        "a": "Setiap pesanan dipacking rapi dengan tambahan ice pack atau dry ice serta dibungkus menggunakan kantong insulator khusus."
+      }
+    ],
+    "service_options": [
+      "Sosis & Daging Olahan Premium",
+      "Nugget & Olahan Ayam",
+      "Seafood & Baso Ikan Cedea",
+      "Daging Sapi & Slice Teriyaki",
+      "Dimsum, Kentang & Pastry Beku",
+      "Layanan Kurir Frozen Same-Day"
+    ],
+    "rating_display": "4.9",
+    "reviews_display": "142+ Ulasan",
+    "operating_hours": "Senin - Sabtu: 08.00 - 17.00 WIB",
+    "source": "gemini_ai (gemini-3.6-flash)",
+    "model_used": "gemini-3.6-flash"
   }
 }

@@ -9,27 +9,235 @@
     "accent_shadow": "rgba(13, 148, 136, 0.25)",
     "secondary": "#0284c7",
     "theme_color": "#0d9488",
-    "schema_type": "Pharmacy",
-    "nav_catalog": "Daftar Obat & Alkes",
-    "nav_order": "Konsultasi Apoteker",
-    "top_bar_label": "Siap Antar Resep Dokter ke Rumah",
-    "catalog_tag": "KATALOG MEDIS & RESEP RESMI",
-    "catalog_title": "Katalog Obat Resmi, Vitamin & Alat Medis",
-    "catalog_desc": "Pilihan obat berizin BPOM, suplemen kesehatan, dan perlengkapan medis siap melayani warga {city}.",
-    "advantages_title": "Standar Farmasi Resmi & Amanah",
-    "advantages_desc": "Komitmen menjaga mutu obat, penyimpanan standar suhu medis, dan bimbingan apoteker ramah.",
-    "order_title": "Konsultasi & Tebus Resep Kilat",
-    "order_desc": "Kirim foto resep atau daftar obat via form di bawah, apoteker kami langsung merespon via WhatsApp.",
-    "card_btn_text": "Tanya Stok Obat via WA ↗",
-    "sticky_wa_text": "Konsul Apoteker WA",
+    "schema_type": "MedicalClinic",
+    "nav_catalog": "Daftar Layanan & Obat",
+    "nav_order": "Konsultasi Medis",
+    "top_bar_label": "Layanan Medis Terpercaya & Resep Dokter Resmi",
+    "catalog_tag": "KATALOG MEDIS & TERAPI RESMI",
+    "catalog_title": "Katalog Obat Resmi, Terapi & Perlengkapan Medis",
+    "catalog_desc": "Pilihan layanan kesehatan, obat berizin BPOM, dan terapi pemulihan siap melayani warga {city}.",
+    "advantages_title": "Standar Medis Resmi & Tenaga Ahli Berlisensi",
+    "advantages_desc": "Komitmen menjaga mutu pelayanan klinis, higienitas fasilitas, dan konsultasi ramah profesional.",
+    "order_title": "Konsultasi & Booking Jadwal Layanan",
+    "order_desc": "Kirimkan keluhan atau daftar kebutuhan via formulir di bawah, tim kami langsung merespon via WhatsApp.",
+    "card_btn_text": "Konsultasi via WA ↗",
+    "sticky_wa_text": "Konsul Medis WA",
+    "card_estimate_btn": "Jadwal Konsul ↓",
     "badge_labels": [
-      "100% BPOM Resmi",
-      "Apoteker Berlisensi",
-      "Penyimpanan Dingin Terjaga",
-      "Resep Dokter Siap",
-      "Alat Medis Higienis",
-      "Layanan Antar Cepat"
-    ]
+      "100% Izin Resmi BPOM/Kemenkes",
+      "Tenaga Ahli Berlisensi",
+      "Higienis & Terstandar",
+      "Peralatan Medis Modern",
+      "Konsultasi Solutif",
+      "Respon Cepat Tanggap"
+    ],
+    "form_name_label": "Nama Pasien / Wali",
+    "form_name_placeholder": "Contoh: Ibu Siti / Bpk. Rahmat",
+    "form_category_label": "Layanan Medis / Obat yang Dibutuhkan",
+    "form_area_label": "Area / Kota Pasien",
+    "form_urgency_label": "Rencana Waktu Konsultasi",
+    "form_urgency_options": [
+      "Hari Ini / Segera",
+      "Besok / Lusa",
+      "Jadwal Akhir Pekan",
+      "Konsultasi Daring via WhatsApp"
+    ],
+    "form_notes_placeholder": "Tuliskan keluhan kesehatan atau resep obat yang ingin dikonsultasikan...",
+    "form_submit_text": "Konsultasikan Keluhan via WA Resmi ↗",
+    "review_guarantees": [
+      {
+        "title": "Standar Medis Higienis",
+        "desc": "Fasilitas bersih, sterilisasi alat terjaga, dan penanganan sesuai protokol kesehatan resmi.",
+        "badge": "Standar Kemenkes",
+        "role": "Tenaga Medis"
+      },
+      {
+        "title": "Obat Resmi Berizin BPOM",
+        "desc": "Jaminan obat dan suplemen asli langsung dari distributor farmasi terpercaya.",
+        "badge": "Apotek Resmi",
+        "role": "Farmasi Klinis"
+      },
+      {
+        "title": "Konsultasi Ramah & Solutif",
+        "desc": "Penjelasan terbuka mengenai indikasi obat, dosis pemakaian, dan anjuran dokter.",
+        "badge": "Respon Cepat",
+        "role": "Layanan Pasien"
+      }
+    ],
+    "hero_cta_primary": "Konsultasi & Tanya Resep via WA",
+    "hero_cta_secondary": "Lihat Daftar Layanan & Obat ↓",
+    "nav_advantages": "Standar Medis",
+    "footer_area_title": "Wilayah Jangkauan Layanan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan informasi layanan medis, konsultasi obat berizin, dan reservasi warga {city}.",
+    "faq_desc": "Informasi penting seputar resep dokter, ketersediaan obat resmi berizin BPOM, dan konsultasi kesehatan di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya berkonsultasi mengenai layanan/obat *{title}* dari website resmi Anda.\\nBoleh minta info ketersediaan, dosis/tata cara, dan estimasi biayanya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Layanan Kunjungan / Panggilan",
+      "Konsultasi Daring / Ambil di Klinik"
+    ],
+    "footer_area_coverage_template": "Melayani pasien & tebus obat berizin untuk seluruh area {city} dan sekitarnya."
+  },
+  "fisioterapi_klinik": {
+    "name": "Klinik & Fisioterapi",
+    "accent": "#0284c7",
+    "accent_hover": "#0369a1",
+    "accent_light": "#f0f9ff",
+    "accent_border": "#bae6fd",
+    "accent_dark": "#075985",
+    "accent_shadow": "rgba(2, 132, 199, 0.25)",
+    "secondary": "#0d9488",
+    "theme_color": "#0284c7",
+    "schema_type": "MedicalClinic",
+    "nav_catalog": "Layanan Terapi & Jadwal",
+    "nav_order": "Booking Konsultasi",
+    "top_bar_label": "Fisioterapis Berizin Resmi & Modalitas Medis Lengkap",
+    "catalog_tag": "LAYANAN TERAPI & REHABILITASI",
+    "catalog_title": "Program Terapi Pemulihan Otot, Sendi & Saraf",
+    "catalog_desc": "Penanganan klinis terstandar dengan fisioterapis berpengalaman dan alat modalitas modern di {city}.",
+    "advantages_title": "Standar Klinis Teruji & Fisioterapis Berlisensi",
+    "advantages_desc": "Pemeriksaan menyeluruh, program terapi personal, dan ruang tindakan bersih serta nyaman.",
+    "order_title": "Booking Jadwal Konsultasi & Terapi",
+    "order_desc": "Pilih keluhan atau layanan yang dibutuhkan, admin kami segera mengonfirmasi slot jadwal fisioterapis via WhatsApp.",
+    "card_btn_text": "Konsul Terapi WA ↗",
+    "sticky_wa_text": "Booking Terapi WA",
+    "card_estimate_btn": "Booking Terapi ↓",
+    "badge_labels": [
+      "Fisioterapis Berlisensi",
+      "Alat Modalitas Lengkap",
+      "Program Terapi Personal",
+      "Privat & Nyaman",
+      "Evaluasi Berkala",
+      "Jadwal Fleksibel"
+    ],
+    "form_name_label": "Nama Pasien",
+    "form_name_placeholder": "Contoh: Bpk. Hendra / Ibu Maya",
+    "form_category_label": "Keluhan Fisik / Program Terapi",
+    "form_area_label": "Area Tempat Tinggal",
+    "form_urgency_label": "Rencana Jadwal Terapi",
+    "form_urgency_options": [
+      "Hari Ini / Nyeri Akut",
+      "Besok / Lusa",
+      "Sesi Akhir Pekan",
+      "Konsultasi Awal via WA"
+    ],
+    "form_notes_placeholder": "Tuliskan bagian tubuh yang nyeri (pinggang, lutut, leher, stroke) atau riwayat cedera...",
+    "form_submit_text": "Booking Jadwal Terapi via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Fisioterapis Berlisensi (SIPF)",
+        "desc": "Penanganan langsung oleh fisioterapis berpengalaman dengan asesmen klinis komprehensif.",
+        "badge": "Tenaga Ahli",
+        "role": "Fisioterapis"
+      },
+      {
+        "title": "Alat Modalitas Lengkap & Modern",
+        "desc": "Dilengkapi terapi ultrasound, elektroterapi TENS, infrared, dan ruang latihan privat.",
+        "badge": "Fasilitas Steril",
+        "role": "Klinik Fisioterapi"
+      },
+      {
+        "title": "Program Pemulihan Terarah",
+        "desc": "Pendampingan latihan bertahap hingga kemandirian gerak dan bebas nyeri tercapai.",
+        "badge": "Hasil Optimal",
+        "role": "Layanan Pasien"
+      }
+    ],
+    "hero_cta_primary": "Booking Jadwal Terapi via WA",
+    "hero_cta_secondary": "Lihat Program Terapi ↓",
+    "nav_advantages": "Keunggulan Klinis",
+    "footer_area_title": "Wilayah Jangkauan Pasien",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan jadwal konsultasi fisioterapi, penanganan nyeri, dan pemulihan gerak warga {city}.",
+    "faq_desc": "Informasi praktis seputar jadwal praktek fisioterapis, penanganan cedera fisik, dan prosedur sesi terapi di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik berkonsultasi mengenai program terapi *{title}* dari website resmi Anda.\\nBoleh minta info jadwal fisioterapis, prosedur asesmen, dan estimasi biaya per sesinya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Kunjungan Home Care / ke Rumah",
+      "Datang Langsung ke Klinik"
+    ],
+    "footer_area_coverage_template": "Melayani terapi di klinik & jadwal home-visit pasien area {city} dan sekitarnya."
+  },
+  "frozen_food": {
+    "name": "Distributor & Retail Frozen Food",
+    "accent": "#0284c7",
+    "accent_hover": "#0369a1",
+    "accent_light": "#f0f9ff",
+    "accent_border": "#bae6fd",
+    "accent_dark": "#075985",
+    "accent_shadow": "rgba(2, 132, 199, 0.25)",
+    "secondary": "#059669",
+    "theme_color": "#0284c7",
+    "schema_type": "WholesaleStore",
+    "nav_catalog": "Katalog Frozen Food",
+    "nav_order": "Cek Stok / Grosir",
+    "top_bar_label": "Cold Storage -18°C & Rantai Dingin Terjamin",
+    "catalog_tag": "KATALOG MAKANAN BEKU & HORECA",
+    "catalog_title": "Pilihan Makanan Beku Segar, Higienis & Halal",
+    "catalog_desc": "Pasokan frozen food terlengkap untuk kebutuhan keluarga, resto, kafe, dan katering di {city}.",
+    "advantages_title": "Jaminan Mutu Rantai Dingin & Higienis",
+    "advantages_desc": "Suhu deep freezer stabil, tanggal kedaluwarsa aman, dan pengiriman berinsulasi ke lokasi Anda.",
+    "order_title": "Cek Ketersediaan Stok & Harga Grosir",
+    "order_desc": "Pilih kategori produk dan jumlah kebutuhan Anda, admin kami segera mengonfirmasi ketersediaan via WhatsApp.",
+    "card_btn_text": "Tanya Stok via WA ↗",
+    "sticky_wa_text": "Tanya Stok WA",
+    "card_estimate_btn": "Cek Stok Grosir ↓",
+    "badge_labels": [
+      "100% Halal & BPOM",
+      "Cold Storage -18°C",
+      "Harga Ecer & Grosir",
+      "Stok Selalu Segar",
+      "Kemasan Rapi & Higienis",
+      "Kirim Cepat Therma-Pack"
+    ],
+    "form_name_label": "Nama Pemesan / Nama Usaha",
+    "form_name_placeholder": "Contoh: Ibu Rina / Kafe Nusantara",
+    "form_category_label": "Kategori Frozen Food yang Dicari",
+    "form_area_label": "Wilayah Pengiriman / Lokasi Toko",
+    "form_urgency_label": "Tipe Pemesanan / Kebutuhan",
+    "form_urgency_options": [
+      "Kebutuhan Rutin / Grosir (Kartonan)",
+      "Kebutuhan Segera / Hari Ini",
+      "Dalam 1-3 Hari Ini",
+      "Tanya Stok & Harga Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan produk (sosis, nugget, kentang, seafood), perkiraan jumlah dus/pack, atau varian merk...",
+    "form_submit_text": "Kirim Rincian ke WhatsApp Resmi ↗",
+    "review_guarantees": [
+      {
+        "title": "Cold Storage -18°C Terjaga",
+        "desc": "Suhu deep freezer stabil menjaga kesegaran, nutrisi, dan cita rasa beku prima hingga tiba di lokasi Anda.",
+        "badge": "Rantai Dingin Aman",
+        "role": "Logistik Cold Chain"
+      },
+      {
+        "title": "100% Halal & Terdaftar BPOM",
+        "desc": "Seluruh pasokan produk higienis resmi dengan tanggal kedaluwarsa panjang dan kemasan tertutup rapat.",
+        "badge": "Higienis & Halal",
+        "role": "Kontrol Kualitas"
+      },
+      {
+        "title": "Harga Grosir & Eceran Bersahabat",
+        "desc": "Penawaran harga terbaik untuk konsumsi langsung keluarga maupun pasokan rutin resto, kafe, dan reseller.",
+        "badge": "Harga Bersahabat",
+        "role": "Admin Pemesanan"
+      }
+    ],
+    "hero_cta_primary": "Tanya Harga & Stok Grosir via WA",
+    "hero_cta_secondary": "Lihat Katalog Frozen Food ↓",
+    "nav_advantages": "Keunggulan Mutu",
+    "footer_area_title": "Wilayah Pengiriman Cold Chain",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan informasi stok beku segar, pasokan grosir katering/resto, dan pengiriman aman warga {city}.",
+    "faq_desc": "Informasi praktis seputar ketersediaan stok beku, suhu pengiriman berinsulasi therma-pack, dan pemesanan ecer/grosir di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik dengan produk *{title}* dari katalog website resmi Anda.\\nBoleh minta info ketersediaan stok, harga grosir/eceran, dan pengiriman untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Luar Kota / Ekspedisi Berpendingin",
+      "Ambil Langsung di Toko"
+    ],
+    "footer_area_coverage_template": "Melayani pasokan cold chain & order grosir/eceran area {city} dan sekitarnya."
   },
   "konstruksi": {
     "name": "Konstruksi & Material",
@@ -54,6 +262,7 @@
     "order_desc": "Isi form sederhana di bawah ini, rincian akan langsung terhubung ke WhatsApp resmi {business_name} untuk dihitung biayanya.",
     "card_btn_text": "Tanya Stok via WA ↗",
     "sticky_wa_text": "Tanya Stok WA",
+    "card_estimate_btn": "Minta Estimasi ↓",
     "badge_labels": [
       "Stok Gudang Lengkap",
       "Standar Mutu SNI",
@@ -61,7 +270,54 @@
       "Pilihan Spesifikasi Pas",
       "Kuat & Presisi Cor",
       "Armada Angkut Siap"
-    ]
+    ],
+    "form_name_label": "Nama Pemesan / Nama Proyek",
+    "form_name_placeholder": "Contoh: Bpk. Wahyu (Proyek Ruko)",
+    "form_category_label": "Kategori Material / Kebutuhan Bangunan",
+    "form_area_label": "Lokasi Titik Proyek / Pengiriman",
+    "form_urgency_label": "Waktu Pengiriman Material",
+    "form_urgency_options": [
+      "Kirim Hari Ini / Siap Cor",
+      "Dalam 1-3 Hari Ini",
+      "Pemesanan Bertahap Proyek",
+      "Minta Penawaran Harga Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan daftar material (semen, besi, pasir, bata), estimasi volume/truk, atau spesifikasi...",
+    "form_submit_text": "Kirim Rincian Material ke WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Material Standar SNI",
+        "desc": "Jaminan mutu spesifikasi presisi, kekuatan struktur aman, dan ukuran jujur sesuai standar.",
+        "badge": "Mutu Teruji SNI",
+        "role": "Manajemen Gudang"
+      },
+      {
+        "title": "Armada Pengiriman Siaga",
+        "desc": "Didukung armada truk dump dan pick-up siap drop barang langsung ke titik proyek Anda.",
+        "badge": "Kirim Tepat Waktu",
+        "role": "Logistik Pengiriman"
+      },
+      {
+        "title": "Kejujuran Ukuran & Hitungan",
+        "desc": "Transparansi volume, nota resmi, dan harga kompetitif untuk mandor maupun kontraktor.",
+        "badge": "Mitra Terpercaya",
+        "role": "Layanan Penjualan"
+      }
+    ],
+    "hero_cta_primary": "Minta Penawaran Material via WA",
+    "hero_cta_secondary": "Lihat Katalog Material Proyek ↓",
+    "nav_advantages": "Standar Material SNI",
+    "footer_area_title": "Wilayah Kirim Armada Proyek",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan estimasi kebutuhan bahan bangunan SNI, pasokan proyek, dan pengiriman armada terawat warga {city}.",
+    "faq_desc": "Informasi praktis seputar ketersediaan material konstruksi standar SNI, armada kirim dump truck/pickup, dan penagihan proyek di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik menanyakan kebutuhan material *{title}* dari website resmi Anda.\\nBoleh minta info spesifikasi teknis, ketersediaan stok, dan penawaran harga terbaik untuk proyek di {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Titik Proyek / Lokasi Bangunan",
+      "Ambil Mandiri di Gudang"
+    ],
+    "footer_area_coverage_template": "Pengiriman material proyek & armada pick-up/dump truck area {city} dan sekitarnya."
   },
   "kuliner": {
     "name": "Kuliner & Pangan",
@@ -86,6 +342,7 @@
     "order_desc": "Pilih menu favorit dan jumlah porsi, pesanan langsung terhubung ke WhatsApp resmi untuk konfirmasi jadwal.",
     "card_btn_text": "Pesan Menu via WA ↗",
     "sticky_wa_text": "Pesan Menu WA",
+    "card_estimate_btn": "Pesan / Katering ↓",
     "badge_labels": [
       "100% Halal & Segar",
       "Resep Otentik Pilihan",
@@ -93,7 +350,54 @@
       "Porsi Pas & Mantap",
       "Katering Acara Siap",
       "Kirim Hangat ke Titik Acara"
-    ]
+    ],
+    "form_name_label": "Nama Pemesan / Acara",
+    "form_name_placeholder": "Contoh: Ibu Ratna (Acara Syukuran)",
+    "form_category_label": "Pilihan Menu / Paket Katering",
+    "form_area_label": "Alamat Titik Antar / Lokasi Acara",
+    "form_urgency_label": "Waktu Pengantaran Makanan",
+    "form_urgency_options": [
+      "Pesan Hari Ini (Makan Siang/Malam)",
+      "Besok / Lusa",
+      "Pesanan Katering Acara Mendatang",
+      "Tanya Menu & Porsi Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan menu pilihan, perkiraan jumlah porsi/box, jam tiba, atau catatan rasa...",
+    "form_submit_text": "Pesan Menu via WhatsApp ↗",
+    "review_guarantees": [
+      {
+        "title": "100% Halal & Bahan Segar Harian",
+        "desc": "Dimasak higienis setiap hari dari rempah dan bahan berkualitas tanpa pengawet berbahaya.",
+        "badge": "Segar & Halal",
+        "role": "Dapur Utama"
+      },
+      {
+        "title": "Cita Rasa Otentik & Porsi Mantap",
+        "desc": "Racikan bumbu meresap dengan porsi memuaskan untuk santap keluarga maupun tamu acara.",
+        "badge": "Rasa Teruji",
+        "role": "Quality Chef"
+      },
+      {
+        "title": "Tiba Hangat & Tepat Waktu",
+        "desc": "Pengemasan rapi dan kurir berpengalaman agar sajian dinikmati dalam kondisi terbaik.",
+        "badge": "Kirim Tepat Waktu",
+        "role": "Tim Pengantaran"
+      }
+    ],
+    "hero_cta_primary": "Pesan Menu & Paket via WA",
+    "hero_cta_secondary": "Lihat Pilihan Menu & Paket ↓",
+    "nav_advantages": "Cita Rasa & Higienitas",
+    "footer_area_title": "Area Pengantaran Pesanan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan pemesanan hidangan lezat, paket katering acara, dan pesan-antar higienis warga {city}.",
+    "faq_desc": "Informasi praktis seputar pemesanan menu harian, paket katering hajatan/kantor, dan jangkauan pengantaran di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik memesan menu/paket *{title}* dari website resmi Anda.\\nBoleh minta info porsi, variasi lauk, dan biaya pengantaran untuk wilayah {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Antar Langsung ke Lokasi Acara",
+      "Ambil Langsung di Outlet"
+    ],
+    "footer_area_coverage_template": "Layanan makan di tempat, pesan-antar higienis, dan katering acara area {city} dan sekitarnya."
   },
   "estetika": {
     "name": "Estetika & Kecantikan",
@@ -118,6 +422,7 @@
     "order_desc": "Pilih jenis treatment dan waktu yang Anda inginkan, admin kami siap mengonfirmasi jadwal tanpa antre.",
     "card_btn_text": "Booking via WA ↗",
     "sticky_wa_text": "Booking Jadwal WA",
+    "card_estimate_btn": "Booking Treatment ↓",
     "badge_labels": [
       "Terapis Bersertifikat",
       "Produk Aman BPOM",
@@ -125,6 +430,52 @@
       "Hasil Glowing Natural",
       "Ruang Nyaman & Privat",
       "Konsultasi Tipe Kulit"
+    ],
+    "form_name_label": "Nama Lengkap",
+    "form_name_placeholder": "Contoh: Kak Siska",
+    "form_category_label": "Treatment / Layanan Perawatan",
+    "form_area_label": "Area Tempat Tinggal",
+    "form_urgency_label": "Rencana Jadwal Treatment",
+    "form_urgency_options": [
+      "Hari Ini (Cek Slot Kosong)",
+      "Besok / Lusa",
+      "Jadwal Akhir Pekan",
+      "Konsultasi Tipe Kulit via WA"
+    ],
+    "form_notes_placeholder": "Tuliskan kondisi kulit (berjerawat, kusam, flek) atau perawatan yang diinginkan...",
+    "form_submit_text": "Reservasi Slot Treatment via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Produk Terdaftar Resmi BPOM",
+        "desc": "Semua bahan skincare dan serum aman, teruji klinis, tanpa bahan berbahaya.",
+        "badge": "Aman & Resmi",
+        "role": "Konsultan Estetika"
+      },
+      {
+        "title": "Alat Steril & Ruang Privat",
+        "desc": "Sterilisasi alat rutin sebelum pemakaian serta suasana studio yang tenang dan nyaman.",
+        "badge": "Higienis & Steril",
+        "role": "Terapis Bersertifikat"
+      },
+      {
+        "title": "Hasil Glowing Natural",
+        "desc": "Perawatan terarah sesuai analisa kebutuhan kulit untuk hasil memuaskan jangka panjang.",
+        "badge": "Hasil Terbukti",
+        "role": "Layanan Klien"
+      }
+    ],
+    "hero_cta_primary": "Konsultasi & Reservasi via WA",
+    "hero_cta_secondary": "Lihat Daftar Perawatan ↓",
+    "nav_advantages": "Standar Higienis & Estetika",
+    "footer_area_title": "Wilayah Layanan Klien",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan konsultasi kecantikan, reservasi slot perawatan, dan layanan ramah warga {city}.",
+    "faq_desc": "Informasi seputar jenis treatment, sterilisasi alat kecantikan, durasi perawatan, dan konsultasi kulit di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik berkonsultasi mengenai perawatan *{title}* dari website resmi Anda.\\nBoleh minta info detail treatment, ketersediaan jadwal terapis, dan promo terbarunya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Datang Langsung ke Studio / Klinik",
+      "Konsultasi Online via WhatsApp"
     ]
   },
   "flora_fauna": {
@@ -150,6 +501,7 @@
     "order_desc": "Kirimkan foto referensi bunga atau kebutuhan anabul Anda, admin kami segera memproses pengiriman.",
     "card_btn_text": "Pesan via WA ↗",
     "sticky_wa_text": "Pesan Cepat WA",
+    "card_estimate_btn": "Pesan / Konsul ↓",
     "badge_labels": [
       "Bunga Segar Harian",
       "Pakan Nutrisi Lengkap",
@@ -157,7 +509,54 @@
       "Desain Buket Mewah",
       "Aman Bagi Anabul",
       "Pengiriman Hari Ini"
-    ]
+    ],
+    "form_name_label": "Nama Pemesan",
+    "form_name_placeholder": "Contoh: Kak Amanda",
+    "form_category_label": "Kategori Bunga / Kebutuhan Pet",
+    "form_area_label": "Alamat Pengiriman / Layanan",
+    "form_urgency_label": "Waktu Pengiriman / Kebutuhan",
+    "form_urgency_options": [
+      "Kirim Hari Ini (Bunga Segar)",
+      "Besok / Lusa",
+      "Jadwal Acara Mendatang",
+      "Tanya Ketersediaan Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan ucapan buket, nuansa warna, atau jenis kebutuhan anabul (pakan, pasir, vitamin)...",
+    "form_submit_text": "Kirim Pesanan Bunga / Pet ke WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Bunga Segar Dipetik Harian",
+        "desc": "Kuntum bunga segar pilihan dirangkai indah oleh florist berpengalaman.",
+        "badge": "Segar Terjamin",
+        "role": "Florist Studio"
+      },
+      {
+        "title": "Nutrisi Peliharaan Resmi",
+        "desc": "Pakan dan vitamin anabul terdaftar resmi untuk kesehatan hewan peliharaan Anda.",
+        "badge": "Nutrisi Lengkap",
+        "role": "Pet Care"
+      },
+      {
+        "title": "Pengiriman Cepat Aman",
+        "desc": "Perlindungan kemasan buket rapi agar tiba di tangan penerima dalam kondisi sempurna.",
+        "badge": "Kirim Aman",
+        "role": "Kurir Cepat"
+      }
+    ],
+    "hero_cta_primary": "Pesan & Konsultasi via WA",
+    "hero_cta_secondary": "Lihat Katalog Bunga & Pet Care ↓",
+    "nav_advantages": "Kualitas Segar & Terawat",
+    "footer_area_title": "Wilayah Pengantaran & Layanan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan pemesanan karangan bunga segar, perlengkapan anabul, dan perawatan terpercaya warga {city}.",
+    "faq_desc": "Informasi praktis seputar rangkaian bunga segar, pengantaran same-day, dan produk nutrisi hewan peliharaan di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik menanyakan produk/layanan *{title}* dari katalog website resmi Anda.\\nBoleh minta info varian yang tersedia, pengiriman same-day, dan harganya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Kirim Kurir Cepat / Sameday",
+      "Ambil Langsung di Toko"
+    ],
+    "footer_area_coverage_template": "Pengiriman aman bibit tanaman hias, pakan & layanan pet care area {city} dan sekitarnya."
   },
   "otomotif": {
     "name": "Otomotif & Bengkel",
@@ -182,6 +581,7 @@
     "order_desc": "Sampaikan keluhan kendaraan atau kebutuhan sparepart, mekanik kami siap membantu via WhatsApp.",
     "card_btn_text": "Konsul Servis WA ↗",
     "sticky_wa_text": "Booking Servis WA",
+    "card_estimate_btn": "Booking Servis ↓",
     "badge_labels": [
       "Mekanik Bersertifikat",
       "Sparepart 100% Asli",
@@ -189,38 +589,533 @@
       "Garansi Hasil Servis",
       "Pemeriksaan Berkala",
       "Estimasi Biaya Terbuka"
-    ]
+    ],
+    "form_name_label": "Nama Pemilik Kendaraan",
+    "form_name_placeholder": "Contoh: Bpk. Dedi (Avanza 2019)",
+    "form_category_label": "Layanan Servis / Sparepart",
+    "form_area_label": "Area / Lokasi Anda",
+    "form_urgency_label": "Jadwal Booking Servis",
+    "form_urgency_options": [
+      "Booking Hari Ini",
+      "Besok / Lusa",
+      "Akhir Pekan",
+      "Tanya Estimasi Biaya Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan keluhan kendaraan (rem bunyi, ganti oli, tune up, kaki-kaki), tipe mobil/motor...",
+    "form_submit_text": "Booking Jadwal Bengkel via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Mekanik Terampil & Diagnostik Akurat",
+        "desc": "Peralatan uji modern mendeteksi sumber kendala mesin secara presisi tanpa tebak-tebak.",
+        "badge": "Mekanik Handal",
+        "role": "Tim Bengkel"
+      },
+      {
+        "title": "Suku Cadang Asli Bergaransi",
+        "desc": "Pilihan sparepart resmi bergaransi untuk menjaga performa mesin tetap prima dan aman.",
+        "badge": "Jaminan Asli",
+        "role": "Suku Cadang"
+      },
+      {
+        "title": "Pengerjaan Tepat Waktu",
+        "desc": "Estimasi waktu pengerjaan teratur agar kendaraan Anda segera siap digunakan kembali.",
+        "badge": "Tepat Waktu",
+        "role": "Layanan Pelanggan"
+      }
+    ],
+    "hero_cta_primary": "Konsultasi Servis Kendaraan via WA",
+    "hero_cta_secondary": "Lihat Layanan & Suku Cadang ↓",
+    "nav_advantages": "Standar Teknisi Ahli",
+    "footer_area_title": "Jangkauan Servis & Panggilan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan perawatan kendaraan, estimasi servis berkala, dan suku cadang teruji warga {city}.",
+    "faq_desc": "Informasi praktis seputar booking antrean bengkel, garansi pengerjaan mesin/kelistrikan, dan layanan darurat di {city}.",
+    "card_wa_prompt_template": "Halo Tim Bengkel {business_name},\\n\\nSaya ingin menanyakan estimasi servis / kebutuhan *{title}* dari website resmi Anda.\\nBoleh info estimasi waktu pengerjaan, biaya, dan ketersediaan slot montir di {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Datang Langsung ke Bengkel",
+      "Layanan Panggilan / Home Service"
+    ],
+    "footer_area_coverage_template": "Layanan bengkel resmi, servis berkala, & panggilan darurat area {city} dan sekitarnya."
   },
-  "modern_clean": {
-    "name": "Modern Retail & Industri",
-    "accent": "#6366f1",
-    "accent_hover": "#4f46e5",
+  "layanan_profesional": {
+    "name": "Layanan Profesional & Legal",
+    "accent": "#1e3a8a",
+    "accent_hover": "#172554",
+    "accent_light": "#f8fafc",
+    "accent_border": "#bfdbfe",
+    "accent_dark": "#0f172a",
+    "accent_shadow": "rgba(30, 58, 138, 0.25)",
+    "secondary": "#b45309",
+    "theme_color": "#1e3a8a",
+    "schema_type": "LegalService",
+    "nav_catalog": "Bidang Praktik & Layanan",
+    "nav_order": "Jadwal Konsultasi",
+    "top_bar_label": "Kerahasiaan Klien Terjamin (NDA) & Tim Ahli Berlisensi",
+    "catalog_tag": "BIDANG KONSULTASI & LAYANAN RESMI",
+    "catalog_title": "Layanan Hukum, Perizinan & Konsultasi Korporat",
+    "catalog_desc": "Pendampingan hukum dan konsultasi manajemen terpercaya untuk perorangan dan korporat di {city}.",
+    "advantages_title": "Integritas, Pengalaman & Kerahasiaan Penuh",
+    "advantages_desc": "Standar etika profesi tinggi, analisis yuridis mendalam, dan komitmen perlindungan kepentingan klien.",
+    "order_title": "Jadwalkan Konsultasi & Telaah Kasus",
+    "order_desc": "Sampaikan gambaran kebutuhan atau permasalahan Anda, tim konsultan kami segera menghubungi Anda via WhatsApp.",
+    "card_btn_text": "Konsultasi via WA ↗",
+    "sticky_wa_text": "Konsul Legal WA",
+    "card_estimate_btn": "Jadwal Konsul ↓",
+    "badge_labels": [
+      "Advokat / Ahli Berlisensi",
+      "Kerahasiaan Terjamin (NDA)",
+      "Metodologi Teruji",
+      "Pendampingan Penuh",
+      "Analisis Mendalam",
+      "Respon Cepat Tanggap"
+    ],
+    "form_name_label": "Nama Lengkap / Nama Perusahaan",
+    "form_name_placeholder": "Contoh: Ibu Dian / PT Graha Mandiri",
+    "form_category_label": "Bidang Konsultasi / Layanan",
+    "form_area_label": "Kota Domisili / Kantor",
+    "form_urgency_label": "Waktu Konsultasi",
+    "form_urgency_options": [
+      "Minggu Ini",
+      "Dalam 1-2 Hari Ini",
+      "Konsultasi Awal via WhatsApp",
+      "Jadwal Diskusi Khusus"
+    ],
+    "form_notes_placeholder": "Tuliskan garis besar persoalan hukum, perizinan, atau konsultasi bisnis yang ingin ditelaah...",
+    "form_submit_text": "Jadwalkan Konsultasi via WA Resmi ↗",
+    "review_guarantees": [
+      {
+        "title": "Kerahasiaan Klien Terjamin (NDA)",
+        "desc": "Perlindungan data dan informasi perkara dengan standar etika profesi yang ketat.",
+        "badge": "Kerahasiaan Penuh",
+        "role": "Tim Advokat / Ahli"
+      },
+      {
+        "title": "Analisis Yuridis Mendalam",
+        "desc": "Solusi legal strategis berbasis regulasi terbaru untuk melindungi hak dan kepentingan Anda.",
+        "badge": "Keahlian Teruji",
+        "role": "Konsultan Senior"
+      },
+      {
+        "title": "Pendampingan Profesional",
+        "desc": "Komunikasi transparan, progresif, dan responsif mendampingi setiap tahapan konsultasi.",
+        "badge": "Respon Cepat",
+        "role": "Client Relations"
+      }
+    ],
+    "hero_cta_primary": "Konsultasi Hukum & Bisnis via WA",
+    "hero_cta_secondary": "Lihat Bidang Praktik & Layanan ↓",
+    "nav_advantages": "Integritas & Etika Profesi",
+    "footer_area_title": "Wilayah Praktik & Pendampingan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan konsultasi yuridis, perizinan legal, dan pendampingan bisnis terpercaya bagi klien di {city}.",
+    "faq_desc": "Informasi umum seputar tahapan konsultasi legal, perjanjian kerahasiaan (NDA), dan ruang lingkup pendampingan di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya ingin berkonsultasi mengenai bidang layanan *{title}* dari website resmi Anda.\\nBoleh minta info jadwal konsultasi awal dan prosedur penanganannya untuk domisili {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Pertemuan di Kantor Klien",
+      "Konsultasi Daring / Zoom / WhatsApp"
+    ],
+    "footer_area_coverage_template": "Pendampingan yuridis kantor & konsultasi klien terpercaya area {city} dan seluruh Indonesia."
+  },
+  "logistik_kargo": {
+    "name": "Logistik & Ekspedisi Kargo",
+    "accent": "#2563eb",
+    "accent_hover": "#1d4ed8",
+    "accent_light": "#eff6ff",
+    "accent_border": "#bfdbfe",
+    "accent_dark": "#1e3a8a",
+    "accent_shadow": "rgba(37, 99, 235, 0.25)",
+    "secondary": "#ea580c",
+    "theme_color": "#2563eb",
+    "schema_type": "DeliveryService",
+    "nav_catalog": "Layanan & Rute Kargo",
+    "nav_order": "Cek Tarif / Sewa Armada",
+    "top_bar_label": "Armada Siap Jalan & Lacak Posisi Pengiriman Realtime",
+    "catalog_tag": "LOGISTIK & PENGIRIMAN KARGO BERAT",
+    "catalog_title": "Layanan Ekspedisi Kargo Antarpulau & Charter Truk",
+    "catalog_desc": "Solusi rantai pasok dan distribusi logistik terpercaya langsung dari pusat operasional {city}.",
+    "advantages_title": "Keandalan Armada & Keamanan Muatan Terjamin",
+    "advantages_desc": "Sopir terlatih, jaminan perlindungan asuransi barang, dan ketepatan jadwal bongkar muat.",
+    "order_title": "Cek Tarif Ongkir & Booking Armada",
+    "order_desc": "Pilih jenis muatan dan kota tujuan Anda, tim dispatcher kami segera menghitungkan tarif terbaik via WhatsApp.",
+    "card_btn_text": "Cek Tarif via WA ↗",
+    "sticky_wa_text": "Cek Tarif WA",
+    "card_estimate_btn": "Cek Tarif ↓",
+    "badge_labels": [
+      "Armada Sendiri Terawat",
+      "Jaminan Asuransi Muatan",
+      "Lacak Posisi Armada",
+      "Tarif Kompetitif B2B",
+      "Muat Cepat Tepat Waktu",
+      "Jangkauan Nasional"
+    ],
+    "form_name_label": "Nama Pengirim / Perusahaan",
+    "form_name_placeholder": "Contoh: Bpk. Firman (PT Sukses Makmur)",
+    "form_category_label": "Jenis Muatan / Layanan Kargo",
+    "form_area_label": "Rute Pengiriman (Kota Asal - Tujuan)",
+    "form_urgency_label": "Jadwal Muat Barang",
+    "form_urgency_options": [
+      "Muat Hari Ini / Siaga",
+      "Dalam 1-2 Hari Ini",
+      "Jadwal Rutin Mingguan",
+      "Cek Tarif Ongkir Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan perkiraan tonase/kubikasi barang, jenis truk (CDD, Fuso, Tronton), atau alamat bongkar...",
+    "form_submit_text": "Cek Tarif & Booking Armada via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Armada Terawat & Driver Terlatih",
+        "desc": "Kondisi truk prima siap jalan rute antarkota dan antarpulau dengan standar keamanan tinggi.",
+        "badge": "Armada Siap",
+        "role": "Dispatcher Armada"
+      },
+      {
+        "title": "Jaminan Asuransi & Keamanan",
+        "desc": "Proteksi muatan barang dari titik muat sampai titik bongkar dengan surat jalan resmi.",
+        "badge": "Muatan Aman",
+        "role": "Operasional Kargo"
+      },
+      {
+        "title": "Lacak Posisi Pengiriman",
+        "desc": "Update berkala perjalanan armada untuk kepastian waktu tiba di gudang tujuan.",
+        "badge": "Tepat Waktu",
+        "role": "Customer Support"
+      }
+    ],
+    "hero_cta_primary": "Cek Tarif & Jadwal Armada via WA",
+    "hero_cta_secondary": "Lihat Rute & Layanan Kargo ↓",
+    "nav_advantages": "Keandalan Armada Kargo",
+    "footer_area_title": "Jangkauan Rute & Pengiriman",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan cek tarif ekspedisi, sewa truk kargo terawat, dan pengiriman antarkota warga {city}.",
+    "faq_desc": "Informasi praktis seputar jenis armada angkut, asuransi muatan barang, jadwal keberangkatan, dan lacak posisi di {city}.",
+    "card_wa_prompt_template": "Halo Tim Ekspedisi {business_name},\\n\\nSaya ingin menanyakan layanan kargo *{title}* dari website resmi Anda.\\nBoleh minta info estimasi tarif, jenis armada yang cocok, dan jadwal pengiriman dari/ke {city}? Terima kasih!",
+    "form_area_options": [
+      "Dalam Kota {city}",
+      "Rute Antarkota Provinsi",
+      "Lintas Pulau / Seluruh Indonesia",
+      "Penjemputan Langsung di Gudang"
+    ],
+    "footer_area_coverage_template": "Penjemputan paket, ekspedisi ritel & sewa armada kargo area {city} ke seluruh Nusantara."
+  },
+  "jasa_teknik": {
+    "name": "Jasa Teknik & Servis AC",
+    "accent": "#0284c7",
+    "accent_hover": "#0369a1",
+    "accent_light": "#f0f9ff",
+    "accent_border": "#bae6fd",
+    "accent_dark": "#075985",
+    "accent_shadow": "rgba(2, 132, 199, 0.25)",
+    "secondary": "#f59e0b",
+    "theme_color": "#0284c7",
+    "schema_type": "HomeAndConstructionBusiness",
+    "nav_catalog": "Layanan Servis & Tarif",
+    "nav_order": "Panggil Teknisi",
+    "top_bar_label": "Teknisi Panggilan Datang Cepat & Garansi Pengerjaan",
+    "catalog_tag": "JASA TEKNIK & SERVIS PANGGILAN",
+    "catalog_title": "Servis AC, Kelistrikan & Perbaikan Rumah Andal",
+    "catalog_desc": "Solusi perbaikan dan instalasi teknis dengan peralatan standar dan teknisi bersertifikat di {city}.",
+    "advantages_title": "Pengerjaan Rapi & Garansi Hasil Kerja",
+    "advantages_desc": "Transparansi biaya di awal tanpa biaya tersembunyi, sparepart asli, dan jaminan dingin maksimal.",
+    "order_title": "Booking Jadwal Teknisi ke Lokasi Anda",
+    "order_desc": "Sampaikan keluhan kerusakan atau jadwal servis berkala, admin kami langsung menjadwalkan teknisi via WhatsApp.",
+    "card_btn_text": "Panggil Teknisi WA ↗",
+    "sticky_wa_text": "Panggil Teknisi WA",
+    "card_estimate_btn": "Panggil Teknisi ↓",
+    "badge_labels": [
+      "Teknisi Berpengalaman",
+      "Garansi Hasil Servis",
+      "Biaya Terbuka di Awal",
+      "Alat Uji Lengkap",
+      "Pengerjaan Cepat Rapi",
+      "Sparepart Asli Teruji"
+    ],
+    "form_name_label": "Nama Pelanggan",
+    "form_name_placeholder": "Contoh: Ibu Devi / Kafe Melati",
+    "form_category_label": "Layanan Servis / Perbaikan",
+    "form_area_label": "Lokasi Rumah / Kantor Anda",
+    "form_urgency_label": "Jadwal Panggilan Teknisi",
+    "form_urgency_options": [
+      "Panggilan Segera / Hari Ini",
+      "Besok / Lusa",
+      "Jadwal Akhir Pekan",
+      "Konsultasi Estimasi Biaya Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan kendala (AC tidak dingin, bocor air, mati total), jumlah unit, dan merk...",
+    "form_submit_text": "Panggil Teknisi ke Lokasi via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Teknisi Berpengalaman & Sopan",
+        "desc": "Pemeriksaan teliti, kerja rapi, dan menjaga kebersihan ruangan tempat pengerjaan.",
+        "badge": "Teknisi Ahli",
+        "role": "Tim Teknisi"
+      },
+      {
+        "title": "Garansi Hasil Servis Nyata",
+        "desc": "Jaminan dingin maksimal dengan garansi purna servis jika ada kendala berulang.",
+        "badge": "Garansi Dingin",
+        "role": "Quality Assurance"
+      },
+      {
+        "title": "Biaya Terbuka & Transparan",
+        "desc": "Estimasi dijelaskan sebelum pengerjaan, tidak ada pungutan biaya terselubung.",
+        "badge": "Kejujuran Biaya",
+        "role": "Customer Care"
+      }
+    ],
+    "hero_cta_primary": "Panggil Teknisi Datang Cepat via WA",
+    "hero_cta_secondary": "Lihat Layanan Servis & Tarif ↓",
+    "nav_advantages": "Garansi Servis & Keahlian",
+    "footer_area_title": "Area Panggilan Teknisi",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan panggilan servis AC, perbaikan mesin pendingin, dan instalasi teruji warga {city}.",
+    "faq_desc": "Informasi praktis seputar garansi servis pengerjaan, estimasi biaya suku cadang, dan respon teknisi panggilan di {city}.",
+    "card_wa_prompt_template": "Halo Tim Teknisi {business_name},\\n\\nSaya ingin meminta layanan servis *{title}* dari website resmi Anda.\\nBoleh info estimasi kedatangan teknisi, pengecekan awal, dan biayanya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Panggilan ke Rumah / Kantor",
+      "Bawa Unit ke Workshop"
+    ],
+    "footer_area_coverage_template": "Layanan teknisi panggilan bergaransi langsung ke rumah & kantor area {city} dan sekitarnya."
+  },
+  "edukasi": {
+    "name": "Pendidikan & Bimbingan Belajar",
+    "accent": "#4f46e5",
+    "accent_hover": "#4338ca",
     "accent_light": "#eef2ff",
     "accent_border": "#c7d2fe",
     "accent_dark": "#3730a3",
-    "accent_shadow": "rgba(99, 102, 241, 0.25)",
-    "secondary": "#8b5cf6",
-    "theme_color": "#6366f1",
+    "accent_shadow": "rgba(79, 70, 229, 0.25)",
+    "secondary": "#f97316",
+    "theme_color": "#4f46e5",
+    "schema_type": "EducationalOrganization",
+    "nav_catalog": "Program Belajar & Kelas",
+    "nav_order": "Konsultasi & Daftar",
+    "top_bar_label": "Pendaftaran Gelombang Baru & Free Trial Class",
+    "catalog_tag": "PROGRAM BELAJAR & KURIKULUM TERUJI",
+    "catalog_title": "Program Bimbingan Belajar & Kursus Berprestasi",
+    "catalog_desc": "Pendampingan belajar efektif dengan tutor profesional dan metode interaktif di {city}.",
+    "advantages_title": "Metode Belajar Terstruktur & Tutor Ahli",
+    "advantages_desc": "Pendekatan personal sesuai karakter siswa, modul eksklusif, dan evaluasi capaian berkala.",
+    "order_title": "Konsultasi Belajar & Booking Trial Class",
+    "order_desc": "Pilih jenjang kelas atau materi yang ingin ditingkatkan, tim konsultan pendidikan kami segera memandu via WhatsApp.",
+    "card_btn_text": "Tanya Program WA ↗",
+    "sticky_wa_text": "Tanya Kelas WA",
+    "card_estimate_btn": "Info Biaya & Kelas ↓",
+    "badge_labels": [
+      "Tutor Berpengalaman",
+      "Modul Belajar Lengkap",
+      "Free Trial Class",
+      "Evaluasi Berkala",
+      "Kelas Privat & Reguler",
+      "Garansi Prestasi Belajar"
+    ],
+    "form_name_label": "Nama Siswa / Orang Tua",
+    "form_name_placeholder": "Contoh: Ibu Wulan (Orang Tua Kevin)",
+    "form_category_label": "Jenjang Kelas / Program Belajar",
+    "form_area_label": "Area / Sekolah Asal",
+    "form_urgency_label": "Rencana Mulai Belajar",
+    "form_urgency_options": [
+      "Free Trial Class Minggu Ini",
+      "Bulan Ini",
+      "Persiapan Ujian / Semester Baru",
+      "Konsultasi Program Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan materi pelajaran yang ingin difokuskan (Matematika, Bahasa Inggris, UTBK, dll)...",
+    "form_submit_text": "Daftar / Booking Trial Class via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Tutor Ahli & Berpengalaman",
+        "desc": "Pengajar berkompeten dari lulusan perguruan tinggi terkemuka dengan metode interaktif.",
+        "badge": "Tutor Pilihan",
+        "role": "Tim Akademik"
+      },
+      {
+        "title": "Modul Belajar & Bank Soal Lengkap",
+        "desc": "Materi terstruktur ringkas, latihan soal terarah, dan evaluasi hasil belajar berkala.",
+        "badge": "Kurikulum Teruji",
+        "role": "Pengembangan Modul"
+      },
+      {
+        "title": "Pendekatan Belajar Personal",
+        "desc": "Perhatian penuh pada kelemahan siswa untuk meningkatkan rasa percaya diri dan prestasi.",
+        "badge": "Fokus Siswa",
+        "role": "Konsultan Pendidikan"
+      }
+    ],
+    "hero_cta_primary": "Konsultasi Program Belajar via WA",
+    "hero_cta_secondary": "Lihat Program Belajar & Kelas ↓",
+    "nav_advantages": "Kurikulum & Tutor Teruji",
+    "footer_area_title": "Wilayah Jangkauan Siswa",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan informasi bimbingan belajar, kelas intensif persiapan ujian, dan konsultasi akademik warga {city}.",
+    "faq_desc": "Informasi praktis seputar jadwal kelas, modul kurikulum, kualifikasi pengajar, dan trial class di {city}.",
+    "card_wa_prompt_template": "Halo Tim Akademik {business_name},\\n\\nSaya tertarik dengan program belajar *{title}* dari website resmi Anda.\\nBoleh minta info jadwal kelas, modul pembelajaran, dan biaya pendaftarannya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Kelas Tatap Muka di Cabang",
+      "Kelas Online Interaktif"
+    ],
+    "footer_area_coverage_template": "Bimbingan belajar tatap muka di {city} serta kelas interaktif persiapan ujian online."
+  },
+  "properti": {
+    "name": "Properti & Real Estate",
+    "accent": "#065f46",
+    "accent_hover": "#047857",
+    "accent_light": "#ecfdf5",
+    "accent_border": "#a7f3d0",
+    "accent_dark": "#022c22",
+    "accent_shadow": "rgba(6, 95, 70, 0.25)",
+    "secondary": "#d97706",
+    "theme_color": "#065f46",
+    "schema_type": "RealEstateAgent",
+    "nav_catalog": "Tipe Unit & Kavling",
+    "nav_order": "Jadwal Survey Lokasi",
+    "top_bar_label": "Legalitas SHM Aman & Promo Cicilan Developer",
+    "catalog_tag": "KATALOG HUNIAN & INVESTASI PROPERTI",
+    "catalog_title": "Pilihan Hunian Eksklusif & Kavling Siap Bangun",
+    "catalog_desc": "Properti strategis dengan legalitas terverifikasi dan potensi investasi tinggi di {city}.",
+    "advantages_title": "Legalitas Pasti & Lokasi Bernilai Tinggi",
+    "advantages_desc": "Sertifikat hak milik aman, bebas sengketa, akses jalan lebar, dan fasilitas lingkungan asri.",
+    "order_title": "Minta Brosur & Booking Jadwal Survey",
+    "order_desc": "Pilih tipe properti yang Anda minati, konsultan properti kami siap memandu kunjungan lokasi via WhatsApp.",
+    "card_btn_text": "Minta Brosur via WA ↗",
+    "sticky_wa_text": "Survey Lokasi WA",
+    "card_estimate_btn": "Jadwal Survey ↓",
+    "badge_labels": [
+      "100% SHM & IMB Resmi",
+      "Bebas Banjir & Asri",
+      "Akses Jalan Lebar",
+      "Fasilitas Terintegrasi",
+      "Skema Bayar Fleksibel",
+      "Nilai Investasi Naik"
+    ],
+    "form_name_label": "Nama Calon Pembeli / Investor",
+    "form_name_placeholder": "Contoh: Bpk. Arif",
+    "form_category_label": "Tipe Properti yang Diminati",
+    "form_area_label": "Lokasi / Kawasan Pilihan",
+    "form_urgency_label": "Jadwal Survey Lokasi",
+    "form_urgency_options": [
+      "Survey Akhir Pekan Ini",
+      "Survey Hari Kerja",
+      "Minta Brosur & Price List via WA",
+      "Konsultasi Simulasi KPR Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan budget investasi, tipe hunian (1 lantai, 2 lantai, tanah), atau cara bayar (KPR/Cash)...",
+    "form_submit_text": "Minta Info Unit & Survey via WA ↗",
+    "review_guarantees": [
+      {
+        "title": "Legalitas SHM / HGB Aman",
+        "desc": "Sertifikat terverifikasi, perizinan jelas, dan bebas sengketa untuk investasi aman.",
+        "badge": "Legalitas Bersih",
+        "role": "Legal Properti"
+      },
+      {
+        "title": "Lokasi Strategis Bernilai Tinggi",
+        "desc": "Akses jalan mudah, dekat fasilitas umum, dengan potensi kenaikan harga tanah menjanjikan.",
+        "badge": "Investasi Prima",
+        "role": "Advisor Properti"
+      },
+      {
+        "title": "Pendampingan KPR & Notaris",
+        "desc": "Bantuan pengurusan berkas bank hingga akad notaris transparan tanpa repot.",
+        "badge": "Layanan Lengkap",
+        "role": "Customer Care"
+      }
+    ],
+    "hero_cta_primary": "Minta Brosur & Jadwal Survey via WA",
+    "hero_cta_secondary": "Lihat Pilihan Tipe Unit ↓",
+    "nav_advantages": "Legalitas SHM Terjamin",
+    "footer_area_title": "Lokasi Proyek & Area Layanan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan informasi unit hunian, kavling bernilai tinggi, dan survey lokasi langsung warga {city}.",
+    "faq_desc": "Informasi praktis seputar legalitas sertifikat tanah/bangunan, skema cicilan/KPR, dan pendampingan survey lokasi di {city}.",
+    "card_wa_prompt_template": "Halo Tim Pemasaran {business_name},\\n\\nSaya tertarik dengan unit properti *{title}* dari website resmi Anda.\\nBoleh minta e-brosur lengkap, daftar harga (pricelist), dan jadwal survey lokasi di {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Jadwal Survey ke Lokasi Proyek",
+      "Pertemuan di Kantor Pemasaran"
+    ],
+    "footer_area_coverage_template": "Konsultasi investasi, pemasaran unit hunian, & survei lokasi langsung area {city} dan sekitarnya."
+  },
+  "modern_clean": {
+    "name": "Modern Retail & Industri",
+    "accent": "#4f46e5",
+    "accent_hover": "#4338ca",
+    "accent_light": "#eef2ff",
+    "accent_border": "#c7d2fe",
+    "accent_dark": "#3730a3",
+    "accent_shadow": "rgba(79, 70, 229, 0.25)",
+    "secondary": "#06b6d4",
+    "theme_color": "#4f46e5",
     "schema_type": "LocalBusiness",
     "nav_catalog": "Katalog Produk & Jasa",
-    "nav_order": "Pesan / Tanya Stok",
+    "nav_order": "Konsultasi & Pemesanan",
     "top_bar_label": "Kualitas Mutu Terjamin & Pengiriman Tepat Waktu",
     "catalog_tag": "KATALOG SPESIFIKASI & LAYANAN",
-    "catalog_title": "Solusi Produk Berkualitas & Pengerjaan Cepat",
+    "catalog_title": "Pilihan Produk Berkualitas & Layanan Terpercaya",
     "catalog_desc": "Pilihan produk bermutu dan layanan profesional siap memenuhi kebutuhan pelanggan di {city}.",
-    "advantages_title": "Ketepatan Mutu & Pelayanan Profesional",
-    "advantages_desc": "Kapasitas produksi andal, jaminan spesifikasi sesuai pesanan, dan respon konsultasi cepat.",
+    "advantages_title": "Standar Mutu & Pelayanan Profesional",
+    "advantages_desc": "Standar mutu teruji, jaminan mutu sesuai kesepakatan, dan respon konsultasi cepat.",
     "order_title": "Formulir Konsultasi & Pemesanan",
-    "order_desc": "Isi form rincian kebutuhan Anda untuk mendapatkan informasi stok dan penawaran harga terbaik via WhatsApp.",
+    "order_desc": "Isi formulir rincian kebutuhan Anda untuk mendapatkan estimasi dan penawaran terbaik via WhatsApp.",
     "card_btn_text": "Tanya Produk WA ↗",
     "sticky_wa_text": "Tanya Produk WA",
+    "card_estimate_btn": "Minta Penawaran ↓",
     "badge_labels": [
       "Produk Teruji Mutu",
       "Kapasitas Order Besar",
-      "Pengerjaan Tepat Waktu",
-      "Harga Pabrik / Grosir",
+      "Pengiriman Tepat Waktu",
+      "Harga Bersahabat",
       "Layanan Konsultasi Cepat",
       "Jangkauan Pengiriman Luas"
-    ]
+    ],
+    "form_name_label": "Nama Lengkap / Instansi",
+    "form_name_placeholder": "Contoh: Pak Anton / Ibu Maya",
+    "form_category_label": "Kategori Produk / Layanan Utama",
+    "form_area_label": "Lokasi Pengiriman / Layanan",
+    "form_urgency_label": "Jadwal Kebutuhan",
+    "form_urgency_options": [
+      "Segera / Hari Ini",
+      "Dalam 1-3 Hari Ini",
+      "Jadwalkan Pekan Depan",
+      "Tanya Penawaran Dulu"
+    ],
+    "form_notes_placeholder": "Tuliskan produk atau layanan yang dicari, jumlah, spesifikasi, atau pertanyaan lain...",
+    "form_submit_text": "Kirim Rincian ke WhatsApp Resmi ↗",
+    "review_guarantees": [
+      {
+        "title": "Komitmen Mutu Terpercaya",
+        "desc": "Standar produk dan pengerjaan teruji untuk menjamin kepuasan pelanggan.",
+        "badge": "Mutu Terjamin",
+        "role": "Tim Mutu"
+      },
+      {
+        "title": "Layanan Profesional & Ramah",
+        "desc": "Kemudahan konsultasi dengan respon cepat dan penjelasan terbuka.",
+        "badge": "Layanan Prima",
+        "role": "Customer Care"
+      },
+      {
+        "title": "Ketepatan Waktu Pelayanan",
+        "desc": "Dedikasi melayani pengiriman dan konsultasi sesuai kesepakatan waktu.",
+        "badge": "Tepat Waktu",
+        "role": "Tim Operasional"
+      }
+    ],
+    "hero_cta_primary": "Konsultasi & Tanya Penawaran via WA",
+    "hero_cta_secondary": "Lihat Katalog Layanan ↓",
+    "nav_advantages": "Standar Mutu Profesional",
+    "footer_area_title": "Wilayah Jangkauan Layanan",
+    "footer_subtext": "Website resmi dihadirkan untuk kemudahan informasi produk, spesifikasi resmi, dan pemesanan warga {city}.",
+    "faq_desc": "Informasi praktis seputar spesifikasi teknis, konsultasi kebutuhan, dan prosedur pemesanan resmi di {city}.",
+    "card_wa_prompt_template": "Halo Manajemen {business_name},\\n\\nSaya tertarik dengan produk/layanan *{title}* dari website resmi Anda.\\nBoleh minta info spesifikasi, estimasi waktu, dan penawaran terbaiknya untuk area {city}? Terima kasih!",
+    "form_area_options": [
+      "Area Pusat {city}",
+      "Area Sekitar {city}",
+      "Wilayah Penyangga / Sekitar",
+      "Layanan Kunjungan / Lokasi Kantor"
+    ],
+    "footer_area_coverage_template": "Melayani konsultasi, pemesanan, dan pengantaran terpercaya area {city} dan sekitarnya."
   }
 }

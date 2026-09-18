@@ -8,7 +8,7 @@ import re
 import json
 import urllib.parse
 from typing import Dict, Any, List, Optional
-from pipeline.quotation import get_live_usd_idr_rate
+from pipeline.payment.payment_gateway import PaymentGateway
 from pipeline.deployer.vercel_deployer import VercelDeployer
 from pipeline.outreach.message_formatter import generate_outreach_message
 
@@ -32,9 +32,7 @@ def generate_html_queue_dashboard(leads: List[Dict[str, Any]], output_path: str 
         reverse=True
     )
 
-    rate = get_live_usd_idr_rate()
-    price_idr = round((100 * rate) / 1000) * 1000
-    price_label = f"$100 USD (~Rp {price_idr:,.0f})".replace(",", ".")
+    price_label = "Rp 1.490.000 (Flat All-In Terima Beres)"
 
     for lead in active_leads:
         b_name = lead.get("business_name", "Bisnis Indonesia")

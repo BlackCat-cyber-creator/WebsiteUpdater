@@ -5,13 +5,13 @@ Renders Swiss Minimalist websites and executive PDF proposals.
 
 import os
 import urllib.parse
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 TEMPLATES_DIR = os.path.dirname(__file__)
 
 _jinja_env = Environment(
     loader=FileSystemLoader(TEMPLATES_DIR),
-    autoescape=False,
+    autoescape=select_autoescape(["html", "xml"]),
     trim_blocks=True,
     lstrip_blocks=True
 )
